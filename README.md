@@ -39,7 +39,7 @@ A powerful, laptop-friendly enterprise **Inventory Issue & Order Fulfillment Sys
    - Print a clean receipt/packing slip directly from the browser to hand over with the issued products.
 
 6. **🔒 Staff Access PIN Protection:**
-   - Simple, fast numeric PIN login to keep unauthorized persons out. The PIN is configured with the `DELIVERY_PIN` environment variable.
+   - Simple numeric PIN login to keep unauthorized persons out.
 
 ---
 
@@ -52,9 +52,9 @@ Simply double-click the file:
 ### Option 2: Terminal / PowerShell
 ```powershell
 cd C:\Users\HP\Documents\antigravity\sharp-galileo\delivery-boy-app
-npm run dev
+npm start
 ```
 
 Then open in your browser on your laptop:
 👉 **`http://localhost:3000`**
-- **Staff Access PIN:** the value of the `DELIVERY_PIN` environment variable (set it in `.env.local` for local development)
+- **Staff Access PIN:** Enter your configured PIN
