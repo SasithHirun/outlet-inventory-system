@@ -98,14 +98,6 @@ export default function InventoryIssueSystem() {
       return;
     }
 
-    // Instant unlock for default 1234
-    if (cleanPin === '1234') {
-      setIsAuthenticated(true);
-      localStorage.setItem('inventory_app_auth', 'true');
-      setPinError('');
-      return;
-    }
-
     setIsAuthLoading(true);
     setPinError('');
 
@@ -317,7 +309,7 @@ export default function InventoryIssueSystem() {
                 maxLength={8}
                 value={pinInput}
                 onChange={e => setPinInput(e.target.value)}
-                placeholder="Enter 4-digit PIN (Default: 1234)"
+                placeholder="Enter Staff PIN"
                 autoFocus
                 className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3.5 text-center text-xl font-mono tracking-widest text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
               />
@@ -338,10 +330,6 @@ export default function InventoryIssueSystem() {
               {isAuthLoading ? 'Authenticating...' : 'Unlock Inventory System'}
             </button>
           </form>
-
-          <p className="text-center text-xs text-slate-500 mt-6">
-            Default PIN: <span className="text-indigo-400 font-mono font-semibold">1234</span>
-          </p>
         </div>
       </div>
     );
