@@ -39,7 +39,7 @@ A powerful, laptop-friendly enterprise **Inventory Issue & Order Fulfillment Sys
    - Print a clean receipt/packing slip directly from the browser to hand over with the issued products.
 
 6. **🔒 Staff Access PIN Protection:**
-   - Simple, fast numeric PIN login (Default: `1234`) to keep unauthorized persons out.
+   - Simple, fast numeric PIN login to keep unauthorized persons out. The PIN is configured with the `DELIVERY_PIN` environment variable.
 
 ---
 
@@ -57,4 +57,4 @@ npm run dev
 
 Then open in your browser on your laptop:
 👉 **`http://localhost:3000`**
-- **Staff Access PIN:** `1234`
+- **Staff Access PIN:** the value of the `DELIVERY_PIN` environment variable (set it in `.env.local` for local development)
