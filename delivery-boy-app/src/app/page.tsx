@@ -167,7 +167,7 @@ export default function InventoryAndCustomerPortal() {
     }
   };
 
-  const handleUpdateStatus = async (orderId: number, newStatus: string) => {
+  const handleUpdateStatus = async ( orderId: number, newStatus: string) => {
     setStatusUpdatingId(orderId);
     try {
       const res = await fetch(`/api/orders/${orderId}`, {
