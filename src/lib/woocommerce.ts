@@ -156,6 +156,111 @@ const MOCK_ORDERS: InventoryOrder[] = [
       { id: 106, name: "Oud Essential Oil 10ml", sku: "OIL-OUD-10", quantity: 1, price: 9500, total: "9500" }
     ],
     customerNote: "Awaiting payment verification before issuing stock."
+  },
+  {
+    id: 1020,
+    orderNumber: "1020",
+    status: "completed",
+    createdAt: "2026-09-15T10:10:00Z",
+    dateOnly: "2026-09-15",
+    monthYear: "2026-09",
+    customerName: "Kamal Perera",
+    phone: "0771234567",
+    email: "kamal.perera@gmail.com",
+    trackingNumber: "KMB-874120",
+    billingAddress: {
+      street: "No. 45, Temple Road",
+      city: "Colombo 03",
+      state: "Western Province",
+      postcode: "00300",
+      fullAddress: "No. 45, Temple Road, Colombo 03, Western Province, 00300"
+    },
+    shippingAddress: {
+      street: "No. 45, Temple Road",
+      city: "Colombo 03",
+      state: "Western Province",
+      postcode: "00300",
+      fullAddress: "No. 45, Temple Road, Colombo 03, Western Province, 00300"
+    },
+    paymentMethod: "cod",
+    paymentMethodTitle: "Cash on Delivery",
+    isCOD: true,
+    totalAmount: 11200,
+    currency: "Rs.",
+    items: [
+      { id: 201, name: "Royal Oud Attar 12ml", sku: "OUD-ATT-12", quantity: 1, price: 11200, total: "11200" }
+    ],
+    customerNote: "Regular customer, delivered safely."
+  },
+  {
+    id: 998,
+    orderNumber: "998",
+    status: "completed",
+    createdAt: "2026-08-01T15:20:00Z",
+    dateOnly: "2026-08-01",
+    monthYear: "2026-08",
+    customerName: "Kamal Perera",
+    phone: "0771234567",
+    email: "kamal.perera@gmail.com",
+    trackingNumber: "PRN-34190",
+    billingAddress: {
+      street: "No. 45, Temple Road",
+      city: "Colombo 03",
+      state: "Western Province",
+      postcode: "00300",
+      fullAddress: "No. 45, Temple Road, Colombo 03, Western Province, 00300"
+    },
+    shippingAddress: {
+      street: "No. 45, Temple Road",
+      city: "Colombo 03",
+      state: "Western Province",
+      postcode: "00300",
+      fullAddress: "No. 45, Temple Road, Colombo 03, Western Province, 00300"
+    },
+    paymentMethod: "bacs",
+    paymentMethodTitle: "Bank Transfer",
+    isCOD: false,
+    totalAmount: 7500,
+    currency: "Rs.",
+    items: [
+      { id: 202, name: "Premium Fragrance Perfume 50ml", sku: "OUD-PERF-50", quantity: 2, price: 3750, total: "7500" }
+    ],
+    customerNote: "First order placed via web."
+  },
+  {
+    id: 1032,
+    orderNumber: "1032",
+    status: "completed",
+    createdAt: "2026-10-05T09:40:00Z",
+    dateOnly: "2026-10-05",
+    monthYear: "2026-10",
+    customerName: "Nimali Silva",
+    phone: "0719876543",
+    email: "nimali.silva@yahoo.com",
+    trackingNumber: "KMB-921443",
+    billingAddress: {
+      street: "12/A, Galle Road",
+      city: "Dehiwala",
+      state: "Western Province",
+      postcode: "10350",
+      fullAddress: "12/A, Galle Road, Dehiwala, Western Province, 10350"
+    },
+    shippingAddress: {
+      street: "12/A, Galle Road",
+      city: "Dehiwala",
+      state: "Western Province",
+      postcode: "10350",
+      fullAddress: "12/A, Galle Road, Dehiwala, Western Province, 10350"
+    },
+    paymentMethod: "cod",
+    paymentMethodTitle: "Cash on Delivery",
+    isCOD: true,
+    totalAmount: 4500,
+    currency: "Rs.",
+    items: [
+      { id: 203, name: "Scented Candle Gift Pack", sku: "CNDL-SET-3", quantity: 1, price: 4500, total: "4500" }
+    ],
+    customerNote: "Satisfied with previous order, reordered."
   }
 ];
 
