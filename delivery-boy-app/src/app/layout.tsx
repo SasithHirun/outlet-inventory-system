@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0f172a",
+  themeColor: "#0f172a ",
 };
 
 export default function RootLayout({
@@ -22,6 +22,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col antialiased font-sans bg-slate-950 text-slate-100">
         {children}
       </body>
-    </html>
+    </html>   
   );
 }
