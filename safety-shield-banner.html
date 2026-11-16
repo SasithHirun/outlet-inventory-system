@@ -1,0 +1,492 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - "ULTIMATE SAFETY SHIELD" PROMO BANNER
+     - Clean, minimalist redesign matching the site's modern design language
+     - High-contrast, legible typography with clean price & DCD trust indicators
+     - 100% Native WooCommerce Cart Compatible (AJAX + Session Cookies + Mini-Cart sync)
+     - Interactive Add to Cart transforming to "Go to Cart →"
+     ========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+  /* ================= SCOPED RESET & STYLING ================= */
+  .shield-banner-wrapper,
+  .shield-banner-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  /* Prevent horizontal scrollbars from 100vw */
+  html, body {
+    overflow-x: clip;
+  }
+
+  /* FULL WIDTH BREAKOUT: Bleeds 100% edge-to-edge across any WordPress/Elementor container */
+  .shield-banner-wrapper {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 40px calc(50% - 50vw);
+    padding: 0;
+  }
+
+  /* Sharp corners & Full-bleed card */
+  .shield-banner-card {
+    position: relative;
+    width: 100%;
+    min-height: 540px;
+    border-radius: 0;
+    overflow: hidden;
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    background-color: #0F172A;
+    /* Original fire extinguisher warehouse photo */
+    background-image: url('https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_dy2byddy2byddy2b-scaled.jpg');
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Text on right, extinguishers visible on left */
+    padding: 60px clamp(24px, 8vw, 120px);
+    box-shadow: none;
+  }
+
+  /* Gradient overlay: Keeps extinguishers visible on left while ensuring 100% readable text on right */
+  .shield-banner-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.15) 0%,
+      rgba(15, 23, 42, 0.45) 40%,
+      rgba(15, 23, 42, 0.88) 60%,
+      rgba(15, 23, 42, 0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  /* Content Area */
+  .shield-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    color: #FFFFFF;
+  }
+
+  /* Subtle Promo Badge */
+  .shield-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .shield-promo-badge {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: #DC2626;
+    color: #FFFFFF;
+    padding: 4px 10px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .shield-cert-badge {
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #F8FAFC;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  /* Heading */
+  .shield-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+
+  .shield-subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin-bottom: 22px;
+  }
+
+  /* Price Section */
+  .shield-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .shield-current-price {
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+
+  .shield-old-price {
+    font-size: 16px;
+    font-weight: 500;
+    color: #94A3B8;
+    text-decoration: line-through;
+  }
+
+  .shield-discount-pill {
+    font-size: 11px;
+    font-weight: 700;
+    background: #FEF2F2;
+    color: #DC2626;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* Actions (Add to Cart + Explore) */
+  .shield-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .shield-add-cart-btn {
+    padding: 12px 24px;
+    background: #DC2626 !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    border: none !important;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+  }
+
+  .shield-add-cart-btn:hover {
+    background: #B91C1C !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.45);
+  }
+
+  .shield-add-cart-btn.loading {
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .shield-secondary-btn {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF !important;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .shield-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #FFFFFF;
+  }
+
+  /* Cart Flow State */
+  .shield-cart-flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .shield-go-cart-btn {
+    padding: 12px 22px;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    border-radius: 8px;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+  }
+
+  .shield-go-cart-btn:hover {
+    background: #F1F5F9 !important;
+  }
+
+  .shield-check-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #16A34A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  /* Feature Trust Pills */
+  .shield-chips-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    color: #94A3B8;
+  }
+
+  .shield-chip-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .shield-chip-item span.dot {
+    color: #10B981;
+    font-weight: bold;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .shield-banner-card {
+      padding: 50px 32px;
+      min-height: 480px;
+      justify-content: center;
+    }
+    .shield-banner-card::before {
+      background: rgba(15, 23, 42, 0.88);
+    }
+    .shield-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .shield-banner-card {
+      padding: 40px 24px;
+      min-height: 420px;
+    }
+    .shield-title {
+      font-size: 24px;
+    }
+    .shield-subtitle {
+      font-size: 13px;
+    }
+    .shield-current-price {
+      font-size: 26px;
+    }
+    .shield-actions-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .shield-add-cart-btn,
+    .shield-secondary-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<div class="shield-banner-wrapper">
+  <div class="shield-banner-card">
+    
+    <!-- Right Content Box -->
+    <div class="shield-content">
+      
+      <!-- Badges -->
+      <div class="shield-badge-row">
+        <span class="shield-promo-badge">🔥 LIMITED PROMOTION</span>
+        <span class="shield-cert-badge">Civil Defense Approved</span>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="shield-title">
+        The Ultimate Safety Shield
+      </h2>
+
+      <p class="shield-subtitle">
+        Commercial grade dry chemical &amp; CO₂ fire extinguishers, precision certified for UAE warehouses, offices &amp; industrial facilities.
+      </p>
+
+      <!-- Pricing with Clean Discount -->
+      <div class="shield-pricing">
+        <div class="shield-current-price">AED 120</div>
+        <div class="shield-old-price">AED 180</div>
+        <span class="shield-discount-pill">-33% OFF</span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="shield-actions-row" id="shield-action-wrap">
+        <a href="?add-to-cart=6281" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart shield-add-cart-btn" data-product_id="6281" onclick="shieldAddToCart(6281, 'Ultimate Safety Shield Extinguisher', this, event)">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <span>Add to cart &bull; AED 120</span>
+        </a>
+        
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/" class="shield-secondary-btn">
+          <span>Explore Collection</span> &rarr;
+        </a>
+      </div>
+
+      <!-- Trust Chips -->
+      <div class="shield-chips-list">
+        <div class="shield-chip-item"><span class="dot">✓</span> DCD Certified</div>
+        <div class="shield-chip-item"><span class="dot">✓</span> Ready with Inspection Tag</div>
+        <div class="shield-chip-item"><span class="dot">✓</span> Same-Day UAE Dispatch</div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Floating Toast -->
+<div id="shield-toast" style="position:fixed; bottom:24px; right:24px; background:#111827; color:#FFFFFF; padding:12px 18px; border-radius:8px; font-size:13px; font-weight:500; box-shadow:0 10px 25px -5px rgba(0,0,0,0.25); display:flex; align-items:center; gap:12px; transform:translateY(100px); opacity:0; transition:all 0.3s ease; z-index:999999;">
+  <span id="shield-toast-msg">Item added to cart</span>
+  <a id="shield-toast-cart-link" href="/cart/" style="color:#F87171; text-decoration:underline; font-weight:600;">Go to Cart &rarr;</a>
+</div>
+
+<script>
+  // Dynamic WooCommerce Environment Detection
+  const shieldEnv = (function() {
+    let cartUrl = "/cart/";
+    let ajaxEndpoint = "";
+    let siteBase = "";
+
+    if (typeof wc_add_to_cart_params !== 'undefined') {
+      if (wc_add_to_cart_params.cart_url) cartUrl = wc_add_to_cart_params.cart_url;
+      if (wc_add_to_cart_params.wc_ajax_url) {
+        ajaxEndpoint = wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart');
+      }
+      if (wc_add_to_cart_params.ajax_url) {
+        siteBase = wc_add_to_cart_params.ajax_url.split('/wp-admin')[0];
+      }
+    }
+
+    if (!siteBase) {
+      const match = window.location.pathname.match(/^(\/[^\/]+\/[^\/]+)/);
+      siteBase = window.location.origin + (match ? match[1] : "");
+    }
+
+    if (!ajaxEndpoint) {
+      ajaxEndpoint = siteBase + "/?wc-ajax=add_to_cart";
+    }
+
+    if (cartUrl === "/cart/" && siteBase) {
+      cartUrl = siteBase + "/cart/";
+    }
+
+    const toastLink = document.getElementById('shield-toast-cart-link');
+    if (toastLink) toastLink.href = cartUrl;
+
+    return { siteBase: siteBase, ajaxEndpoint: ajaxEndpoint, cartUrl: cartUrl };
+  })();
+
+  // Reliable Add to Cart with session credentials & mini-cart sync
+  async function shieldAddToCart(productId, productName, btn, event) {
+    event.preventDefault();
+    if (btn.classList.contains('loading')) return;
+    btn.classList.add('loading');
+    btn.innerHTML = "<span>Adding...</span>";
+
+    let success = false;
+
+    try {
+      const params = new URLSearchParams();
+      params.append('product_id', productId);
+      params.append('quantity', '1');
+
+      const response = await fetch(shieldEnv.ajaxEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: params.toString(),
+        credentials: 'include'
+      });
+
+      if (response.ok) {
+        success = true;
+        if (window.jQuery) {
+          window.jQuery(document.body).trigger('wc_fragment_refresh');
+          window.jQuery(document.body).trigger('added_to_cart', [null, null, window.jQuery(btn)]);
+        }
+      }
+    } catch (e) {
+      console.log("Direct AJAX fallback trigger:", e);
+    }
+
+    if (!success && !window.jQuery) {
+      window.location.href = shieldEnv.siteBase + "/?add-to-cart=" + productId;
+      return;
+    }
+
+    // Transition to Go to Cart
+    const wrap = document.getElementById('shield-action-wrap');
+    if (wrap) {
+      wrap.innerHTML = `
+        <div class="shield-cart-flow">
+          <a href="${shieldEnv.cartUrl}" class="shield-go-cart-btn">
+            <span>Go to Cart</span> &rarr;
+          </a>
+          <div class="shield-check-badge" title="Added to cart">✓</div>
+          <a href="${shieldEnv.siteBase}/shop/" class="shield-secondary-btn" style="margin-left:8px;">
+            <span>More Products</span> &rarr;
+          </a>
+        </div>
+      `;
+    }
+
+    // Show toast
+    const toast = document.getElementById('shield-toast');
+    const msg = document.getElementById('shield-toast-msg');
+    if (toast && msg) {
+      msg.textContent = productName + " added to cart";
+      toast.style.transform = 'translateY(0)';
+      toast.style.opacity = '1';
+      setTimeout(function() {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+      }, 3500);
+    }
+  }
+</script>

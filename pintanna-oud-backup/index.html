@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pintanna Oud | Discover the Sri Lankan Legacy of Pure Silani Oud</title>
+  <meta name="description" content="Discover the Sri Lankan Legacy of Oud: Where Fragrance Meets Luxury. Pure Silani Oud oils, Unanduwa Eau de Parfum collections, Bakhoor, Home Fragrances & Botanical Skincare sourced from our 1,500-acre estate." />
+  <link rel="icon" type="image/png" href="assets/pintanna-logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. TOP UTILITY ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span>Discover the Sri Lankan Legacy of Oud — Complimentary shipping on orders over LKR 15,000</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+94762154054" class="top-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>(+94) 76 215 4054</span>
+        </a>
+        <a href="mailto:info.oud@pintanna.lk" class="top-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>info.oud@pintanna.lk</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. MAIN STICKY HEADER / NAVBAR
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: Hamburger + Uploaded Pintanna Oud Logo & Brand Wordmark -->
+      <div class="header-left">
+        <button class="menu-toggle-btn" onclick="toggleDrawer('nav-drawer', true)" aria-label="Open Menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="16" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="#" class="brand-logo" title="Pintanna Oud Sri Lanka">
+          <img src="assets/pintanna-logo.png" alt="Pintanna Oud Logo" class="brand-logo-img" />
+          <span class="brand-wordmark">PINTANNA<span class="dot">.</span></span>
+        </a>
+      </div>
+
+      <!-- Center: Search Input -->
+      <div class="header-search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="search"
+          id="header-search-input"
+          placeholder="Search for Silani Oud oils, Unanduwa perfumes, diffusers..."
+          aria-label="Search products"
+        />
+      </div>
+
+      <!-- Right: Wishlist, Account, Shopping Bag -->
+      <div class="header-actions">
+        <button class="action-btn" onclick="showToast('Saved items in your Pintanna Oud wishlist')" aria-label="Wishlist" title="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+
+        <a href="https://pintannaoud.lk/my-account/" target="_blank" rel="noopener" class="action-btn" aria-label="My Account" title="My Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <button class="action-btn" onclick="toggleDrawer('cart-drawer', true)" aria-label="Shopping Cart" title="Your Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge-count" id="cart-badge-count">2</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. HERO SECTION (FULL-WIDTH DARK WOOD ARCHITECTURAL AMBIANCE)
+       ======================================================================== -->
+  <section class="hero-section">
+    <div class="hero-wood-grid"></div>
+    <div class="hero-lamp-glow"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Fragrance made<br />for modern living
+      </h1>
+      <p class="hero-subtitle">
+        Discover the Sri Lankan legacy of pure Silani Oud: where rare Wallapatta agarwood meets fine perfumery, sourced and crafted at the heart of the island.
+      </p>
+      <a href="#best-sellers" class="btn-primary">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. THREE PROMO FEATURE CARDS ROW
+       ======================================================================== -->
+  <section class="promo-cards-section">
+    <div class="container">
+      <div class="promo-cards-grid">
+        <!-- Card 1 -->
+        <div class="promo-card">
+          <div class="promo-card-text">
+            <div>
+              <h3 class="promo-card-title">Online Store</h3>
+              <p class="promo-card-desc">Unanduwa Prestige &amp; Elite Eau de Parfum crafted with pure Ceylon agarwood.</p>
+            </div>
+            <a href="#best-sellers" class="promo-card-link">Shop Now</a>
+          </div>
+          <div class="promo-card-visual">
+            <img src="assets/cutouts/prestige-oud-100ml.png" alt="Unanduwa Prestige Oud 100ml" />
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="promo-card">
+          <div class="promo-card-text">
+            <div>
+              <h3 class="promo-card-title">New Arrival</h3>
+              <p class="promo-card-desc">Pure hydro &amp; steam-distilled Silani Oud oils and Legacy discovery sets.</p>
+            </div>
+            <a href="#new-arrivals" class="promo-card-link">Shop Now</a>
+          </div>
+          <div class="promo-card-visual">
+            <img src="assets/cutouts/legacy-discovery-set.png" alt="Unanduwa Legacy Collection Set" />
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="promo-card">
+          <div class="promo-card-text">
+            <div>
+              <h3 class="promo-card-title">Home Sanctuary</h3>
+              <p class="promo-card-desc">Luxury Rose Oud reed diffusers, chakra candles, and Wallapatta bakhoor.</p>
+            </div>
+            <a href="#new-arrivals" class="promo-card-link">Shop Now</a>
+          </div>
+          <div class="promo-card-visual">
+            <img src="assets/cutouts/diffuser-rose-oud.png" alt="Rose Oud Reed Diffuser" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. BEST SELLER SECTION (4x2 PRODUCT GRID)
+       ======================================================================== -->
+  <section class="products-section" id="best-sellers">
+    <div class="container">
+      <div class="section-tag-center">
+        <span>Best Seller</span>
+      </div>
+      <div class="product-grid" id="best-seller-grid">
+        <!-- Populated dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. TRUSTED BY / BOUTIQUES & HERITAGE PARTNERS SECTION
+       ======================================================================== -->
+  <section class="trusted-section">
+    <div class="container">
+      <h2 class="trusted-heading">
+        Trusted by over 16,000+ connoisseurs and<br />luxury collectors around the world
+      </h2>
+
+      <div class="trusted-logos-grid">
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span>Pintanna Estate</span>
+        </div>
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 3v18M3 12h18"></path>
+          </svg>
+          <span>Silani Oud</span>
+        </div>
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>Unanduwa</span>
+        </div>
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          <span>One Galle Face</span>
+        </div>
+        <div class="trusted-logo-card">
+          <span>Cinnamon Life</span>
+        </div>
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>CITES Certified</span>
+        </div>
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span>Lotus Tower</span>
+        </div>
+        <div class="trusted-logo-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          </svg>
+          <span>BIA Duty Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. FULL-WIDTH SHOWCASE BANNER + 4 WATERMARK STATS STRIP
+       ======================================================================== -->
+  <section class="showcase-banner">
+    <a href="https://pintannaoud.lk/about/" target="_blank" rel="noopener" class="showcase-overlay-badge">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      <span>Discover Our 1,500-Acre Ayagama Agarwood Estate &amp; Artisanal Distillery</span>
+    </a>
+  </section>
+
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-watermark">75K+</span>
+          <span class="stat-label">Agarwood Trees</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-watermark">15K+</span>
+          <span class="stat-label">Products Sold</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-watermark">4.9</span>
+          <span class="stat-label">Client Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-watermark">15+</span>
+          <span class="stat-label">Years of Excellence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. NEW ARRIVAL SECTION (SPLIT HEADER + 4x2 PRODUCT GRID)
+       ======================================================================== -->
+  <section class="products-section" id="new-arrivals">
+    <div class="container">
+      <div class="section-header-split">
+        <div class="section-header-left">
+          <h2 class="section-title-main">New Arrival</h2>
+          <div class="section-header-divider"></div>
+          <p class="section-header-sub">
+            Browse the latest collections of signature fragrances &amp; home rituals
+          </p>
+        </div>
+        <a href="https://pintannaoud.lk/shop/" target="_blank" rel="noopener" class="btn-view-all">View All</a>
+      </div>
+
+      <div class="product-grid" id="new-arrival-grid">
+        <!-- Populated dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. DARK SPLIT VALUES SECTION ("Creating better spaces through meaningful values")
+       ======================================================================== -->
+  <section class="values-dark-section" id="about-heritage">
+    <div class="container">
+      <div class="values-grid">
+        <div>
+          <h2 class="values-title">
+            Creating better spaces<br />through meaningful values
+          </h2>
+          <p class="values-desc">
+            From 2009 to today, Pintanna Estate in Ayagama, Ratnapura has evolved into Sri Lanka’s pioneering hub for sustainable Agarwood (Wallapatta) cultivation and luxury Oud creation.
+          </p>
+
+          <div class="value-cards-stack">
+            <div class="value-box">
+              <div class="value-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3 class="value-box-title">Our Mission</h3>
+                <p class="value-box-text">
+                  To elevate Sri Lanka’s natural agarwood heritage to global recognition through ethical cultivation, organic inoculation, and artisanal hydro-distillation.
+                </p>
+              </div>
+            </div>
+
+            <div class="value-box">
+              <div class="value-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h3 class="value-box-title">Our Vision</h3>
+                <p class="value-box-text">
+                  Guided by Mr. Kumar Dharmasena, we strive to ensure every drop of Pintanna Oud reflects the spirit of Sri Lanka—pure, refined, sustainable, and timeless.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="values-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+            alt="Luxury Living Space with Pintanna Oud Home Fragrance"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       10. TESTIMONIALS ("Client Feedback & Reviews")
+       ======================================================================== -->
+  <section class="testimonials-section">
+    <!-- Subtle Botanical Leaf Line-Art Watermark matching reference design -->
+    <svg viewBox="0 0 800 500" fill="none" stroke="#DCDCDC" stroke-width="1.2" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:760px; height:480px; pointer-events:none; opacity:0.55; z-index:1;">
+      <path d="M260,480 C280,350 340,220 420,40" />
+      <path d="M300,360 C240,330 200,290 180,240 C230,250 280,290 300,360 Z" />
+      <path d="M330,280 C270,240 230,190 220,140 C270,160 310,210 330,280 Z" />
+      <path d="M365,200 C320,150 290,100 290,50 C330,80 355,135 365,200 Z" />
+      <path d="M315,330 C380,310 430,280 470,230 C420,235 365,270 315,330 Z" />
+      <path d="M350,240 C415,215 465,175 495,125 C445,135 390,180 350,240 Z" />
+      <path d="M385,150 C440,125 480,90 505,45 C460,60 415,100 385,150 Z" />
+    </svg>
+    <div class="container" style="position:relative; z-index:2;">
+      <p class="testimonials-sub">Testimonial</p>
+      <h2 class="testimonials-title">Client Feedback &amp; Reviews</h2>
+
+      <div class="testimonials-grid" id="testimonials-grid">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="stars-row" style="justify-content:center;">
+              ★★★★<span class="star-muted">★</span>
+            </div>
+            <p class="testimonial-quote">
+              “The quality of Silani Ravana Oud Oil exceeded our expectations from the moment the bottle arrived. The rich resinous depth, packaging, and sillage feel truly world-class and authentic.”
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
+              alt="Kasun Perera"
+              class="author-avatar"
+            />
+            <div class="author-name">Kasun Perera</div>
+            <div class="author-role">Colombo, Sri Lanka</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="stars-row" style="justify-content:center;">
+              ★★★★<span class="star-muted">★</span>
+            </div>
+            <p class="testimonial-quote">
+              “The entire shopping experience at Pintanna Oud was seamless from choosing the Unanduwa Kesaraja parfum to islandwide delivery. Customer service was polite, responsive, and professional throughout.”
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=80"
+              alt="Amaya Senanayake"
+              class="author-avatar"
+            />
+            <div class="author-name">Amaya Senanayake</div>
+            <div class="author-role">Kandy, Sri Lanka</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="stars-row" style="justify-content:center;">
+              ★★★★<span class="star-muted">★</span>
+            </div>
+            <p class="testimonial-quote">
+              “Well-crafted and rare to find pure sustainable Wallapatta agarwood of this caliber. Every bottle from the Unanduwa Elite Collection feels essential in our collection and lasts all day.”
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80"
+              alt="Tariq Al-Mansoor"
+              class="author-avatar"
+            />
+            <div class="author-name">Tariq Al-Mansoor</div>
+            <div class="author-role">Dubai, UAE</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-dots">
+        <span class="testimonial-dot active" onclick="switchTestimonialSet(0)"></span>
+        <span class="testimonial-dot" onclick="switchTestimonialSet(1)"></span>
+        <span class="testimonial-dot" onclick="switchTestimonialSet(0)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. "15+ YEARS OF EXPERIENCE / MONSOON SKINCARE" SPLIT FEATURE SECTION
+       ======================================================================== -->
+  <section class="experience-section">
+    <div class="container">
+      <div class="experience-grid">
+        <!-- Left Image with Top-Left Orange Circle Badge & Uploaded Monsoon Campaign Image -->
+        <div class="experience-image-box">
+          <div class="experience-orange-badge">
+            <span class="exp-num">15+</span>
+            <span class="exp-text">Years of Experience</span>
+          </div>
+          <img
+            src="assets/monsoon-serum-banner.png"
+            alt="Monsoon Skincare Collection – Oil Control Face Serum"
+          />
+        </div>
+
+        <!-- Right Content (With Authentic Monsoon Skincare & Estate Copy from pintannaoud.lk) -->
+        <div>
+          <h2 class="experience-content-title">
+            Nature-powered essentials for<br />better living every single day
+          </h2>
+          <p class="experience-content-desc">
+            Soothe, hydrate, and restore your skin naturally with our Monsoon Skincare &amp; Pure Oud collections. Designed to calm imbalanced skin while locking in lasting hydration for a velvety matte glow.
+          </p>
+
+          <div class="experience-features-list">
+            <div class="exp-feature-item">
+              <div class="exp-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"></polygon>
+                </svg>
+              </div>
+              <div>
+                <h4 class="exp-feature-title">Balances Oil &amp; Hydration Naturally</h4>
+                <p class="exp-feature-desc">
+                  Our Monsoon Oil Control Face Serum calms oily, imbalanced skin while locking in weightless moisture for humid climates.
+                </p>
+              </div>
+            </div>
+
+            <div class="exp-feature-item">
+              <div class="exp-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="exp-feature-title">Reduces Shine, Enhances Velvety Glow</h4>
+                <p class="exp-feature-desc">
+                  Formulated with botanical extracts and estate-grown agarwood hydrosols to soothe skin post-humidity.
+                </p>
+              </div>
+            </div>
+
+            <div class="exp-feature-item">
+              <div class="exp-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="exp-feature-title">1,500-Acre Sustainable Plantation Heritage</h4>
+                <p class="exp-feature-desc">
+                  Crafted from our Ayagama estate nurturing 75,000+ Wallapatta trees alongside pure island botanicals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       12. PROMOTIONAL WIDE BANNER ("Enjoy 15% off your favorite pieces")
+       ======================================================================== -->
+  <section class="promo-wide-banner">
+    <div class="container promo-wide-inner">
+      <div class="promo-wide-box">
+        <h2 class="promo-wide-title">
+          Enjoy 15% off your<br />favorite pieces
+        </h2>
+        <p class="promo-wide-desc">
+          Indulge in the Unanduwa Legacy Eau de Parfum 50ml collection, Essoud 90ml series, and Monsoon botanical skincare with exclusive seasonal savings.
+        </p>
+        <a href="#best-sellers" class="btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       13. FOUR SERVICE GUARANTEES STRIP
+       ======================================================================== -->
+  <section class="guarantees-strip">
+    <div class="container">
+      <div class="guarantees-grid">
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div>
+            <div class="guarantee-title">Free Shipping</div>
+            <div class="guarantee-sub">Islandwide &amp; global courier delivery</div>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div>
+            <div class="guarantee-title">100% Authentic Oud</div>
+            <div class="guarantee-sub">Certified pure Sri Lankan Wallapatta</div>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="guarantee-title">Online Support</div>
+            <div class="guarantee-sub">Dedicated hotline (+94) 76 215 4054</div>
+          </div>
+        </div>
+
+        <div class="guarantee-item">
+          <div class="guarantee-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+          </div>
+          <div>
+            <div class="guarantee-title">Flexible Payment</div>
+            <div class="guarantee-sub">Visa, MasterCard, Amex, Koko &amp; Mintpay</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       14. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <!-- Col 1: Brand Logo + Description + Contact -->
+        <div>
+          <a href="#" class="brand-logo">
+            <img src="assets/pintanna-logo.png" alt="Pintanna Oud Logo" class="brand-logo-img" />
+            <span class="brand-wordmark">PINTANNA<span class="dot">.</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            Discover the Sri Lankan Legacy of Oud: Where Fragrance Meets Luxury. Sourced and crafted at the heart of the island across our 1,500-acre estate.
+          </p>
+          <div class="footer-contact-list">
+            <div class="footer-contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>(+94) 76 215 4054</span>
+            </div>
+            <div class="footer-contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>info.oud@pintanna.lk — 207 High Level Rd, Nugegoda</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Shop -->
+        <div>
+          <h4 class="footer-col-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="https://pintannaoud.lk/product-category/perfume/" target="_blank" rel="noopener">Oud Perfume Collection</a></li>
+            <li><a href="https://pintannaoud.lk/oud-oils/" target="_blank" rel="noopener">Silani Heritage Oud Oils</a></li>
+            <li><a href="https://pintannaoud.lk/product-category/home-fragrance/" target="_blank" rel="noopener">Home Fragrance &amp; Diffusers</a></li>
+            <li><a href="https://pintannaoud.lk/product-category/oud-chips/" target="_blank" rel="noopener">Wallapatta Chips &amp; Bakhoor</a></li>
+            <li><a href="https://pintannaoud.lk/product-category/skin-care/" target="_blank" rel="noopener">Monsoon &amp; Serenity Skincare</a></li>
+            <li><a href="https://pintannaoud.lk/product-category/ji/" target="_blank" rel="noopener">Luxury Agarwood Jewellery</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Store Locations / Support -->
+        <div>
+          <h4 class="footer-col-title">Boutiques</h4>
+          <ul class="footer-links">
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Flagship Store – Nugegoda</a></li>
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">One Galle Face Mall</a></li>
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Cinnamon Life – City of Dreams</a></li>
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Bandaranaike Intl. Airport (BIA)</a></li>
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Colombo Lotus Tower</a></li>
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Rajagiriya &amp; Moratuwa</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Company -->
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="https://pintannaoud.lk/about/" target="_blank" rel="noopener">About Pintanna Oud</a></li>
+            <li><a href="https://pintannaoud.lk/about/" target="_blank" rel="noopener">Ayagama 1,500-Acre Estate</a></li>
+            <li><a href="https://pintannaoud.lk/partnership-program/" target="_blank" rel="noopener">Partnership Program</a></li>
+            <li><a href="https://pintannaoud.lk/bulk-purchaise/" target="_blank" rel="noopener">Bulk &amp; Corporate Orders</a></li>
+            <li><a href="https://pintannaoud.lk/my-account/" target="_blank" rel="noopener">My Account</a></li>
+            <li><a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright & Payment Gateways Bar -->
+      <div class="footer-bottom">
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/pintannaoud" target="_blank" rel="noopener" class="social-circle" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/pintanna_oud" target="_blank" rel="noopener" class="social-circle" aria-label="Instagram">ig</a>
+          <a href="https://www.linkedin.com/company/pintanna-oud" target="_blank" rel="noopener" class="social-circle" aria-label="LinkedIn">in</a>
+          <a href="https://www.threads.net/@pintanna_oud" target="_blank" rel="noopener" class="social-circle" aria-label="Threads">@</a>
+          <a href="https://pintannaoud.lk/" target="_blank" rel="noopener" class="social-circle" aria-label="Website">↗</a>
+        </div>
+
+        <p class="footer-copyright">
+          Copyright © 2026 Pintanna Oud (Pvt) Ltd. All Rights Reserved.
+        </p>
+
+        <div class="footer-payments">
+          <span class="payment-pill visa">VISA</span>
+          <span class="payment-pill amex">AMEX</span>
+          <span class="payment-pill mc">MC</span>
+          <span class="payment-pill koko">KOKO</span>
+          <span class="payment-pill mint">MINTPAY</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       INTERACTIVE DRAWERS & MODALS
+       ======================================================================== -->
+  <div class="drawer-backdrop" id="drawer-backdrop" onclick="closeAllDrawers()"></div>
+
+  <!-- Left Navigation Drawer -->
+  <aside class="side-drawer left" id="nav-drawer" aria-label="Site Navigation">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <img src="assets/pintanna-logo.png" alt="Pintanna Oud" style="height:32px;" />
+        <span class="brand-wordmark" style="font-size:18px;">PINTANNA<span class="dot">.</span></span>
+      </div>
+      <button class="drawer-close" onclick="toggleDrawer('nav-drawer', false)">×</button>
+    </div>
+    <div class="drawer-body">
+      <nav class="nav-drawer-list">
+        <a href="#best-sellers" onclick="toggleDrawer('nav-drawer', false)">Best Sellers <span>→</span></a>
+        <a href="#new-arrivals" onclick="toggleDrawer('nav-drawer', false)">New Arrivals <span>→</span></a>
+        <a href="https://pintannaoud.lk/oud-oils/" target="_blank" rel="noopener">Pure Silani Oud Oils <span>↗</span></a>
+        <a href="https://pintannaoud.lk/product-category/perfume/" target="_blank" rel="noopener">Unanduwa Perfumes <span>↗</span></a>
+        <a href="https://pintannaoud.lk/product-category/home-fragrance/" target="_blank" rel="noopener">Home Fragrance &amp; Bakhoor <span>↗</span></a>
+        <a href="https://pintannaoud.lk/product-category/skin-care/" target="_blank" rel="noopener">Monsoon &amp; Aloe Skincare <span>↗</span></a>
+        <a href="#about-heritage" onclick="toggleDrawer('nav-drawer', false)">Our 1,500-Acre Estate <span>→</span></a>
+        <a href="https://pintannaoud.lk/contact/" target="_blank" rel="noopener">Boutique Locations <span>↗</span></a>
+      </nav>
+    </div>
+    <div class="drawer-footer">
+      <p style="font-size:11.5px; color:#666;">Flagship Showroom: 207 High Level Rd, Nugegoda</p>
+      <p style="font-size:12px; font-weight:700; color:#1A1A1A; margin-top:4px;">Hotline: (+94) 76 215 4054</p>
+    </div>
+  </aside>
+
+  <!-- Right Shopping Cart Drawer -->
+  <aside class="side-drawer right" id="cart-drawer" aria-label="Shopping Bag">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Shopping Bag</h3>
+      <button class="drawer-close" onclick="toggleDrawer('cart-drawer', false)">×</button>
+    </div>
+    <div class="drawer-body" id="cart-items-container">
+      <!-- Populated by app.js -->
+    </div>
+    <div class="drawer-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <span style="font-size:13px; color:#666;">Subtotal</span>
+        <span style="font-size:16px; font-weight:700; color:#1A1A1A;" id="cart-subtotal-amount">LKR 0</span>
+      </div>
+      <a
+        href="https://pintannaoud.lk/cart/"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary"
+        style="width:100%; text-align:center;"
+      >
+        Proceed to Official Checkout
+      </a>
+    </div>
+  </aside>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="quickview-modal-overlay" onclick="if(event.target===this) closeQuickView()">
+    <div class="quickview-modal">
+      <button
+        class="drawer-close"
+        onclick="closeQuickView()"
+        style="position:absolute; top:14px; right:14px; z-index:10; background:#fff;"
+      >×</button>
+      <div class="qv-image-col">
+        <img id="qv-img" src="" alt="" />
+      </div>
+      <div class="qv-info-col">
+        <div class="qv-cat" id="qv-cat"></div>
+        <h3 class="qv-title" id="qv-title"></h3>
+        <div class="qv-price-wrap">
+          <span class="qv-price-now" id="qv-price-now"></span>
+          <span class="qv-price-old" id="qv-price-old"></span>
+        </div>
+        <p class="qv-desc" id="qv-desc"></p>
+        <div class="qv-notes" id="qv-notes"></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button class="btn-primary" id="qv-add-btn" style="flex:1;">Add to Bag</button>
+          <a
+            id="qv-official-link"
+            href="https://pintannaoud.lk/"
+            target="_blank"
+            rel="noopener"
+            style="padding:12px 18px; border:1px solid #DDD; border-radius:4px; font-size:12.5px; font-weight:600; color:#222;"
+          >
+            View on pintannaoud.lk ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast-notification">
+    <span class="toast-dot"></span>
+    <span id="toast-message">Added to bag</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

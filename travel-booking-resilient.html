@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resilient Travel Booking - Offline-First & Auto-Save</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* Simulation Bar */
+    .sim-bar {
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .sim-bar .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+    }
+
+    .sim-bar .status-badge.offline {
+      background: rgba(239, 68, 68, 0.25);
+      color: #f87171;
+    }
+
+    .sim-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-sim {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-sim:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    /* Main Card */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--border);
+      background: #fafafa;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .title-area h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .title-area p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .saved-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--success);
+      font-weight: 600;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 5px 12px;
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+
+    /* Stepper */
+    .stepper {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .stepper::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: var(--border);
+      z-index: 1;
+    }
+
+    .stepper-progress {
+      position: absolute;
+      top: 18px;
+      left: 10%;
+      height: 3px;
+      background: var(--primary);
+      z-index: 2;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+      flex: 1;
+    }
+
+    .step-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: all 0.3s;
+    }
+
+    .step-item.active .step-circle {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 0 0 4px var(--primary-light);
+    }
+
+    .step-item.completed .step-circle {
+      border-color: var(--success);
+      background: var(--success);
+      color: #fff;
+    }
+
+    .step-label {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .step-item.active .step-label {
+      color: var(--primary);
+    }
+
+    /* Card Body */
+    .card-body {
+      padding: 28px;
+    }
+
+    .form-step {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .form-step.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #334155;
+    }
+
+    .badge-secure {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #fee2e2;
+      color: #b91c1c;
+      margin-left: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-persisted {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #e0f2fe;
+      color: #0369a1;
+      margin-left: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: #fff;
+      transition: all 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .secure-input {
+      border-color: #fca5a5 !important;
+      background: #fffafa !important;
+    }
+
+    .secure-input:focus {
+      box-shadow: 0 0 0 3px #fee2e2 !important;
+    }
+
+    .input-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Actions Footer */
+    .card-footer {
+      padding: 18px 28px;
+      border-top: 1px solid var(--border);
+      background: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      color: #475569;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Live LocalStorage Inspector */
+    .inspector-card {
+      background: #0f172a;
+      border-radius: var(--radius);
+      color: #f8fafc;
+      padding: 20px;
+      font-size: 0.85rem;
+    }
+
+    .inspector-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 10px;
+    }
+
+    .inspector-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #93c5fd;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    pre {
+      font-family: 'JetBrains Mono', monospace;
+      background: #1e293b;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #38bdf8;
+      font-size: 0.82rem;
+      max-height: 220px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .resumed-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 0.84rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Simulation & Demo Control Bar -->
+    <div class="sim-bar">
+      <div>
+        <span>Connection: </span>
+        <span id="connectionBadge" class="status-badge">● Online (Stable)</span>
+      </div>
+      <div class="sim-actions">
+        <button type="button" class="btn-sim" id="btnToggleNetwork" onclick="toggleNetwork()">Simulate Signal Drop</button>
+        <button type="button" class="btn-sim" onclick="simulateCrash()">Simulate Page Reload / Refresh</button>
+        <button type="button" class="btn-sim" style="color: #fca5a5;" onclick="clearSavedData()">Reset / Clear Cache</button>
+      </div>
+    </div>
+
+    <!-- Main Booking Form Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="header-top">
+          <div class="title-area">
+            <h1>Express Flight & Consultation Booking</h1>
+            <p>Designed for travelers on high-speed or low-bandwidth unstable connections</p>
+          </div>
+          <div id="savedIndicator" class="saved-status">
+            <span>✓ Auto-saved locally</span>
+          </div>
+        </div>
+
+        <!-- Multi-Step Progress Tracker -->
+        <div class="stepper">
+          <div id="stepperLine" class="stepper-progress"></div>
+          <div class="step-item active" id="stepIndicator-1">
+            <div class="step-circle">1</div>
+            <div class="step-label">Traveler Info</div>
+          </div>
+          <div class="step-item" id="stepIndicator-2">
+            <div class="step-circle">2</div>
+            <div class="step-label">Trip Details</div>
+          </div>
+          <div class="step-item" id="stepIndicator-3">
+            <div class="step-circle">3</div>
+            <div class="step-label">Payment & Submit</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <!-- Resumed Notification Banner -->
+        <div id="resumedNotice" class="resumed-banner">
+          <span>⚡ <strong>Welcome back!</strong> We restored your incomplete booking from where you left off.</span>
+          <button onclick="dismissResumeNotice()" style="background:none; border:none; cursor:pointer; color:#1e40af; font-weight:700;">✕</button>
+        </div>
+
+        <form id="bookingForm" onsubmit="event.preventDefault();">
+          
+          <!-- STEP 1: Traveler Details -->
+          <div class="form-step active" id="step-1">
+            <h2 class="step-heading">Step 1: Traveler Details</h2>
+            <p class="step-desc">All fields auto-save instantly. If your network disconnects, your entries remain intact.</p>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label>First Name <span class="badge-persisted">Auto-Saved</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Kasun" oninput="saveCurrentState()">
+              </div>
+              <div class="form-group">
+                <label>Last Name <span class="badge-persisted">Auto-Saved</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="e.g. Perera" oninput="saveCurrentState()">
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label>Email Address <span class="badge-persisted">Auto-Saved</span></label>
+                <input type="email" id="email" name="email" placeholder="kasun@example.com" oninput="saveCurrentState()">
+              </div>
+              <div class="form-group">
+                <label>WhatsApp / Mobile No <span class="badge-persisted">Auto-Saved</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+94 77 123 4567" oninput="saveCurrentState()">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Passport / ID Number <span class="badge-persisted">Auto-Saved</span></label>
+              <input type="text" id="passport" name="passport" placeholder="N12345678" oninput="saveCurrentState()">
+              <p class="input-hint">Used for urgent passenger confirmation.</p>
+            </div>
+          </div>
+
+          <!-- STEP 2: Trip & Consultation Preferences -->
+          <div class="form-step" id="step-2">
+            <h2 class="step-heading">Step 2: Trip & Consultation Details</h2>
+            <p class="step-desc">Tell us where you are heading and your consultation preference.</p>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label>Departure City <span class="badge-persisted">Auto-Saved</span></label>
+                <select id="origin" name="origin" onchange="saveCurrentState()">
+                  <option value="">Select origin...</option>
+                  <option value="Colombo (CMB)">Colombo (CMB)</option>
+                  <option value="Dubai (DXB)">Dubai (DXB)</option>
+                  <option value="Singapore (SIN)">Singapore (SIN)</option>
+                  <option value="London (LHR)">London (LHR)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Destination City <span class="badge-persisted">Auto-Saved</span></label>
+                <select id="destination" name="destination" onchange="saveCurrentState()">
+                  <option value="">Select destination...</option>
+                  <option value="Tokyo (HND)">Tokyo (HND)</option>
+                  <option value="Melbourne (MEL)">Melbourne (MEL)</option>
+                  <option value="Paris (CDG)">Paris (CDG)</option>
+                  <option value="New York (JFK)">New York (JFK)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label>Preferred Travel Date <span class="badge-persisted">Auto-Saved</span></label>
+                <input type="date" id="travelDate" name="travelDate" onchange="saveCurrentState()">
+              </div>
+              <div class="form-group">
+                <label>Consultation Channel <span class="badge-persisted">Auto-Saved</span></label>
+                <select id="channel" name="channel" onchange="saveCurrentState()">
+                  <option value="whatsapp">WhatsApp Text (Low data)</option>
+                  <option value="voice">Voice Call</option>
+                  <option value="zoom">Video Consultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Special Requests or Flight Notes <span class="badge-persisted">Auto-Saved</span></label>
+              <textarea id="notes" name="notes" rows="3" placeholder="e.g. Window seat, dietary requirements..." oninput="saveCurrentState()"></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 3: Payment & Sensitive Data (Demonstrating Exclusion) -->
+          <div class="form-step" id="step-3">
+            <h2 class="step-heading">Step 3: Secure Finalization & Payment</h2>
+            <p class="step-desc">Notice how non-sensitive info is persisted, but card & CVV are strictly excluded for your security.</p>
+
+            <div class="form-group">
+              <label>Cardholder Name <span class="badge-persisted">Auto-Saved</span></label>
+              <input type="text" id="cardName" name="cardName" placeholder="KASUN PERERA" oninput="saveCurrentState()">
+            </div>
+
+            <div class="form-group">
+              <label>Card Number <span class="badge-secure">🔒 EXCLUDED FROM LOCAL STORAGE</span></label>
+              <input type="text" id="cardNumber" class="secure-input" placeholder="4111 •••• •••• 1111" autocomplete="off" oninput="showSensitiveWarning()">
+              <p class="input-hint" style="color: #b91c1c;">Security Rule: Sensitive credit card details are NEVER saved in browser storage.</p>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label>Expiration Date <span class="badge-secure">🔒 EXCLUDED FROM LOCAL STORAGE</span></label>
+                <input type="text" id="cardExp" class="secure-input" placeholder="MM/YY" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label>CVV / CVC <span class="badge-secure">🔒 EXCLUDED FROM LOCAL STORAGE</span></label>
+                <input type="password" id="cardCvv" class="secure-input" maxlength="4" placeholder="•••" autocomplete="off">
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="card-footer">
+        <button type="button" class="btn btn-secondary" id="btnPrev" onclick="navigateStep(-1)" disabled>
+          ← Back
+        </button>
+        <button type="button" class="btn btn-primary" id="btnNext" onclick="navigateStep(1)">
+          Next Step →
+        </button>
+      </div>
+    </div>
+
+    <!-- Live LocalStorage Inspector -->
+    <div class="inspector-card">
+      <div class="inspector-header">
+        <div class="inspector-title">
+          <span>🔍 Live Browser LocalStorage Inspector</span>
+        </div>
+        <span style="color: #94a3b8; font-size: 0.78rem;">Updates in Real-Time</span>
+      </div>
+      <p style="margin-bottom: 8px; color: #cbd5e1; font-size: 0.8rem;">
+        See what the interview answer described: Only non-sensitive form state is cached. Sensitive card fields are skipped!
+      </p>
+      <pre id="storageViewer">{ "status": "Waiting for input..." }</pre>
+    </div>
+
+  </div>
+
+  <div id="toast" class="toast">
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'resilient_travel_booking_draft';
+    let currentStep = 1;
+    let isOffline = false;
+
+    // List of fields safe to persist in localStorage
+    const PERSISTED_FIELDS = [
+      'firstName',
+      'lastName',
+      'email',
+      'phone',
+      'passport',
+      'origin',
+      'destination',
+      'travelDate',
+      'channel',
+      'notes',
+      'cardName'
+    ];
+
+    // Explicitly excluded fields for privacy & security:
+    // ['cardNumber', 'cardExp', 'cardCvv']
+
+    window.addEventListener('DOMContentLoaded', () => {
+      restoreState();
+      updateStorageViewer();
+    });
+
+    // Save current step and safe field values into localStorage
+    function saveCurrentState() {
+      const data = {
+        lastSaved: new Date().toLocaleTimeString(),
+        step: currentStep,
+        fields: {}
+      };
+
+      PERSISTED_FIELDS.forEach(fieldId => {
+        const el = document.getElementById(fieldId);
+        if (el) {
+          data.fields[fieldId] = el.value;
+        }
+      });
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        showSavedIndicator(`Saved at ${data.lastSaved}`);
+        updateStorageViewer();
+      } catch (e) {
+        console.warn('Storage quota exceeded or private mode error', e);
+      }
+    }
+
+    // Restore state if a draft exists
+    function restoreState() {
+      const savedRaw = localStorage.getItem(STORAGE_KEY);
+      if (!savedRaw) return;
+
+      try {
+        const data = JSON.parse(savedRaw);
+        if (data && data.fields) {
+          // Fill inputs
+          Object.keys(data.fields).forEach(key => {
+            const el = document.getElementById(key);
+            if (el && data.fields[key] !== undefined) {
+              el.value = data.fields[key];
+            }
+          });
+
+          // Resume to the previous step (if between 1 and 3)
+          if (data.step && data.step >= 1 && data.step <= 3) {
+            goToStep(data.step);
+          }
+
+          // Show resumed welcome banner
+          document.getElementById('resumedNotice').style.display = 'flex';
+          showToast(`Restored draft from ${data.lastSaved}`);
+        }
+      } catch (err) {
+        console.error('Error parsing stored draft', err);
+      }
+    }
+
+    // Multi-step navigation logic
+    function navigateStep(direction) {
+      const targetStep = currentStep + direction;
+
+      if (targetStep > 3) {
+        // Complete booking
+        if (isOffline) {
+          showToast('⚠️ You are offline! Form will submit once connection is restored.');
+          return;
+        }
+        showToast('🎉 Booking Submitted Successfully!');
+        clearSavedData(true);
+        setTimeout(() => {
+          alert('Congratulations! Your travel consultation booking is confirmed.');
+          location.reload();
+        }, 800);
+        return;
+      }
+
+      if (targetStep < 1) return;
+
+      goToStep(targetStep);
+      saveCurrentState();
+    }
+
+    function goToStep(stepNum) {
+      currentStep = stepNum;
+
+      // Update Form Steps
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById(`step-${i}`).classList.remove('active');
+        const indicator = document.getElementById(`stepIndicator-${i}`);
+        indicator.classList.remove('active', 'completed');
+
+        if (i < currentStep) {
+          indicator.classList.add('completed');
+        } else if (i === currentStep) {
+          indicator.classList.add('active');
+        }
+      }
+
+      document.getElementById(`step-${currentStep}`).classList.add('active');
+
+      // Update Stepper Progress Bar
+      const progressPercent = ((currentStep - 1) / 2) * 80;
+      document.getElementById('stepperLine').style.width = `${progressPercent}%`;
+
+      // Update Buttons
+      document.getElementById('btnPrev').disabled = (currentStep === 1);
+      const nextBtn = document.getElementById('btnNext');
+      if (currentStep === 3) {
+        nextBtn.innerHTML = 'Complete Booking ✓';
+        nextBtn.style.background = '#10b981';
+      } else {
+        nextBtn.innerHTML = 'Next Step →';
+        nextBtn.style.background = 'var(--primary)';
+      }
+    }
+
+    // Indicator feedback
+    function showSavedIndicator(text) {
+      const indicator = document.getElementById('savedIndicator');
+      indicator.innerHTML = `<span>✓ ${text}</span>`;
+      indicator.style.borderColor = '#10b981';
+      indicator.style.color = '#10b981';
+    }
+
+    // Live display of localStorage contents
+    function updateStorageViewer() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const viewer = document.getElementById('storageViewer');
+      if (!raw) {
+        viewer.textContent = '// LocalStorage is currently EMPTY\n// (Type something in the form to observe live auto-save)';
+        return;
+      }
+      try {
+        const parsed = JSON.parse(raw);
+        viewer.textContent = JSON.stringify(parsed, null, 2);
+      } catch (e) {
+        viewer.textContent = raw;
+      }
+    }
+
+    // Simulate Network Toggle
+    function toggleNetwork() {
+      isOffline = !isOffline;
+      const badge = document.getElementById('connectionBadge');
+      const btn = document.getElementById('btnToggleNetwork');
+
+      if (isOffline) {
+        badge.className = 'status-badge offline';
+        badge.textContent = '✕ Offline (Unstable 2G/Tunnel)';
+        btn.textContent = 'Restore Connection';
+        showToast('📶 Connection lost! All progress is still safe locally.');
+      } else {
+        badge.className = 'status-badge';
+        badge.textContent = '● Online (Stable)';
+        btn.textContent = 'Simulate Signal Drop';
+        showToast('✅ Connection restored!');
+      }
+    }
+
+    // Simulate Page Refresh
+    function simulateCrash() {
+      showToast('🔄 Reloading page to test persistence...');
+      setTimeout(() => {
+        location.reload();
+      }, 700);
+    }
+
+    // Clear Draft
+    function clearSavedData(silent = false) {
+      localStorage.removeItem(STORAGE_KEY);
+      updateStorageViewer();
+      if (!silent) {
+        showToast('🗑️ Cleared local draft data.');
+        setTimeout(() => location.reload(), 500);
+      }
+    }
+
+    function dismissResumeNotice() {
+      document.getElementById('resumedNotice').style.display = 'none';
+    }
+
+    function showSensitiveWarning() {
+      // Intentionally shows no storage is happening for this input
+      updateStorageViewer();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+  </script>
+</body>
+</html>

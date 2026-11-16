@@ -1,0 +1,695 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - 2 HOME PAGE SECTIONS
+     Font: Lato | Color Theme: Charcoal (#333E48), Red (#FF3D3D / #D32F2F), Gold (#ECA227)
+     ========================================================================== -->
+
+<!-- Google Fonts: Lato -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ================= ROOT SCOPED VARIABLES ================= */
+  .ppfc-home-wrapper,
+  .ppfc-home-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ppfc-home-wrapper {
+    font-family: 'Lato', sans-serif;
+    color: #555E68;
+    background-color: #F8FAFC;
+    line-height: 1.65;
+    padding: 40px 0 60px;
+  }
+
+  .ppfc-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ==========================================================================
+     SECTION 1: HOME SERVICES BENTO SHOWCASE (CORE SERVICES)
+     ========================================================================== */
+  .ppfc-services-home {
+    padding: 50px 0 70px;
+  }
+
+  .ppfc-sec-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: flex-end;
+    margin-bottom: 45px;
+  }
+
+  .ppfc-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1565C0;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .ppfc-sec-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #333E48;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .ppfc-sec-desc {
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .ppfc-sec-desc p {
+    font-size: 15px;
+    color: #64748B;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .ppfc-sec-desc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75px;
+    height: 3px;
+    background-color: #D32F2F;
+    border-radius: 2px;
+  }
+
+  /* Bento Grid */
+  .ppfc-bento-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 22px;
+  }
+
+  /* Card Base */
+  .ppfc-srv-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1A202C;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .ppfc-srv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  .ppfc-srv-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 0;
+  }
+
+  .ppfc-srv-card:hover .ppfc-srv-bg {
+    transform: scale(1.07);
+  }
+
+  .ppfc-srv-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.25) 0%, rgba(15, 23, 42, 0.88) 72%, rgba(15, 23, 42, 0.98) 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+
+  .ppfc-srv-card:hover .ppfc-srv-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.85) 65%, rgba(15, 23, 42, 0.98) 100%);
+  }
+
+  .ppfc-srv-body {
+    position: relative;
+    z-index: 2;
+    padding: 26px 28px;
+    color: #FFFFFF;
+  }
+
+  .ppfc-badge-mini {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .ppfc-srv-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .ppfc-srv-body p {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.55;
+    margin-bottom: 15px;
+  }
+
+  /* Card 1: Large Featured Card (Spans 2 rows) */
+  .ppfc-srv-card.is-featured {
+    grid-row: span 2;
+    min-height: 520px;
+  }
+
+  .ppfc-srv-card.is-featured .ppfc-srv-body {
+    padding: 40px 35px;
+    max-width: 520px;
+  }
+
+  .ppfc-srv-card.is-featured h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+
+  .ppfc-srv-card.is-featured p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+
+  /* Buttons & Links */
+  .ppfc-btn-gold {
+    background-color: #ECA227;
+    color: #1A202C;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 10px 22px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(236, 162, 39, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  .ppfc-btn-gold:hover {
+    background-color: #D9911A;
+    color: #000000;
+    transform: translateY(-2px);
+  }
+
+  .ppfc-link-arrow {
+    color: #ECA227;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease, transform 0.25s ease;
+  }
+
+  .ppfc-srv-card:hover .ppfc-link-arrow {
+    color: #FFC107;
+    transform: translateX(4px);
+  }
+
+  /* Standard Card Heights */
+  .ppfc-srv-card:not(.is-featured) {
+    min-height: 245px;
+  }
+
+  /* ==========================================================================
+     SECTION 2: WHY CHOOSE US & CIVIL DEFENSE COMPLIANCE (TRUST & ACTION)
+     ========================================================================== */
+  .ppfc-trust-section {
+    padding: 70px 0 40px;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .ppfc-trust-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.95fr;
+    gap: 55px;
+    align-items: center;
+  }
+
+  /* Left Side: Compliance & Checklist */
+  .ppfc-trust-text .ppfc-tag {
+    color: #D32F2F;
+  }
+
+  .ppfc-trust-text .ppfc-sec-title {
+    margin-bottom: 18px;
+  }
+
+  .ppfc-trust-intro {
+    font-size: 15px;
+    color: #555E68;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  /* 4 Grid Features */
+  .ppfc-features-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 32px;
+  }
+
+  .ppfc-feature-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #F8FAFC;
+    padding: 18px 16px;
+    border-radius: 8px;
+    border-left: 3px solid #D32F2F;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .ppfc-feature-box:hover {
+    background: #EFF6FF;
+    border-left-color: #1565C0;
+    transform: translateX(3px);
+  }
+
+  .ppfc-feat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: #FFFFFF;
+    color: #D32F2F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .ppfc-feature-box:hover .ppfc-feat-icon {
+    color: #1565C0;
+  }
+
+  .ppfc-feat-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333E48;
+    margin-bottom: 3px;
+  }
+
+  .ppfc-feat-info p {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.45;
+  }
+
+  .ppfc-action-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .ppfc-btn-primary {
+    background-color: #333E48;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 13px 28px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+
+  .ppfc-btn-primary:hover {
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  /* Right Side: Visual Composite Card with Emergency Hotline */
+  .ppfc-trust-media {
+    position: relative;
+  }
+
+  .ppfc-media-main {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border: 4px solid #FFFFFF;
+  }
+
+  .ppfc-media-main img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Red Emergency Badge Floating */
+  .ppfc-float-badge {
+    position: absolute;
+    top: 24px;
+    right: -20px;
+    background-color: #C62828;
+    color: #FFFFFF;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(198, 40, 40, 0.4);
+    z-index: 3;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .ppfc-float-badge:hover {
+    background-color: #B71C1C;
+    transform: translateY(-3px);
+  }
+
+  .ppfc-badge-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    opacity: 0.95;
+  }
+
+  .ppfc-badge-num {
+    font-size: 19px;
+    font-weight: 900;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Bottom Inset Cert Badge */
+  .ppfc-float-cert {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 3;
+  }
+
+  .ppfc-float-cert i {
+    color: #1565C0;
+    font-size: 26px;
+  }
+
+  .ppfc-float-cert strong {
+    display: block;
+    font-size: 13px;
+    color: #333E48;
+    font-weight: 700;
+  }
+
+  .ppfc-float-cert small {
+    font-size: 11px;
+    color: #64748B;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1024px) {
+    .ppfc-bento-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .ppfc-srv-card.is-featured {
+      grid-column: span 2;
+      min-height: 400px;
+    }
+    .ppfc-trust-layout {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+    .ppfc-float-badge {
+      right: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ppfc-sec-header {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .ppfc-sec-title {
+      font-size: 26px;
+    }
+    .ppfc-bento-grid {
+      grid-template-columns: 1fr;
+    }
+    .ppfc-srv-card.is-featured {
+      grid-column: span 1;
+      min-height: 380px;
+    }
+    .ppfc-features-2x2 {
+      grid-template-columns: 1fr;
+    }
+    .ppfc-float-cert {
+      position: static;
+      margin-top: 15px;
+    }
+  }
+</style>
+
+<div class="ppfc-home-wrapper">
+  
+  <!-- ==========================================================================
+       SECTION 1: CORE SERVICES BENTO SHOWCASE (HOME PAGE)
+       ========================================================================== -->
+  <section class="ppfc-services-home">
+    <div class="ppfc-container">
+      
+      <!-- Section Header -->
+      <div class="ppfc-sec-header">
+        <div>
+          <span class="ppfc-tag">CERTIFIED PROTECTION SERVICES</span>
+          <h2 class="ppfc-sec-title">Comprehensive Fire Safety &amp; Engineering Solutions in Dubai</h2>
+        </div>
+        <div class="ppfc-sec-desc">
+          <p>From Civil Defense approvals and turnkey installation to 24/7 maintenance contracts, we safeguard commercial properties, residential towers, and industrial facilities across the UAE.</p>
+        </div>
+      </div>
+
+      <!-- Bento Grid (Connecting directly to your inner pages) -->
+      <div class="ppfc-bento-grid">
+        
+        <!-- 1. Annual Maintenance Contract (Featured Large Card) -->
+        <a href="annual-maintenance.html" class="ppfc-srv-card is-featured">
+          <img class="ppfc-srv-bg" 
+               src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" 
+               alt="Annual Maintenance Contract inspection">
+          <div class="ppfc-srv-overlay"></div>
+          <div class="ppfc-srv-body">
+            <span class="ppfc-badge-mini"><i class="fa-solid fa-certificate"></i> Approved AMC</span>
+            <h3>Annual Maintenance Contracts</h3>
+            <p>Planned quarterly inspections, emergency pump testing, and Civil Defense certification renewal to keep your systems compliant, functional, and penalty-free.</p>
+            <span class="ppfc-btn-gold">
+              Explore AMC Plans <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- 2. Fire Extinguishers -->
+        <a href="fire-extinguishers.html" class="ppfc-srv-card">
+          <img class="ppfc-srv-bg" 
+               src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80" 
+               alt="Fire extinguishers inspection and refilling">
+          <div class="ppfc-srv-overlay"></div>
+          <div class="ppfc-srv-body">
+            <h3>Fire Extinguishers</h3>
+            <p>Supply, placement, hydro-pressure testing, refilling, and tagging of powder, CO2, and foam units.</p>
+            <span class="ppfc-link-arrow">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 3. Emergency Lighting -->
+        <a href="emergency-lighting.html" class="ppfc-srv-card">
+          <img class="ppfc-srv-bg" 
+               src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" 
+               alt="Emergency exit and battery lighting fixtures">
+          <div class="ppfc-srv-overlay"></div>
+          <div class="ppfc-srv-body">
+            <h3>Emergency Lighting</h3>
+            <p>Monitored exit fixtures, central battery systems, and backup power integration for safe evacuation.</p>
+            <span class="ppfc-link-arrow">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 4. Fire Safety Design -->
+        <a href="fire-safety-design.html" class="ppfc-srv-card">
+          <img class="ppfc-srv-bg" 
+               src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+               alt="Fire safety drawings and engineering design">
+          <div class="ppfc-srv-overlay"></div>
+          <div class="ppfc-srv-body">
+            <h3>Fire Safety Design</h3>
+            <p>Engineering drawings, hydraulic calculations, and Dubai Civil Defense submittal and approvals.</p>
+            <span class="ppfc-link-arrow">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 5. Fire Pumps -->
+        <a href="fire-pumps.html" class="ppfc-srv-card">
+          <img class="ppfc-srv-bg" 
+               src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" 
+               alt="Electric and diesel fire pump stations">
+          <div class="ppfc-srv-overlay"></div>
+          <div class="ppfc-srv-body">
+            <h3>Fire Pump Sets</h3>
+            <p>Installation, flow testing, and refurbishment of electric, diesel, and jockey fire pump sets.</p>
+            <span class="ppfc-link-arrow">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: WHY CHOOSE US & CIVIL DEFENSE COMPLIANCE (TRUST & CONVERSION)
+       ========================================================================== -->
+  <section class="ppfc-trust-section">
+    <div class="ppfc-container">
+      <div class="ppfc-trust-layout">
+        
+        <!-- Left: Text & 4-Box Value Proposition -->
+        <div class="ppfc-trust-text">
+          <span class="ppfc-tag">WHY PACIFIC POWER &amp; FIRE</span>
+          <h2 class="ppfc-sec-title">Engineered for Rapid Response &amp; Full Civil Defense Compliance</h2>
+          
+          <p class="ppfc-trust-intro">
+            Protecting lives and infrastructure requires certified expertise. We combine licensed engineers, strict adherence to UAE fire codes, and direct manufacturer partnerships to deliver seamless installation and reliable lifetime maintenance.
+          </p>
+
+          <!-- 2x2 Feature Grid -->
+          <div class="ppfc-features-2x2">
+            <div class="ppfc-feature-box">
+              <div class="ppfc-feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="ppfc-feat-info">
+                <h4>Civil Defense Approved</h4>
+                <p>100% compliant with UAE fire and life safety codes.</p>
+              </div>
+            </div>
+
+            <div class="ppfc-feature-box">
+              <div class="ppfc-feat-icon"><i class="fa-solid fa-user-check"></i></div>
+              <div class="ppfc-feat-info">
+                <h4>Certified Engineers</h4>
+                <p>Factory-trained technicians for testing &amp; commissioning.</p>
+              </div>
+            </div>
+
+            <div class="ppfc-feature-box">
+              <div class="ppfc-feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <div class="ppfc-feat-info">
+                <h4>Fast Equipment Dispatch</h4>
+                <p>Direct inventory of certified alarms, valves, and extinguishers.</p>
+              </div>
+            </div>
+
+            <div class="ppfc-feature-box">
+              <div class="ppfc-feat-icon"><i class="fa-solid fa-headset"></i></div>
+              <div class="ppfc-feat-info">
+                <h4>24/7 Emergency Dispatch</h4>
+                <p>Immediate technician deployment across Dubai &amp; UAE.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="ppfc-action-row">
+            <a href="about-us.html" class="ppfc-btn-primary">
+              <span>About Our Company</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="services.html" class="ppfc-link-arrow" style="font-size: 14px;">
+              View All Services <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Visual Composite with Emergency Hotline Badge -->
+        <div class="ppfc-trust-media">
+          <div class="ppfc-media-main">
+            <!-- Inspection & Fire Safety Operations Image -->
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=900&q=80" 
+                 alt="Pacific Power and Fire Contractors on-site engineer">
+          </div>
+
+          <!-- Floating 24/7 Emergency Hotline Badge -->
+          <a href="tel:+971544472389" class="ppfc-float-badge">
+            <div class="ppfc-badge-top">
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>Emergency 24/7 Support</span>
+            </div>
+            <div class="ppfc-badge-num">+971 544 472 389</div>
+          </a>
+
+          <!-- Floating Approval Guarantee -->
+          <div class="ppfc-float-cert">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <strong>Dubai Civil Defense</strong>
+              <small>Certified Fire Contractor</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

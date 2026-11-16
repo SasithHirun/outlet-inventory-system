@@ -1,0 +1,239 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - FULL WIDTH (EDGE-TO-EDGE) CTA SECTION
+     Design: 100% Full Width Screen Background with Centered Content Container
+     Typography: 100% Lato | Colors: White Text, #D32F2F, #ECA227
+     ========================================================================== -->
+
+<!-- Google Fonts: Lato -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ================= RESET & ISOLATED SCOPE ================= */
+  .ppfc-fullwidth-cta,
+  .ppfc-fullwidth-cta * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Strict Lato enforcement across every text element */
+  .ppfc-fullwidth-cta,
+  .ppfc-fullwidth-cta h2,
+  .ppfc-fullwidth-cta p,
+  .ppfc-fullwidth-cta span,
+  .ppfc-fullwidth-cta a,
+  .ppfc-fullwidth-cta strong {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  /* Protect FontAwesome icons */
+  .ppfc-fullwidth-cta i,
+  .ppfc-fullwidth-cta [class*="fa-"] {
+    font-family: "Font Awesome 6 Free" !important;
+  }
+
+  /* ================= 100% FULL WIDTH SECTION CONTAINER ================= */
+  .ppfc-fullwidth-cta {
+    width: 100%;
+    position: relative;
+    background: linear-gradient(90deg, rgba(20, 27, 36, 0.94) 0%, rgba(20, 27, 36, 0.88) 55%, rgba(20, 27, 36, 0.78) 100%), 
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') center center / cover no-repeat;
+    padding: 65px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Centered Content Wrap inside Full Width Band */
+  .ppfc-fullwidth-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Left: Clear & Concise Text */
+  .ppfc-cta-text-wrap {
+    max-width: 720px;
+  }
+
+  .ppfc-cta-mini-tag {
+    font-size: 12.5px;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FF5252; /* Safety Red */
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .ppfc-cta-title-simple {
+    font-size: 32px;
+    font-weight: 900 !important;
+    color: #FFFFFF;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    letter-spacing: -0.4px;
+  }
+
+  .ppfc-cta-title-simple span {
+    color: #ECA227; /* Golden Amber Highlight */
+  }
+
+  .ppfc-cta-desc-simple {
+    font-size: 15px;
+    font-weight: 400 !important;
+    color: #CBD5E1;
+    line-height: 1.6;
+  }
+
+  /* Right: Action Buttons Group */
+  .ppfc-cta-actions-simple {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Primary Gold Action Button */
+  .ppfc-btn-simple-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background-color: #ECA227;
+    color: #1A202C;
+    font-size: 14.5px;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 15px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    box-shadow: 0 4px 14px rgba(236, 162, 39, 0.35);
+    white-space: nowrap;
+  }
+
+  .ppfc-btn-simple-gold:hover {
+    background-color: #D9911A;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(236, 162, 39, 0.45);
+  }
+
+  /* Secondary Emergency Call Button */
+  .ppfc-btn-simple-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #FFFFFF;
+    border: 1.5px solid rgba(255, 255, 255, 0.28);
+    font-size: 14.5px;
+    font-weight: 700 !important;
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+  }
+
+  .ppfc-btn-simple-call i {
+    color: #FF5252;
+    font-size: 15px;
+  }
+
+  .ppfc-btn-simple-call:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 991px) {
+    .ppfc-fullwidth-cta {
+      padding: 50px 0;
+    }
+
+    .ppfc-fullwidth-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
+    }
+
+    .ppfc-cta-actions-simple {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .ppfc-btn-simple-gold,
+    .ppfc-btn-simple-call {
+      flex: 1;
+      text-align: center;
+      min-width: 210px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .ppfc-fullwidth-cta {
+      padding: 40px 0;
+    }
+
+    .ppfc-cta-title-simple {
+      font-size: 24px;
+    }
+
+    .ppfc-cta-actions-simple {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ppfc-btn-simple-gold,
+    .ppfc-btn-simple-call {
+      width: 100%;
+    }
+  }
+</style>
+
+<!-- 100% Full Width Section -->
+<section class="ppfc-fullwidth-cta">
+  <div class="ppfc-fullwidth-inner">
+
+    <!-- Text Info -->
+    <div class="ppfc-cta-text-wrap">
+      <span class="ppfc-cta-mini-tag">Civil Defense Approved Contractor</span>
+      <h2 class="ppfc-cta-title-simple">Need Certified Fire Protection <span>For Your Property?</span></h2>
+      <p class="ppfc-cta-desc-simple">
+        Get in touch with our certified engineering team for compliant fire systems, annual maintenance (AMC), and fast approvals across Dubai &amp; the UAE.
+      </p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="ppfc-cta-actions-simple">
+      <a href="tel:+971544472389" class="ppfc-btn-gold ppfc-btn-simple-gold">
+        <i class="fa-solid fa-file-signature"></i>
+        Request Free Quote
+      </a>
+      <a href="tel:+971544472389" class="ppfc-btn-simple-call">
+        <i class="fa-solid fa-phone"></i>
+        +971 544 472 389
+      </a>
+    </div>
+
+  </div>
+</section>

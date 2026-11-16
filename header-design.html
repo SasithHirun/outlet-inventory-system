@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header with Slide-out Shop Cart Drawer | Pacific Power &amp; Fire Dubai</title>
+
+  <!-- Google Font: Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       THEME VARIABLES & BASE RESETS
+       ========================================================================== */
+    :root {
+      --hdr-red: #DC2626;             /* Signature Red */
+      --hdr-red-hover: #B91C1C;
+      --hdr-dark: #1E293B;            /* Slate for menu items */
+      --hdr-text-muted: #64748B;
+      --hdr-text-light: #94A3B8;
+      --hdr-border: #F1F5F9;
+      --hdr-bg-nav: #E9ECEF;          /* Light gray background of bottom nav */
+      --hdr-font: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .ppf-header-wrapper,
+    .ppf-header-wrapper * {
+      box-sizing: border-box !important;
+      font-family: var(--hdr-font) !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ppf-header-wrapper {
+      width: 100% !important;
+      background: #FFFFFF !important;
+      position: relative !important;
+      z-index: 9999 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .ppf-hdr-container {
+      width: 100% !important;
+      max-width: 1340px !important;
+      margin: 0 auto !important;
+      padding: 0 24px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    /* ==========================================================================
+       1. TOP BAR
+       ========================================================================== */
+    .ppf-topbar {
+      width: 100% !important;
+      background: #FFFFFF !important;
+      border-bottom: 1px solid var(--hdr-border) !important;
+      padding: 8px 0 !important;
+      font-size: 12.5px !important;
+      color: var(--hdr-text-muted) !important;
+    }
+
+    .ppf-topbar-left {
+      display: flex !important;
+      align-items: center !important;
+      gap: 7px !important;
+    }
+
+    .ppf-topbar-left svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke: #334155 !important;
+      fill: none !important;
+      stroke-width: 2 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .ppf-topbar-left span.label {
+      color: #334155 !important;
+      font-weight: 500 !important;
+    }
+
+    .ppf-topbar-left a.phone {
+      color: var(--hdr-red) !important;
+      font-weight: 800 !important;
+      text-decoration: none !important;
+      letter-spacing: 0.2px !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .ppf-topbar-left a.phone:hover {
+      color: var(--hdr-red-hover) !important;
+      text-decoration: underline !important;
+    }
+
+    .ppf-topbar-right {
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    /* Full Clickable Welcome Admin Link */
+    .ppf-user-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      text-decoration: none !important;
+      color: inherit !important;
+      transition: opacity 0.15s ease !important;
+    }
+
+    .ppf-user-link:hover {
+      opacity: 0.8 !important;
+    }
+
+    .ppf-user-link svg {
+      width: 15px !important;
+      height: 15px !important;
+      stroke: #334155 !important;
+      fill: none !important;
+      stroke-width: 2 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .ppf-user-link span.welcome {
+      color: var(--hdr-text-muted) !important;
+      font-weight: 500 !important;
+    }
+
+    .ppf-user-link span.username {
+      color: #0F172A !important;
+      font-weight: 800 !important;
+    }
+
+    /* ==========================================================================
+       2. MIDDLE BRANDING & SEARCH BAR
+       ========================================================================== */
+    .ppf-midbar {
+      width: 100% !important;
+      background: #FFFFFF !important;
+      padding: 16px 0 !important;
+    }
+
+    .ppf-logo-wrap {
+      display: flex !important;
+      align-items: center !important;
+      text-decoration: none !important;
+    }
+
+    .ppf-logo-wrap img {
+      height: 52px !important;
+      width: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+    }
+
+    /* Pill-shaped Red-bordered Search Box */
+    .ppf-search-form {
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      height: 44px !important;
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--hdr-red) !important;
+      border-radius: 9999px !important;
+      padding: 0 3px 0 16px !important;
+      position: relative !important;
+      overflow: hidden !important;
+      transition: box-shadow 0.2s ease !important;
+    }
+
+    .ppf-search-form:focus-within {
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+    }
+
+    /* Category Dropdown Container */
+    .ppf-search-cat {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      padding-right: 14px !important;
+      margin-right: 12px !important;
+      border-right: 1px solid #E2E8F0 !important;
+      flex-shrink: 0 !important;
+      height: 24px !important;
+    }
+
+    .ppf-search-cat-select {
+      border: none !important;
+      outline: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      color: #334155 !important;
+      cursor: pointer !important;
+      padding: 0 16px 0 0 !important;
+      margin: 0 !important;
+      height: 100% !important;
+      max-width: 140px !important;
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .ppf-search-cat-select optgroup {
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      background: #F8FAFC !important;
+      font-style: normal !important;
+      padding: 4px 0 !important;
+    }
+
+    .ppf-search-cat-select option {
+      font-weight: 400 !important;
+      color: #334155 !important;
+      background: #FFFFFF !important;
+      padding: 4px 8px !important;
+    }
+
+    .ppf-search-cat svg {
+      position: absolute !important;
+      right: 0 !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: 12px !important;
+      height: 12px !important;
+      stroke: #64748B !important;
+      stroke-width: 2 !important;
+      fill: none !important;
+      pointer-events: none !important;
+    }
+
+    /* Search Text Input */
+    .ppf-search-input {
+      flex: 1 1 auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0 !important;
+      border-width: 0 !important;
+      border-style: none !important;
+      outline: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      padding: 0 10px 0 0 !important;
+      margin: 0 !important;
+      font-size: 13.5px !important;
+      color: #1E293B !important;
+      line-height: normal !important;
+      border-radius: 0 !important;
+    }
+
+    .ppf-search-input:focus,
+    .ppf-search-input:active {
+      border: 0 !important;
+      outline: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+
+    .ppf-search-input::placeholder {
+      color: var(--hdr-text-light) !important;
+      font-weight: 400 !important;
+    }
+
+    /* Circular Red Search Button */
+    .ppf-search-btn {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      background: var(--hdr-red) !important;
+      border: none !important;
+      outline: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      flex-shrink: 0 !important;
+      transition: background 0.15s ease, transform 0.1s ease !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .ppf-search-btn:hover {
+      background: var(--hdr-red-hover) !important;
+      transform: scale(1.05) !important;
+    }
+
+    .ppf-search-btn svg {
+      width: 16px !important;
+      height: 16px !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 2.5 !important;
+      fill: none !important;
+    }
+
+    /* ==========================================================================
+       3. BOTTOM NAVIGATION BAR
+       ========================================================================== */
+    .ppf-navbar {
+      width: 100% !important;
+      background: var(--hdr-bg-nav) !important;
+      height: 48px !important;
+      position: relative !important;
+    }
+
+    .ppf-navbar .ppf-hdr-container {
+      height: 100% !important;
+    }
+
+    .ppf-nav-links {
+      display: flex !important;
+      align-items: center !important;
+      list-style: none !important;
+      gap: 32px !important;
+      height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .ppf-nav-item {
+      position: relative !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .ppf-nav-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      text-decoration: none !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      color: var(--hdr-dark) !important;
+      transition: color 0.15s ease !important;
+      height: 100% !important;
+      cursor: pointer !important;
+    }
+
+    .ppf-nav-link:hover {
+      color: var(--hdr-red) !important;
+    }
+
+    .ppf-nav-item.active .ppf-nav-link {
+      color: var(--hdr-red) !important;
+    }
+
+    .ppf-nav-link svg.chevron {
+      width: 11px !important;
+      height: 11px !important;
+      stroke: currentColor !important;
+      stroke-width: 2.2 !important;
+      fill: none !important;
+      transition: transform 0.2s ease !important;
+    }
+
+    .ppf-nav-item:hover .ppf-nav-link svg.chevron {
+      transform: rotate(180deg) !important;
+    }
+
+    /* Mega Menu Dropdown */
+    .ppf-mega-menu {
+      position: absolute !important;
+      top: 100% !important;
+      left: -120px !important;
+      width: 960px !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 8px !important;
+      box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.15) !important;
+      padding: 24px !important;
+      display: none !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 22px !important;
+      z-index: 99999 !important;
+    }
+
+    .ppf-nav-item:hover .ppf-mega-menu {
+      display: grid !important;
+      animation: ppfFadeDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    @keyframes ppfFadeDown {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ppf-mega-col h4 {
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.4px !important;
+      color: var(--hdr-red) !important;
+      margin: 0 0 10px 0 !important;
+      padding-bottom: 6px !important;
+      border-bottom: 1px solid #F1F5F9 !important;
+    }
+
+    .ppf-mega-sublist {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 0 16px 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+
+    .ppf-mega-sublist li a {
+      font-size: 12.5px !important;
+      font-weight: 500 !important;
+      color: #475569 !important;
+      text-decoration: none !important;
+      transition: all 0.15s ease !important;
+      display: inline-block !important;
+    }
+
+    .ppf-mega-sublist li a:hover {
+      color: var(--hdr-red) !important;
+      transform: translateX(3px) !important;
+    }
+
+    /* Action Icons (Wishlist & Cart) */
+    .ppf-nav-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 20px !important;
+      height: 100% !important;
+    }
+
+    .ppf-action-item {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-decoration: none !important;
+      color: var(--hdr-dark) !important;
+      cursor: pointer !important;
+      transition: transform 0.15s ease, color 0.15s ease !important;
+      background: none !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .ppf-action-item:hover {
+      color: var(--hdr-red) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .ppf-action-item svg {
+      width: 22px !important;
+      height: 22px !important;
+      stroke: currentColor !important;
+      stroke-width: 1.8 !important;
+      fill: none !important;
+    }
+
+    .ppf-badge {
+      position: absolute !important;
+      top: -7px !important;
+      right: -8px !important;
+      background: var(--hdr-red) !important;
+      color: #FFFFFF !important;
+      font-size: 10.5px !important;
+      font-weight: 800 !important;
+      height: 17px !important;
+      min-width: 17px !important;
+      padding: 0 4px !important;
+      border-radius: 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      line-height: 1 !important;
+      border: 1.5px solid var(--hdr-bg-nav) !important;
+    }
+
+    /* ==========================================================================
+       4. SLIDE-OUT SHOP CART DRAWER (ALWAYS AVAILABLE & BULLETPROOF)
+       ========================================================================== */
+    .ppf-cart-backdrop {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: rgba(15, 23, 42, 0.6) !important;
+      z-index: 9999998 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      backdrop-filter: blur(3px) !important;
+      -webkit-backdrop-filter: blur(3px) !important;
+    }
+
+    .ppf-cart-backdrop.open {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+
+    .ppf-cart-drawer {
+      position: fixed !important;
+      top: 0 !important;
+      right: -450px !important;
+      width: 400px !important;
+      max-width: 90vw !important;
+      height: 100vh !important;
+      background: #FFFFFF !important;
+      z-index: 9999999 !important;
+      box-shadow: -8px 0 35px rgba(0, 0, 0, 0.18) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      box-sizing: border-box !important;
+    }
+
+    .ppf-cart-drawer.open {
+      right: 0px !important;
+    }
+
+    /* Drawer Header */
+    .ppf-cart-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 22px 24px !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      background: #FFFFFF !important;
+    }
+
+    .ppf-cart-header h3 {
+      font-size: 20px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      margin: 0 !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .ppf-cart-close {
+      width: 32px !important;
+      height: 32px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      background: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+      color: #475569 !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .ppf-cart-close:hover {
+      background: var(--hdr-red) !important;
+      color: #FFFFFF !important;
+      border-color: var(--hdr-red) !important;
+    }
+
+    .ppf-cart-close svg {
+      width: 16px !important;
+      height: 16px !important;
+      stroke: currentColor !important;
+      stroke-width: 2.2 !important;
+    }
+
+    /* Drawer Items List (Scrollable) */
+    .ppf-cart-body {
+      flex: 1 1 auto !important;
+      overflow-y: auto !important;
+      padding: 18px 24px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+      background: #FFFFFF !important;
+    }
+
+    .ppf-cart-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      padding-bottom: 16px !important;
+      border-bottom: 1px solid #F1F5F9 !important;
+      position: relative !important;
+    }
+
+    .ppf-cart-item-img {
+      width: 65px !important;
+      height: 65px !important;
+      border-radius: 6px !important;
+      background: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+      flex-shrink: 0 !important;
+    }
+
+    .ppf-cart-item-img img {
+      max-width: 85% !important;
+      max-height: 85% !important;
+      object-fit: contain !important;
+    }
+
+    .ppf-cart-item-info {
+      flex: 1 1 auto !important;
+      padding-right: 22px !important;
+    }
+
+    .ppf-cart-item-title {
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: #1E293B !important;
+      line-height: 1.35 !important;
+      text-decoration: none !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      margin-bottom: 5px !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .ppf-cart-item-title:hover {
+      color: var(--hdr-red) !important;
+    }
+
+    .ppf-cart-item-price {
+      font-size: 13.5px !important;
+      font-weight: 800 !important;
+      color: #0F172A !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+
+    .ppf-cart-item-qty {
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      color: var(--hdr-text-muted) !important;
+    }
+
+    .ppf-cart-item-remove {
+      position: absolute !important;
+      right: 0 !important;
+      top: 4px !important;
+      color: #94A3B8 !important;
+      cursor: pointer !important;
+      font-size: 18px !important;
+      line-height: 1 !important;
+      transition: color 0.15s ease !important;
+      padding: 4px !important;
+    }
+
+    .ppf-cart-item-remove:hover {
+      color: var(--hdr-red) !important;
+    }
+
+    /* Drawer Footer */
+    .ppf-cart-footer {
+      padding: 20px 24px 28px 24px !important;
+      border-top: 1px solid #E2E8F0 !important;
+      background: #FAFAFA !important;
+    }
+
+    .ppf-cart-subtotal {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #475569 !important;
+      margin-bottom: 18px !important;
+    }
+
+    .ppf-cart-subtotal-amount {
+      font-size: 18px !important;
+      font-weight: 900 !important;
+      color: #0F172A !important;
+    }
+
+    .ppf-cart-btns {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+
+    .ppf-btn-checkout {
+      width: 100% !important;
+      background: var(--hdr-red) !important;
+      color: #FFFFFF !important;
+      padding: 12px !important;
+      border-radius: 6px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+      box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25) !important;
+      display: block !important;
+    }
+
+    .ppf-btn-checkout:hover {
+      background: var(--hdr-red-hover) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35) !important;
+      color: #FFFFFF !important;
+    }
+
+    .ppf-btn-viewcart {
+      width: 100% !important;
+      background: #FFFFFF !important;
+      color: #1E293B !important;
+      border: 1px solid #CBD5E1 !important;
+      padding: 11px !important;
+      border-radius: 6px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      transition: all 0.15s ease !important;
+      display: block !important;
+    }
+
+    .ppf-btn-viewcart:hover {
+      background: #F1F5F9 !important;
+      border-color: #94A3B8 !important;
+      color: #1E293B !important;
+    }
+
+    /* Mobile Hamburger */
+    .ppf-mobile-toggle {
+      display: none !important;
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+      padding: 6px !important;
+      color: var(--hdr-dark) !important;
+    }
+
+    .ppf-mobile-toggle svg {
+      width: 24px !important;
+      height: 24px !important;
+      stroke: currentColor !important;
+      stroke-width: 2 !important;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .ppf-hdr-container {
+        padding: 0 16px !important;
+      }
+
+      .ppf-search-form {
+        max-width: 380px !important;
+      }
+
+      .ppf-nav-links {
+        gap: 20px !important;
+      }
+
+      .ppf-mega-menu {
+        width: 100vw !important;
+        left: -16px !important;
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ppf-topbar-right {
+        display: none !important;
+      }
+
+      .ppf-midbar .ppf-hdr-container {
+        flex-direction: column !important;
+        gap: 14px !important;
+        align-items: stretch !important;
+      }
+
+      .ppf-logo-wrap {
+        justify-content: center !important;
+      }
+
+      .ppf-search-form {
+        max-width: 100% !important;
+      }
+
+      .ppf-mobile-toggle {
+        display: block !important;
+      }
+
+      .ppf-nav-links {
+        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #FFFFFF !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        height: auto !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important;
+        border-top: 1px solid #E2E8F0 !important;
+      }
+
+      .ppf-nav-links.open {
+        display: flex !important;
+      }
+
+      .ppf-nav-item {
+        width: 100% !important;
+        height: auto !important;
+        border-bottom: 1px solid #F1F5F9 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      .ppf-nav-link {
+        width: 100% !important;
+        padding: 12px 20px !important;
+      }
+
+      .ppf-mega-menu {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        grid-template-columns: 1fr !important;
+        padding: 10px 24px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER WRAPPER ================= -->
+  <header class="ppf-header-wrapper">
+
+    <!-- 1. TOP UTILITY BAR -->
+    <div class="ppf-topbar">
+      <div class="ppf-hdr-container">
+        
+        <!-- Left: Free Call -->
+        <div class="ppf-topbar-left">
+          <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          <span class="label">Call us for free:</span>
+          <a href="tel:+971544472399" class="phone">+971 544 472 399</a>
+        </div>
+
+        <!-- Right: Welcome Admin (Clickable link to /my-account/) -->
+        <div class="ppf-topbar-right">
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/my-account/" class="ppf-user-link" title="My Account">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="welcome">Welcome,</span>
+            <span class="username">admin</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. MIDDLE BRANDING & PILL SEARCH BAR -->
+    <div class="ppf-midbar">
+      <div class="ppf-hdr-container">
+
+        <!-- Logo -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/" class="ppf-logo-wrap" title="Fire Contractor in Dubai UAE">
+          <img src="https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2023/08/firec-logo.png" alt="Fire Contractors in Dubai">
+        </a>
+
+        <!-- Red Pill Search Form -->
+        <form class="ppf-search-form" action="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/" method="get">
+          
+          <!-- Category Selector (All Categories & Subcategories) -->
+          <div class="ppf-search-cat">
+            <select name="product_cat" class="ppf-search-cat-select" title="Select Category">
+              <option value="">All categories</option>
+              
+              <!-- 1. Fire Products -->
+              <optgroup label="Fire Products">
+                <option value="conventional-fire-alarm">&nbsp;&nbsp;Conventional Fire Alarm</option>
+                <option value="addressable-fire-alarm">&nbsp;&nbsp;Addressable Fire Alarm</option>
+                <option value="voice-evacuation">&nbsp;&nbsp;Voice Evacuation System</option>
+                <option value="beam-detector">&nbsp;&nbsp;Beam Detector</option>
+                <option value="flame-detector">&nbsp;&nbsp;Flame Detector</option>
+                <option value="co-detection">&nbsp;&nbsp;CO Detection System</option>
+                <option value="gas-detectors">&nbsp;&nbsp;Gas &amp; LPG Detectors</option>
+                <option value="panels-modules">&nbsp;&nbsp;Panels &amp; Modules</option>
+                <option value="smoke-detectors">&nbsp;&nbsp;Smoke Detectors</option>
+                <option value="heat-detectors">&nbsp;&nbsp;Heat Detectors</option>
+                <option value="testing-tools">&nbsp;&nbsp;Testing &amp; Commissioning</option>
+              </optgroup>
+
+              <!-- 2. Fire Fighting -->
+              <optgroup label="Fire Fighting">
+                <option value="fire-extinguisher">&nbsp;&nbsp;Fire Extinguisher</option>
+                <option value="fire-extinguisher-refilling">&nbsp;&nbsp;Extinguisher Refilling</option>
+                <option value="trolley-extinguisher">&nbsp;&nbsp;Trolley Type Extinguishers</option>
+                <option value="cabinets">&nbsp;&nbsp;Fire &amp; Hose Cabinets</option>
+                <option value="fire-hydrants">&nbsp;&nbsp;Fire Hydrants</option>
+                <option value="hose">&nbsp;&nbsp;Fire Hose &amp; Reels</option>
+                <option value="pump-valves">&nbsp;&nbsp;Pump &amp; Valves</option>
+                <option value="sprinklers">&nbsp;&nbsp;Sprinklers</option>
+              </optgroup>
+
+              <!-- 3. Emergency Lighting -->
+              <optgroup label="Emergency Lighting">
+                <option value="central-monitoring">&nbsp;&nbsp;Central Monitoring System</option>
+                <option value="self-contained">&nbsp;&nbsp;Self Contained Lights</option>
+                <option value="exit-lights">&nbsp;&nbsp;Exit Luminaires</option>
+              </optgroup>
+
+              <!-- 4. Marine Products -->
+              <optgroup label="Marine Products">
+                <option value="marine-safety">&nbsp;&nbsp;Safety (Lifejackets &amp; Buoys)</option>
+                <option value="marine-alarms">&nbsp;&nbsp;Marine Alarms &amp; Sirens</option>
+                <option value="marine-anchor">&nbsp;&nbsp;Anchor &amp; Lifecrafts</option>
+              </optgroup>
+
+              <!-- 5. Safety Products (PPE) -->
+              <optgroup label="Safety Products">
+                <option value="ppe">&nbsp;&nbsp;Personal Protective (PPE)</option>
+                <option value="emergency-kits">&nbsp;&nbsp;Emergency Kits &amp; First Aid</option>
+                <option value="traffic-equipments">&nbsp;&nbsp;Traffic &amp; Lockout</option>
+              </optgroup>
+
+              <!-- 6. Hardwares & Fittings -->
+              <optgroup label="Hardwares &amp; Fittings">
+                <option value="bath-sanitaries">&nbsp;&nbsp;Bath Sanitaries (Accessories, Showers)</option>
+                <option value="door-handles">&nbsp;&nbsp;Door &amp; Handles (Knobs, Fittings)</option>
+              </optgroup>
+            </select>
+            <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+
+          <!-- Bulletproof Search Input -->
+          <input type="text" name="s" class="ppf-search-input" placeholder="Search for products" autocomplete="off" required>
+
+          <!-- Circular Red Search Button -->
+          <button type="submit" class="ppf-search-btn" aria-label="Search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+    <!-- 3. BOTTOM NAVIGATION BAR -->
+    <nav class="ppf-navbar">
+      <div class="ppf-hdr-container">
+
+        <!-- Mobile Toggle Button -->
+        <button class="ppf-mobile-toggle" onclick="document.querySelector('.ppf-nav-links').classList.toggle('open')" aria-label="Toggle navigation">
+          <svg viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <!-- Navigation Menu Links (Exact Requested URLs) -->
+        <ul class="ppf-nav-links">
+          
+          <!-- Home -->
+          <li class="ppf-nav-item active">
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/" class="ppf-nav-link">Home</a>
+          </li>
+
+          <!-- About Us -->
+          <li class="ppf-nav-item">
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/about-us/" class="ppf-nav-link">About Us</a>
+          </li>
+
+          <!-- Services -->
+          <li class="ppf-nav-item">
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/services/" class="ppf-nav-link">Services</a>
+          </li>
+
+          <!-- Shop with Categories Mega Menu -->
+          <li class="ppf-nav-item">
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/" class="ppf-nav-link">
+              <span>Shop</span>
+              <svg class="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+
+            <!-- Mega Dropdown Menu Showing All Categories & Subcategories -->
+            <div class="ppf-mega-menu">
+              
+              <!-- Column 1: Fire Products -->
+              <div class="ppf-mega-col">
+                <h4>Fire Products</h4>
+                <ul class="ppf-mega-sublist">
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=conventional-fire-alarm">Conventional Fire Alarm</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=addressable-fire-alarm">Addressable Fire Alarm</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=voice-evacuation">Voice Evacuation System</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=beam-detector">Beam Detector</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=flame-detector">Flame Detector</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=co-detection">CO Detection System</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=gas-detectors">Gas &amp; LPG Detectors</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=panels-modules">Panels &amp; Modules</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=smoke-detectors">Smoke Detectors</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=heat-detectors">Heat Detectors</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 2: Fire Fighting & Emergency Lighting -->
+              <div class="ppf-mega-col">
+                <h4>Fire Fighting</h4>
+                <ul class="ppf-mega-sublist">
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=fire-extinguisher">Fire Extinguisher</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=fire-extinguisher-refilling">Extinguisher Refilling</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=trolley-extinguisher">Trolley Type Extinguishers</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=cabinets">Fire &amp; Hose Cabinets</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=fire-hydrants">Fire Hydrants</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=hose">Fire Hose &amp; Reels</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=pump-valves">Pump &amp; Valves</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=sprinklers">Sprinklers</a></li>
+                </ul>
+
+                <h4>Emergency Lighting</h4>
+                <ul class="ppf-mega-sublist">
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=central-monitoring">Central Monitoring System</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=self-contained">Self Contained Lights</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=exit-lights">Exit Luminaires</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 3: Marine, Safety & Hardwares -->
+              <div class="ppf-mega-col">
+                <h4>Marine Products</h4>
+                <ul class="ppf-mega-sublist">
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=marine-safety">Safety (Lifejackets &amp; Buoys)</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=marine-alarms">Marine Alarms &amp; Sirens</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=marine-anchor">Anchor &amp; Lifecrafts</a></li>
+                </ul>
+
+                <h4>Safety Products (PPE)</h4>
+                <ul class="ppf-mega-sublist">
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=ppe">Personal Protective (PPE)</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=emergency-kits">Emergency Kits &amp; First Aid</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=traffic-equipments">Traffic &amp; Lockout</a></li>
+                </ul>
+
+                <h4>Hardwares &amp; Fittings</h4>
+                <ul class="ppf-mega-sublist">
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=bath-sanitaries">Bath Sanitaries (Accessories, Showers)</a></li>
+                  <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?cat=door-handles">Door Knobs &amp; Fittings</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </li>
+
+          <!-- Blogs -->
+          <li class="ppf-nav-item">
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/blog-grid/" class="ppf-nav-link">Blogs</a>
+          </li>
+
+          <!-- Contact Us -->
+          <li class="ppf-nav-item">
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/contact/" class="ppf-nav-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <!-- Right Side: Wishlist & Slide-Out Cart Trigger -->
+        <div class="ppf-nav-actions">
+          
+          <!-- Wishlist (Badge: 0) -->
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/wishlist/" class="ppf-action-item" title="Wishlist">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            <span class="ppf-badge">0</span>
+          </a>
+
+          <!-- Cart Trigger Button (Calls Slide-Out Shop Cart Drawer) -->
+          <button type="button" class="ppf-action-item" id="ppf-cart-btn" title="Open Shop Cart" onclick="ppfOpenCartDrawer(event)">
+            <svg viewBox="0 0 24 24">
+              <circle cx="8" cy="21" r="1"/>
+              <circle cx="19" cy="21" r="1"/>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+            </svg>
+            <span class="ppf-badge" id="ppf-header-cart-count">2</span>
+          </button>
+
+        </div>
+
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- ==========================================================================
+       SLIDE-OUT "SHOP CART" DRAWER (MATCHING USER SCREENSHOT)
+       ========================================================================== -->
+  <!-- Dark Backdrop Overlay -->
+  <div class="ppf-cart-backdrop" id="ppf-cart-backdrop" onclick="ppfCloseCartDrawer()"></div>
+
+  <!-- Right Side Cart Panel -->
+  <aside class="ppf-cart-drawer" id="ppf-cart-drawer" role="dialog" aria-modal="true" aria-label="Shop Cart">
+    
+    <!-- Drawer Header -->
+    <div class="ppf-cart-header">
+      <h3>Shop Cart</h3>
+      <button class="ppf-cart-close" onclick="ppfCloseCartDrawer()" aria-label="Close cart">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Drawer Items List -->
+    <div class="ppf-cart-body" id="ppf-cart-items-container">
+      
+      <!-- Cart Item 1 (From User Screenshot) -->
+      <div class="ppf-cart-item">
+        <div class="ppf-cart-item-img">
+          <img src="https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Zeta-ZTB8B-8-Inch-300x300-1.jpg" alt="Zeta ZTB8B 8 Inch Fire Alarm Bell" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2023/08/firec-logo.png'">
+        </div>
+        <div class="ppf-cart-item-info">
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/zeta-ztb8b-8-inch-fire-alarm-bell-24v-dc/" class="ppf-cart-item-title">
+            Zeta ZTB8B 8 Inch Fire Alarm Bell (24V DC)
+          </a>
+          <div class="ppf-cart-item-price">
+            <span>AED 191</span>
+            <span class="ppf-cart-item-qty">&times; 1</span>
+          </div>
+        </div>
+        <span class="ppf-cart-item-remove" onclick="this.closest('.ppf-cart-item').remove()" title="Remove item">&times;</span>
+      </div>
+
+      <!-- Cart Item 2 (From User Screenshot) -->
+      <div class="ppf-cart-item">
+        <div class="ppf-cart-item-img">
+          <img src="https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Ziton-ZP730-2P-300x300-1.jpg" alt="Ziton ZP730-2P Optical Smoke Detector" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2023/08/firec-logo.png'">
+        </div>
+        <div class="ppf-cart-item-info">
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/ziton-zp730-2p-optical-smoke-detector-analogue-addressable-polar-white/" class="ppf-cart-item-title">
+            Ziton ZP730-2P Optical Smoke Detector Analogue Addressable &ndash; Polar White
+          </a>
+          <div class="ppf-cart-item-price">
+            <span>AED 315</span>
+            <span class="ppf-cart-item-qty">&times; 1</span>
+          </div>
+        </div>
+        <span class="ppf-cart-item-remove" onclick="this.closest('.ppf-cart-item').remove()" title="Remove item">&times;</span>
+      </div>
+
+    </div>
+
+    <!-- Drawer Footer (Subtotal & Buttons) -->
+    <div class="ppf-cart-footer">
+      <div class="ppf-cart-subtotal">
+        <span>Subtotal:</span>
+        <span class="ppf-cart-subtotal-amount" id="ppf-cart-subtotal-val">AED 506</span>
+      </div>
+      <div class="ppf-cart-btns">
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/checkout/" class="ppf-btn-checkout">Checkout</a>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/cart/" class="ppf-btn-viewcart">View Cart</a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ==========================================================================
+       GUARANTEED CART DRAWER CONTROLLER
+       ========================================================================== -->
+  <script>
+    // 1. Move drawer directly to <body> so Elementor or wrapper overflow cannot hide it
+    function ppfRelocateCartDrawer() {
+      const drawer = document.getElementById('ppf-cart-drawer');
+      const backdrop = document.getElementById('ppf-cart-backdrop');
+      if (drawer && drawer.parentElement !== document.body) {
+        document.body.appendChild(drawer);
+      }
+      if (backdrop && backdrop.parentElement !== document.body) {
+        document.body.appendChild(backdrop);
+      }
+    }
+
+    // Run relocation immediately & when DOM is ready
+    ppfRelocateCartDrawer();
+    document.addEventListener('DOMContentLoaded', ppfRelocateCartDrawer);
+
+    // 2. Open Cart Drawer Guaranteed
+    function ppfOpenCartDrawer(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      ppfRelocateCartDrawer();
+
+      const drawer = document.getElementById('ppf-cart-drawer');
+      const backdrop = document.getElementById('ppf-cart-backdrop');
+
+      if (drawer) {
+        drawer.classList.add('open');
+        drawer.style.setProperty('right', '0px', 'important');
+        drawer.style.setProperty('display', 'flex', 'important');
+      }
+
+      if (backdrop) {
+        backdrop.classList.add('open');
+        backdrop.style.setProperty('opacity', '1', 'important');
+        backdrop.style.setProperty('visibility', 'visible', 'important');
+      }
+
+      document.body.style.overflow = 'hidden';
+
+      // Fetch live WooCommerce cart data in background to stay synchronized
+      ppfSyncWooCommerceCart();
+    }
+
+    // 3. Close Cart Drawer
+    function ppfCloseCartDrawer() {
+      const drawer = document.getElementById('ppf-cart-drawer');
+      const backdrop = document.getElementById('ppf-cart-backdrop');
+
+      if (drawer) {
+        drawer.classList.remove('open');
+        drawer.style.setProperty('right', '-450px', 'important');
+      }
+
+      if (backdrop) {
+        backdrop.classList.remove('open');
+        backdrop.style.setProperty('opacity', '0', 'important');
+        backdrop.style.setProperty('visibility', 'hidden', 'important');
+      }
+
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape Key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') ppfCloseCartDrawer();
+    });
+
+    // 4. Live WooCommerce Store API Synchronization
+    async function ppfSyncWooCommerceCart() {
+      try {
+        const res = await fetch('https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-json/wc/store/v1/cart', {
+          credentials: 'include'
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        if (data && data.items) {
+          const badge = document.getElementById('ppf-header-cart-count');
+          if (badge) badge.textContent = data.items.length || 0;
+
+          const minorUnit = (data.totals && typeof data.totals.currency_minor_unit === 'number') ? data.totals.currency_minor_unit : 0;
+          const divisor = Math.pow(10, minorUnit);
+
+          // If there are real items in WooCommerce cart, render them
+          if (data.items.length > 0) {
+            const container = document.getElementById('ppf-cart-items-container');
+            if (container) {
+              container.innerHTML = data.items.map(item => {
+                const rawP = (item.prices && item.prices.price) ? parseInt(item.prices.price) : 0;
+                const itemPrice = Math.round(rawP / divisor);
+                return `
+                <div class="ppf-cart-item">
+                  <div class="ppf-cart-item-img">
+                    <img src="${(item.images && item.images[0]) ? item.images[0].src : ''}" alt="${item.name}">
+                  </div>
+                  <div class="ppf-cart-item-info">
+                    <a href="${item.permalink || '#'}" class="ppf-cart-item-title">${item.name}</a>
+                    <div class="ppf-cart-item-price">
+                      <span>AED ${itemPrice}</span>
+                      <span class="ppf-cart-item-qty">&times; ${item.quantity}</span>
+                    </div>
+                  </div>
+                </div>`;
+              }).join('');
+            }
+
+            const subtotalVal = document.getElementById('ppf-cart-subtotal-val');
+            if (subtotalVal && data.totals && data.totals.total_price) {
+              const rawTotal = parseInt(data.totals.total_price);
+              subtotalVal.textContent = 'AED ' + Math.round(rawTotal / divisor);
+            }
+          }
+        }
+      } catch (err) {
+        // Fallback gracefully
+      }
+    }
+
+    // Auto-sync cart badge on load
+    window.addEventListener('load', ppfSyncWooCommerceCart);
+  </script>
+
+</body>
+</html>

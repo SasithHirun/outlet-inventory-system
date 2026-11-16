@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Extinguishers Services | Pacific Power & Fire Contractors Dubai</title>
+
+  <!-- Google Fonts: Consistent with Website Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       THEME VARIABLES & CORE RESET (MATCHING LIVE WEBSITE)
+       ========================================================= */
+    :root {
+      --theme-primary-color: #333E48;       /* Charcoal Primary */
+      --theme-secondary-color: #004EC3;     /* Corporate Blue */
+      --primary-blue: #1565C0;
+      --theme-accent-color: #FF3D3D;        /* Fire Alert Red */
+      --accent-red: #C62828;                /* Safety Red (Sidebar Call Box) */
+      --accent-red-hover: #B71C1C;
+      --gold-accent: #ECA227;               /* Golden Amber CTA */
+      --gold-accent-hover: #D9911A;
+      --text-main: #333E48;
+      --text-muted: #555E68;
+      --bg-page: #FFFFFF;
+      --border-color: #E2E8F0;
+      
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.14);
+      --transition: all 0.28s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      background-color: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* =========================================================
+       FIRE EXTINGUISHERS SECTION LAYOUT (EXACT MATCH TO IMAGE)
+       ========================================================= */
+    .extinguishers-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    /* Left Column: Main Detail Content */
+    .detail-main-content {
+      color: var(--text-muted);
+    }
+
+    .content-heading {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 22px;
+      letter-spacing: -0.4px;
+      line-height: 1.25;
+    }
+
+    .detail-main-content p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #555E68;
+      margin-bottom: 20px;
+    }
+
+    /* Center Row: Image + 5-Point Checklist */
+    .content-feature-row {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin: 30px 0;
+      padding: 5px 0;
+    }
+
+    .feature-image-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 3px solid #FFFFFF;
+    }
+
+    .feature-image-wrap img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .feature-image-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    .feature-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      line-height: 1.45;
+      font-family: var(--font-heading);
+    }
+
+    .checklist-item i {
+      color: var(--theme-accent-color);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       RIGHT SIDEBAR: CONTACT US & EMERGENCY 24/7 WIDGETS
+       ========================================================= */
+    .sidebar-sticky-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 30px;
+    }
+
+    /* Widget 1: Contact Us Card */
+    .widget-contact-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 38px 30px;
+      color: #FFFFFF;
+      background: linear-gradient(rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.94)),
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .widget-contact-card h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .widget-contact-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: var(--theme-accent-color);
+      border-radius: 2px;
+    }
+
+    .widget-contact-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #E2E8F0;
+      margin-bottom: 22px;
+    }
+
+    .widget-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background-color: var(--gold-accent);
+      color: #1A202C;
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 13px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(236, 162, 39, 0.4);
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .widget-contact-btn:hover {
+      background-color: var(--gold-accent-hover);
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(236, 162, 39, 0.6);
+    }
+
+    /* Widget 2: Red Emergency Box */
+    .widget-emergency-box {
+      background-color: var(--accent-red);
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 8px 22px rgba(198, 40, 40, 0.35);
+      transition: var(--transition);
+    }
+
+    .widget-emergency-box:hover {
+      background-color: var(--accent-red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(198, 40, 40, 0.5);
+    }
+
+    .emergency-box-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .emergency-box-content small {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      opacity: 0.95;
+      margin-bottom: 2px;
+    }
+
+    .emergency-box-content strong {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================= */
+    @media (max-width: 992px) {
+      .extinguishers-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .content-feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar-sticky-wrap {
+        position: static;
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 25px 0;
+      }
+
+      .content-heading {
+        font-size: 26px;
+      }
+
+      .widget-contact-card {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       MAIN SERVICE DETAIL SECTION (EXACT CONTENT FROM IMAGE)
+       ========================================================= -->
+  <section class="section-extinguishers-detail">
+    <div class="container">
+      <div class="extinguishers-layout-grid">
+
+        <!-- Left Column: Description & Scope Checklist -->
+        <main class="detail-main-content">
+          <h1 class="content-heading">Description</h1>
+
+          <p>Fire extinguishers are the first line of defense against fire emergencies, allowing immediate response before a fire escalates and causes serious damage or injury. Correct selection, placement, and maintenance of fire extinguishers are essential to protect lives, property, and business continuity. Each environment requires specific extinguisher types based on fire risk classification, such as electrical, flammable liquids, gas, or solid materials.</p>
+
+          <p>At Fire Contractors in Dubai, we supply, install, inspect, and maintain a full range of Civil Defence-approved fire extinguishers for residential, commercial, and industrial premises. Our solutions are designed to meet UAE fire safety regulations while ensuring ease of access, reliability, and readiness at all times.</p>
+
+          <!-- Middle Feature Row: Image + 5-Point Checklist -->
+          <div class="content-feature-row">
+            <div class="feature-image-wrap">
+              <!-- Technician inspecting extinguisher valve, gauge, and safety seal -->
+              <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80" 
+                   alt="Technician inspecting safety seal and pressure gauge on fire extinguisher">
+            </div>
+
+            <div class="feature-checklist">
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Supply Of Civil Defence-Approved Fire Extinguishers</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Installation And Proper Placement As Per Safety Standards</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Periodic Inspection And Pressure Testing</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Refilling, Servicing, And Replacement Of Extinguishers</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Labeling, Tagging, And Compliance Documentation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Summary Paragraph -->
+          <p>Having the right fire extinguisher in the right location can prevent minor incidents from turning into major disasters. Properly maintained extinguishers allow trained occupants to respond quickly, minimize damage, and support safe evacuation until emergency services arrive. Regular inspection ensures that pressure levels, seals, and discharge mechanisms function correctly during an emergency.</p>
+        </main>
+
+        <!-- Right Column: Sidebar Widgets (Contact Us & Emergency Call) -->
+        <aside class="detail-sidebar">
+          <div class="sidebar-sticky-wrap">
+
+            <!-- Widget 1: Contact Us Card -->
+            <div class="widget-contact-card">
+              <h3>Contact Us</h3>
+              <p>A trusted Civil Defence-approved fire contractor in Dubai serving residential and commercial sectors with reliable, compliant fire protection annual maintenance services.</p>
+              
+              <a href="#inquiry" class="widget-contact-btn">
+                <span>Inquire About Extinguishers</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Widget 2: Emergency 24/7 Red Box -->
+            <a href="tel:+971544472399" class="widget-emergency-box">
+              <div class="emergency-box-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div class="emergency-box-content">
+                <small>Emergency Call 24/7</small>
+                <strong>+971 544 472 399</strong>
+              </div>
+            </a>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - 20 FIRE EXTINGUISHER PRODUCTS SHOWCASE
+     - Responsive 4-Column Grid with Filter Tabs & Search
+     - Exact Safetag Images, SKUs, AED Prices & Technical Descriptions
+     - 100% Lato / Sans-Serif Minimalist Corporate Design
+     ========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+<style>
+  .fe-section-wrap,
+  .fe-section-wrap * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .fe-section-wrap {
+    width: 100%;
+    max-width: 1320px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  /* Header Section */
+  .fe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+
+  .fe-header-titles h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .fe-header-titles h2 span {
+    color: #DC2626;
+  }
+
+  .fe-header-titles p {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.5;
+  }
+
+  /* Filter Tabs & Search */
+  .fe-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .fe-filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fe-filter-btn {
+    background: #F8FAFC;
+    color: #475569;
+    border: 1px solid #E2E8F0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .fe-filter-btn:hover {
+    background: #FEE2E2;
+    color: #DC2626;
+    border-color: #FCA5A5;
+  }
+
+  .fe-filter-btn.active {
+    background: #DC2626;
+    color: #FFFFFF;
+    border-color: #DC2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+  }
+
+  .fe-search-box {
+    position: relative;
+    min-width: 260px;
+  }
+
+  .fe-search-input {
+    width: 100%;
+    padding: 9px 14px 9px 36px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .fe-search-input:focus {
+    border-color: #DC2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  }
+
+  .fe-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94A3B8;
+    pointer-events: none;
+  }
+
+  /* Products Grid */
+  .fe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  /* Single Product Card */
+  .fe-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+  }
+
+  .fe-card:hover {
+    transform: translateY(-4px);
+    border-color: #FCA5A5;
+    box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.1);
+  }
+
+  .fe-card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(220, 38, 38, 0.92);
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    z-index: 2;
+  }
+
+  .fe-card-img-wrap {
+    height: 220px;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid #F1F5F9;
+  }
+
+  .fe-card-img-wrap img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .fe-card:hover .fe-card-img-wrap img {
+    transform: scale(1.05);
+  }
+
+  .fe-card-body {
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .fe-card-sku {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .fe-card-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    min-height: 42px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .fe-card-desc {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    min-height: 36px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .fe-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid #F1F5F9;
+  }
+
+  .fe-card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .fe-currency {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748B;
+  }
+
+  .fe-amount {
+    font-size: 19px;
+    font-weight: 900;
+    color: #DC2626;
+  }
+
+  .fe-btn-order {
+    background: #0F172A;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .fe-btn-order:hover {
+    background: #DC2626;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .fe-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 860px) {
+    .fe-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .fe-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .fe-search-box {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .fe-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="fe-section-wrap">
+  <!-- Section Title -->
+  <div class="fe-header">
+    <div class="fe-header-titles">
+      <h2>Fire Fighting &bull; <span>Fire Extinguishers</span></h2>
+      <p>Civil Defence Approved High-Performance Portable &amp; Automatic Extinguishers</p>
+    </div>
+  </div>
+
+  <!-- Filter & Search Controls -->
+  <div class="fe-controls">
+    <div class="fe-filter-tabs">
+      <button class="fe-filter-btn active" data-filter="all" type="button">All Products (20)</button>
+      <button class="fe-filter-btn" data-filter="powder" type="button">Dry Powder (DCP)</button>
+      <button class="fe-filter-btn" data-filter="co2" type="button">Carbon Dioxide (CO2)</button>
+      <button class="fe-filter-btn" data-filter="foam" type="button">Foam Extinguishers</button>
+      <button class="fe-filter-btn" data-filter="water" type="button">Water Extinguishers</button>
+      <button class="fe-filter-btn" data-filter="automatic" type="button">Automatic &amp; Ball</button>
+    </div>
+
+    <div class="fe-search-box">
+      <svg class="fe-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="fe-search-input" placeholder="Search extinguishers..." id="feSearchInput">
+    </div>
+  </div>
+
+  <!-- Product Cards Grid -->
+  <div class="fe-grid" id="feProductGrid">
+    
+    <div class="fe-card" data-category="automatic" data-title="6kg automatic dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Automatic / Ball</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/6KG-Automatic-Dry-Chemical-Powder-1.jpg" alt="6KG Automatic Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S10062201</div>
+        <h3 class="fe-card-title">6KG Automatic Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Ceiling Mounted Automatic Powder Fire Extinguishers are designed for installation in larger areas where an increase...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">199.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S10062201&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="automatic" data-title="9kg automatic dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Automatic / Ball</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/6KG-Automatic-Dry-Chemical-Powder-1.jpg" alt="9KG Automatic Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S07062605</div>
+        <h3 class="fe-card-title">9KG Automatic Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Ceiling Mounted Automatic Powder Fire Extinguishers are designed for installation in larger areas where an increase...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">199.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S07062605&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="automatic" data-title="afo fire extinguisher ball">
+      <div class="fe-card-badge">Automatic / Ball</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/AFO-FIre-Ball-1.jpg" alt="AFO Fire Extinguisher Ball" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0423001</div>
+        <h3 class="fe-card-title">AFO Fire Extinguisher Ball</h3>
+        <div class="fe-card-desc">• Brand: AFO • • Model: AFO123 •</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">94.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0423001&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="foam" data-title="bristol fe6 6 liters foam fire extinguisher">
+      <div class="fe-card-badge">Foam Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/bristol-foam.jpg" alt="Bristol FE6 6 Liters Foam Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0606007</div>
+        <h3 class="fe-card-title">Bristol FE6 6 Liters Foam Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Foam Fire Extinguisher is a perfect solution for initial fires of fire classes A and B are these easily manageable ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">171.15</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0606007&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="foam" data-title="bristol fe9 9 liters foam fire extinguisher">
+      <div class="fe-card-badge">Foam Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/bristol-foam.jpg" alt="Bristol FE9 9 Liters Foam Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0606008</div>
+        <h3 class="fe-card-title">Bristol FE9 9 Liters Foam Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Foam Fire Extinguisher is a perfect solution for initial fires of fire classes A and B are these easily manageable ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">257.25</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0606008&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="water" data-title="bristol we6 6 liters water fire extinguisher">
+      <div class="fe-card-badge">Water Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/bristol-6L.jpg" alt="Bristol WE6 6 Liters Water Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0606002</div>
+        <h3 class="fe-card-title">Bristol WE6 6 Liters Water Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Water Extinguishers are very effective against fires in furniture, fabrics, as well as deep-seated fires because it...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">171.15</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0606002&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="water" data-title="bristol we9 9 liters water fire extinguisher">
+      <div class="fe-card-badge">Water Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/bristol-6L.jpg" alt="Bristol WE9 9 Liters Water Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0606004</div>
+        <h3 class="fe-card-title">Bristol WE9 9 Liters Water Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Water Extinguishers are very effective against fires in furniture, fabrics, as well as deep-seated fires because it...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">191.10</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0606004&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireguard 1kg dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Fireguard-1-Kg-DCP.jpg" alt="Fireguard 1kg Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0070</div>
+        <h3 class="fe-card-title">Fireguard 1kg Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• ABC or multipurpose fire extinguishers are multi-function extinguishers capable of extinguishing class A and class ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">52.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0070&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="co2" data-title="fireguard 2kg carbon dioxide fire extinguisher">
+      <div class="fe-card-badge">CO2 Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Fireguard-2Kg-CO2.jpg" alt="Fireguard 2Kg Carbon Dioxide Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0016</div>
+        <h3 class="fe-card-title">Fireguard 2Kg Carbon Dioxide Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Fireguard FGFC2 2Kg Carbon Dioxide Fire Extinguisher • • Carbon dioxide replaces the fire’s oxygen and, as the gas ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">147.00</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0016&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireguard 2kg dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/2Kg-dcp-1.jpg" alt="Fireguard 2Kg Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S100233-2</div>
+        <h3 class="fe-card-title">Fireguard 2Kg Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• ABC or multipurpose fire extinguishers are multi-function extinguishers capable of extinguishing class A and class ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">78.75</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S100233-2&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireguard 4kg dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Fireguard-4kg-DCP-1.jpg" alt="Fireguard 4Kg Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0001</div>
+        <h3 class="fe-card-title">Fireguard 4Kg Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Fireguard FGP4R 4Kg Dry Chemical Powder Fire Extinguisher • • ABC or multipurpose fire extinguishers are multi-func...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">105.00</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0001&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="co2" data-title="fireguard 5kg carbon dioxide fire extinguisher">
+      <div class="fe-card-badge">CO2 Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Fireguard-5kg-CO2.jpg" alt="Fireguard 5Kg Carbon Dioxide Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0017</div>
+        <h3 class="fe-card-title">Fireguard 5Kg Carbon Dioxide Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Fireguard FGFC5 5Kg Carbon Dioxide Fire Extinguisher • • Carbon dioxide replaces the fire’s oxygen and, as the gas ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">262.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0017&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="foam" data-title="fireguard 6 liter foam fire extinguisher">
+      <div class="fe-card-badge">Foam Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/6-Liter.jpg" alt="Fireguard 6 Liter Foam Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S06022302</div>
+        <h3 class="fe-card-title">Fireguard 6 Liter Foam Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Foam fire extinguishers provide a fast, powerful means of tackling class A and B fires. • • Foam Fire Extinguisher ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">136.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S06022302&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="water" data-title="fireguard 6 liter water fire extinguisher">
+      <div class="fe-card-badge">Water Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Water-Fire-Extinguisher.jpg" alt="Fireguard 6 Liter Water Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S09102501</div>
+        <h3 class="fe-card-title">Fireguard 6 Liter Water Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Water extinguishers are reliable and effective general purpose extinguishers, providing a cost effective solution f...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">102.90</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S09102501&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireguard 6kg dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/CO2-5kg-6kg-Fire-Extinguisher-1.jpeg" alt="Fireguard 6kg Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0014</div>
+        <h3 class="fe-card-title">Fireguard 6kg Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Fireguard FGFP6 6kg Dry Chemical Powder Fire Extinguisher • • ABC or multipurpose fire extinguishers are multi-func...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">136.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0014&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="foam" data-title="fireguard 9 liter foam fire extinguisher">
+      <div class="fe-card-badge">Foam Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/11/FIreguard-9-Liter-Foam.jpg" alt="Fireguard 9 Liter Foam Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S05112410-1</div>
+        <h3 class="fe-card-title">Fireguard 9 Liter Foam Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Foam fire extinguishers provide a fast, powerful means of tackling class A and B fires. • • Foam Fire Extinguisher ...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">157.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S05112410-1&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="water" data-title="fireguard 9 liter water fire extinguisher">
+      <div class="fe-card-badge">Water Extinguisher</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Water-Fire-Extinguisher.jpg" alt="Fireguard 9 Liter Water Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S01312401</div>
+        <h3 class="fe-card-title">Fireguard 9 Liter Water Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Water extinguishers are reliable and effective general purpose extinguishers, providing a cost effective solution f...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">147.00</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S01312401&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireguard 9kg dry chemical powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/Fireguard-FGFP9-9kg.jpg" alt="Fireguard 9kg Dry Chemical Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S0015</div>
+        <h3 class="fe-card-title">Fireguard 9kg Dry Chemical Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Fireguard FGFP9 9kg Dry Chemical Powder Fire Extinguisher • • ABC or multipurpose fire extinguishers are multi-func...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">157.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S0015&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireking 12kg dry powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/05/Fireking-Fire-Extinguisher.jpg" alt="Fireking 12KG Dry Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S05072408</div>
+        <h3 class="fe-card-title">Fireking 12KG Dry Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• ABC dry powder is multi-purpose for all class A,B,C and electrical fire risks. Ideal for residential, commercial an...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">189.00</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S05072408&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fe-card" data-category="powder" data-title="fireking 1kg dry powder fire extinguisher">
+      <div class="fe-card-badge">Dry Powder (DCP)</div>
+      <div class="fe-card-img-wrap">
+        <img src="https://safetag.ae/wp-content/uploads/2024/03/1kg-DCP.jpg" alt="Fireking 1KG Dry Powder Fire Extinguisher" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+      </div>
+      <div class="fe-card-body">
+        <div class="fe-card-sku">SKU: S10122301</div>
+        <h3 class="fe-card-title">Fireking 1KG Dry Powder Fire Extinguisher</h3>
+        <div class="fe-card-desc">• Fireking FKPD1 1KG Dry Powder Fire Extinguisher • • ABC dry powder is multi-purpose for all class A,B,C and electri...</div>
+        <div class="fe-card-footer">
+          <div class="fe-card-price">
+            <span class="fe-currency">AED</span>
+            <span class="fe-amount">52.50</span>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=S10122301&post_type=product" class="fe-btn-order" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>Order Now</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var tabs = document.querySelectorAll('.fe-filter-btn');
+    var cards = document.querySelectorAll('.fe-card');
+    var searchInput = document.getElementById('feSearchInput');
+
+    var currentFilter = 'all';
+
+    function filterCards() {
+      var query = (searchInput.value || '').toLowerCase().trim();
+
+      cards.forEach(function(card) {
+        var cat = card.getAttribute('data-category');
+        var title = card.getAttribute('data-title');
+
+        var matchCat = (currentFilter === 'all') || (cat === currentFilter);
+        var matchSearch = !query || title.indexOf(query) !== -1;
+
+        if (matchCat && matchSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        currentFilter = this.getAttribute('data-filter');
+        filterCards();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterCards);
+    }
+  })();
+</script>
+</body>
+</html>

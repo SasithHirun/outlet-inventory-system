@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STAR SLURRY SYSTEMS | Engineered Drilling Fluids & Geotechnical Solutions</title>
+  <meta name="description" content="Global leaders in advanced polymer slurries, API-grade bentonite, and customized drilling fluid engineering for demanding foundation, diaphragm wall, and HDD projects.">
+  
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#F0F7FF',
+              100: '#E0EFFF',
+              200: '#B9DDFF',
+              300: '#7CC0FF',
+              400: '#38BDF8',
+              500: '#0284C7',
+              600: '#0369A1',
+              700: '#075985',
+              800: '#0C4A6E',
+              900: '#082F49',
+              950: '#041726',
+            },
+            amber: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+              light: '#FEF3C7',
+            },
+            surface: {
+              card: '#FFFFFF',
+              muted: '#F8FAFC',
+              border: '#E2E8F0',
+              dark: '#0B1523',
+              darker: '#060D17',
+              cardDark: '#111F33'
+            }
+          },
+          backgroundImage: {
+            'grid-pattern': "radial-gradient(rgba(14, 116, 144, 0.12) 1px, transparent 1px)",
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid {
+      background-size: 24px 24px;
+      background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1.5px, transparent 1.5px);
+    }
+    .badge-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .card-shadow {
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-shadow:hover {
+      box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.2), 0 8px 12px -3px rgba(15, 23, 42, 0.04);
+      transform: translateY(-4px);
+    }
+    .tech-border {
+      position: relative;
+    }
+    .tech-border::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid #0284C7;
+      border-right: 2px solid #0284C7;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-brand-950 via-slate-900 to-brand-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium text-[11px] border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          24/7 Field Engineering Support Active
+        </span>
+        <span class="hidden md:inline text-slate-400">|</span>
+        <span class="hidden md:inline text-slate-300">API Spec 13A Certified Mud Systems & Sustainable Polymer Chemistry</span>
+      </div>
+      <div class="flex items-center gap-5 text-slate-300">
+        <a href="tel:+18005553745" class="hover:text-brand-400 transition flex items-center gap-1.5 font-mono">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-400"></i> +1 (800) 555-FLUID
+        </a>
+        <a href="#advisor" class="text-amber-400 hover:text-amber-300 transition font-semibold flex items-center gap-1">
+          <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i> Live Slurry Advisor
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-700 via-brand-600 to-slate-900 flex items-center justify-center text-white shadow-md shadow-brand-700/20 group-hover:scale-105 transition-transform duration-200">
+            <i data-lucide="droplets" class="w-6 h-6 text-brand-300"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-mono text-2xl font-bold tracking-tight text-slate-950 uppercase">STAR<span class="text-brand-600">SLURRY</span></span>
+              <span class="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-brand-100 text-brand-800">ISO 9001</span>
+            </div>
+            <p class="text-[10px] tracking-wider text-slate-500 uppercase font-semibold font-mono">Precision Fluid Systems</p>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAV LINKS -->
+        <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-700">
+          <a href="#home" class="text-brand-600 font-semibold hover:text-brand-700 transition">Home</a>
+          <a href="#about" class="hover:text-brand-600 transition">About Us</a>
+          <a href="#products" class="hover:text-brand-600 transition flex items-center gap-1">
+            Fluid Systems
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+          </a>
+          <a href="#conditions" class="hover:text-brand-600 transition">Ground Conditions</a>
+          <a href="#operations" class="hover:text-brand-600 transition">Operations</a>
+          <a href="#blog" class="hover:text-brand-600 transition">Technical Blog</a>
+          <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+        </nav>
+
+        <!-- HEADER CTAS -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#advisor" class="px-4 py-2 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition flex items-center gap-2">
+            <i data-lucide="calculator" class="w-4 h-4 text-brand-600"></i>
+            Slurry Calculator
+          </a>
+          <a href="#contact" class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 active:bg-brand-800 rounded-lg shadow-sm hover:shadow-brand-600/30 transition flex items-center gap-2">
+            Request Formulation
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <a href="#home" class="block px-3 py-2 rounded-md text-base font-semibold text-brand-600 bg-brand-50">Home</a>
+      <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">About Us</a>
+      <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Fluid Systems & Products</a>
+      <a href="#conditions" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Ground Conditions</a>
+      <a href="#operations" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Engineering Operations</a>
+      <a href="#advisor" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Interactive Slurry Advisor</a>
+      <a href="#blog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Technical Blog</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact Us</a>
+      <div class="pt-2">
+        <a href="#contact" class="w-full text-center block px-4 py-3 rounded-lg bg-brand-600 text-white font-semibold">Request Formulation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-16 pb-24 lg:pt-24 lg:pb-32">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0 opacity-25 mix-blend-luminosity bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent z-0"></div>
+    <div class="absolute inset-0 bg-grid opacity-30 z-0"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-400/30 text-brand-300 text-xs font-semibold tracking-wide uppercase">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]"></span>
+            Engineered Geotechnical & Deep Drilling Fluids
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+            DELIVERING <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-sky-200 to-white">SLURRY SOLUTIONS</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal max-w-2xl">
+            Custom polymer chemistry, high-yield sodium bentonite, and precision rheological additives designed to guarantee borehole stability across the world's most unpredictable geological formations.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#products" class="px-7 py-3.5 rounded-xl font-bold text-white bg-brand-600 hover:bg-brand-500 active:scale-95 transition-all shadow-lg shadow-brand-600/30 flex items-center gap-2 text-base">
+              Explore Fluid Systems
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="#advisor" class="px-6 py-3.5 rounded-xl font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 active:scale-95 transition-all flex items-center gap-2 text-base backdrop-blur-sm">
+              <i data-lucide="sliders" class="w-5 h-5 text-amber-400"></i>
+              Interactive Mix Advisor
+            </a>
+          </div>
+
+          <!-- Feature badges -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 max-w-xl text-slate-300">
+            <div>
+              <p class="font-mono text-2xl lg:text-3xl font-bold text-white">99.8%</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Borehole Integrity</p>
+            </div>
+            <div>
+              <p class="font-mono text-2xl lg:text-3xl font-bold text-white">&lt; 15ml</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Ultra-Low Fluid Loss</p>
+            </div>
+            <div>
+              <p class="font-mono text-2xl lg:text-3xl font-bold text-white">Zero</p>
+              <p class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Ecological Toxicity</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual / Live Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl bg-gradient-to-b from-slate-800/70 to-slate-900/90 border border-slate-700/70 p-6 backdrop-blur-xl shadow-2xl space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-slate-700/60 pb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="p-2 rounded-lg bg-brand-500/20 text-brand-400">
+                  <i data-lucide="activity" class="w-5 h-5"></i>
+                </span>
+                <div>
+                  <h2 class="font-mono text-sm font-bold text-white tracking-wide">LIVE SLURRY METRICS</h2>
+                  <p class="text-[11px] text-slate-400">Real-Time Field Testing Benchmark</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-mono font-medium border border-emerald-500/20">
+                OPTIMIZED
+              </span>
+            </div>
+
+            <!-- Parameters Grid -->
+            <div class="space-y-4 font-mono text-sm">
+              <div>
+                <div class="flex justify-between text-xs mb-1 text-slate-300">
+                  <span>Marsh Funnel Viscosity</span>
+                  <span class="text-cyan-400 font-bold">52 sec/qt (Target: 48-55)</span>
+                </div>
+                <div class="w-full bg-slate-700/50 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-brand-500 to-cyan-400 h-2 rounded-full" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1 text-slate-300">
+                  <span>Sand Content by Volume</span>
+                  <span class="text-emerald-400 font-bold">0.4% (&lt; 1.0% Threshold)</span>
+                </div>
+                <div class="w-full bg-slate-700/50 rounded-full h-2">
+                  <div class="bg-emerald-400 h-2 rounded-full" style="width: 25%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1 text-slate-300">
+                  <span>Filter Cake Thickness</span>
+                  <span class="text-amber-400 font-bold">1.2 mm (Ultra-Thin Membrane)</span>
+                </div>
+                <div class="w-full bg-slate-700/50 rounded-full h-2">
+                  <div class="bg-amber-400 h-2 rounded-full" style="width: 40%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1 text-slate-300">
+                  <span>Specific Gravity / Slurry Density</span>
+                  <span class="text-white font-bold">1.03 g/cm³</span>
+                </div>
+                <div class="w-full bg-slate-700/50 rounded-full h-2">
+                  <div class="bg-sky-400 h-2 rounded-full" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Action Box -->
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-700/40 flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs text-slate-300 font-medium">Need customized mud balance?</p>
+                <p class="text-[11px] text-slate-400">Get certified mud engineers onsite within 24h.</p>
+              </div>
+              <a href="#contact" class="px-3.5 py-2 rounded-lg bg-amber text-slate-950 font-bold text-xs hover:bg-amber-400 transition whitespace-nowrap">
+                Consult Lab
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: ABOUT US & FIELD VERIFICATION -->
+  <!-- "BUILDING CONFIDENCE IN EACH SLURRY PROJECT" -->
+  <section id="about" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Dual Image Showcase -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-slate-200">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" 
+                   alt="Field Slurry Testing" 
+                   class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-brand-300 font-mono tracking-wider">Field Verification</span>
+                  <p class="text-sm font-bold text-white">Rheology & Density Testing</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-2xl shadow-lg border border-slate-200">
+              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=800&auto=format&fit=crop" 
+                   alt="Deep Piling Rig in Action" 
+                   class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-amber-400 font-mono tracking-wider">Heavy Geotechnical</span>
+                  <p class="text-sm font-bold text-white">Diaphragm Trench Stabilization</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proof Quote / Technical Certification -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-4">
+            <div class="p-3 rounded-lg bg-brand-100 text-brand-700">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-800">API Spec 13A & ISO 9001:2015 Approved Formulations</p>
+              <p class="text-[11px] text-slate-500">Every batch is tested for yield, filtrate loss, plastic viscosity, and heavy metal compliance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content & Key Numbers -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-600 font-mono">ABOUT STAR SLURRY SYSTEMS</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              BUILDING CONFIDENCE IN EACH SLURRY PROJECT
+            </h2>
+          </div>
+
+          <p class="text-slate-600 text-base leading-relaxed">
+            Founded by geotechnical fluid engineers, Star Slurry Systems bridges the gap between laboratory polymer chemistry and harsh ground operations. Whether you are executing a 70-meter diaphragm wall in permeable coastal sands or drilling microtunnels under active highways, our fluids create an impermeable filter membrane that locks in hydrostatic equilibrium.
+          </p>
+
+          <p class="text-slate-600 text-base leading-relaxed">
+            We supply not just dry bags, but complete fluid management ecosystems—including automated dosing skids, on-site mud engineers, and rapid-response lab troubleshooting.
+          </p>
+
+          <!-- The 3 Key Stats matching the screenshot (2+, 3+, 51+) with rich context -->
+          <div class="grid grid-cols-3 gap-6 pt-4 border-t border-slate-200">
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl sm:text-4xl font-extrabold text-brand-700 font-mono">25+</span>
+              </div>
+              <p class="text-xs text-slate-500 font-medium mt-1">Years of Slurry Fluid Innovation</p>
+            </div>
+
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl sm:text-4xl font-extrabold text-brand-700 font-mono">3,500+</span>
+              </div>
+              <p class="text-xs text-slate-500 font-medium mt-1">Bored Piles & Trenches Stabilized</p>
+            </div>
+
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl sm:text-4xl font-extrabold text-brand-700 font-mono">51+</span>
+              </div>
+              <p class="text-xs text-slate-500 font-medium mt-1">Global Logistics & Supply Hubs</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="#products" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-brand-700 text-white font-semibold text-sm transition">
+              Explore Our Fluid Formulations
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: INNOVATION & GLOBAL TO LOCAL -->
+  <!-- "DRIVING SUCCESS THROUGH INNOVATION" & "CLOSE TO THE PROJECT: GLOBAL TO LOCAL" -->
+  <section class="py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Top Sub-Section: Driving Success Through Innovation -->
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-3">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-600 font-mono">R&D AND FLUID CHEMISTRY</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            DRIVING SUCCESS THROUGH INNOVATION
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Traditional bentonite slurries often create massive disposal headaches and slow recycling. Our next-generation synthetic polymers dissolve within minutes, drastically cut fresh water consumption, and reduce spoils volume by up to 80%.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid sm:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 card-shadow space-y-2.5">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm">Instant Viscosity</h3>
+            <p class="text-xs text-slate-500 leading-normal">
+              High-yield synthetic polymers achieve full hydration in under 8 minutes without shear mixing.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 card-shadow space-y-2.5">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+              <i data-lucide="recycle" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm">Rapid Sand Settling</h3>
+            <p class="text-xs text-slate-500 leading-normal">
+              Accelerates sand particle dropping at the surface, eliminating continuous high-cost centrifuge cycling.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 card-shadow space-y-2.5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="leaf" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-sm">Eco-Breakable</h3>
+            <p class="text-xs text-slate-500 leading-normal">
+              Easily broken down using oxidizers or bleach to harmless water and carbon for clean, permitted disposal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Sub-Section: Global to Local Map / Presence -->
+      <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-brand-950 to-slate-950 text-white p-8 sm:p-12 border border-slate-800 shadow-xl overflow-hidden relative">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-mono font-medium border border-brand-500/30">
+              <i data-lucide="globe" class="w-3.5 h-3.5"></i> WORLDWIDE NETWORK
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              CLOSE TO THE PROJECT: <br />
+              <span class="text-brand-400">GLOBAL REACH, LOCAL SPEED</span>
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              When ground conditions shift without warning, delays cost thousands of dollars per hour. Our strategic stocking hubs across North America, Europe, the Middle East, and Asia ensure rapid delivery of emergency polymer stocks and slurry loss agents.
+            </p>
+
+            <!-- Regional Selector Buttons -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button onclick="setRegion('nam')" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-600 text-white hover:bg-brand-500 transition">North America</button>
+              <button onclick="setRegion('eur')" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Europe</button>
+              <button onclick="setRegion('mea')" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Middle East & Africa</button>
+              <button onclick="setRegion('apac')" class="region-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Asia Pacific</button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <!-- Dynamic Region Info Card -->
+            <div id="regionCard" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-700/80 backdrop-blur-md space-y-5">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                  <span id="regionTitle" class="font-mono text-base font-bold text-white uppercase">North America Hub (Houston & Chicago)</span>
+                </div>
+                <span id="regionDelivery" class="text-xs font-mono text-amber-400 font-semibold">&lt; 24h Express Dispatch</span>
+              </div>
+
+              <div class="grid sm:grid-cols-3 gap-4 text-xs font-mono">
+                <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <p class="text-slate-400 text-[10px]">IN-STOCK WAREHOUSES</p>
+                  <p id="regionHubs" class="text-sm font-bold text-white mt-1">12 Major Depots</p>
+                </div>
+                <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <p class="text-slate-400 text-[10px]">FIELD MUD ENGINEERS</p>
+                  <p id="regionEngineers" class="text-sm font-bold text-white mt-1">18 Mobile Specialists</p>
+                </div>
+                <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <p class="text-slate-400 text-[10px]">AVG DISPATCH TIME</p>
+                  <p id="regionTime" class="text-sm font-bold text-white mt-1">4.5 Hours</p>
+                </div>
+              </div>
+
+              <p id="regionDesc" class="text-xs text-slate-300 leading-relaxed">
+                Full stocking of STAR-POLY high-yield polymers, STAR-SEAL loss control fibers, and API-certified bentonites with rail and flatbed delivery right to your job site.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: PRODUCTS / FLUID SYSTEMS -->
+  <!-- "PRODUCTS THAT BECOME COMPLETE FLUID SYSTEMS" -->
+  <section id="products" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-600 font-mono">ENGINEERED CHEMICAL SYSTEMS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          PRODUCTS THAT BECOME COMPLETE FLUID SYSTEMS
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Rather than isolated additives, each Star Slurry product is formulated to synergize seamlessly into a balanced, reusable drilling fluid system.
+        </p>
+
+        <!-- Product Category Filter -->
+        <div class="flex flex-wrap justify-center gap-2 pt-4">
+          <button onclick="filterProducts('all')" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-sm transition">All Fluid Systems</button>
+          <button onclick="filterProducts('polymers')" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Synthetic Polymers</button>
+          <button onclick="filterProducts('bentonite')" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">API Bentonite</button>
+          <button onclick="filterProducts('additives')" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Loss Control & Modifiers</button>
+          <button onclick="filterProducts('breakers')" class="prod-filter-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">Slurry Breakers</button>
+        </div>
+      </div>
+
+      <!-- 6 PRODUCTS GRID (Elevated directly from screenshot) -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGrid">
+        
+        <!-- Product 1: STAR-POLY -->
+        <div class="product-card flex flex-col justify-between bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow" data-category="polymers">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-brand-50 text-brand-700 font-mono text-xs font-bold border border-brand-200">
+                POLYMER SLURRY
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CODE: SP-900</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900">STAR-POLY™ ULTRA</h3>
+              <p class="text-xs text-slate-500 mt-1">High Molecular Weight Synthetic Polymer</p>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Premium linear polymer designed for drilled shafts and diaphragm walls. Builds instant viscosity, creates an electrostatic membrane against cave-ins, and allows rapid sand separation.
+            </p>
+
+            <div class="space-y-2 py-3 border-y border-slate-100 text-xs">
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Dosage:</span>
+                <span class="font-semibold text-slate-800">0.7 – 1.5 kg / m³</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Marsh Viscosity:</span>
+                <span class="font-semibold text-slate-800">45 – 90 sec/qt</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Application:</span>
+                <span class="font-semibold text-brand-600">Bored Piling, Diaphragm Walls</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openModal('STAR-POLY™ ULTRA', 'High-performance synthetic polymer providing maximum borehole stabilization with minimal environmental footprint.', '0.7 - 1.5 kg/m³', '45 - 90 sec/qt', 'Granular White Powder (25kg bags)')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View Spec Sheet
+            </button>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 2: STAR-BOND BENTONITE -->
+        <div class="product-card flex flex-col justify-between bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow" data-category="bentonite">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-amber-50 text-amber-800 font-mono text-xs font-bold border border-amber-200">
+                API BENTONITE
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CODE: SB-13A</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900">STAR-BOND™ PREMIUM</h3>
+              <p class="text-xs text-slate-500 mt-1">High-Yield Natural Wyoming Sodium Bentonite</p>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Milled to API Spec 13A Section 9 standards. Forms an ultra-thin, low-permeability filter cake in loose coarse gravel and fractured strata where hydrostatic pressure is critical.
+            </p>
+
+            <div class="space-y-2 py-3 border-y border-slate-100 text-xs">
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Dosage:</span>
+                <span class="font-semibold text-slate-800">30 – 55 kg / m³</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Yield:</span>
+                <span class="font-semibold text-slate-800">95 – 105 bbl / ton</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Application:</span>
+                <span class="font-semibold text-brand-600">Slurry Walls, Hydro-fraise, TBM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openModal('STAR-BOND™ PREMIUM', 'API Spec 13A Section 9 certified sodium bentonite providing unmatched filtrate loss control in extreme depths.', '30 - 55 kg/m³', '95-105 bbl/ton', 'Finely milled powder (1,000kg bulk bag or 25kg bags)')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View Spec Sheet
+            </button>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 3: STAR-VISC MODIFIER -->
+        <div class="product-card flex flex-col justify-between bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow" data-category="additives">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-sky-50 text-sky-700 font-mono text-xs font-bold border border-sky-200">
+                VISCOSIFIER
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CODE: SV-BOOST</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900">STAR-VISC™ LIQUID</h3>
+              <p class="text-xs text-slate-500 mt-1">Concentrated Rheology & Yield Point Booster</p>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Liquid concentrated biopolymer emulsion for immediate in-hole viscosity spikes. Ideal when suddenly hitting cobble seams, gravel lenses, or unexpected artesian water ingress.
+            </p>
+
+            <div class="space-y-2 py-3 border-y border-slate-100 text-xs">
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Dosage:</span>
+                <span class="font-semibold text-slate-800">0.5 – 1.2 L / m³</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Hydration:</span>
+                <span class="font-semibold text-slate-800">Instant (No Shear Tank Needed)</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Application:</span>
+                <span class="font-semibold text-brand-600">HDD, Microtunneling, Gravel Piling</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openModal('STAR-VISC™ LIQUID', 'Rapid-action liquid polymer designed to rescue loss of viscosity during drilling operations in under 3 minutes.', '0.5 - 1.2 L/m³', 'Instant Viscosity Boost', '25L Drums & 1,000L IBC Totes')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View Spec Sheet
+            </button>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 4: STAR-SEAL LCM -->
+        <div class="product-card flex flex-col justify-between bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow" data-category="additives">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-rose-50 text-rose-700 font-mono text-xs font-bold border border-rose-200">
+                LOSS CIRCULATION
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CODE: SS-SEAL</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900">STAR-SEAL™ PLUG</h3>
+              <p class="text-xs text-slate-500 mt-1">Multi-Graded Fiber & Swelling Polymer Bridge</p>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Engineered blend of swelling hydrophilic polymers and natural fibrous particulates designed to interlock and plug fissures, porous gravel, and karstic cavities up to 40mm wide.
+            </p>
+
+            <div class="space-y-2 py-3 border-y border-slate-100 text-xs">
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Swelling Ratio:</span>
+                <span class="font-semibold text-slate-800">Up to 300x dry volume</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Response Time:</span>
+                <span class="font-semibold text-slate-800">Bridging within 5 minutes</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Application:</span>
+                <span class="font-semibold text-brand-600">Karst Limestone, Coarse Cobbles</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openModal('STAR-SEAL™ PLUG', 'Super-absorbent crosslinked polymeric bridge for catastrophic slurry loss control and fissure sealing.', '2.0 - 5.0 kg/m³ pill', 'Bridging up to 40mm', '20kg Weatherproof sacks')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View Spec Sheet
+            </button>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 5: STAR-BREAK ENZYMATIC -->
+        <div class="product-card flex flex-col justify-between bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow" data-category="breakers">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-700 font-mono text-xs font-bold border border-emerald-200">
+                SLURRY BREAKER
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CODE: SB-CLEAN</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900">STAR-BREAK™ ECO</h3>
+              <p class="text-xs text-slate-500 mt-1">Oxidizing & Enzymatic Polymer De-chaining Agent</p>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Safe, non-toxic chemical breaker that breaks polymer chains post-excavation. Facilitates effortless concrete tremie placement and turns slurry back to clear water for easy municipal discharge.
+            </p>
+
+            <div class="space-y-2 py-3 border-y border-slate-100 text-xs">
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Dosage:</span>
+                <span class="font-semibold text-slate-800">0.3 – 0.8 kg / m³</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Reaction Time:</span>
+                <span class="font-semibold text-slate-800">20 – 45 minutes</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">pH Impact:</span>
+                <span class="font-semibold text-brand-600">Neutral (pH 7.0 - 7.5)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openModal('STAR-BREAK™ ECO', 'Environmentally compliant polymer breaker ensuring clean concrete interface and minimal waste disposal cost.', '0.3 - 0.8 kg/m³', '20-45 mins breakdown', '25kg Bags & 200L Drums')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View Spec Sheet
+            </button>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 6: STAR-DESAND FLUID AID -->
+        <div class="product-card flex flex-col justify-between bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow" data-category="additives">
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-purple-50 text-purple-700 font-mono text-xs font-bold border border-purple-200">
+                SAND REMOVAL AID
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CODE: SD-FLOC</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-extrabold text-slate-900">STAR-DESAND™ FLOC</h3>
+              <p class="text-xs text-slate-500 mt-1">Cationic Flocculant for Desanding Plants</p>
+            </div>
+
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Speeds up the sedimentation of fine silts and colloidal sands inside settling pits and hydrocyclone units. Extends pump impeller lifespan and keeps slurry density well below 1.05 g/cm³.
+            </p>
+
+            <div class="space-y-2 py-3 border-y border-slate-100 text-xs">
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Dosage:</span>
+                <span class="font-semibold text-slate-800">10 – 30 ppm</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Sand Reduction:</span>
+                <span class="font-semibold text-slate-800">&gt; 92% removal in 1 pass</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span class="text-slate-400">Application:</span>
+                <span class="font-semibold text-brand-600">Slurry Recycling Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="openModal('STAR-DESAND™ FLOC', 'High-efficiency flocculant preventing slurry sand content buildup and excessive wear on desanding cyclones.', '10 - 30 ppm', 'Rapid Sedimentation', '25kg sacks or liquid emulsion')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1.5">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View Spec Sheet
+            </button>
+            <a href="#contact" class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs transition">
+              Request Quote
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: SOLUTIONS FOR DEMANDING GROUND CONDITIONS -->
+  <!-- "SOLUTIONS FOR DEMANDING GROUND CONDITIONS" (From screenshot 6 cards) -->
+  <section id="conditions" class="py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-600 font-mono">GEOTECHNICAL ADAPTABILITY</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            SOLUTIONS FOR DEMANDING GROUND CONDITIONS
+          </h2>
+          <p class="text-slate-600 text-sm">
+            Geology is never homogeneous. We customize fluid rheology to counteract the exact hydrostatic, frictional, and chemical forces of your strata.
+          </p>
+        </div>
+
+        <a href="#advisor" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md transition self-start md:self-end">
+          <i data-lucide="compass" class="w-4 h-4"></i> Match Your Soil Type
+        </a>
+      </div>
+
+      <!-- 6 GROUND CONDITIONS CARDS (Direct redesign of the screenshot's circular indicator cards) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Condition 1: Sand & Loose Gravel -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">HIGH RISK: CAVE-IN</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Coarse Sand & Gravel</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            High permeability causes severe fluid loss and catastrophic sidewall collapse if the mud fails to bridge interstitial pore throats.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+            <p class="font-bold text-slate-800">STAR Solution:</p>
+            <p class="text-slate-600">STAR-POLY™ + STAR-SEAL™ fibrous bridge. Forms an elastic membrane across permeable gravel layers.</p>
+          </div>
+        </div>
+
+        <!-- Condition 2: Reactive Clays & Shales -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-xs font-bold text-brand-600 bg-brand-50 px-2 py-1 rounded">SWELLING / BIT BALLING</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Reactive Clays & Smectites</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Water absorption causes rapid shale hydration, borehole narrowing, drill bit balling, and uncontrolled slurry viscosity spikes.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+            <p class="font-bold text-slate-800">STAR Solution:</p>
+            <p class="text-slate-600">PHPA Polymer Clay Inhibitor. Encapsulates cuttings to prevent swelling and viscosity runaway.</p>
+          </div>
+        </div>
+
+        <!-- Condition 3: Karst & Fractured Rock -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
+              <i data-lucide="triangle-alert" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-xs font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded">TOTAL FLUID LOSS</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Karst & Fissured Formations</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Subterranean caverns and fissures drain hydrostatic head instantly, risking surface subsidence and stuck drilling tooling.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+            <p class="font-bold text-slate-800">STAR Solution:</p>
+            <p class="text-slate-600">STAR-SEAL™ PLUG crosslinking pills. Expands 300x in cracks to lock in hydrostatic head within 5 minutes.</p>
+          </div>
+        </div>
+
+        <!-- Condition 4: High Artesian Water Table -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center">
+              <i data-lucide="waves" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-xs font-bold text-cyan-600 bg-cyan-50 px-2 py-1 rounded">PRESSURE BLOWOUT</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">High Artesian Groundwater</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Subsurface groundwater pressure exceeds the mud column head, diluting slurry and destabilizing foundation integrity.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+            <p class="font-bold text-slate-800">STAR Solution:</p>
+            <p class="text-slate-600">STAR-BOND™ high-density bentonite systems weighted to 1.15-1.25 g/cm³ with Barite integration.</p>
+          </div>
+        </div>
+
+        <!-- Condition 5: Saline & Marine Environments -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+              <i data-lucide="anchor" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">IONIC CONTAMINATION</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Saline & Coastal Groundwater</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            High salinity flocculates conventional bentonite, causing sudden rheology collapse and failure to support trench walls.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+            <p class="font-bold text-slate-800">STAR Solution:</p>
+            <p class="text-slate-600">Salt-Tolerant Polyglycol Polymers & Attapulgite clay matrices that remain unaffected by seawater ions.</p>
+          </div>
+        </div>
+
+        <!-- Condition 6: Urban & Eco-Sensitive Sites -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="tree-pine" class="w-6 h-6"></i>
+            </div>
+            <span class="font-mono text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">ZERO-POLLUTION DISCHARGE</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900">Urban & Eco-Sensitive Projects</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Strict local environmental regulations forbid heavy bentonite sludge transport and disposal near public waterways.
+          </p>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+            <p class="font-bold text-slate-800">STAR Solution:</p>
+            <p class="text-slate-600">100% Biodegradable STAR-POLY™ + STAR-BREAK™. Treated discharge passes direct sewer disposal norms.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: SPECIALIZED OPERATIONS -->
+  <!-- "INNOVATIVE SLURRY SOLUTIONS FOR DIFFICULT/UNFAVOURABLE DRILLING OPERATIONS" -->
+  <section id="operations" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-400 font-mono">MISSION-CRITICAL OPERATIONS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          INNOVATIVE SLURRY SOLUTIONS FOR DIFFICULT & UNFAVOURABLE DRILLING OPERATIONS
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          From massive urban diaphragm walls to mega-diameter bored piles and horizontal river crossings, we engineer fluids for extreme geotechnical loads.
+        </p>
+      </div>
+
+      <!-- Operations Showcase Tabs / Matrix -->
+      <div class="grid lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-300 flex items-center justify-center">
+            <i data-lucide="building-2" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Diaphragm Walls</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Continuous grab and hydro-fraise cutter trench stability up to 80m deep. High hydrostatic pressure retention with clean tremie concrete displacement.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center">
+            <i data-lucide="hammer" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Large Bored Piling</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Kelly bar auger drilling up to 3.5m diameter. Prevents necking, sloughing, and excessive base sediment accumulation before cage placement.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">HDD & River Crossings</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Low-friction, high-carrying capacity fluids for long-distance reaming. Minimizes annular pressure to prevent surface frac-outs.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center">
+            <i data-lucide="disc" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white">Microtunneling (TBM)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Slurry shield lubrication and face support that prevents ground settlement under active rail lines and highway networks.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: INTERACTIVE SLURRY ADVISOR & CALCULATOR -->
+  <!-- "HAVE A DIFFICULT GROUND CONDITION?" (High Value Interactive Tool) -->
+  <section id="advisor" class="py-20 bg-gradient-to-b from-slate-50 to-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="text-center space-y-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-800 font-mono text-xs font-bold">
+          <i data-lucide="calculator" class="w-3.5 h-3.5"></i> INSTANT FLUID FORMULATION ENGINE
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          HAVE A DIFFICULT GROUND CONDITION?
+        </h2>
+        <p class="text-slate-600 text-sm">
+          Select your ground type and operation below to receive an instant recommended slurry formulation benchmark.
+        </p>
+      </div>
+
+      <!-- Calculator Card -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 card-shadow space-y-8">
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Step 1: Soil Condition -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 font-mono">
+              1. Predominant Geology
+            </label>
+            <select id="calcSoil" onchange="calculateSlurry()" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="gravel">Coarse Gravel, Cobbles & High Permeability Sand</option>
+              <option value="clay">Reactive Swelling Clay & Soft Silt</option>
+              <option value="karst">Fissured Rock, Karst Limestone & Cavities</option>
+              <option value="marine">Coastal Saline Groundwater & Marine Sand</option>
+              <option value="urban">Urban Eco-Sensitive / Low Disposal Zone</option>
+            </select>
+          </div>
+
+          <!-- Step 2: Excavation Type -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 font-mono">
+              2. Drilling / Foundation Method
+            </label>
+            <select id="calcMethod" onchange="calculateSlurry()" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 text-slate-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="diaphragm">Diaphragm Wall (Grab / Trench Cutter)</option>
+              <option value="pile">Large Diameter Bored Pile (Kelly Bar)</option>
+              <option value="hdd">Horizontal Directional Drilling (HDD)</option>
+              <option value="micro">Microtunneling / Pipe Jacking</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Calculated Output Results -->
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-brand-950 text-white space-y-6">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div>
+              <span class="text-xs text-brand-300 font-mono font-semibold uppercase">Engineered Mud Recipe</span>
+              <h3 id="calcRecipeTitle" class="text-xl font-extrabold text-white">STAR-POLY™ ULTRA + STAR-SEAL™ PLUG</h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold border border-emerald-500/30">
+              RECOMMENDED
+            </span>
+          </div>
+
+          <!-- Result parameters -->
+          <div class="grid sm:grid-cols-4 gap-4 text-xs font-mono">
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+              <p class="text-slate-400 text-[10px]">MARSH VISCOSITY</p>
+              <p id="calcViscosity" class="text-base font-bold text-cyan-400 mt-1">55 – 70 sec/qt</p>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+              <p class="text-slate-400 text-[10px]">TARGET DENSITY</p>
+              <p id="calcDensity" class="text-base font-bold text-white mt-1">1.02 – 1.05 g/cm³</p>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+              <p class="text-slate-400 text-[10px]">FILTRATE LOSS</p>
+              <p id="calcLoss" class="text-base font-bold text-emerald-400 mt-1">&lt; 14 ml (API)</p>
+            </div>
+            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+              <p class="text-slate-400 text-[10px]">EST. DRY DOSAGE</p>
+              <p id="calcDosage" class="text-base font-bold text-amber-400 mt-1">1.2 kg / m³</p>
+            </div>
+          </div>
+
+          <p id="calcNotes" class="text-xs text-slate-300 leading-relaxed">
+            Formulation incorporates crosslinked polymer bridges to lock interstitial pores in gravel, preventing fluid loss into surrounding formations while maintaining wall stability.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs text-slate-400">
+              *Preliminary guideline. Final mix requires pilot testing with jobsite water chemistry.
+            </span>
+            <a href="#contact" class="px-5 py-2.5 rounded-xl bg-amber hover:bg-amber-400 text-slate-950 font-bold text-xs transition flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i> Send Formulation to Engineering Team
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 7: TECHNICAL BLOG & FIELD CASE STUDIES -->
+  <!-- "FROM OUR BLOG" (Direct recreation of the 3 cards in the screenshot) -->
+  <section id="blog" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-600 font-mono">FIELD REPORTS & RESEARCH</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            FROM OUR TECHNICAL BLOG
+          </h2>
+        </div>
+        <a href="#blog" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1 font-mono">
+          VIEW ALL CASE STUDIES & ARTICLES →
+        </a>
+      </div>
+
+      <!-- 3 BLOG CARDS -->
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Drilling Rig / Field Work -->
+        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow flex flex-col justify-between group">
+          <div>
+            <div class="relative overflow-hidden h-52">
+              <img src="https://images.unsplash.com/photo-1579847188804-ecba0e2ea330?q=80&w=800&auto=format&fit=crop" 
+                   alt="Drilling Rig On-Site Slurry Testing" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-900/90 text-white text-[10px] font-bold font-mono uppercase backdrop-blur-md">
+                CASE STUDY
+              </span>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center gap-3 text-xs text-slate-400 font-mono">
+                <span>OCTOBER 28, 2026</span>
+                <span>•</span>
+                <span>6 MIN READ</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                Overcoming Severe Slurry Loss in 65-Meter Diaphragm Walls in Coastal Sand
+              </h3>
+
+              <p class="text-xs text-slate-500 leading-relaxed">
+                How a blend of high-molecular polymers and fibrous loss-circulation pills averted trench collapse under 0.8 bar artesian groundwater.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <span class="text-xs font-bold text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Read Field Report <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Card 2: Green Product Canister (Matching the green jug in the screenshot) -->
+        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow flex flex-col justify-between group">
+          <div>
+            <div class="relative overflow-hidden h-52 bg-slate-100 flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?q=80&w=800&auto=format&fit=crop" 
+                   alt="Chemical Polymer Canister" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-brand-700/90 text-white text-[10px] font-bold font-mono uppercase backdrop-blur-md">
+                TECHNICAL GUIDE
+              </span>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center gap-3 text-xs text-slate-400 font-mono">
+                <span>NOVEMBER 04, 2026</span>
+                <span>•</span>
+                <span>4 MIN READ</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                Synthetic Polymers vs. Traditional Bentonite: Lifecycle Cost & Environmental Footprint
+              </h3>
+
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Comparative analysis of fresh water consumption, site footprint, muck disposal fees, and speed of excavation on urban piling jobs.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <span class="text-xs font-bold text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Read Technical Comparison <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Card 3: Heavy Excavator / Trenching (Matching excavator in screenshot) -->
+        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden card-shadow flex flex-col justify-between group">
+          <div>
+            <div class="relative overflow-hidden h-52">
+              <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop" 
+                   alt="Heavy Foundation Excavator" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-amber-700/90 text-white text-[10px] font-bold font-mono uppercase backdrop-blur-md">
+                IN THE FIELD
+              </span>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div class="flex items-center gap-3 text-xs text-slate-400 font-mono">
+                <span>NOVEMBER 09, 2026</span>
+                <span>•</span>
+                <span>5 MIN READ</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                Best Practices for Sand Removal & Slurry Desanding in Heavy Trench Cutters
+              </h3>
+
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Step-by-step flocculation protocols to maintain sand content below 0.5% and prevent devastating wear on submersible pumps.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2">
+            <span class="text-xs font-bold text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              Read Best Practices <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 8: HIGH-CONVERSION CTA -->
+  <section class="py-16 bg-gradient-to-r from-brand-900 via-brand-800 to-slate-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="space-y-2 text-center lg:text-left">
+          <span class="text-amber-400 font-mono text-xs font-bold uppercase tracking-wider">TACKLING UNCERTAIN STRATA?</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            Speak with a Senior Geotechnical Mud Engineer Today
+          </h2>
+          <p class="text-slate-300 text-sm max-w-xl">
+            Send us your geotechnical bore logs. We will deliver a tailored slurry recipe, viscosity parameters, and cost optimization report within 24 hours.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-amber hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition shadow-lg flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4"></i> Request Technical Consultation
+          </a>
+          <a href="tel:+18005553745" class="px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-900 border border-slate-700 text-white font-bold text-sm transition flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> +1 (800) 555-FLUID
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & INQUIRY FORM MODAL / SECTION -->
+  <section id="contact" class="py-20 bg-slate-100 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 card-shadow space-y-8">
+        <div class="text-center space-y-2">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-600 font-mono">TECHNICAL FORMULATION REQUEST</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            Submit Your Project Geotechnical Parameters
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            Our engineering laboratory will formulate the exact polymer-to-bentonite balance for your borehole.
+          </p>
+        </div>
+
+        <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+              <input type="text" required placeholder="John Anderson, PE" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Company / Contractor Name *</label>
+              <input type="text" required placeholder="Keller / Bauer / Trevi Group" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Email Address *</label>
+              <input type="email" required placeholder="j.anderson@foundationcorp.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
+              <input type="tel" placeholder="+1 (555) 019-2834" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Operation Method</label>
+              <select class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                <option>Diaphragm Wall (Grab / Hydromill)</option>
+                <option>Large Diameter Bored Piles</option>
+                <option>Horizontal Directional Drilling (HDD)</option>
+                <option>Microtunneling / Pipe Jacking</option>
+                <option>Environmental Grouting / Cutoff Wall</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Depth / Diameter</label>
+              <input type="text" placeholder="e.g. 55m deep x 1.2m thick" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Geotechnical Profile / Challenges</label>
+            <textarea rows="3" placeholder="Describe soil strata (e.g. 0-15m clay, 15-40m saturated gravel, presence of saline water, severe fluid loss)..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+            <i data-lucide="check-circle" class="w-4 h-4"></i> Submit Request to Slurry Engineering Lab
+          </button>
+
+          <p id="formFeedback" class="text-xs text-center font-bold text-emerald-600 hidden">
+            Thank you! Your inquiry has been routed to our Senior Mud Engineer. We will reply within 4 hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Enhanced directly from screenshot dark footer) -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8">
+        
+        <!-- Company Profile & Accreditation -->
+        <div class="col-span-2 lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white">
+              <i data-lucide="droplets" class="w-5 h-5 text-brand-200"></i>
+            </div>
+            <div>
+              <span class="font-mono text-xl font-bold tracking-tight text-white uppercase">STAR<span class="text-brand-400">SLURRY</span></span>
+              <p class="text-[9px] tracking-wider text-slate-400 uppercase font-mono">Engineered Fluid Systems</p>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400 leading-relaxed pr-4">
+            Star Slurry Systems is a premier international developer and supplier of high-yield synthetic drilling polymers, API-certified bentonites, and eco-friendly slurry additives for geotechnical foundations, diaphragm walls, and trenchless engineering.
+          </p>
+
+          <div class="flex items-center gap-3 text-xs text-slate-300 font-mono">
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">API Spec 13A</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">ISO 9001:2015</span>
+            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">CE Certified</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-span-1 lg:col-span-2 space-y-3">
+          <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Navigation</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" class="hover:text-brand-400 transition">Home Overview</a></li>
+            <li><a href="#about" class="hover:text-brand-400 transition">About Our Engineering</a></li>
+            <li><a href="#products" class="hover:text-brand-400 transition">Fluid Systems & Products</a></li>
+            <li><a href="#conditions" class="hover:text-brand-400 transition">Soil & Ground Conditions</a></li>
+            <li><a href="#advisor" class="hover:text-brand-400 transition">Interactive Mix Advisor</a></li>
+            <li><a href="#blog" class="hover:text-brand-400 transition">Field Reports & Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Products List -->
+        <div class="col-span-1 lg:col-span-3 space-y-3">
+          <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Product Systems</h3>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#products" class="hover:text-brand-400 transition">STAR-POLY™ Ultra-High Molecular</a></li>
+            <li><a href="#products" class="hover:text-brand-400 transition">STAR-BOND™ API Sodium Bentonite</a></li>
+            <li><a href="#products" class="hover:text-brand-400 transition">STAR-VISC™ Rheology Booster</a></li>
+            <li><a href="#products" class="hover:text-brand-400 transition">STAR-SEAL™ Lost Circulation LCM</a></li>
+            <li><a href="#products" class="hover:text-brand-400 transition">STAR-BREAK™ Biodegradable Breakers</a></li>
+            <li><a href="#products" class="hover:text-brand-400 transition">STAR-DESAND™ Fine Flocculant Aids</a></li>
+          </ul>
+        </div>
+
+        <!-- Global Contact & Emergency -->
+        <div class="col-span-2 lg:col-span-3 space-y-3">
+          <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Global Dispatch Endpoints</h3>
+          <ul class="space-y-2.5 text-xs">
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+              <span>Global HQ: 4800 Westway Park Blvd, Houston, TX 77041, USA</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span>24/7 Field Tech: +1 (800) 555-FLUID</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>Engineering Lab: lab@starslurry.com</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Compliance -->
+      <div class="pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© 2026 Star Slurry Systems LLC. All rights reserved. Precision drilling fluid chemicals and geotechnical engineering.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400 transition">Safety Data Sheets (MSDS)</a>
+          <a href="#" class="hover:text-slate-400 transition">API Specification 13A</a>
+          <a href="#" class="hover:text-slate-400 transition">Privacy & Quality Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SPEC SHEET MODAL -->
+  <div id="specModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-6 shadow-2xl border border-slate-200 animate-in fade-in zoom-in duration-200">
+      <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-brand-600 font-mono">Technical Data Sheet</span>
+          <h3 id="modalTitle" class="text-xl font-bold text-slate-900 mt-0.5">Product Title</h3>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg bg-slate-100">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <p id="modalDesc" class="text-xs text-slate-600 leading-relaxed"></p>
+
+      <div class="space-y-3 font-mono text-xs bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Standard Dosage:</span>
+          <span id="modalDosage" class="font-bold text-slate-800"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Target Viscosity / Yield:</span>
+          <span id="modalVisc" class="font-bold text-slate-800"></span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Packaging Format:</span>
+          <span id="modalPackaging" class="font-bold text-slate-800"></span>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-2">
+        <button onclick="closeModal()" class="px-4 py-2.5 rounded-xl text-slate-600 text-xs font-semibold hover:bg-slate-100 transition">
+          Close
+        </button>
+        <a href="#contact" onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold transition flex items-center gap-1.5">
+          Request Lab Batch Sample
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when link clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Regional data switcher
+    const regionData = {
+      nam: {
+        title: "North America Hub (Houston & Chicago)",
+        delivery: "< 24h Express Dispatch",
+        hubs: "12 Major Depots",
+        engineers: "18 Mobile Specialists",
+        time: "4.5 Hours",
+        desc: "Full stocking of STAR-POLY high-yield polymers, STAR-SEAL loss control fibers, and API-certified bentonites with rail and flatbed delivery right to your job site."
+      },
+      eur: {
+        title: "European Operations (Rotterdam & Frankfurt)",
+        delivery: "< 18h EU-Wide Transport",
+        hubs: "8 Regional Warehouses",
+        engineers: "14 Certified Mud Chemist",
+        time: "3.2 Hours",
+        desc: "Compliant with strict REACH and environmental discharge standards. Rapid deployment to tunneling and deep infrastructure works across the EU and UK."
+      },
+      mea: {
+        title: "Middle East & GCC (Dubai & Dammam)",
+        delivery: "< 12h Regional Dispatch",
+        hubs: "6 Centralized Terminals",
+        engineers: "22 Onshore Piling Experts",
+        time: "2.8 Hours",
+        desc: "High-temperature tolerant polymer slurries and extreme saline groundwater inhibitors engineered specifically for Arabian Gulf and Red Sea megaprojects."
+      },
+      apac: {
+        title: "Asia Pacific Network (Singapore & Sydney)",
+        delivery: "< 24h Port-to-Site Support",
+        hubs: "10 Coastal Depots",
+        engineers: "16 Drilling Technicians",
+        time: "5.0 Hours",
+        desc: "Serving high-density urban diaphragm wall excavation, MRT transit tunneling, and long-range HDD river crossings across Southeast Asia and Australia."
+      }
+    };
+
+    function setRegion(key) {
+      const data = regionData[key];
+      if (!data) return;
+      document.getElementById('regionTitle').textContent = data.title;
+      document.getElementById('regionDelivery').textContent = data.delivery;
+      document.getElementById('regionHubs').textContent = data.hubs;
+      document.getElementById('regionEngineers').textContent = data.engineers;
+      document.getElementById('regionTime').textContent = data.time;
+      document.getElementById('regionDesc').textContent = data.desc;
+
+      document.querySelectorAll('.region-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      event.target.classList.remove('bg-slate-800', 'text-slate-300');
+      event.target.classList.add('bg-brand-600', 'text-white');
+    }
+
+    // Product Category Filter
+    function filterProducts(cat) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.prod-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white');
+        btn.classList.add('bg-slate-100', 'text-slate-700');
+      });
+      event.target.classList.remove('bg-slate-100', 'text-slate-700');
+      event.target.classList.add('bg-brand-600', 'text-white');
+    }
+
+    // Modal Trigger
+    function openModal(title, desc, dosage, visc, packaging) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('modalDosage').textContent = dosage;
+      document.getElementById('modalVisc').textContent = visc;
+      document.getElementById('modalPackaging').textContent = packaging;
+      const modal = document.getElementById('specModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('specModal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    // Close modal on click outside
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('specModal');
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Interactive Slurry Calculator
+    const slurryCombinations = {
+      'gravel-diaphragm': {
+        title: 'STAR-POLY™ ULTRA + STAR-SEAL™ PLUG (Heavy Membrane)',
+        visc: '55 – 70 sec/qt',
+        density: '1.02 – 1.05 g/cm³',
+        loss: '< 12 ml',
+        dosage: '1.2 kg polymer + 2.5 kg LCM / m³',
+        notes: 'Coarse gravel requires instant pore-throat bridging to maintain positive hydrostatic balance and stop slurry runaway.'
+      },
+      'gravel-pile': {
+        title: 'STAR-POLY™ ULTRA + STAR-VISC™ BOOST',
+        visc: '50 – 62 sec/qt',
+        density: '1.01 – 1.03 g/cm³',
+        loss: '< 15 ml',
+        dosage: '0.9 kg polymer + 0.5L boost / m³',
+        notes: 'Prevents raveling of gravel during auger withdrawal. Guarantees base clean-out with minimal sand content.'
+      },
+      'clay-diaphragm': {
+        title: 'STAR-BOND™ PREMIUM + PHPA CLAY INHIBITOR',
+        visc: '42 – 50 sec/qt',
+        density: '1.05 – 1.10 g/cm³',
+        loss: '< 9 ml',
+        dosage: '35 kg bentonite + 0.4 kg PHPA / m³',
+        notes: 'Inhibits clay platelets from absorbing water and prevents grab teeth clogging or swelling narrowing of the trench.'
+      },
+      'clay-pile': {
+        title: 'STAR-POLY™ ULTRA LOW-VISC + DE-FLOCCULANT',
+        visc: '38 – 45 sec/qt',
+        density: '1.01 – 1.03 g/cm³',
+        loss: '< 18 ml',
+        dosage: '0.7 kg polymer / m³',
+        notes: 'Prevents bit balling while maintaining rapid auger penetration in sticky cohesive clays.'
+      },
+      'karst-diaphragm': {
+        title: 'STAR-BOND™ HIGH-YIELD + STAR-SEAL™ PLUG BRIDGING',
+        visc: '65 – 85 sec/qt',
+        density: '1.08 – 1.16 g/cm³',
+        loss: '< 8 ml',
+        dosage: '45 kg bentonite + 4.0 kg LCM / m³',
+        notes: 'Rapidly forms high shear strength gel plugs in limestone voids, preventing sudden slurry drop and sinkholes.'
+      },
+      'marine-diaphragm': {
+        title: 'STAR-POLY™ MARINE GRADE (Salt-Tolerant Formulation)',
+        visc: '52 – 64 sec/qt',
+        density: '1.04 – 1.06 g/cm³',
+        loss: '< 14 ml',
+        dosage: '1.1 kg marine polymer / m³',
+        notes: 'Unaffected by Na+ and Cl- ions. Does not flocculate or lose viscosity when encountering coastal saline intrusion.'
+      },
+      'urban-pile': {
+        title: 'STAR-POLY™ ECO-PURE + STAR-BREAK™ ON DISCHARGE',
+        visc: '45 – 55 sec/qt',
+        density: '1.01 – 1.02 g/cm³',
+        loss: '< 15 ml',
+        dosage: '0.8 kg clean polymer / m³',
+        notes: 'Zero heavy metals, 100% biodegradable. Easily oxidized with STAR-BREAK for clean municipal storm drain disposal.'
+      }
+    };
+
+    function calculateSlurry() {
+      const soil = document.getElementById('calcSoil').value;
+      const method = document.getElementById('calcMethod').value;
+      const key = `${soil}-${method}`;
+      
+      const res = slurryCombinations[key] || {
+        title: 'STAR-POLY™ ULTRA + STAR-BOND™ HYBRID SYSTEM',
+        visc: '48 – 60 sec/qt',
+        density: '1.02 – 1.06 g/cm³',
+        loss: '< 14 ml',
+        dosage: '1.0 kg polymer + 15 kg bentonite / m³',
+        notes: 'Balanced rheological system providing low filtrate loss and high hydrostatic stability.'
+      };
+
+      document.getElementById('calcRecipeTitle').textContent = res.title;
+      document.getElementById('calcViscosity').textContent = res.visc;
+      document.getElementById('calcDensity').textContent = res.density;
+      document.getElementById('calcLoss').textContent = res.loss;
+      document.getElementById('calcDosage').textContent = res.dosage;
+      document.getElementById('calcNotes').textContent = res.notes;
+    }
+
+    // Contact Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formFeedback').classList.remove('hidden');
+      setTimeout(() => {
+        alert('Thank you! Your formulation inquiry has been recorded and submitted to the engineering team.');
+      }, 300);
+    }
+  </script>
+</body>
+</html>

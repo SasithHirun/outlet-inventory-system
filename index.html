@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA Events &amp; Surprises | Luxury Event Management &amp; Bespoke Surprise Studio</title>
+  <meta name="description" content="Premier white-glove event management and bespoke surprise planning. Weddings, corporate galas, birthday surprises, proposals, flash mobs, and milestone celebrations." />
+  <link rel="icon" type="image/png" href="assets/events/aura-emblem.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. MINIMALIST STICKY WHITE HEADER
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="assets/events/aura-emblem.png" alt="AURA Events & Surprises Logo" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-name">AURA<span>.</span></span>
+          <span class="brand-sub">Events &amp; Surprises</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#surprises" class="nav-link active">Surprise Categories</a>
+        <a href="#services" class="nav-link">Event Management</a>
+        <a href="#process" class="nav-link">Our Process</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#packages" class="nav-link">Packages</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="tel:+94778889900" class="header-phone">+94 77 888 9900</a>
+        <a href="#contact" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. CLEAN ARCHITECTURAL HERO SECTION
+       ======================================================================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-tag">Premier Event Architecture &amp; Surprise Studio</span>
+        <h1 class="hero-title">
+          Crafting Extraordinary Events &amp; Unforgettable <em>Surprises.</em>
+        </h1>
+        <p class="hero-lead">
+          We design and produce luminous, colour-rich celebrations—from sunlit glass-atrium weddings and corporate galas to discreet 90-minute birthday transformations, cliffside proposals, and live musical surprises.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#surprises" class="btn btn-accent">Explore Surprise Categories</a>
+          <a href="#services" class="btn btn-outline">Event Management Services</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>1,850+</strong>
+            <span>Events &amp; Surprises Produced</span>
+          </div>
+          <div class="stat-item">
+            <strong>90 Min</strong>
+            <span>Express Stealth Setup Crew</span>
+          </div>
+          <div class="stat-item">
+            <strong>4.98 / 5</strong>
+            <span>Verified Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Clean 3-Photo Editorial Mosaic -->
+      <div class="hero-mosaic">
+        <div class="mosaic-item mosaic-main">
+          <img src="assets/events/hero-celebration.jpg" alt="Glass Atrium Luxury Floral Event" />
+          <span class="mosaic-caption">Botanical Glass-Atrium Weddings &amp; Galas</span>
+        </div>
+        <div class="mosaic-item">
+          <img src="assets/events/surprise-birthday.jpg" alt="Penthouse Birthday Surprise" />
+          <span class="mosaic-caption">Birthday Surprises</span>
+        </div>
+        <div class="mosaic-item">
+          <img src="assets/events/surprise-romantic.jpg" alt="Cliffside Proposal Arch" />
+          <span class="mosaic-caption">Romantic Proposals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. BESPOKE SURPRISE CATEGORIES (#surprises)
+       ======================================================================== -->
+  <section class="section" id="surprises">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Bespoke Surprise Division</span>
+        <h2 class="section-title">Curated <em>Surprise</em> Categories</h2>
+        <p class="section-subtitle">
+          Discreetly planned and seamlessly executed celebrations. We handle the decoy coordination, rapid venue styling, and candid photography.
+        </p>
+      </div>
+
+      <!-- Clean Segmented Filter Bar -->
+      <div class="filter-tabs" role="tablist">
+        <button type="button" class="tab-btn active" onclick="filterSurpriseCategory('all', this)">All Surprises</button>
+        <button type="button" class="tab-btn" onclick="filterSurpriseCategory('birthday', this)">Birthday Surprises</button>
+        <button type="button" class="tab-btn" onclick="filterSurpriseCategory('proposal', this)">Proposal &amp; Romance</button>
+        <button type="button" class="tab-btn" onclick="filterSurpriseCategory('event', this)">Event &amp; Flash Mobs</button>
+        <button type="button" class="tab-btn" onclick="filterSurpriseCategory('anniversary', this)">Anniversary</button>
+        <button type="button" class="tab-btn" onclick="filterSurpriseCategory('family', this)">Family &amp; Baby Reveal</button>
+      </div>
+
+      <!-- Uniform 3-Column Card Grid -->
+      <div class="cards-grid" id="surprise-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. FULL-SCALE EVENT MANAGEMENT SERVICES (#services)
+       ======================================================================== -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Full-Scale Production</span>
+        <h2 class="section-title">Comprehensive <em>Event</em> Management</h2>
+        <p class="section-subtitle">
+          End-to-end architectural staging, vibrant floral design, audiovisual production, and guest hospitality for private and corporate occasions.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-img">
+            <img src="assets/events/hero-celebration.jpg" alt="Luxury Weddings & Receptions" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <span class="service-num">01 / WEDDINGS</span>
+            <h3 class="service-title">Luxury Weddings &amp; Receptions</h3>
+            <p class="service-text">
+              Bespoke floral arches, crystal atrium transformations, custom table styling, and full wedding-day timeline direction.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-img">
+            <img src="assets/events/corporate-gala.jpg" alt="Corporate Galas & Product Launches" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <span class="service-num">02 / CORPORATE</span>
+            <h3 class="service-title">Corporate Galas &amp; Brand Launches</h3>
+            <p class="service-text">
+              Dynamic projection mapping, keynote stage architecture, LED centerpieces, and executive guest management.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-img">
+            <img src="assets/events/surprise-birthday.jpg" alt="Milestone Birthday Parties" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <span class="service-num">03 / PRIVATE GALAS</span>
+            <h3 class="service-title">Milestone BirthdayCelebrations</h3>
+            <p class="service-text">
+              Penthouse soirées, custom LED marquees, organic balloon installations, artisan tiered cakes, and private DJs.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-img">
+            <img src="assets/events/surprise-flashmob.jpg" alt="Flash Mobs & Live Entertainment" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <span class="service-num">04 / LIVE PRODUCTION</span>
+            <h3 class="service-title">Flash Mobs &amp; Musical Reveals</h3>
+            <p class="service-text">
+              Undercover singing waiters, brass ensembles, choreographed flash mobs, and stadium confetti finales.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-img">
+            <img src="assets/events/surprise-anniversary.jpg" alt="Anniversary & Garden Soirees" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <span class="service-num">05 / MILESTONES</span>
+            <h3 class="service-title">Anniversary &amp; Garden Soirées</h3>
+            <p class="service-text">
+              Floral-draped pergolas, private starlight cinema screenings, custom family tribute films, and private chef dining.
+            </p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-img">
+            <img src="assets/events/surprise-kids.jpg" alt="Kids Wonderlands & Baby Showers" loading="lazy" />
+          </div>
+          <div class="service-content">
+            <span class="service-num">06 / FAMILY EVENTS</span>
+            <h3 class="service-title">Kids Wonderlands &amp; Baby Showers</h3>
+            <p class="service-text">
+              Pastel rainbow pavilions, carousel props, patisserie dessert carts, and gender reveal celebrations.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. HOW WE WORK — 4-STEP PROCESS (#process)
+       ======================================================================== -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Seamless Execution</span>
+        <h2 class="section-title">How We Orchestrate <em>Every Detail</em></h2>
+        <p class="section-subtitle">
+          A structured, stress-free workflow designed for both grand public events and strictly confidential surprises.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Consultation &amp; Brief</h3>
+          <p>Share your vision, preferred colour palette, guest count, and whether the celebration requires confidential planning.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Design &amp; Alibi Planning</h3>
+          <p>We prepare 3D spatial layouts, floral moodboards, and—for surprises—coordinate the decoy schedule with your inner circle.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Precision Setup</h3>
+          <p>Our production crew installs florals, balloon architecture, lighting, and catering within a tight 90-to-120-minute window.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>The Grand Reveal</h3>
+          <p>Our on-site Stage Manager cues the music, lighting, and sparklers while photographers capture every candid reaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. COLOURFUL PORTFOLIO LOOKBOOK (#portfolio)
+       ======================================================================== -->
+  <section class="section section-alt" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Selected Works</span>
+        <h2 class="section-title">Recent <em>Celebrations</em> Gallery</h2>
+        <p class="section-subtitle">
+          A showcase of vibrant colour palettes set against crisp architectural spaces.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item" onclick="openSurpriseDetail('birthday-penthouse')">
+          <img src="assets/events/hero-celebration.jpg" alt="Glass Atrium Wedding" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Luxury Wedding</span>
+            <strong>Crystal Conservatory Gala</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('birthday-penthouse')">
+          <img src="assets/events/surprise-birthday.jpg" alt="Penthouse Birthday Surprise" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Birthday Surprise</span>
+            <strong>30th Penthouse Reveal</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('proposal-cliffside')">
+          <img src="assets/events/surprise-romantic.jpg" alt="Cliffside Proposal" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Romantic Proposal</span>
+            <strong>Sunset Cliffside Rose Arch</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('event-flashmob')">
+          <img src="assets/events/surprise-flashmob.jpg" alt="Musical Flash Mob" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Event Surprise</span>
+            <strong>Courtyard Brass Flash Mob</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('anniversary-pergola')">
+          <img src="assets/events/surprise-anniversary.jpg" alt="Anniversary Pergola" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Anniversary</span>
+            <strong>Starlight Pergola Cinema</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('family-babyreveal')">
+          <img src="assets/events/surprise-babyshower.jpg" alt="Baby Shower Conservatory" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Family Celebration</span>
+            <strong>Pastel Cloud Baby Shower</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('birthday-wonderland')">
+          <img src="assets/events/surprise-kids.jpg" alt="Kids Wonderland Birthday" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Kids Birthday</span>
+            <strong>Rainbow Carousel Pavilion</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openSurpriseDetail('event-flashmob')">
+          <img src="assets/events/corporate-gala.jpg" alt="Corporate Gala" loading="lazy" />
+          <div class="portfolio-overlay">
+            <span>Corporate Production</span>
+            <strong>Annual Executive Summit</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. TRANSPARENT PACKAGES (#packages)
+       ======================================================================== -->
+  <section class="section" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Investment Tiers</span>
+        <h2 class="section-title">Tailored <em>Packages</em></h2>
+        <p class="section-subtitle">
+          Clear turnkey starting packages for intimate surprises and full-scale event productions.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="pricing-tier">Intimate Surprise</h3>
+          <p class="pricing-desc">Ideal for home makeovers, hotel suites, and midnight birthday reveals.</p>
+          <div class="pricing-amount">$490 <span>/ turnkey setup</span></div>
+          <ul class="pricing-list">
+            <li>14ft Organic Balloon &amp; Floral Garland</li>
+            <li>Custom Tiered Celebration Cake</li>
+            <li>Warm Ambient Fairy &amp; Candle Lighting</li>
+            <li>60-to-90 Minute Discreet Setup Crew</li>
+            <li>Dedicated Alibi &amp; Cue Coordinator</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" onclick="selectPackageForBooking('Intimate Surprise ($490)')">Select Package</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <span class="featured-badge">Most Popular</span>
+          <h3 class="pricing-tier">Signature Celebration</h3>
+          <p class="pricing-desc">Our most requested package for milestone birthdays, proposals, and private soirées.</p>
+          <div class="pricing-amount">$890 <span>/ full production</span></div>
+          <ul class="pricing-list">
+            <li>20ft Custom Architectural Floral / Balloon Arch</li>
+            <li>Bespoke LED Neon Sign &amp; 3-Tier Artisan Cake</li>
+            <li>Live Solo Violinist, Saxophonist, or Event DJ</li>
+            <li>Candid Photographer + 4K Highlight Reel</li>
+            <li>Synchronized Cold Sparkler Entrance Cue</li>
+          </ul>
+          <a href="#contact" class="btn btn-accent" onclick="selectPackageForBooking('Signature Celebration ($890)')">Select Package</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-tier">Grand Bespoke Event</h3>
+          <p class="pricing-desc">Designed for luxury weddings, corporate galas, flash mobs, and 100+ guest events.</p>
+          <div class="pricing-amount">$2,450+ <span>/ custom scope</span></div>
+          <ul class="pricing-list">
+            <li>Full Venue Architectural &amp; Botanical Design</li>
+            <li>Concert-Grade Lighting, Sound &amp; LED Walls</li>
+            <li>Undercover Flash Mob Crew or Live Band</li>
+            <li>Multi-Camera Cinema &amp; Drone Production</li>
+            <li>Full Catering, Mixology &amp; Guest Concierge</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" onclick="selectPackageForBooking('Grand Bespoke Event ($2,450+)')">Request Custom Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. CONTACT & CONSULTATION FORM (#contact)
+       ======================================================================== -->
+  <section class="section section-alt" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">Start Planning</span>
+        <h2 class="section-title">Book Your Private <em>Consultation</em></h2>
+        <p class="section-subtitle">
+          Tell us about your upcoming event or secret surprise. For undercover surprises, all communication is handled discreetly via your preferred channel.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <strong>Studio Address</strong>
+            <span>Level 14, Crystal Atrium Tower, Colombo 03</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>Direct Phone &amp; Discreet WhatsApp</strong>
+            <span>+94 77 888 9900</span>
+          </div>
+          <div class="contact-info-item">
+            <strong>Email Desk</strong>
+            <span>concierge@auraevents.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inquiry-card">
+        <form onsubmit="handleInquirySubmit(event)">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="inquiry-name">Full Name</label>
+              <input type="text" id="inquiry-name" class="form-input" placeholder="Your Name" required />
+            </div>
+            <div class="form-field">
+              <label for="inquiry-phone">Phone / WhatsApp</label>
+              <input type="tel" id="inquiry-phone" class="form-input" placeholder="+94 77 123 4567" required />
+            </div>
+            <div class="form-field">
+              <label for="inquiry-category">Event or Surprise Category</label>
+              <select id="inquiry-category" class="form-input">
+                <option value="Birthday Surprise">Birthday Surprise</option>
+                <option value="Proposal & Romantic Surprise">Proposal &amp; Romantic Surprise</option>
+                <option value="Event Flash Mob Surprise">Event &amp; Flash Mob Surprise</option>
+                <option value="Anniversary Celebration">Anniversary Celebration</option>
+                <option value="Baby Shower / Gender Reveal">Baby Shower / Gender Reveal</option>
+                <option value="Luxury Wedding / Reception">Luxury Wedding &amp; Reception</option>
+                <option value="Corporate Gala / Launch">Corporate Gala &amp; Brand Launch</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="inquiry-date">Preferred Date</label>
+              <input type="date" id="inquiry-date" class="form-input" required />
+            </div>
+            <div class="form-field full">
+              <label for="inquiry-notes">Event Details, Colour Preferences &amp; Special Requests</label>
+              <textarea id="inquiry-notes" class="form-input" rows="4" placeholder="Share guest count, preferred colours, venue ideas, or confidential surprise instructions..."></textarea>
+            </div>
+          </div>
+          <div style="margin-top: 24px;">
+            <button type="submit" class="btn btn-accent" style="width: 100%;">Submit Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. CLEAN FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <a href="#" class="brand" style="margin-bottom: 14px;">
+            <img src="assets/events/aura-emblem.png" alt="AURA Logo" class="brand-logo-img" />
+            <div class="brand-text">
+              <span class="brand-name">AURA<span>.</span></span>
+              <span class="brand-sub">Events &amp; Surprises</span>
+            </div>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-body); max-width: 300px;">
+            Architectural event management and confidential surprise production across Sri Lanka.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Surprise Categories</h4>
+          <ul>
+            <li><a href="#surprises" onclick="filterSurpriseCategory('birthday')">Birthday Surprises</a></li>
+            <li><a href="#surprises" onclick="filterSurpriseCategory('proposal')">Romantic Proposals</a></li>
+            <li><a href="#surprises" onclick="filterSurpriseCategory('event')">Flash Mobs &amp; Reveals</a></li>
+            <li><a href="#surprises" onclick="filterSurpriseCategory('anniversary')">Anniversary Dinners</a></li>
+            <li><a href="#surprises" onclick="filterSurpriseCategory('family')">Gender Reveals</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Event Services</h4>
+          <ul>
+            <li><a href="#services">Luxury Weddings</a></li>
+            <li><a href="#services">Corporate Galas</a></li>
+            <li><a href="#services">Private Soirées</a></li>
+            <li><a href="#services">Live Stage Production</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#process">Our 4-Step Process</a></li>
+            <li><a href="#portfolio">Event Portfolio</a></li>
+            <li><a href="#packages">Pricing Packages</a></li>
+            <li><a href="#contact">Book Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 AURA Events &amp; Surprises. All rights reserved.</span>
+        <span>Designed with a Clean Architectural White Theme</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       10. PACKAGE DETAIL MODAL & TOAST
+       ======================================================================== -->
+  <div class="modal-overlay" id="detail-modal" onclick="if(event.target === this) closeDetailModal()">
+    <div class="modal-box">
+      <div class="modal-top">
+        <strong id="modal-title" style="font-family: var(--font-heading); font-size: 1.1rem;">Package Details</strong>
+        <button type="button" class="modal-close" onclick="closeDetailModal()">✕</button>
+      </div>
+      <div class="modal-content" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast-banner">
+    Thank you! Your consultation request has been received. Our team will contact you shortly.
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

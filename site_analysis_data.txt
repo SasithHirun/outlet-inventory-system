@@ -1,0 +1,309 @@
+=== 1. WEBSITE GENERAL INFO ===
+Page Title: Fire Contractor in Dubai UAE
+WordPress Theme Detected: {'onsus'}
+WordPress Plugins Detected: ['*","', 'contact-form-7', 'elementor', 'themesflat-core', 'woo-variation-swatches', 'woocommerce', 'x-currency', 'yith-woocommerce-frequently-bought-together', 'yith-woocommerce-quick-view', 'yith-woocommerce-wishlist']
+
+=== 2. FONTS & TYPOGRAPHY ===
+Google Fonts requested:
+ - Roboto Slab:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic
+ - Inter:wght@400
+ - Poppins:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic
+ - Inter:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic
+ - Roboto:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic
+ - Poppins:wght@400;500;600;700;800
+ - Plus Jakarta Sans:wght@400;500;600;700;800
+ - Inter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2Cregular%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CPoppins%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C700%7CPoppins%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C600%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C700%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400%7CInter%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C900%2C400
+
+Inline Font Families:
+ - 'Inter', sans-serif
+ - 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+ - 'Poppins'
+ - 'Poppins', sans-serif
+ - 'Poppins', sans-serif
+ - Cardo
+ - Inter
+ - Poppins
+ - inherit
+ - var(--wp--preset--font-family--cardo)
+ - var(--wp--preset--font-family--inter)
+
+Font weights / sizes in inline CSS:
+Font weights: ['300 900', '400', '400', '500', '600', '600', '700', '700', '800', 'inherit']
+
+=== 3. COLOR PALETTE EXTRACTED ===
+Found 44 hex colors.
+
+Key CSS Variables for Colors:
+ - --accent-red-light: #FEF2F2;
+ - --accent-red: #D32F2F;
+ - --add-to-wishlist-icon-color: #000000;
+ - --added-to-wishlist-icon-color: #000000;
+ - --bg-page: #F8FAFC;
+ - --border-color: #E2E8F0;
+ - --color-headers-background: #F4F4F4;
+ - --primary-blue-hover: #0D47A1;
+ - --primary-blue-light: #EFF6FF;
+ - --primary-blue: #1565C0;
+ - --theme-primary-color:#333E48 }
+ :root { --theme-secondary-color:#004EC3 }
+ :root { --theme-accent-color:#FF3D3D }
+
+/*# sourceURL=themesflat-inline-css-inline-css */
+</style>
+<link rel='stylesheet' id='themesflat-magnific.popup-css' href='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/themes/onsus/css/magnific.popup.css?ver=7.1.4' media='all' />
+<link rel='stylesheet' id='themesflat-responsive-css' href='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/themes/onsus/css/responsive.css?ver=7.1.4' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa5-css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css?ver=5.15.4' media='all' />
+<link rel='stylesheet' id='themesflat-shop-woocommerce-css' href='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/themes/onsus/css/shop-woocommerce.css?ver=7.1.4' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.3.6' media='all' />
+<style id="elementor-frontend-inline-css">
+.e-heading-base a, .e-paragraph-base a { all: unset;
+ - --wp--preset--color--black: #000000;
+ - --wp--preset--color--cyan-bluish-gray: #abb8c3;
+ - --wp--preset--color--light-green-cyan: #7bdcb5;
+ - --wp--preset--color--luminous-vivid-amber: #fcb900;
+ - --wp--preset--color--luminous-vivid-orange: #ff6900;
+ - --wp--preset--color--pale-cyan-blue: #8ed1fc;
+ - --wp--preset--color--pale-pink: #f78da7;
+ - --wp--preset--color--vivid-cyan-blue: #0693e3;
+ - --wp--preset--color--vivid-green-cyan: #00d084;
+ - --wp--preset--color--vivid-purple: #9b51e0;
+ - --wp--preset--color--vivid-red: #cf2e2e;
+ - --wp--preset--color--white: #ffffff;
+ - --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+ - --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+ - --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);
+ - --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+ - --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);
+
+Elementor Color Palette & Global Settings:
+
+Found 38 targeted class style rules.
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}
+.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}
+.yith-wfbt-submit-button {
+                        background: ;
+                        color: ;
+                }
+.themesflat-button { font-family:Inter;}
+.themesflat-button { font-weight:600;}
+.themesflat-button { font-style:normal; }
+.themesflat-button { font-size:15px;}
+.themesflat-button { line-height:1.6;}
+.themesflat-button { letter-spacing:0px;}
+.themesflat-button { background-color:rgba(0,0,0,0);}
+.e-accordion-item-header-base { list-style: none; }
+.ppfc-banner-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+.ppfc-left-banner {
+    background-image: url('https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2023/09/bg10-home01.webp');
+    background-size: cover;
+    background-position: center left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 50px;
+    min-height: 640px;
+    cursor: pointer;
+  }
+.ppfc-price-box {
+    margin-bottom: 24px;
+  }
+
+=== 4. STRUCTURAL SECTIONS & WIREFRAME ===
+Key structural layout blocks (77 detected):
+ - <div class='modal-menu-left'>
+ - <div class='modal-menu__backdrop'>
+ - <div class='modal-menu__body'>
+ - <div class='modal-menu__panel'>
+ - <div class='modal-menu__panel-header'>
+ - <div class='modal-menu__panel-title'>
+ - <div class='header-modal-menu-left-btn'>
+ - <div class='modal-menu__panel-body'>
+ - <div class='nav-wrap-secondary'>
+ - <div class='modal-menu__panel-footer'>
+ - <header class='header header-01 '>
+ - <div class='inner-header'>
+ - <div class='header-wrap clearfix'>
+ - <div class='header-ct-left'>
+ - <div class='header-ct-center'>
+ - <div class='header-ct-right'>
+ - <div class='header-infor'>
+ - <div class='btn-menu'>
+ - <div class='header-bottom'>
+ - <div class='header-bottom-inner clearfix'>
+ - <div class='nav-wrap'>
+ - <nav class='mainnav'>
+ - <div class='header-wishlist-wrapper'>
+ - <div class='header-cart-wrapper'>
+ - <div class='nav-shop-cart'>
+ - <div class='minicar-header'>
+ - <div class='canvas-nav-wrap'>
+ - <div class='overlay-canvas-nav'>
+ - <div class='canvas-menu-close'>
+ - <div class='inner-canvas-nav'>
+ - <div class='tf-tabs-menu'>
+ - <div class='tf-tabnav'>
+ - <nav class='mainnav_canvas'>
+ - <div class='menu-category-menu-container'>
+ - <div class='header-fixed-wrap'>
+ - <div class='nav-wrap-category'>
+ - <div class='title-menu'>
+ - <nav class='category-menu'>
+ - <header class='page-header'>
+ - <div class='elementor-element elementor-element-fd93f6e elementor-widget elementor-widget-tf-nav-menu'>
+
+=== 5. HEADINGS AND TEXT CONTENT SAMPLE ===
+<h2> Archives
+<h2> Categories
+<h4> Your cart is curently empty
+<h4> Let up help you find the perfect item
+<h4> Your cart is curently empty
+<h4> Let up help you find the perfect item
+<h3> All Departments
+<h2> DEALS
+<h2> DEALS
+<h3> Free delivery
+<h3> Support 24/7
+<h3> Payment
+<h3> Trusted
+<h3> Guarantee
+<h5> Civil Defense Approved
+<h5> Fast UAE Delivery
+<h5> 100% Genuine Certified
+<h5> Engineering Support
+<h3> Aico EI100MRF Radiolink + Wireless Interlink Module
+<h3> Aico EI141RC Smoke Detector – Mains Ionization Domestic Detector With Battery
+<h3> Aico EI144E Heat Detector
+<h3> Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery
+<h3> Aico EI168RC Radio Link Base Plate – Mains Powered Radio Link Detector Base
+<h3> Aico EI3016 Mains Interlinked Optical Smoke Detector With 10 Year Lithium Battery Backup
+<h3> C-Tec CFP760 8 Zone Fire Alarm System Repeater Panel
+<h3> Aico EI144E Heat Detector
+<h3> Aico Relay Base Plate EI128R
+<h3> Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery
+<h3> APC Z41-300, 6″, 6″ 300PSI-OS&amp;Y Type Flange End Gate Valve
+<h3> Aico EI168RC Radio Link Base Plate – Mains Powered Radio Link Detector Base
+<h3> Bardic Call Point Cover
+<h3> Aico EI3016 Mains Interlinked Optical Smoke Detector With 10 Year Lithium Battery Backup
+<h3> BRK FG250B Smoke Alarm 9V Battery Powered
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+<h2> SALE 10% The Ultimate Safety Shield
+<h3> Aico Relay Base Plate EI128R
+<h3> Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery
+<h3> C-Tec CFP708-4 Standard 8 Zone Conventional Fire Alarm Control Panel
+<h3> C-Tec CFP704-4 Standard 4 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> Aico EI141RC Smoke Detector – Mains Ionization Domestic Detector With Battery
+<h3> C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+<h2> Fire Protection &amp; Safety Equipment
+<h4> APC Z41-300, 6″, 6″ 300PSI-OS&amp;Y Type Flange End Gate Valve
+<h4> Aico EI164RC Heat Detector – Mains Domestic Detector
+<h4> C-Tec CFP760 8 Zone Fire Alarm System Repeater Panel
+<h4> Aico Relay Base Plate EI128R Compatible Mounting
+<h4> Aico EI3018 3000 Series Carbon Monoxide Alarm
+<h4> C-Tec CFP704E-4 Economy 4 Zone Conventional Panel
+<h4> Aico EI100MRF Radiolink + Wireless Module
+<h4> Aico EI141RC Smoke Detector Ionization
+<h4> Bardic Emergency Call Point Protective Cover
+<h4> C-Tec CFP708-4 Standard 8 Zone Panel
+<h4> Aico EI3016 Mains Interlinked Optical Detector
+<h4> BRK FG250B Smoke Alarm 9V Battery Powered
+<h4> Aico EI144E Heat Detector Compact Series
+<h4> Aico EI407 Radio Link Call Point Manual
+<h4> Aico EI450 Radiolink System Controller
+<h4> Aico EI603RF Battery Heat Detector
+<h4> AICO EI650RF Battery Optical Smoke Alarm
+<h4> C-Tec CFP708E-4 Economy 8 Zone Panel
+<h2> DEALS
+<h2> DEALS
+<h2> DEALS
+<h2> DEALS
+<h2> Best Seller
+<h3> Aico EI450 Radiolink Alarm Controller
+<h3> C-Tec CFP708-4 Standard 8 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI100MRF Radiolink + Wireless Interlink Module
+<h3> Aico EI603RF Battery Powered Heat Detector With Wireless Interlink Facility
+<h3> C-Tec CFP708E-4 Economy 8 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI141RC Smoke Detector – Mains Ionization Domestic Detector With Battery
+<h3> AICO EI650RF Battery Powered Optical Smoke Detector With Wireless Interlink Facility
+<h3> C-Tec CFP760 8 Zone Fire Alarm System Repeater Panel
+<h3> Aico EI144E Heat Detector
+<h3> Aico Relay Base Plate EI128R
+<h3> Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery
+<h3> APC Z41-300, 6″, 6″ 300PSI-OS&amp;Y Type Flange End Gate Valve
+<h3> Aico EI168RC Radio Link Base Plate – Mains Powered Radio Link Detector Base
+<h3> Bardic Call Point Cover
+<h3> Aico EI3016 Mains Interlinked Optical Smoke Detector With 10 Year Lithium Battery Backup
+<h3> BRK FG250B Smoke Alarm 9V Battery Powered
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+<h2> SHOP & SAVE BIG on Essential Fire Safety Equipment!
+<h2> SHOP &amp; SAVE Fire Safety Equipment!
+<h2> Don&#039;t wait for an emergency to get prepared.
+<h2> Top 20
+<h3> Aico EI450 Radiolink Alarm Controller
+<h3> C-Tec CFP708-4 Standard 8 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI100MRF Radiolink + Wireless Interlink Module
+<h3> Aico EI603RF Battery Powered Heat Detector With Wireless Interlink Facility
+<h3> C-Tec CFP708E-4 Economy 8 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI141RC Smoke Detector – Mains Ionization Domestic Detector With Battery
+<h3> AICO EI650RF Battery Powered Optical Smoke Detector With Wireless Interlink Facility
+<h3> C-Tec CFP760 8 Zone Fire Alarm System Repeater Panel
+<h3> Aico EI144E Heat Detector
+<h2> Featured Products
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> Aico Relay Base Plate EI128R
+<h3> Aico EI407 Radio Link Call Point
+<h3> Bardic Call Point Cover
+<h3> C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI3024 Mains Interlinked Optical Smoke &amp; Heat Multisensor Detector With 10 Year Lithium Battery Backup
+<h3> Aico EI144E Heat Detector
+<h3> Aico EI603RF Battery Powered Heat Detector With Wireless Interlink Facility
+<h3> Aico EI450 Radiolink Alarm Controller
+<h2> Top Selling Product
+<h3> Bardic Call Point Cover
+<h3> Aico EI3016 Mains Interlinked Optical Smoke Detector With 10 Year Lithium Battery Backup
+<h3> BRK FG250B Smoke Alarm 9V Battery Powered
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+<h3> Aico EI3024 Mains Interlinked Optical Smoke &amp; Heat Multisensor Detector With 10 Year Lithium Battery Backup
+<h2> On-Sale Product
+<h3> Aico EI100MRF Radiolink + Wireless Interlink Module
+<h3> Aico EI141RC Smoke Detector – Mains Ionization Domestic Detector With Battery
+<h3> Aico EI144E Heat Detector
+<h3> Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery
+<h3> Aico EI168RC Radio Link Base Plate – Mains Powered Radio Link Detector Base
+<h3> Aico EI3016 Mains Interlinked Optical Smoke Detector With 10 Year Lithium Battery Backup
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> Aico EI3024 Mains Interlinked Optical Smoke &amp; Heat Multisensor Detector With 10 Year Lithium Battery Backup
+<h3> Aico EI3028 Mains Interlinked Heat &amp; Carbon Monoxide Multisensor Detector With 10 Year Lithium Battery Backup
+<h2> Medium Full Facepiece Reusable
+<h2> Respirator Mask
+<h2> Lalizas Torpedo Diving Marker Buoy
+<h2> Diam. 28CM L 88CM
+<h2> Recently Viewed
+<h3> Aico EI100MRF Radiolink + Wireless Interlink Module
+<h3> Aico EI141RC Smoke Detector – Mains Ionization Domestic Detector With Battery
+<h3> Aico EI144E Heat Detector
+<h3> Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery
+<h3> Aico EI168RC Radio Link Base Plate – Mains Powered Radio Link Detector Base
+<h3> Aico EI3016 Mains Interlinked Optical Smoke Detector With 10 Year Lithium Battery Backup
+<h3> Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink Functionality
+<h3> Aico EI3024 Mains Interlinked Optical Smoke &amp; Heat Multisensor Detector With 10 Year Lithium Battery Backup
+<h3> Aico EI3028 Mains Interlinked Heat &amp; Carbon Monoxide Multisensor Detector With 10 Year Lithium Battery Backup
+<h3> Aico EI407 Radio Link Call Point
+<h2> Get help
+<h2> Popular categories
+<h2> Customer Care
+<h2> Contact
+<h2> Login:
+<h2> Register:
+<h4> Forgot your password?
+<h4> Your cart is curently empty
+<h4> Let up help you find the perfect item

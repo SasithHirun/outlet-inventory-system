@@ -1,0 +1,656 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - "BEST SELLER" FULL-WIDTH SHOWCASE
+     - 100% Dynamic Backend Fetching from WordPress Products (REST API)
+     - ZERO Hardcoded Products: Pulls directly from WordPress Admin > Products
+     - Accurate Pricing: Handles WooCommerce currency_minor_unit (0 units) & Sale Prices
+     - 5 Products Per Row (Desktop)
+     - Square Shape Product Cards (aspect-ratio: 1 / 1)
+     - Exact Circle Arrow Navigation Buttons (Red Left + White Right)
+     - Typography: Lato (Minimalist, Light Mode)
+     - 100% Native WooCommerce Cart Integration (AJAX + Session Cookies)
+     ========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+  /* Prevent horizontal scrollbars from 100vw breakout */
+  html, body {
+    overflow-x: clip;
+  }
+
+  /* ================= SCOPED RESET & STYLING ================= */
+  .bs-section-wrapper,
+  .bs-section-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  /* 100vw Edge-to-Edge Full-Width Breakout */
+  .bs-section-wrapper {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 40px calc(50% - 50vw);
+    background: #FFFFFF;
+    padding: 36px clamp(16px, 4vw, 64px);
+    color: #111827;
+  }
+
+  /* Header */
+  .bs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #F3F4F6;
+  }
+
+  .bs-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bs-badge-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #FEF2F2;
+    color: #DC2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .bs-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.01em;
+  }
+
+  /* Circular Navigation Buttons */
+  .bs-arrows {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bs-nav-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FF4742;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(255, 71, 66, 0.3);
+  }
+
+  .bs-nav-prev:hover {
+    background: #E03530;
+    transform: scale(1.06);
+    box-shadow: 0 6px 16px rgba(255, 71, 66, 0.4);
+  }
+
+  .bs-nav-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bs-nav-next:hover {
+    border-color: #CBD5E1;
+    background: #F8FAFC;
+    transform: scale(1.06);
+  }
+
+  .bs-arrows svg {
+    width: 17px;
+    height: 17px;
+    stroke: #1E293B;
+    stroke-width: 2.6;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Multi-Row Carousel (5 per row on desktop) */
+  .bs-carousel-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .bs-carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bs-grid {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (4 * 16px)) / 5);
+    gap: 16px;
+  }
+
+  /* Square Shaped Card */
+  .bs-card {
+    aspect-ratio: 1 / 1;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bs-card:hover {
+    border-color: #D1D5DB;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.08);
+  }
+
+  .bs-card-top {
+    flex-shrink: 0;
+  }
+
+  .bs-category {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #9CA3AF;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bs-product-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1F2937;
+    line-height: 1.35;
+    height: 32px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .bs-product-title:hover {
+    color: #DC2626;
+  }
+
+  .bs-img-link {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .bs-img-link img {
+    max-width: 90%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  .bs-card:hover .bs-img-link img {
+    transform: scale(1.08);
+  }
+
+  .bs-bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #F3F4F6;
+    flex-shrink: 0;
+  }
+
+  .bs-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #111827;
+    white-space: nowrap;
+  }
+
+  .bs-add-btn {
+    padding: 7px 12px;
+    background: #DC2626 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none !important;
+    white-space: nowrap;
+  }
+
+  .bs-add-btn:hover {
+    background: #B91C1C !important;
+  }
+
+  .bs-add-btn.loading {
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .bs-cart-flow {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .bs-go-cart-btn {
+    padding: 6px 10px;
+    background: #111827 !important;
+    color: #FFFFFF !important;
+    border-radius: 4px;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+
+  .bs-go-cart-btn:hover {
+    background: #1F2937 !important;
+  }
+
+  .bs-check-badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #16A34A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  /* Shimmer Skeleton */
+  .bs-skeleton {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: bsShimmer 1.5s infinite;
+  }
+  @keyframes bsShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1200px) {
+    .bs-grid {
+      grid-auto-columns: calc((100% - (3 * 16px)) / 4);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .bs-grid {
+      grid-auto-columns: calc((100% - (2 * 14px)) / 3);
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .bs-grid {
+      grid-auto-columns: calc((100% - 10px) / 2);
+      gap: 10px;
+    }
+    .bs-card {
+      padding: 10px;
+    }
+    .bs-product-title {
+      font-size: 11px;
+      height: 28px;
+    }
+    .bs-price {
+      font-size: 12px;
+    }
+    .bs-add-btn {
+      padding: 5px 8px;
+      font-size: 10px !important;
+    }
+  }
+</style>
+
+<div class="bs-section-wrapper">
+  
+  <!-- Header -->
+  <div class="bs-header">
+    <div class="bs-title-wrap">
+      <div class="bs-badge-icon">★</div>
+      <h2 class="bs-title">Best Seller</h2>
+    </div>
+    
+    <!-- Top-Right Navigation Buttons: Solid Red Left + White Right -->
+    <div class="bs-arrows">
+      <button class="bs-nav-prev" onclick="bsScroll(-1)" aria-label="Previous Products">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="bs-nav-next" onclick="bsScroll(1)" aria-label="Next Products">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- 5-Column Carousel Container -->
+  <div class="bs-carousel-container" id="bs-carousel-container">
+    <div class="bs-grid" id="bs-product-grid">
+      <!-- Loading Skeleton Cards -->
+      <div class="bs-card">
+        <div class="bs-skeleton" style="width:50%; height:10px; margin-bottom:6px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="width:85%; height:12px; margin-bottom:10px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="flex:1; width:100%; border-radius:4px; margin-bottom:10px;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="bs-skeleton" style="width:35%; height:14px; border-radius:3px;"></div>
+          <div class="bs-skeleton" style="width:40%; height:26px; border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="bs-card">
+        <div class="bs-skeleton" style="width:50%; height:10px; margin-bottom:6px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="width:85%; height:12px; margin-bottom:10px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="flex:1; width:100%; border-radius:4px; margin-bottom:10px;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="bs-skeleton" style="width:35%; height:14px; border-radius:3px;"></div>
+          <div class="bs-skeleton" style="width:40%; height:26px; border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="bs-card">
+        <div class="bs-skeleton" style="width:50%; height:10px; margin-bottom:6px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="width:85%; height:12px; margin-bottom:10px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="flex:1; width:100%; border-radius:4px; margin-bottom:10px;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="bs-skeleton" style="width:35%; height:14px; border-radius:3px;"></div>
+          <div class="bs-skeleton" style="width:40%; height:26px; border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="bs-card">
+        <div class="bs-skeleton" style="width:50%; height:10px; margin-bottom:6px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="width:85%; height:12px; margin-bottom:10px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="flex:1; width:100%; border-radius:4px; margin-bottom:10px;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="bs-skeleton" style="width:35%; height:14px; border-radius:3px;"></div>
+          <div class="bs-skeleton" style="width:40%; height:26px; border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="bs-card">
+        <div class="bs-skeleton" style="width:50%; height:10px; margin-bottom:6px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="width:85%; height:12px; margin-bottom:10px; border-radius:2px;"></div>
+        <div class="bs-skeleton" style="flex:1; width:100%; border-radius:4px; margin-bottom:10px;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="bs-skeleton" style="width:35%; height:14px; border-radius:3px;"></div>
+          <div class="bs-skeleton" style="width:40%; height:26px; border-radius:4px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Floating Toast -->
+<div id="bs-toast" style="position:fixed; bottom:24px; right:24px; background:#111827; color:#FFFFFF; padding:12px 18px; border-radius:4px; font-size:13px; font-weight:500; box-shadow:0 10px 25px -5px rgba(0,0,0,0.25); display:flex; align-items:center; gap:12px; transform:translateY(100px); opacity:0; transition:all 0.3s ease; z-index:999999;">
+  <span id="bs-toast-msg">Product added to cart</span>
+  <a id="bs-toast-cart-link" href="/cart/" style="color:#F87171; text-decoration:underline; font-weight:600;">Go to Cart &rarr;</a>
+</div>
+
+<script>
+  // Dynamic Environment Detection
+  const bsEnv = (function() {
+    let cartUrl = "/cart/";
+    let ajaxEndpoint = "";
+    let siteBase = "";
+
+    if (typeof wc_add_to_cart_params !== 'undefined') {
+      if (wc_add_to_cart_params.cart_url) cartUrl = wc_add_to_cart_params.cart_url;
+      if (wc_add_to_cart_params.wc_ajax_url) {
+        ajaxEndpoint = wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart');
+      }
+      if (wc_add_to_cart_params.ajax_url) {
+        siteBase = wc_add_to_cart_params.ajax_url.split('/wp-admin')[0];
+      }
+    }
+
+    if (!siteBase) {
+      const match = window.location.pathname.match(/^(\/[^\/]+\/[^\/]+)/);
+      siteBase = window.location.origin + (match ? match[1] : "");
+    }
+
+    if (!ajaxEndpoint) ajaxEndpoint = siteBase + "/?wc-ajax=add_to_cart";
+    if (cartUrl === "/cart/" && siteBase) cartUrl = siteBase + "/cart/";
+
+    return { siteBase: siteBase, ajaxEndpoint: ajaxEndpoint, cartUrl: cartUrl };
+  })();
+
+  // Robust Price Formatter: Properly handles integer AED prices without unwanted division
+  function formatProductPrice(item) {
+    if (item.prices && item.prices.price) {
+      let raw = parseFloat(item.prices.price);
+      
+      // In this WooCommerce backend, currency_minor_unit is 0. 
+      // Only divide if minor unit is explicitly a positive number greater than 0
+      const minor = (typeof item.prices.currency_minor_unit === 'number') ? item.prices.currency_minor_unit : 0;
+      if (minor > 0) {
+        raw = raw / Math.pow(10, minor);
+      }
+      
+      const formatted = Number.isInteger(raw)
+        ? raw.toLocaleString('en-US')
+        : raw.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+      
+      // Check for sale discount
+      if (item.prices.regular_price && item.prices.sale_price && item.prices.regular_price !== item.prices.sale_price) {
+        let reg = parseFloat(item.prices.regular_price);
+        if (minor > 0) reg = reg / Math.pow(10, minor);
+        const regFormatted = Number.isInteger(reg) ? reg.toLocaleString('en-US') : reg.toLocaleString('en-US');
+        return `AED ${formatted} <span style="text-decoration:line-through; color:#94A3B8; font-size:11px; margin-left:4px; font-weight:500;">AED ${regFormatted}</span>`;
+      }
+      
+      return `AED ${formatted}`;
+    }
+
+    if (item.price) {
+      const clean = String(item.price).replace(/AED/gi, '').trim();
+      return "AED " + clean;
+    }
+
+    return "AED 0";
+  }
+
+  // Pure Live Fetch from WordPress Database (No Hardcoding)
+  async function bsLoadLiveProducts() {
+    const grid = document.getElementById('bs-product-grid');
+    let products = [];
+
+    // 1. Fetch from WooCommerce Store API
+    try {
+      const storeApiUrl = bsEnv.siteBase + '/wp-json/wc/store/v1/products?orderby=popularity&order=desc&per_page=12';
+      const res = await fetch(storeApiUrl, { method: 'GET', headers: { 'Accept': 'application/json' } });
+      
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          products = data.map(function(item) {
+            return {
+              id: item.id,
+              name: item.name,
+              category: (item.categories && item.categories[0]) ? item.categories[0].name : "Fire Products",
+              price: formatProductPrice(item),
+              image: (item.images && item.images[0]) ? item.images[0].src : "",
+              link: item.permalink || (bsEnv.siteBase + '/?p=' + item.id)
+            };
+          });
+        }
+      }
+    } catch (e) {
+      console.warn("Store API query error:", e);
+    }
+
+    // 2. Fallback to WordPress WP REST API
+    if (products.length === 0) {
+      try {
+        const wpApiUrl = bsEnv.siteBase + '/wp-json/wp/v2/product?per_page=12';
+        const res = await fetch(wpApiUrl, { method: 'GET', headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            products = data.map(function(item) {
+              return {
+                id: item.id,
+                name: item.title ? item.title.rendered : "Product",
+                category: "Fire Products",
+                price: item.price ? ("AED " + item.price) : "AED Contact",
+                image: (item.featured_media_src_url || ""),
+                link: item.link
+              };
+            });
+          }
+        }
+      } catch (err) {
+        console.warn("WP REST API query error:", err);
+      }
+    }
+
+    // Render Live Backend Products
+    if (products.length > 0) {
+      renderLiveBestSellers(products);
+    } else if (grid) {
+      grid.innerHTML = `
+        <div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: #64748B;">
+          <p style="font-size: 15px; font-weight: 600; margin-bottom: 6px;">Connected to WordPress Backend</p>
+          <p style="font-size: 13px;">No published products found in your catalog. Please ensure products are published in WP Admin &gt; Products.</p>
+        </div>
+      `;
+    }
+  }
+
+  function renderLiveBestSellers(items) {
+    const grid = document.getElementById('bs-product-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    items.forEach(function(item) {
+      const card = document.createElement('div');
+      card.className = 'bs-card';
+      card.innerHTML = `
+        <div class="bs-card-top">
+          <div class="bs-category">${item.category}</div>
+          <a href="${item.link}" class="bs-product-title" title="${item.name}">${item.name}</a>
+        </div>
+        
+        <a href="${item.link}" class="bs-img-link" title="${item.name}">
+          ${item.image ? `<img src="${item.image}" alt="${item.name}" loading="lazy">` : `<div style="color:#94A3B8; font-size:12px;">No Image</div>`}
+        </a>
+
+        <div class="bs-bottom-bar">
+          <div class="bs-price">${item.price}</div>
+          <div id="bs-action-${item.id}">
+            <a href="?add-to-cart=${item.id}" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bs-add-btn" data-product_id="${item.id}" onclick="bsAddToCart(${item.id}, '${item.name.replace(/'/g, "\\'")}', this, event)">
+              <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>Add</span>
+            </a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function bsScroll(dir) {
+    const container = document.getElementById('bs-carousel-container');
+    if (container) {
+      const scrollAmount = container.clientWidth * 0.85;
+      container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+    }
+  }
+
+  async function bsAddToCart(productId, productName, btn, event) {
+    event.preventDefault();
+    if (btn.classList.contains('loading')) return;
+    btn.classList.add('loading');
+    btn.innerHTML = "<span>...</span>";
+
+    try {
+      const params = new URLSearchParams();
+      params.append('product_id', productId);
+      params.append('quantity', '1');
+
+      const response = await fetch(bsEnv.ajaxEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: params.toString(),
+        credentials: 'include'
+      });
+
+      if (response.ok && window.jQuery) {
+        window.jQuery(document.body).trigger('wc_fragment_refresh');
+        window.jQuery(document.body).trigger('added_to_cart', [null, null, window.jQuery(btn)]);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+    const actionWrap = document.getElementById('bs-action-' + productId);
+    if (actionWrap) {
+      actionWrap.innerHTML = `
+        <div class="bs-cart-flow">
+          <a href="${bsEnv.cartUrl}" class="bs-go-cart-btn"><span>Cart</span> &rarr;</a>
+          <div class="bs-check-badge" title="Added to cart">✓</div>
+        </div>
+      `;
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bsLoadLiveProducts);
+  } else {
+    bsLoadLiveProducts();
+  }
+</script>

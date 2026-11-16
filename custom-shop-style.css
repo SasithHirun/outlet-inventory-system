@@ -1,0 +1,652 @@
+/* ==========================================================================
+   PACIFIC POWER & FIRE CONTRACTORS - WOOCOMMERCE SHOP PAGE REDESIGN
+   - Matches: Best Seller, Detections, & Deal of the Day Product Cards
+   - Typography: 100% Lato Minimalist Light Theme
+   - Colors: Primary Red (#DC2626), Slate Dark (#0F172A / #1E293B), Muted (#64748B)
+   - Layout: Modern Responsive CSS Grid, Equal-Height Rounded Cards, Floating Badges
+   - Compatible with: WooCommerce Core, Hello Elementor, Onsus Theme, YITH Request a Quote
+   ========================================================================== */
+
+/* Load Google Lato Font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap');
+
+/* ==========================================================================
+   1. SHOP CONTAINER & GLOBAL TYPOGRAPHY
+   ========================================================================== */
+.woocommerce-page,
+.post-type-archive-product,
+.tax-product_cat,
+.tax-product_tag {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #1E293B;
+  background-color: #FFFFFF;
+}
+
+/* Shop Main Content Bounds (Matching 1340px Wide Standard) */
+.woocommerce-page .site-main,
+.post-type-archive-product .site-main,
+.woocommerce-page .content-area,
+.post-type-archive-product .content-area,
+.woocommerce.archive .elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 1340px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* Breadcrumbs */
+.woocommerce-page .woocommerce-breadcrumb {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13px !important;
+  color: #64748B !important;
+  margin: 18px 0 24px 0 !important;
+  padding: 0 !important;
+}
+
+.woocommerce-page .woocommerce-breadcrumb a {
+  color: #475569 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.woocommerce-page .woocommerce-breadcrumb a:hover {
+  color: #DC2626 !important;
+}
+
+/* Page Header & Title */
+.woocommerce-page .woocommerce-products-header {
+  margin-bottom: 25px !important;
+  padding-bottom: 15px !important;
+  border-bottom: 1px solid #F1F5F9 !important;
+}
+
+.woocommerce-page .woocommerce-products-header__title.page-title {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* ==========================================================================
+   2. TOP TOOLBAR (RESULT COUNT & ORDERING DROPDOWN)
+   ========================================================================== */
+.woocommerce-page .woocommerce-notices-wrapper {
+  margin-bottom: 15px !important;
+}
+
+/* Flex Toolbar Container */
+.woocommerce-page .woocommerce-result-count {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #64748B !important;
+  float: left !important;
+  margin: 8px 0 20px 0 !important;
+}
+
+.woocommerce-page .woocommerce-ordering {
+  float: right !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.woocommerce-page .woocommerce-ordering select {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #1E293B !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 6px !important;
+  padding: 9px 34px 9px 14px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+}
+
+.woocommerce-page .woocommerce-ordering select:hover,
+.woocommerce-page .woocommerce-ordering select:focus {
+  border-color: #DC2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+/* Clearfix for toolbar */
+.woocommerce-page .woocommerce-result-count::after,
+.woocommerce-page .woocommerce-ordering::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ==========================================================================
+   3. MODERN PRODUCT GRID LAYOUT
+   ========================================================================== */
+.woocommerce-page ul.products,
+.woocommerce ul.products {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  margin: 25px 0 40px 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  clear: both !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+.woocommerce ul.products::before,
+.woocommerce ul.products::after {
+  display: none !important;
+}
+
+/* ==========================================================================
+   4. PRODUCT CARD STYLING (MATCHING DETECTIONS & BEST SELLER SECTIONS)
+   ========================================================================== */
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 8px !important;
+  padding: 16px 14px 14px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  float: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-shadow: none !important;
+}
+
+/* Card Hover Elevation */
+.woocommerce ul.products li.product:hover,
+.woocommerce-page ul.products li.product:hover {
+  border-color: #D1D5DB !important;
+  box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Link Wrapper */
+.woocommerce ul.products li.product .woocommerce-LoopProduct-link,
+.woocommerce-page ul.products li.product .woocommerce-LoopProduct-link {
+  display: flex !important;
+  flex-direction: column !important;
+  text-decoration: none !important;
+  flex-grow: 1 !important;
+}
+
+/* ==========================================================================
+   5. SALE & SPECIAL OFFER BADGES
+   ========================================================================== */
+.woocommerce ul.products li.product .onsale,
+.woocommerce-page ul.products li.product .onsale {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  margin: 0 !important;
+  min-height: auto !important;
+  min-width: auto !important;
+  line-height: 1 !important;
+  background: #DC2626 !important;
+  color: #FFFFFF !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3) !important;
+  z-index: 5 !important;
+}
+
+/* ==========================================================================
+   6. PRODUCT IMAGE CONTAINER & HOVER ZOOM
+   ========================================================================== */
+.woocommerce ul.products li.product .woocommerce-LoopProduct-link img,
+.woocommerce-page ul.products li.product .woocommerce-LoopProduct-link img {
+  display: block !important;
+  width: 100% !important;
+  height: 170px !important;
+  max-height: 170px !important;
+  object-fit: contain !important;
+  margin: 0 auto 14px auto !important;
+  padding: 6px 0 !important;
+  transition: transform 0.25s ease !important;
+  background: transparent !important;
+}
+
+.woocommerce ul.products li.product:hover .woocommerce-LoopProduct-link img,
+.woocommerce-page ul.products li.product:hover .woocommerce-LoopProduct-link img {
+  transform: scale(1.06) !important;
+}
+
+/* ==========================================================================
+   7. PRODUCT CATEGORY & TITLE
+   ========================================================================== */
+/* Optional Category Label if generated by theme */
+.woocommerce ul.products li.product .posted_in,
+.woocommerce ul.products li.product .onsus-product-cat,
+.woocommerce ul.products li.product .product-cat-name {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #9CA3AF !important;
+  margin-bottom: 5px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  text-decoration: none !important;
+  display: block !important;
+}
+
+/* Product Title (2-line clean clamped title) */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce-page ul.products li.product .woocommerce-loop-product__title {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #1E293B !important;
+  line-height: 1.4 !important;
+  height: 38px !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin: 0 0 10px 0 !important;
+  padding: 0 !important;
+  transition: color 0.15s ease !important;
+}
+
+.woocommerce ul.products li.product:hover .woocommerce-loop-product__title,
+.woocommerce-page ul.products li.product:hover .woocommerce-loop-product__title {
+  color: #DC2626 !important;
+}
+
+/* Star Ratings */
+.woocommerce ul.products li.product .star-rating {
+  font-size: 11px !important;
+  margin: 0 0 8px 0 !important;
+  color: #ECA227 !important;
+}
+
+/* ==========================================================================
+   8. PRICING DISPLAY
+   ========================================================================== */
+.woocommerce ul.products li.product .price,
+.woocommerce-page ul.products li.product .price {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  margin-bottom: 12px !important;
+  display: block !important;
+  line-height: 1.3 !important;
+}
+
+/* Del / Old Price */
+.woocommerce ul.products li.product .price del,
+.woocommerce-page ul.products li.product .price del {
+  color: #94A3B8 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  margin-right: 6px !important;
+}
+
+/* Ins / Active Sale Price */
+.woocommerce ul.products li.product .price ins,
+.woocommerce-page ul.products li.product .price ins {
+  color: #DC2626 !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+}
+
+/* Currency AED Symbol */
+.woocommerce ul.products li.product .price .woocommerce-Price-currencySymbol {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: inherit !important;
+  margin-right: 2px !important;
+}
+
+/* ==========================================================================
+   9. ACTION BUTTONS (ADD TO CART & GET QUOTE)
+   ========================================================================== */
+/* Primary Full-Width Red Button */
+.woocommerce ul.products li.product .button,
+.woocommerce-page ul.products li.product .button,
+.woocommerce ul.products li.product a.add_to_cart_button,
+.woocommerce-page ul.products li.product a.add_to_cart_button {
+  width: 100% !important;
+  padding: 9px 12px !important;
+  background: #DC2626 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.15) !important;
+}
+
+.woocommerce ul.products li.product .button:hover,
+.woocommerce-page ul.products li.product .button:hover,
+.woocommerce ul.products li.product a.add_to_cart_button:hover,
+.woocommerce-page ul.products li.product a.add_to_cart_button:hover {
+  background: #B91C1C !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25) !important;
+}
+
+/* Loading & Added States */
+.woocommerce ul.products li.product .button.loading {
+  opacity: 0.75 !important;
+  padding-right: 32px !important;
+}
+
+/* View Cart Link */
+.woocommerce ul.products li.product .added_to_cart,
+.woocommerce-page ul.products li.product .added_to_cart {
+  display: block !important;
+  text-align: center !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #059669 !important;
+  margin-top: 6px !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.woocommerce ul.products li.product .added_to_cart:hover {
+  color: #047857 !important;
+  text-decoration: underline !important;
+}
+
+/* YITH Request a Quote Secondary Button */
+.woocommerce ul.products li.product .yith-ywraq-add-to-quote,
+.woocommerce-page ul.products li.product .yith-ywraq-add-to-quote {
+  margin-top: 6px !important;
+  width: 100% !important;
+}
+
+.woocommerce ul.products li.product .add-request-quote-button,
+.woocommerce-page ul.products li.product .add-request-quote-button {
+  width: 100% !important;
+  padding: 8px 12px !important;
+  background: #F8FAFC !important;
+  color: #334155 !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 6px !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  display: block !important;
+  transition: all 0.15s ease !important;
+  text-transform: capitalize !important;
+}
+
+.woocommerce ul.products li.product .add-request-quote-button:hover,
+.woocommerce-page ul.products li.product .add-request-quote-button:hover {
+  background: #F1F5F9 !important;
+  border-color: #CBD5E1 !important;
+  color: #DC2626 !important;
+}
+
+/* ==========================================================================
+   10. WOOCOMMERCE PAGINATION
+   ========================================================================== */
+.woocommerce-page nav.woocommerce-pagination,
+.woocommerce nav.woocommerce-pagination {
+  margin: 45px 0 25px 0 !important;
+  text-align: center !important;
+  border-top: 1px solid #F1F5F9 !important;
+  padding-top: 25px !important;
+}
+
+.woocommerce-pagination ul.page-numbers {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.woocommerce-pagination ul.page-numbers li {
+  border: none !important;
+  float: none !important;
+  display: inline-block !important;
+  margin: 0 !important;
+}
+
+.woocommerce-pagination ul.page-numbers li .page-numbers {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #1E293B !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 6px !important;
+  min-width: 38px !important;
+  height: 38px !important;
+  line-height: 36px !important;
+  padding: 0 10px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.woocommerce-pagination ul.page-numbers li .page-numbers:hover {
+  border-color: #DC2626 !important;
+  color: #DC2626 !important;
+  background: #FEF2F2 !important;
+}
+
+/* Active Page */
+.woocommerce-pagination ul.page-numbers li .page-numbers.current {
+  background: #DC2626 !important;
+  border-color: #DC2626 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3) !important;
+}
+
+/* ==========================================================================
+   11. SHOP SIDEBAR & FILTER WIDGETS (IF SIDEBAR IS VISIBLE)
+   ========================================================================== */
+.woocommerce-page .widget-area .widget,
+.woocommerce-page #secondary .widget {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  margin-bottom: 24px !important;
+}
+
+.woocommerce-page .widget .widget-title,
+.woocommerce-page #secondary .widget-title {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid #F1F5F9 !important;
+  position: relative !important;
+}
+
+.woocommerce-page .widget .widget-title::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 35px !important;
+  height: 2px !important;
+  background: #DC2626 !important;
+}
+
+/* Product Categories in Sidebar */
+.woocommerce-page .widget_product_categories ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.woocommerce-page .widget_product_categories ul li {
+  padding: 7px 0 !important;
+  border-bottom: 1px solid #F8FAFC !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.woocommerce-page .widget_product_categories ul li a {
+  font-size: 13px !important;
+  color: #4B5563 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease !important;
+}
+
+.woocommerce-page .widget_product_categories ul li a:hover {
+  color: #DC2626 !important;
+  font-weight: 700 !important;
+}
+
+.woocommerce-page .widget_product_categories ul li .count {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #94A3B8 !important;
+  background: #F1F5F9 !important;
+  padding: 2px 7px !important;
+  border-radius: 10px !important;
+}
+
+/* Price Filter Slider */
+.woocommerce-page .widget_price_filter .ui-slider-range {
+  background-color: #DC2626 !important;
+}
+
+.woocommerce-page .widget_price_filter .ui-slider-handle {
+  background-color: #DC2626 !important;
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.woocommerce-page .widget_price_filter .price_slider_amount .button {
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  border-radius: 4px !important;
+  padding: 6px 14px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.woocommerce-page .widget_price_filter .price_slider_amount .button:hover {
+  background: #DC2626 !important;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+/* Tablet & Medium Screens: 3 columns */
+@media (max-width: 1100px) {
+  .woocommerce-page ul.products,
+  .woocommerce ul.products {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+/* Small Tablets / Landscape Mobile: 2 columns */
+@media (max-width: 768px) {
+  .woocommerce-page ul.products,
+  .woocommerce ul.products {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .woocommerce-page .woocommerce-result-count,
+  .woocommerce-page .woocommerce-ordering {
+    float: none !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin-bottom: 12px !important;
+  }
+
+  .woocommerce-page .woocommerce-ordering select {
+    width: 100% !important;
+  }
+}
+
+/* Small Mobile: 2 compact columns (standard modern e-commerce mobile layout) */
+@media (max-width: 480px) {
+  .woocommerce-page ul.products,
+  .woocommerce ul.products {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .woocommerce ul.products li.product,
+  .woocommerce-page ul.products li.product {
+    padding: 10px !important;
+  }
+
+  .woocommerce ul.products li.product .woocommerce-LoopProduct-link img,
+  .woocommerce-page ul.products li.product .woocommerce-LoopProduct-link img {
+    height: 120px !important;
+    max-height: 120px !important;
+  }
+
+  .woocommerce ul.products li.product .woocommerce-loop-product__title,
+  .woocommerce-page ul.products li.product .woocommerce-loop-product__title {
+    font-size: 12px !important;
+    height: 34px !important;
+  }
+
+  .woocommerce ul.products li.product .price,
+  .woocommerce-page ul.products li.product .price {
+    font-size: 13.5px !important;
+  }
+
+  .woocommerce ul.products li.product .button,
+  .woocommerce-page ul.products li.product .button {
+    font-size: 11px !important;
+    padding: 7px 8px !important;
+  }
+}

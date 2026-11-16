@@ -1,0 +1,697 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - 2 BRAND NEW HOME PAGE SECTIONS
+     Section 1: Industry Sectors We Safeguard (with Live Achievement Counter)
+     Section 2: Annual Maintenance (AMC) Package Comparison & Pricing Tiers
+     Typography: 100% Lato | Theme Colors: #333E48, #D32F2F, #1565C0, #ECA227
+     ========================================================================== -->
+
+<!-- Google Fonts: Lato -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  /* ================= ISOLATED SCOPE & RESET ================= */
+  .ppfc-new-sections,
+  .ppfc-new-sections * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Strict Lato enforcement across every single content element */
+  .ppfc-new-sections,
+  .ppfc-new-sections h1,
+  .ppfc-new-sections h2,
+  .ppfc-new-sections h3,
+  .ppfc-new-sections h4,
+  .ppfc-new-sections h5,
+  .ppfc-new-sections h6,
+  .ppfc-new-sections p,
+  .ppfc-new-sections span,
+  .ppfc-new-sections a,
+  .ppfc-new-sections li,
+  .ppfc-new-sections div,
+  .ppfc-new-sections button,
+  .ppfc-new-sections strong,
+  .ppfc-new-sections b {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  /* Ensure FontAwesome icons retain their icon font */
+  .ppfc-new-sections i,
+  .ppfc-new-sections [class*="fa-"] {
+    font-family: "Font Awesome 6 Free" !important;
+  }
+
+  .ppfc-new-sections {
+    color: #555E68;
+    background-color: #FFFFFF;
+    line-height: 1.65;
+    padding: 30px 0;
+  }
+
+  .ppfc-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Common Headings & Badges */
+  .ppfc-tag-badge {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  .ppfc-main-heading {
+    font-size: 34px;
+    font-weight: 900;
+    color: #333E48;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+
+  .ppfc-sub-intro {
+    font-size: 15px;
+    color: #64748B;
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  /* ==========================================================================
+     NEW SECTION 1: SECTORS & ENVIRONMENTS WE SAFEGUARD
+     ========================================================================== */
+  .ppfc-sectors-section {
+    padding: 70px 0 85px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .ppfc-sectors-header {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+  .ppfc-sectors-header .ppfc-sub-intro {
+    margin: 0 auto;
+  }
+
+  .ppfc-sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .ppfc-sector-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ppfc-sector-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+    border-color: #1565C0;
+  }
+
+  .ppfc-sector-img-wrap {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+  }
+
+  .ppfc-sector-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .ppfc-sector-card:hover .ppfc-sector-img-wrap img {
+    transform: scale(1.08);
+  }
+
+  .ppfc-sector-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: rgba(15, 23, 42, 0.85);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
+
+  .ppfc-sector-body {
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .ppfc-sector-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333E48;
+    margin-bottom: 10px;
+  }
+
+  .ppfc-sector-body p {
+    font-size: 13.5px;
+    color: #64748B;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .ppfc-sector-list {
+    list-style: none;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #F1F5F9;
+  }
+
+  .ppfc-sector-list li {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #333E48;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .ppfc-sector-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .ppfc-sector-list li i {
+    color: #D32F2F;
+    font-size: 13px;
+  }
+
+  /* Live Achievements Strip Under Sectors */
+  .ppfc-stats-strip {
+    background-color: #333E48;
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 30px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+  }
+
+  .ppfc-stat-item {
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .ppfc-stat-item:last-child {
+    border-right: none;
+  }
+
+  .ppfc-stat-number {
+    font-size: 38px;
+    font-weight: 900;
+    color: #ECA227; /* Golden Amber */
+    line-height: 1.1;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+
+  .ppfc-stat-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #E2E8F0;
+  }
+
+  .ppfc-stat-sub {
+    font-size: 11.5px;
+    color: #94A3B8;
+  }
+
+  /* ==========================================================================
+     NEW SECTION 2: ANNUAL MAINTENANCE (AMC) PACKAGES & PRICING
+     ========================================================================== */
+  .ppfc-amc-pricing-section {
+    padding: 85px 0 95px;
+    background-color: #FFFFFF;
+  }
+
+  .ppfc-amc-header {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+  .ppfc-amc-header .ppfc-sub-intro {
+    margin: 0 auto;
+  }
+
+  .ppfc-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+  }
+
+  .ppfc-price-card {
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .ppfc-price-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.10);
+  }
+
+  /* Featured / Most Popular Middle Plan */
+  .ppfc-price-card.is-popular {
+    border-color: #D32F2F;
+    box-shadow: 0 12px 32px rgba(211, 47, 47, 0.12);
+    transform: scale(1.03);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F8 100%);
+  }
+
+  .ppfc-price-card.is-popular:hover {
+    transform: scale(1.03) translateY(-6px);
+    box-shadow: 0 18px 40px rgba(211, 47, 47, 0.20);
+  }
+
+  .ppfc-popular-ribbon {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(211, 47, 47, 0.35);
+  }
+
+  .ppfc-plan-name {
+    font-size: 22px;
+    font-weight: 900;
+    color: #333E48;
+    margin-bottom: 8px;
+  }
+
+  .ppfc-plan-desc {
+    font-size: 13.5px;
+    color: #64748B;
+    line-height: 1.5;
+    min-height: 40px;
+    margin-bottom: 22px;
+  }
+
+  .ppfc-price-tag {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .ppfc-price-from {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: block;
+  }
+
+  .ppfc-price-val {
+    font-size: 36px;
+    font-weight: 900;
+    color: #333E48;
+    line-height: 1.1;
+  }
+
+  .ppfc-price-val span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+  }
+
+  .ppfc-features-list {
+    list-style: none;
+    margin-bottom: 30px;
+    flex: 1;
+  }
+
+  .ppfc-features-list li {
+    font-size: 13.5px;
+    color: #475569;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    line-height: 1.45;
+  }
+
+  .ppfc-features-list li i {
+    color: #1565C0;
+    font-size: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .ppfc-price-card.is-popular .ppfc-features-list li i {
+    color: #D32F2F;
+  }
+
+  .ppfc-plan-btn {
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: block;
+    cursor: pointer;
+  }
+
+  .ppfc-btn-outline {
+    border: 2px solid #333E48;
+    color: #333E48;
+    background: transparent;
+  }
+
+  .ppfc-btn-outline:hover {
+    background: #333E48;
+    color: #FFFFFF;
+  }
+
+  .ppfc-btn-highlight {
+    background-color: #ECA227;
+    color: #1A202C;
+    border: none;
+    box-shadow: 0 4px 14px rgba(236, 162, 39, 0.4);
+  }
+
+  .ppfc-btn-highlight:hover {
+    background-color: #D9911A;
+    color: #000000;
+    transform: translateY(-2px);
+  }
+
+  /* ================= RESPONSIVE BREAKPOINTS ================= */
+  @media (max-width: 1024px) {
+    .ppfc-sectors-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ppfc-stats-strip {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    .ppfc-stat-item:nth-child(2) {
+      border-right: none;
+    }
+    .ppfc-pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .ppfc-price-card.is-popular {
+      transform: none;
+    }
+    .ppfc-price-card.is-popular:hover {
+      transform: translateY(-6px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .ppfc-main-heading {
+      font-size: 26px;
+    }
+    .ppfc-sectors-grid {
+      grid-template-columns: 1fr;
+    }
+    .ppfc-stats-strip {
+      grid-template-columns: 1fr;
+      padding: 25px 20px;
+    }
+    .ppfc-stat-item {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+    .ppfc-stat-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+</style>
+
+<div class="ppfc-new-sections">
+
+  <!-- ==========================================================================
+       SECTION 1: SECTORS & ENVIRONMENTS WE SAFEGUARD
+       ========================================================================== -->
+  <section class="ppfc-sectors-section">
+    <div class="ppfc-container">
+
+      <!-- Header -->
+      <div class="ppfc-sectors-header">
+        <span class="ppfc-tag-badge" style="color: #1565C0;">SECTOR EXPERTISE</span>
+        <h2 class="ppfc-main-heading">Specialized Fire Protection Tailored to Every UAE Industry</h2>
+        <p class="ppfc-sub-intro">
+          Different building structures carry unique risk profiles. From high-hazard industrial warehousing to critical server rooms, we design and certify compliant solutions for every environment.
+        </p>
+      </div>
+
+      <!-- 4-Card Sector Showcase -->
+      <div class="ppfc-sectors-grid">
+        
+        <!-- Sector 1: Commercial Towers -->
+        <div class="ppfc-sector-card">
+          <div class="ppfc-sector-img-wrap">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80" 
+                 alt="Commercial high-rises and corporate offices in Dubai">
+            <span class="ppfc-sector-badge">Commercial</span>
+          </div>
+          <div class="ppfc-sector-body">
+            <h3>High-Rise &amp; Office Towers</h3>
+            <p>Complete life safety infrastructure engineered for dense commercial towers and business headquarters.</p>
+            <ul class="ppfc-sector-list">
+              <li><i class="fa-solid fa-circle-check"></i> Addressable Fire Alarms</li>
+              <li><i class="fa-solid fa-circle-check"></i> Sprinkler Riser Monitoring</li>
+              <li><i class="fa-solid fa-circle-check"></i> Monitored Voice Evacuation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sector 2: Industrial Warehouses -->
+        <div class="ppfc-sector-card">
+          <div class="ppfc-sector-img-wrap">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80" 
+                 alt="Industrial logistics warehouses and manufacturing facilities">
+            <span class="ppfc-sector-badge">Industrial</span>
+          </div>
+          <div class="ppfc-sector-body">
+            <h3>Warehouses &amp; Logistics</h3>
+            <p>Heavy-duty fire suppression and high-volume water supply systems for logistics hubs and factories.</p>
+            <ul class="ppfc-sector-list">
+              <li><i class="fa-solid fa-circle-check"></i> High-Bay ESFR Sprinklers</li>
+              <li><i class="fa-solid fa-circle-check"></i> Diesel &amp; Electric Fire Pumps</li>
+              <li><i class="fa-solid fa-circle-check"></i> Foam Deluge Suppression</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sector 3: Data Centers -->
+        <div class="ppfc-sector-card">
+          <div class="ppfc-sector-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" 
+                 alt="Mission critical data centers and electrical switch rooms">
+            <span class="ppfc-sector-badge">Data Centers</span>
+          </div>
+          <div class="ppfc-sector-body">
+            <h3>Critical Server Rooms</h3>
+            <p>Non-conductive clean agent flooding that extinguishes electrical fires in seconds without water damage.</p>
+            <ul class="ppfc-sector-list">
+              <li><i class="fa-solid fa-circle-check"></i> FM200 &amp; Novec 1230 Gas</li>
+              <li><i class="fa-solid fa-circle-check"></i> Aspirating Smoke Detection (VESDA)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Zero Residue &amp; Equipment Safety</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sector 4: Residential Communities -->
+        <div class="ppfc-sector-card">
+          <div class="ppfc-sector-img-wrap">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80" 
+                 alt="Residential communities and residential apartment buildings">
+            <span class="ppfc-sector-badge">Residential</span>
+          </div>
+          <div class="ppfc-sector-body">
+            <h3>Residential Communities</h3>
+            <p>Annual maintenance contracts, hose reels, and detection systems safeguarding tenants and property owners.</p>
+            <ul class="ppfc-sector-list">
+              <li><i class="fa-solid fa-circle-check"></i> Interlinked Smoke Alarms</li>
+              <li><i class="fa-solid fa-circle-check"></i> Fire Extinguishers &amp; Hose Reels</li>
+              <li><i class="fa-solid fa-circle-check"></i> Civil Defense NOC Renewal</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Statistics Strip -->
+      <div class="ppfc-stats-strip">
+        <div class="ppfc-stat-item">
+          <div class="ppfc-stat-number">15+</div>
+          <div class="ppfc-stat-label">Years of Trust</div>
+          <div class="ppfc-stat-sub">Across Dubai &amp; the UAE</div>
+        </div>
+        <div class="ppfc-stat-item">
+          <div class="ppfc-stat-number">1,250+</div>
+          <div class="ppfc-stat-label">Buildings Protected</div>
+          <div class="ppfc-stat-sub">Active AMC Contracts</div>
+        </div>
+        <div class="ppfc-stat-item">
+          <div class="ppfc-stat-number">100%</div>
+          <div class="ppfc-stat-label">Compliance Pass</div>
+          <div class="ppfc-stat-sub">Dubai Civil Defense Approved</div>
+        </div>
+        <div class="ppfc-stat-item">
+          <div class="ppfc-stat-number">&lt; 30m</div>
+          <div class="ppfc-stat-label">Emergency Response</div>
+          <div class="ppfc-stat-sub">24/7 Field Dispatch</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+     SECTION 2: ANNUAL MAINTENANCE (AMC) PACKAGES & COMPARISON
+     ========================================================================== -->
+  <section class="ppfc-amc-pricing-section">
+    <div class="ppfc-container">
+
+      <!-- Header -->
+      <div class="ppfc-amc-header">
+        <span class="ppfc-tag-badge" style="color: #D32F2F;">MAINTENANCE PACKAGES</span>
+        <h2 class="ppfc-main-heading">Transparent Annual Maintenance (AMC) Contracts</h2>
+        <p class="ppfc-sub-intro">
+          Prevent costly Civil Defense violation fines and equipment breakdown. Choose a certified maintenance plan tailored to your building square footage and operational schedule.
+        </p>
+      </div>
+
+      <!-- 3-Tier AMC Packages -->
+      <div class="ppfc-pricing-grid">
+        
+        <!-- Plan 1: Standard Compliance -->
+        <div class="ppfc-price-card">
+          <h3 class="ppfc-plan-name">Standard Compliance</h3>
+          <p class="ppfc-plan-desc">Essential regulatory inspection package for small businesses, retail shops, and standalone clinics.</p>
+          
+          <div class="ppfc-price-tag">
+            <span class="ppfc-price-from">Starting From</span>
+            <div class="ppfc-price-val">AED 1,499 <span>/ year</span></div>
+          </div>
+
+          <ul class="ppfc-features-list">
+            <li><i class="fa-solid fa-check"></i> 4 Scheduled Quarterly Inspections</li>
+            <li><i class="fa-solid fa-check"></i> Fire Extinguishers Pressure Checks &amp; Tagging</li>
+            <li><i class="fa-solid fa-check"></i> Emergency Exit Lighting Battery Tests</li>
+            <li><i class="fa-solid fa-check"></i> Dubai Civil Defense Portal Logbook Update</li>
+            <li><i class="fa-solid fa-check"></i> Standard Business Hours Support</li>
+          </ul>
+
+          <a href="tel:+971544472389" class="ppfc-plan-btn ppfc-btn-outline">
+            Choose Standard
+          </a>
+        </div>
+
+        <!-- Plan 2: Comprehensive 24/7 (Most Popular) -->
+        <div class="ppfc-price-card is-popular">
+          <div class="ppfc-popular-ribbon">Most Popular</div>
+          <h3 class="ppfc-plan-name">Comprehensive 24/7</h3>
+          <p class="ppfc-plan-desc">Complete peace-of-mind coverage for residential buildings, commercial towers, and schools.</p>
+          
+          <div class="ppfc-price-tag">
+            <span class="ppfc-price-from">Starting From</span>
+            <div class="ppfc-price-val">AED 2,999 <span>/ year</span></div>
+          </div>
+
+          <ul class="ppfc-features-list">
+            <li><i class="fa-solid fa-check"></i> <strong>12 Monthly Preventive Checks</strong> + Quarterly Tests</li>
+            <li><i class="fa-solid fa-check"></i> <strong>24/7 Unlimited Emergency Call-Outs</strong></li>
+            <li><i class="fa-solid fa-check"></i> Fire Pump Flow &amp; Pressure Operational Overhaul</li>
+            <li><i class="fa-solid fa-check"></i> Sprinkler Valves &amp; Alarm Panel Diagnostic</li>
+            <li><i class="fa-solid fa-check"></i> Free Minor Replacement of Sensors &amp; Seals</li>
+            <li><i class="fa-solid fa-check"></i> Guaranteed Civil Defense Certificate Renewal</li>
+          </ul>
+
+          <a href="tel:+971544472389" class="ppfc-plan-btn ppfc-btn-highlight">
+            Choose Comprehensive
+          </a>
+        </div>
+
+        <!-- Plan 3: Industrial Enterprise -->
+        <div class="ppfc-price-card">
+          <h3 class="ppfc-plan-name">Industrial Enterprise</h3>
+          <p class="ppfc-plan-desc">Dedicated engineering support for logistics warehouses, multi-site complexes, and data centers.</p>
+          
+          <div class="ppfc-price-tag">
+            <span class="ppfc-price-from">Customized For</span>
+            <div class="ppfc-price-val">Tailored <span>/ Facility</span></div>
+          </div>
+
+          <ul class="ppfc-features-list">
+            <li><i class="fa-solid fa-check"></i> Dedicated Lead Safety Engineer Assigned</li>
+            <li><i class="fa-solid fa-check"></i> Clean Agent (FM200 / Novec) Gas Flooding Servicing</li>
+            <li><i class="fa-solid fa-check"></i> High-Bay ESFR Sprinklers &amp; Hydrant Flow Tests</li>
+            <li><i class="fa-solid fa-check"></i> Priority 30-Minute Emergency Field Dispatch</li>
+            <li><i class="fa-solid fa-check"></i> Detailed Engineering Reports &amp; Asset Lifecycle Audits</li>
+          </ul>
+
+          <a href="tel:+971544472389" class="ppfc-plan-btn ppfc-btn-outline">
+            Request Site Audit
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>

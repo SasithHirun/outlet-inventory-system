@@ -1,0 +1,1065 @@
+<!-- ==========================================================================
+     FIRE PROTECTION & SAFETY EQUIPMENT - MINIMALIST BENTO SHOWCASE
+     - Clean, modern, minimalist design matching the Deal of the Day section
+     - 100% Native WooCommerce Cart Compatible (AJAX + Session Cookies + Mini-Cart sync)
+     - Automatically handles subdirectory paths (e.g., /demo/pacificpowerfirecontractors/)
+     - Working "Add to Cart" with instant transition to "Go to Cart →" on all cards
+     ========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ================= SCOPED RESET & DESIGN SYSTEM ================= */
+  .fire-bento-section,
+  .fire-bento-section * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fire-bento-section {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #111827;
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 1320px;
+    margin: 32px auto;
+    padding: 24px 16px;
+  }
+
+  .fire-bento-section h1,
+  .fire-bento-section h2,
+  .fire-bento-section h3,
+  .fire-bento-section h4,
+  .fire-bento-section .font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Header Bar */
+  .bento-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #F3F4F6;
+  }
+
+  .header-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-icon-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #FEF2F2;
+    border: 1px solid #FEE2E2;
+    color: #DC2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .header-title-group h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.01em;
+  }
+
+  .header-title-group p {
+    font-size: 13px;
+    color: #6B7280;
+    margin-top: 2px;
+  }
+
+  /* Minimalist Pill Navigation */
+  .pill-nav {
+    display: flex;
+    align-items: center;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 4px;
+    border-radius: 999px;
+    gap: 4px;
+  }
+
+  .pill-btn {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+    padding: 6px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pill-btn:hover {
+    color: #111827;
+  }
+
+  .pill-btn.active {
+    background: #111827;
+    color: #FFFFFF;
+  }
+
+  .pill-btn .pill-counter {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    background: #E2E8F0;
+    color: #475569;
+  }
+
+  .pill-btn.active .pill-counter {
+    background: #334155;
+    color: #F8FAFC;
+  }
+
+  /* Bento Tab Layout */
+  .bento-content-tab {
+    display: none;
+  }
+
+  .bento-content-tab.active {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 20px;
+    animation: bentoFadeIn 0.25s ease;
+  }
+
+  @keyframes bentoFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Spotlight Hero Card (Left) */
+  .bento-hero-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .bento-hero-card:hover {
+    border-color: #CBD5E1;
+    transform: translateY(-2px);
+  }
+
+  .hero-badge-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .hero-deal-tag {
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .hero-visual-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    height: 220px;
+    background: #FFFFFF;
+    border: 1px solid #F9FAFB;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .hero-visual-area img {
+    max-width: 90%;
+    max-height: 190px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .bento-hero-card:hover .hero-visual-area img {
+    transform: scale(1.05);
+  }
+
+  .hero-specs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .spec-pill {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #F1F5F9;
+    color: #334155;
+  }
+
+  .category-crumb {
+    font-size: 11px;
+    font-weight: 500;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .hero-headline {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 12px;
+    transition: color 0.15s;
+  }
+
+  .hero-headline:hover {
+    color: #DC2626;
+  }
+
+  .hero-pricing-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #F3F4F6;
+  }
+
+  .hero-red-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #DC2626;
+  }
+
+  /* Grid Items (Right) */
+  .bento-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .bento-item-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .bento-item-card:hover {
+    border-color: #D1D5DB;
+    transform: translateY(-2px);
+  }
+
+  .item-media-box {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 1px solid #F9FAFB;
+    text-decoration: none;
+  }
+
+  .item-media-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  .bento-item-card:hover .item-media-box img {
+    transform: scale(1.05);
+  }
+
+  .item-title-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1F2937;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 8px;
+    min-height: 36px;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .item-title-link:hover {
+    color: #DC2626;
+  }
+
+  .item-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+  }
+
+  /* Native Button Styling (Same as Deal of the Day) */
+  .bento-btn-wrap {
+    min-height: 36px;
+  }
+
+  .bento-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 9px 12px;
+    background: #DC2626 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .bento-add-btn:hover {
+    background: #B91C1C !important;
+    color: #FFFFFF !important;
+  }
+
+  .bento-add-btn.loading {
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  /* Flow state: Go to Cart */
+  .bento-cart-flow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    animation: bentoFadeIn 0.25s ease;
+  }
+
+  .bento-go-cart-btn {
+    flex: 1;
+    padding: 9px 10px;
+    background: #111827 !important;
+    color: #FFFFFF !important;
+    border-radius: 6px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-align: center;
+    text-decoration: none !important;
+    transition: background 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    line-height: 1;
+  }
+
+  .bento-go-cart-btn:hover {
+    background: #1F2937 !important;
+  }
+
+  .bento-check-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #16A34A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .bento-content-tab.active { grid-template-columns: 320px 1fr; }
+    .bento-items-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 850px) {
+    .bento-content-tab.active { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .fire-bento-section { padding: 16px 12px; }
+    .bento-items-grid { grid-template-columns: 1fr; }
+    .pill-nav { width: 100%; overflow-x: auto; }
+    .pill-btn { padding: 6px 12px; font-size: 12px; }
+  }
+</style>
+
+<section class="fire-bento-section">
+  <!-- Minimalist Header -->
+  <div class="bento-header">
+    <div class="header-title-group">
+      <div class="section-icon-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+      </div>
+      <div>
+        <h2>Fire Protection &amp; Safety Equipment</h2>
+        <p>Certified conventional alarms, detectors, controllers &amp; valves</p>
+      </div>
+    </div>
+
+    <!-- Minimalist Pill Tabs -->
+    <nav class="pill-nav">
+      <button class="pill-btn active" data-bento-tab="feature">Feature <span class="pill-counter">7</span></button>
+      <button class="pill-btn" data-bento-tab="bestselling">Best selling <span class="pill-counter">7</span></button>
+      <button class="pill-btn" data-bento-tab="onsale">On Sale <span class="pill-counter">7</span></button>
+    </nav>
+  </div>
+
+  <!-- ================= TAB 1: FEATURE ================= -->
+  <div class="bento-content-tab active" id="bento-tab-feature">
+    
+    <!-- Hero Spotlight Card (Left) -->
+    <div class="bento-hero-card" data-product-id="6285">
+      <div>
+        <div class="hero-badge-row">
+          <span class="hero-deal-tag">Featured Spotlight</span>
+        </div>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702-4-standard-2-zone-conventional-fire-alarm-control-panel/" class="hero-visual-area">
+          <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP702-4 Panel">
+        </a>
+        <div class="hero-specs-row">
+          <span class="spec-pill">2 Zone System</span>
+          <span class="spec-pill">EN54 Certified</span>
+        </div>
+        <span class="category-crumb">Fire Products</span>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702-4-standard-2-zone-conventional-fire-alarm-control-panel/" class="hero-headline">
+          C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-pricing-action">
+          <div class="hero-red-price">AED 1,240</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6285" style="margin-top:12px;">
+          <a href="?add-to-cart=6285" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6285" onclick="bentoAddToCart(6285, 'C-Tec CFP702-4 Panel', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Product Grid (Right) -->
+    <div class="bento-items-grid">
+      
+      <!-- 1: Gate Valve -->
+      <div class="bento-item-card" data-product-id="6279">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/apc-z41-300-6-6-300psi-osy-type-flange-end-gate-valve/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/APC-Z41-300-300x300.jpg" alt="Gate Valve">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/apc-z41-300-6-6-300psi-osy-type-flange-end-gate-valve/" class="item-title-link">
+            APC Z41-300, 6″, 6″ 300PSI-OS&amp;Y Type Flange End Gate Valve
+          </a>
+          <div class="item-price">AED 1,680</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6279">
+          <a href="?add-to-cart=6279" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6279" onclick="bentoAddToCart(6279, 'APC Z41-300 Gate Valve', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 2: Heat Detector -->
+      <div class="bento-item-card" data-product-id="6257">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei164rc-heat-detector-mains-domestic-detector-with-lithium-battery/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI164RC-Heat-Detector-300x300.jpg" alt="Heat Detector">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei164rc-heat-detector-mains-domestic-detector-with-lithium-battery/" class="item-title-link">
+            Aico EI164RC Heat Detector – Mains Domestic Detector
+          </a>
+          <div class="item-price">AED 413</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6257">
+          <a href="?add-to-cart=6257" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6257" onclick="bentoAddToCart(6257, 'Aico EI164RC Heat Detector', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 3: Repeater Panel -->
+      <div class="bento-item-card" data-product-id="6297">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp760-8-zone-fire-alarm-system-repeater-panel/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="Repeater Panel">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp760-8-zone-fire-alarm-system-repeater-panel/" class="item-title-link">
+            C-Tec CFP760 8 Zone Fire Alarm System Repeater Panel
+          </a>
+          <div class="item-price">AED 1,808</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6297">
+          <a href="?add-to-cart=6297" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6297" onclick="bentoAddToCart(6297, 'C-Tec CFP760 Repeater Panel', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 4: Base Plate -->
+      <div class="bento-item-card" data-product-id="6277">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-relay-base-plate-ei128r/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI128R-300x300.jpg" alt="Base Plate">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-relay-base-plate-ei128r/" class="item-title-link">
+            Aico Relay Base Plate EI128R Compatible Mounting
+          </a>
+          <div class="item-price">AED 336</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6277">
+          <a href="?add-to-cart=6277" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6277" onclick="bentoAddToCart(6277, 'Aico Relay Base Plate', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 5: CO Alarm -->
+      <div class="bento-item-card" data-product-id="6263">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3018-3000-series-carbon-monoxide-alarm-with-smartlink-functionality/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI3018-300x300.jpg" alt="CO Alarm">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3018-3000-series-carbon-monoxide-alarm-with-smartlink-functionality/" class="item-title-link">
+            Aico EI3018 3000 Series Carbon Monoxide Alarm
+          </a>
+          <div class="item-price">AED 595</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6263">
+          <a href="?add-to-cart=6263" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6263" onclick="bentoAddToCart(6263, 'Aico EI3018 CO Alarm', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 6: Economy 4 Zone Panel -->
+      <div class="bento-item-card" data-product-id="6291">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp704e-4-economy-4-zone-conventional-fire-alarm-control-panel/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="Control Panel">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp704e-4-economy-4-zone-conventional-fire-alarm-control-panel/" class="item-title-link">
+            C-Tec CFP704E-4 Economy 4 Zone Conventional Panel
+          </a>
+          <div class="item-price">AED 1,240</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6291">
+          <a href="?add-to-cart=6291" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6291" onclick="bentoAddToCart(6291, 'C-Tec CFP704E-4 Panel', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= TAB 2: BESTSELLING ================= -->
+  <div class="bento-content-tab" id="bento-tab-bestselling">
+    <div class="bento-hero-card" data-product-id="6251">
+      <div>
+        <div class="hero-badge-row">
+          <span class="hero-deal-tag" style="background:#0F766E;">Top Rated Sensor</span>
+        </div>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3024-mains-interlinked-optical-smoke-heat-multisensor-detector-with-10-year-lithium-battery-backup/" class="hero-visual-area">
+          <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI3024-300x300.jpg" alt="Aico EI3024 Detector">
+        </a>
+        <div class="hero-specs-row">
+          <span class="spec-pill">Optical Smoke &amp; Heat</span>
+          <span class="spec-pill">10-Yr Battery Backup</span>
+        </div>
+        <span class="category-crumb">Fire Products</span>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3024-mains-interlinked-optical-smoke-heat-multisensor-detector-with-10-year-lithium-battery-backup/" class="hero-headline">
+          Aico EI3024 Mains Interlinked Optical Smoke &amp; Heat Multisensor Detector
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-pricing-action">
+          <div class="hero-red-price">AED 601</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6251" style="margin-top:12px;">
+          <a href="?add-to-cart=6251" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6251" onclick="bentoAddToCart(6251, 'Aico EI3024 Detector', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-items-grid">
+      <!-- 1 -->
+      <div class="bento-item-card" data-product-id="6251">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei100mrf-radiolink-wireless-interlink-module/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI100MRF-300x300.jpg" alt="Aico Module">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei100mrf-radiolink-wireless-interlink-module/" class="item-title-link">
+            Aico EI100MRF Radiolink + Wireless Module
+          </a>
+          <div class="item-price">AED 458</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6251-sub">
+          <a href="?add-to-cart=6251" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6251" onclick="bentoAddToCart(6251, 'Aico EI100MRF Module', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="bento-item-card" data-product-id="6253">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei141rc-smoke-detector-mains-ionization-domestic-detector-with-battery/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/EI141RC-300x300.jpg" alt="Aico Detector">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei141rc-smoke-detector-mains-ionization-domestic-detector-with-battery/" class="item-title-link">
+            Aico EI141RC Smoke Detector Ionization
+          </a>
+          <div class="item-price">AED 368</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6253">
+          <a href="?add-to-cart=6253" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6253" onclick="bentoAddToCart(6253, 'Aico EI141RC Smoke Detector', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="bento-item-card" data-product-id="6281">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/bardic-call-point-cover/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Bardic-Cover-300x300.jpg" alt="Bardic Cover">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/bardic-call-point-cover/" class="item-title-link">
+            Bardic Emergency Call Point Protective Cover
+          </a>
+          <div class="item-price">AED 53</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6281">
+          <a href="?add-to-cart=6281" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6281" onclick="bentoAddToCart(6281, 'Bardic Call Point Cover', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="bento-item-card" data-product-id="6293">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp708-4-standard-8-zone-conventional-fire-alarm-control-panel/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="8 Zone Panel">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp708-4-standard-8-zone-conventional-fire-alarm-control-panel/" class="item-title-link">
+            C-Tec CFP708-4 Standard 8 Zone Panel
+          </a>
+          <div class="item-price">AED 2,045</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6293">
+          <a href="?add-to-cart=6293" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6293" onclick="bentoAddToCart(6293, 'C-Tec CFP708-4 Panel', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="bento-item-card" data-product-id="6261">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3016-mains-interlinked-optical-smoke-detector-with-10-year-lithium-battery-backup/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI3016-300x300.jpg" alt="Optical Detector">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3016-mains-interlinked-optical-smoke-detector-with-10-year-lithium-battery-backup/" class="item-title-link">
+            Aico EI3016 Mains Interlinked Optical Detector
+          </a>
+          <div class="item-price">AED 452</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6261">
+          <a href="?add-to-cart=6261" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6261" onclick="bentoAddToCart(6261, 'Aico EI3016 Optical Detector', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="bento-item-card" data-product-id="6283">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/brk-fg250b-smoke-alarm-9v-battery-powered/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/BRK-300x300.jpg" alt="Smoke Alarm">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/brk-fg250b-smoke-alarm-9v-battery-powered/" class="item-title-link">
+            BRK FG250B Smoke Alarm 9V Battery Powered
+          </a>
+          <div class="item-price">AED 158</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6283">
+          <a href="?add-to-cart=6283" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6283" onclick="bentoAddToCart(6283, 'BRK FG250B Smoke Alarm', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= TAB 3: ONSALE ================= -->
+  <div class="bento-content-tab" id="bento-tab-onsale">
+    <div class="bento-hero-card" data-product-id="6287">
+      <div>
+        <div class="hero-badge-row">
+          <span class="hero-deal-tag">Special Discount</span>
+        </div>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702e-4-economy-2-zone-conventional-fire-alarm-control-panel/" class="hero-visual-area">
+          <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP702E-4">
+        </a>
+        <div class="hero-specs-row">
+          <span class="spec-pill">Economy Series</span>
+          <span class="spec-pill">2 Zone Control</span>
+        </div>
+        <span class="category-crumb">Fire Products</span>
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702e-4-economy-2-zone-conventional-fire-alarm-control-panel/" class="hero-headline">
+          C-Tec CFP702E-4 Economy 2 Zone Conventional Fire Alarm Control Panel
+        </a>
+      </div>
+
+      <div>
+        <div class="hero-pricing-action">
+          <div class="hero-red-price">AED 1,097</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6287" style="margin-top:12px;">
+          <a href="?add-to-cart=6287" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6287" onclick="bentoAddToCart(6287, 'C-Tec CFP702E-4 Panel', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-items-grid">
+      <!-- 1 -->
+      <div class="bento-item-card" data-product-id="6255">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei144e-heat-detector/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI144E-Heat-detector-1-300x300.jpg" alt="Aico Heat Detector">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei144e-heat-detector/" class="item-title-link">
+            Aico EI144E Heat Detector Compact Series
+          </a>
+          <div class="item-price">AED 315</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6255">
+          <a href="?add-to-cart=6255" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6255" onclick="bentoAddToCart(6255, 'Aico EI144E Heat Detector', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="bento-item-card" data-product-id="6267">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei407-radio-link-call-point/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI407-Radio-Link-Call-Point-300x300.jpg" alt="Call Point">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei407-radio-link-call-point/" class="item-title-link">
+            Aico EI407 Radio Link Call Point Manual
+          </a>
+          <div class="item-price">AED 399</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6267">
+          <a href="?add-to-cart=6267" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6267" onclick="bentoAddToCart(6267, 'Aico EI407 Call Point', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="bento-item-card" data-product-id="6269">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei450-radiolink-alarm-controller/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI450-1-300x300.jpg" alt="Controller">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei450-radiolink-alarm-controller/" class="item-title-link">
+            Aico EI450 Radiolink System Controller
+          </a>
+          <div class="item-price">AED 546</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6269">
+          <a href="?add-to-cart=6269" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6269" onclick="bentoAddToCart(6269, 'Aico EI450 System Controller', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="bento-item-card" data-product-id="6273">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei603rf-battery-powered-heat-detector-with-wireless-interlink-facility/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI603RF-300x300.jpg" alt="Aico EI603RF">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei603rf-battery-powered-heat-detector-with-wireless-interlink-facility/" class="item-title-link">
+            Aico EI603RF Battery Heat Detector
+          </a>
+          <div class="item-price">AED 706</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6273">
+          <a href="?add-to-cart=6273" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6273" onclick="bentoAddToCart(6273, 'Aico EI603RF Heat Detector', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="bento-item-card" data-product-id="6275">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei650rf-battery-powered-optical-smoke-detector-with-wireless-interlink-facility/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI650RF-1-300x300.jpg" alt="AICO EI650RF">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei650rf-battery-powered-optical-smoke-detector-with-wireless-interlink-facility/" class="item-title-link">
+            AICO EI650RF Battery Optical Smoke Alarm
+          </a>
+          <div class="item-price">AED 689</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6275">
+          <a href="?add-to-cart=6275" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6275" onclick="bentoAddToCart(6275, 'Aico EI650RF Smoke Alarm', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="bento-item-card" data-product-id="6295">
+        <div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp708e-4-economy-8-zone-conventional-fire-alarm-control-panel/" class="item-media-box">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="Economy 8 Zone">
+          </a>
+          <span class="category-crumb">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp708e-4-economy-8-zone-conventional-fire-alarm-control-panel/" class="item-title-link">
+            C-Tec CFP708E-4 Economy 8 Zone Panel
+          </a>
+          <div class="item-price">AED 1,714</div>
+        </div>
+        <div class="bento-btn-wrap" id="bento-wrap-6295">
+          <a href="?add-to-cart=6295" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart bento-add-btn" data-product_id="6295" onclick="bentoAddToCart(6295, 'C-Tec CFP708E-4 Panel', this, event)">
+            Add to cart
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Floating Toast -->
+<div id="bento-toast" style="position:fixed; bottom:24px; right:24px; background:#111827; color:#FFFFFF; padding:12px 18px; border-radius:8px; font-size:13px; font-weight:500; box-shadow:0 10px 25px -5px rgba(0,0,0,0.25); display:flex; align-items:center; gap:12px; transform:translateY(100px); opacity:0; transition:all 0.3s ease; z-index:999999;">
+  <span id="bento-toast-msg">Item added to cart</span>
+  <a id="bento-toast-cart-link" href="/cart/" style="color:#F87171; text-decoration:underline; font-weight:600;">Go to Cart &rarr;</a>
+</div>
+
+<script>
+  // 1. Detect dynamic WooCommerce Environment
+  const bentoEnv = (function() {
+    let cartUrl = "/cart/";
+    let ajaxEndpoint = "";
+    let siteBase = "";
+
+    if (typeof wc_add_to_cart_params !== 'undefined') {
+      if (wc_add_to_cart_params.cart_url) cartUrl = wc_add_to_cart_params.cart_url;
+      if (wc_add_to_cart_params.wc_ajax_url) {
+        ajaxEndpoint = wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart');
+      }
+      if (wc_add_to_cart_params.ajax_url) {
+        siteBase = wc_add_to_cart_params.ajax_url.split('/wp-admin')[0];
+      }
+    }
+
+    if (!siteBase) {
+      const match = window.location.pathname.match(/^(\/[^\/]+\/[^\/]+)/);
+      siteBase = window.location.origin + (match ? match[1] : "");
+    }
+
+    if (!ajaxEndpoint) {
+      ajaxEndpoint = siteBase + "/?wc-ajax=add_to_cart";
+    }
+
+    if (cartUrl === "/cart/" && siteBase) {
+      cartUrl = siteBase + "/cart/";
+    }
+
+    const toastLink = document.getElementById('bento-toast-cart-link');
+    if (toastLink) toastLink.href = cartUrl;
+
+    return { siteBase: siteBase, ajaxEndpoint: ajaxEndpoint, cartUrl: cartUrl };
+  })();
+
+  // 2. Tab Navigation Switcher
+  (function () {
+    var section = document.querySelector('.fire-bento-section');
+    if (!section) return;
+    var pillButtons = section.querySelectorAll('.pill-btn');
+    var bentoTabs = section.querySelectorAll('.bento-content-tab');
+
+    pillButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        pillButtons.forEach(function (b) { b.classList.remove('active'); });
+        bentoTabs.forEach(function (t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        var target = document.getElementById('bento-tab-' + this.getAttribute('data-bento-tab'));
+        if (target) target.classList.add('active');
+      });
+    });
+  })();
+
+  // 3. Reliable WooCommerce Add to Cart & Go to Cart Transformation
+  async function bentoAddToCart(productId, productName, btn, event) {
+    event.preventDefault();
+
+    if (btn.classList.contains('loading')) return;
+    btn.classList.add('loading');
+    btn.textContent = "Adding...";
+
+    let success = false;
+
+    try {
+      const params = new URLSearchParams();
+      params.append('product_id', productId);
+      params.append('quantity', '1');
+
+      const response = await fetch(bentoEnv.ajaxEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: params.toString(),
+        credentials: 'include' // Passes WooCommerce cart session
+      });
+
+      if (response.ok) {
+        success = true;
+        if (window.jQuery) {
+          window.jQuery(document.body).trigger('wc_fragment_refresh');
+          window.jQuery(document.body).trigger('added_to_cart', [null, null, window.jQuery(btn)]);
+        }
+      }
+    } catch (e) {
+      console.log("Direct AJAX fallback trigger:", e);
+    }
+
+    // Direct fallback if running outside AJAX context
+    if (!success && !window.jQuery) {
+      window.location.href = bentoEnv.siteBase + "/?add-to-cart=" + productId;
+      return;
+    }
+
+    // Transform into Go to Cart button
+    bentoShowAddedState(productId, productName, btn);
+  }
+
+  function bentoShowAddedState(productId, productName, btn) {
+    const parent = btn.closest('.bento-btn-wrap');
+    if (parent) {
+      parent.innerHTML = `
+        <div class="bento-cart-flow">
+          <a href="${bentoEnv.cartUrl}" class="bento-go-cart-btn">
+            <span>Go to Cart</span> &rarr;
+          </a>
+          <div class="bento-check-badge" title="Added to cart">✓</div>
+        </div>
+      `;
+    }
+
+    // Show floating toast
+    const toast = document.getElementById('bento-toast');
+    const msg = document.getElementById('bento-toast-msg');
+    if (toast && msg) {
+      msg.textContent = productName + " added to cart";
+      toast.style.transform = 'translateY(0)';
+      toast.style.opacity = '1';
+      setTimeout(function() {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+      }, 3500);
+    }
+  }
+
+  // Hook into native WooCommerce jQuery event if present on page
+  if (typeof jQuery !== 'undefined') {
+    jQuery(document.body).on('added_to_cart', function(event, fragments, cart_hash, $button) {
+      if ($button && $button.length) {
+        const id = $button.attr('data-product_id');
+        if (id) {
+          const btnElem = document.querySelector('.bento-add-btn[data-product_id="' + id + '"]');
+          if (btnElem) {
+            bentoShowAddedState(id, "Item", btnElem);
+          }
+        }
+      }
+    });
+  }
+</script>

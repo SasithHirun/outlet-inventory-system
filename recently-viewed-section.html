@@ -1,0 +1,684 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - "RECENTLY VIEWED" FULL-WIDTH SECTION
+     - Layout & Design Matching Reference Image (media_1794033316821_3082d2fd.png)
+     - Clean Minimalist Header with Circle Nav Controls (< >)
+     - Clean Cards with Upper Image, Muted Category, 2-line Title, Bold Price & Full-Width Red Button
+     - Real Prices: Fixed WooCommerce minor unit (AED 315, AED 420 instead of AED 3.15)
+     - 100% Native WooCommerce Cart Integration (AJAX + Session Cookies)
+     - Real-Time Tracking: localStorage + WooCommerce Backend Store API
+     ========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+  /* Prevent horizontal scrollbars from 100vw breakout */
+  html, body {
+    overflow-x: clip;
+  }
+
+  /* ================= SCOPED RESET & STYLING ================= */
+  .rv-section-wrapper,
+  .rv-section-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  /* 100vw Full-Width Breakout */
+  .rv-section-wrapper {
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 40px calc(50% - 50vw);
+    background: #FFFFFF;
+    border-top: 1px solid #F1F5F9;
+    border-bottom: 1px solid #F1F5F9;
+    padding: 36px clamp(16px, 4vw, 64px);
+    color: #111827;
+  }
+
+  /* Header */
+  .rv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #F1F5F9;
+  }
+
+  .rv-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.01em;
+  }
+
+  /* Top Right Circle Navigation Buttons */
+  .rv-arrows {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rv-nav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .rv-nav-btn:hover {
+    border-color: #CBD5E1;
+    background: #F8FAFC;
+    color: #0F172A;
+  }
+
+  .rv-nav-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Carousel Horizontal Scroll */
+  .rv-carousel-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 4px 2px 14px 2px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .rv-carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 5 products visible across desktop with clean spacing */
+  .rv-grid {
+    display: flex;
+    gap: 16px;
+    min-width: 100%;
+  }
+
+  /* Card Matching Exact Reference Image */
+  .rv-card {
+    flex: 0 0 calc((100% - (4 * 16px)) / 5);
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 16px 14px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    min-width: 210px;
+  }
+
+  .rv-card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Centered Product Image Container */
+  .rv-img-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    width: 100%;
+    margin-bottom: 14px;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .rv-img-link img {
+    max-width: 85%;
+    max-height: 155px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+  }
+
+  .rv-card:hover .rv-img-link img {
+    transform: scale(1.06);
+  }
+
+  /* Category */
+  .rv-category {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #9CA3AF;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Product Title (2-line clamp) */
+  .rv-product-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.4;
+    height: 36px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.15s ease;
+  }
+
+  .rv-product-title:hover {
+    color: #DC2626;
+  }
+
+  /* Price */
+  .rv-price {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 12px;
+  }
+
+  /* Full-Width Red Button */
+  .rv-add-btn {
+    width: 100%;
+    padding: 8px 12px;
+    background: #DC2626 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .rv-add-btn:hover {
+    background: #B91C1C !important;
+  }
+
+  .rv-add-btn.loading {
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  /* Added to Cart State */
+  .rv-cart-flow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .rv-go-cart-btn {
+    flex: 1;
+    padding: 8px 10px;
+    background: #0F172A !important;
+    color: #FFFFFF !important;
+    border-radius: 6px;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-align: center;
+    text-decoration: none !important;
+    transition: background 0.15s ease;
+  }
+
+  .rv-go-cart-btn:hover {
+    background: #1E293B !important;
+  }
+
+  .rv-check-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #16A34A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  /* Shimmer Skeleton */
+  .rv-skeleton {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: rvShimmer 1.5s infinite;
+  }
+  @keyframes rvShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1200px) {
+    .rv-card {
+      flex: 0 0 calc((100% - (3 * 16px)) / 4); /* 4 per row on laptop */
+    }
+  }
+
+  @media (max-width: 900px) {
+    .rv-card {
+      flex: 0 0 calc((100% - (2 * 14px)) / 3); /* 3 per row on tablet */
+    }
+    .rv-grid {
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .rv-card {
+      flex: 0 0 calc((100% - 10px) / 2); /* 2 per row on mobile */
+      padding: 12px 10px;
+      min-width: 160px;
+    }
+    .rv-grid {
+      gap: 10px;
+    }
+    .rv-img-link {
+      height: 135px;
+    }
+    .rv-product-title {
+      font-size: 11.5px;
+      height: 32px;
+    }
+    .rv-price {
+      font-size: 13.5px;
+    }
+    .rv-add-btn {
+      padding: 7px 10px;
+      font-size: 11px !important;
+    }
+  }
+</style>
+
+<div class="rv-section-wrapper">
+  
+  <!-- Header -->
+  <div class="rv-header">
+    <h2 class="rv-title">Recently Viewed</h2>
+    
+    <div class="rv-arrows">
+      <button class="rv-nav-btn" onclick="rvScroll(-1)" aria-label="Previous Products">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="rv-nav-btn" onclick="rvScroll(1)" aria-label="Next Products">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Carousel Grid -->
+  <div class="rv-carousel-container" id="rv-carousel-container">
+    <div class="rv-grid" id="rv-product-grid">
+      <!-- Loading Skeletons -->
+      <div class="rv-card" style="height: 330px;">
+        <div class="rv-skeleton" style="width: 100%; height: 160px; border-radius: 4px; margin-bottom: 12px;"></div>
+        <div class="rv-skeleton" style="width: 45%; height: 10px; border-radius: 3px; margin-bottom: 8px;"></div>
+        <div class="rv-skeleton" style="width: 90%; height: 14px; border-radius: 3px; margin-bottom: 6px;"></div>
+        <div class="rv-skeleton" style="width: 40%; height: 16px; border-radius: 3px; margin-bottom: 14px;"></div>
+        <div class="rv-skeleton" style="width: 100%; height: 34px; border-radius: 6px;"></div>
+      </div>
+      <div class="rv-card" style="height: 330px;">
+        <div class="rv-skeleton" style="width: 100%; height: 160px; border-radius: 4px; margin-bottom: 12px;"></div>
+        <div class="rv-skeleton" style="width: 45%; height: 10px; border-radius: 3px; margin-bottom: 8px;"></div>
+        <div class="rv-skeleton" style="width: 90%; height: 14px; border-radius: 3px; margin-bottom: 6px;"></div>
+        <div class="rv-skeleton" style="width: 40%; height: 16px; border-radius: 3px; margin-bottom: 14px;"></div>
+        <div class="rv-skeleton" style="width: 100%; height: 34px; border-radius: 6px;"></div>
+      </div>
+      <div class="rv-card" style="height: 330px;">
+        <div class="rv-skeleton" style="width: 100%; height: 160px; border-radius: 4px; margin-bottom: 12px;"></div>
+        <div class="rv-skeleton" style="width: 45%; height: 10px; border-radius: 3px; margin-bottom: 8px;"></div>
+        <div class="rv-skeleton" style="width: 90%; height: 14px; border-radius: 3px; margin-bottom: 6px;"></div>
+        <div class="rv-skeleton" style="width: 40%; height: 16px; border-radius: 3px; margin-bottom: 14px;"></div>
+        <div class="rv-skeleton" style="width: 100%; height: 34px; border-radius: 6px;"></div>
+      </div>
+      <div class="rv-card" style="height: 330px;">
+        <div class="rv-skeleton" style="width: 100%; height: 160px; border-radius: 4px; margin-bottom: 12px;"></div>
+        <div class="rv-skeleton" style="width: 45%; height: 10px; border-radius: 3px; margin-bottom: 8px;"></div>
+        <div class="rv-skeleton" style="width: 90%; height: 14px; border-radius: 3px; margin-bottom: 6px;"></div>
+        <div class="rv-skeleton" style="width: 40%; height: 16px; border-radius: 3px; margin-bottom: 14px;"></div>
+        <div class="rv-skeleton" style="width: 100%; height: 34px; border-radius: 6px;"></div>
+      </div>
+      <div class="rv-card" style="height: 330px;">
+        <div class="rv-skeleton" style="width: 100%; height: 160px; border-radius: 4px; margin-bottom: 12px;"></div>
+        <div class="rv-skeleton" style="width: 45%; height: 10px; border-radius: 3px; margin-bottom: 8px;"></div>
+        <div class="rv-skeleton" style="width: 90%; height: 14px; border-radius: 3px; margin-bottom: 6px;"></div>
+        <div class="rv-skeleton" style="width: 40%; height: 16px; border-radius: 3px; margin-bottom: 14px;"></div>
+        <div class="rv-skeleton" style="width: 100%; height: 34px; border-radius: 6px;"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Floating Toast -->
+<div id="rv-toast" style="position:fixed; bottom:24px; right:24px; background:#0F172A; color:#FFFFFF; padding:12px 18px; border-radius:6px; font-size:13px; font-weight:600; box-shadow:0 10px 25px -5px rgba(0,0,0,0.25); display:flex; align-items:center; gap:12px; transform:translateY(100px); opacity:0; transition:all 0.3s ease; z-index:999999;">
+  <span id="rv-toast-msg">Product added to cart</span>
+  <a id="rv-toast-cart-link" href="/cart/" style="color:#F87171; text-decoration:underline; font-weight:700;">Go to Cart &rarr;</a>
+</div>
+
+<script>
+  // 1. Dynamic Environment Detection
+  const rvEnv = (function() {
+    let cartUrl = "/cart/";
+    let ajaxEndpoint = "";
+    let siteBase = "";
+
+    if (typeof wc_add_to_cart_params !== 'undefined') {
+      if (wc_add_to_cart_params.cart_url) cartUrl = wc_add_to_cart_params.cart_url;
+      if (wc_add_to_cart_params.wc_ajax_url) {
+        ajaxEndpoint = wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart');
+      }
+      if (wc_add_to_cart_params.ajax_url) {
+        siteBase = wc_add_to_cart_params.ajax_url.split('/wp-admin')[0];
+      }
+    }
+
+    if (!siteBase) {
+      const match = window.location.pathname.match(/^(\/[^\/]+\/[^\/]+)/);
+      siteBase = window.location.origin + (match ? match[1] : "");
+    }
+
+    if (!ajaxEndpoint) ajaxEndpoint = siteBase + "/?wc-ajax=add_to_cart";
+    if (cartUrl === "/cart/" && siteBase) cartUrl = siteBase + "/cart/";
+
+    const toastLink = document.getElementById('rv-toast-cart-link');
+    if (toastLink) toastLink.href = cartUrl;
+
+    return { siteBase: siteBase, ajaxEndpoint: ajaxEndpoint, cartUrl: cartUrl };
+  })();
+
+  // 2. Accurate Price Formatter: Correctly preserves integer AED prices (315 -> AED 315, not 3.15)
+  function formatRVPrice(item) {
+    if (item.prices && item.prices.price) {
+      let raw = parseFloat(item.prices.price);
+      const minor = (typeof item.prices.currency_minor_unit === 'number') ? item.prices.currency_minor_unit : 0;
+      if (minor > 0) raw = raw / Math.pow(10, minor);
+
+      const formatted = Number.isInteger(raw)
+        ? raw.toLocaleString('en-US')
+        : raw.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+
+      if (item.prices.regular_price && item.prices.sale_price && item.prices.regular_price !== item.prices.sale_price) {
+        let reg = parseFloat(item.prices.regular_price);
+        if (minor > 0) reg = reg / Math.pow(10, minor);
+        const regFormatted = Number.isInteger(reg) ? reg.toLocaleString('en-US') : reg.toLocaleString('en-US');
+        return `AED ${formatted} <span style="text-decoration:line-through; color:#94A3B8; font-size:11px; margin-left:4px; font-weight:500;">AED ${regFormatted}</span>`;
+      }
+      return `AED ${formatted}`;
+    }
+
+    if (item.price) {
+      const clean = String(item.price).replace(/AED/gi, '').trim();
+      return "AED " + clean;
+    }
+
+    return "AED 0";
+  }
+
+  // 3. Fallback Catalog (Loaded only if fresh visitor has no localStorage history and API is pending)
+  const rvDefaultCatalog = [
+    {
+      id: 7513,
+      name: "Ziton ZP730-2P Optical Smoke Detector Analogue Addressable – Polar White",
+      category: "Addressable Smoke Detectors",
+      price: "AED 315",
+      image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP730-2P.jpg",
+      link: rvEnv.siteBase + "/product/ziton-zp730-2p/"
+    },
+    {
+      id: 7511,
+      name: "Ziton ZP886R ZP7 Series Intelligent Addressable Manual Call Point – Red",
+      category: "Fire Products",
+      price: "AED 420",
+      image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP886R.jpg",
+      link: rvEnv.siteBase + "/product/ziton-zp886r/"
+    },
+    {
+      id: 7509,
+      name: "Ziton ZP755HAV-2R Sounder Beacon – Wall Mounted",
+      category: "Fire Products",
+      price: "AED 609",
+      image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP755HAV-2R.jpg",
+      link: rvEnv.siteBase + "/product/ziton-zp755hav-2r/"
+    },
+    {
+      id: 7507,
+      name: "Ziton ZP732-2P Combination Smoke and Heat Sensor – Polar White",
+      category: "Addressable Heat Detectors",
+      price: "AED 315",
+      image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP732-2P.jpg",
+      link: rvEnv.siteBase + "/product/ziton-zp732-2p/"
+    },
+    {
+      id: 7505,
+      name: "Ziton ZP720-3P Heat Detector Analogue Addressable – Polar White",
+      category: "Addressable Heat Detectors",
+      price: "AED 315",
+      image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP720-3P.jpg",
+      link: rvEnv.siteBase + "/product/ziton-zp720-3p/"
+    },
+    {
+      id: 7503,
+      name: "Ziton ZP7-SB1-P Detector Surface Base – Polar White",
+      category: "Addressable Bases",
+      price: "AED 37",
+      image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP7-SB1-P.jpg",
+      link: rvEnv.siteBase + "/product/ziton-zp7-sb1-p/"
+    }
+  ];
+
+  // 4. Load Products dynamically from Backend / localStorage
+  async function rvLoadProducts() {
+    let products = [];
+
+    // Check localStorage first
+    try {
+      const stored = localStorage.getItem('ppf_recently_viewed');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          products = parsed;
+        }
+      }
+    } catch (e) {
+      console.warn("Storage read error:", e);
+    }
+
+    // If no local history, fetch live detection products directly from WooCommerce Store API
+    if (products.length === 0) {
+      try {
+        const storeApiUrl = rvEnv.siteBase + '/wp-json/wc/store/v1/products?category=125&per_page=12';
+        const res = await fetch(storeApiUrl, { method: 'GET', headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            products = data
+              .filter(item => String(item.prices ? item.prices.price : "").length < 8)
+              .map(function(item) {
+                let cat = "Detections";
+                if (item.categories && item.categories.length > 0) {
+                  const detCat = item.categories.find(c => c.name.toLowerCase().includes('detector') || c.name.toLowerCase().includes('detection'));
+                  cat = detCat ? detCat.name : item.categories[0].name;
+                }
+                return {
+                  id: item.id,
+                  name: item.name,
+                  category: cat,
+                  price: formatRVPrice(item),
+                  image: (item.images && item.images[0]) ? item.images[0].src : "",
+                  link: item.permalink || (rvEnv.siteBase + '/?p=' + item.id)
+                };
+              });
+          }
+        }
+      } catch (err) {
+        console.warn("Store API query error:", err);
+      }
+    }
+
+    if (products.length === 0) {
+      products = rvDefaultCatalog;
+    }
+
+    renderRVProducts(products);
+  }
+
+  // 5. Render Cards Matching the Reference Design
+  function renderRVProducts(items) {
+    const grid = document.getElementById('rv-product-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    items.forEach(function(item) {
+      const card = document.createElement('div');
+      card.className = 'rv-card';
+      card.innerHTML = `
+        <div>
+          <a href="${item.link}" class="rv-img-link" title="${item.name}">
+            <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP730-2P.jpg'">
+          </a>
+          <div class="rv-category">${item.category}</div>
+          <a href="${item.link}" class="rv-product-title" title="${item.name}">${item.name}</a>
+          <div class="rv-price">${item.price}</div>
+        </div>
+
+        <div id="rv-action-${item.id}">
+          <a href="?add-to-cart=${item.id}" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart rv-add-btn" data-product_id="${item.id}" onclick="rvAddToCart(${item.id}, '${item.name.replace(/'/g, "\\'")}', this, event)">
+            <span>Add to cart</span>
+          </a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // 6. Scroll Navigation
+  function rvScroll(dir) {
+    const container = document.getElementById('rv-carousel-container');
+    if (container) {
+      const scrollAmount = container.clientWidth * 0.82;
+      container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+    }
+  }
+
+  // 7. WooCommerce AJAX Add to Cart & Flow Transition
+  async function rvAddToCart(productId, productName, btn, event) {
+    event.preventDefault();
+    if (btn.classList.contains('loading')) return;
+    btn.classList.add('loading');
+    btn.innerHTML = "<span>Adding...</span>";
+
+    try {
+      const params = new URLSearchParams();
+      params.append('product_id', productId);
+      params.append('quantity', '1');
+
+      const response = await fetch(rvEnv.ajaxEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: params.toString(),
+        credentials: 'include'
+      });
+
+      if (response.ok && window.jQuery) {
+        window.jQuery(document.body).trigger('wc_fragment_refresh');
+        window.jQuery(document.body).trigger('added_to_cart', [null, null, window.jQuery(btn)]);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+    const actionWrap = document.getElementById('rv-action-' + productId);
+    if (actionWrap) {
+      actionWrap.innerHTML = `
+        <div class="rv-cart-flow">
+          <a href="${rvEnv.cartUrl}" class="rv-go-cart-btn"><span>Go to cart</span> &rarr;</a>
+          <div class="rv-check-badge" title="Added to cart">✓</div>
+        </div>
+      `;
+    }
+
+    // Show floating toast
+    const toast = document.getElementById('rv-toast');
+    const msg = document.getElementById('rv-toast-msg');
+    if (toast && msg) {
+      msg.textContent = productName + " added to cart";
+      toast.style.transform = 'translateY(0)';
+      toast.style.opacity = '1';
+      setTimeout(function() {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+      }, 3500);
+    }
+  }
+
+  // Auto-record product view if on single product page
+  (function trackSingleProduct() {
+    if (document.body.classList.contains('single-product')) {
+      const idInput = document.querySelector('input[name="add-to-cart"]');
+      const titleElem = document.querySelector('.product_title');
+      const priceElem = document.querySelector('.woocommerce-Price-amount');
+      const imgElem = document.querySelector('.woocommerce-product-gallery__image img');
+
+      if (idInput && titleElem) {
+        const currentItem = {
+          id: idInput.value,
+          name: titleElem.textContent.trim(),
+          category: "Fire Products",
+          price: priceElem ? priceElem.textContent.trim() : "AED Contact",
+          image: imgElem ? imgElem.src : "",
+          link: window.location.href
+        };
+
+        try {
+          let recents = JSON.parse(localStorage.getItem('ppf_recently_viewed') || '[]');
+          recents = recents.filter(p => String(p.id) !== String(currentItem.id));
+          recents.unshift(currentItem);
+          if (recents.length > 12) recents = recents.slice(0, 12);
+          localStorage.setItem('ppf_recently_viewed', JSON.stringify(recents));
+        } catch(e) {}
+      }
+    }
+  })();
+
+  // Initialize
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rvLoadProducts);
+  } else {
+    rvLoadProducts();
+  }
+</script>

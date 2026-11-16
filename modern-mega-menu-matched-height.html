@@ -1,0 +1,430 @@
+<!-- ==========================================================================
+     PACIFIC POWER & FIRE CONTRACTORS - FULL-HEIGHT MATCHED MEGA MENU
+     - Auto-Stretches to 100% of the Hero Banner Height (e.g. ~640px)
+     - Equal Flex Item Distribution: 10 items perfectly distributed vertically
+     - Bottom edge aligns pixel-perfect with the banner's bottom edge
+     - Full Width (100% of Elementor left column)
+     - Responsive & Clean Minimalist Lato Design
+     ========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+  /* ================= RESET & TYPOGRAPHY ================= */
+  .ppf-nav-wrap,
+  .ppf-nav-wrap * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  /* Full Height Column Container */
+  .ppf-nav-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 640px; /* Fallback matches banner min-height */
+    z-index: 9999;
+  }
+
+  /* Red "All Departments" Header Button */
+  .ppf-dept-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100% !important;
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 14px 20px;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    border: none;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+  }
+
+  .ppf-dept-btn:hover {
+    background: #B91C1C;
+  }
+
+  .ppf-dept-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Vertical Departments Menu: Stretches to Bottom Edge */
+  .ppf-dept-menu {
+    flex: 1; /* Automatically expands to fill remaining vertical height */
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    list-style: none;
+    overflow: visible;
+  }
+
+  /* Each Menu Item Distributes Evenly */
+  .ppf-dept-item {
+    flex: 1; /* Distributes vertical height equally across all 10 items */
+    display: flex;
+    position: static; /* Allows mega-panel to align to full menu height */
+    border-bottom: 1px solid #F8FAFC;
+  }
+
+  .ppf-dept-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Links fill each flex row vertically and horizontally */
+  .ppf-dept-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #1F2937;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .ppf-dept-link:hover,
+  .ppf-dept-item:hover > .ppf-dept-link {
+    background: #FEE2E2;
+    color: #DC2626;
+    padding-left: 24px;
+  }
+
+  .ppf-dept-link svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.2;
+    transition: transform 0.15s ease;
+  }
+
+  .ppf-dept-item:hover > .ppf-dept-link svg {
+    transform: translateX(3px);
+  }
+
+  /* Badge styling */
+  .ppf-badge-hot {
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  /* ================= DYNAMIC MEGA-PANEL FLYOUT ================= */
+  .ppf-mega-panel {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 12px;
+    width: 780px;
+    height: 100%; /* Matches full height of the expanded menu */
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-left: 3px solid #DC2626;
+    border-radius: 12px;
+    box-shadow: 10px 20px 45px -8px rgba(15, 23, 42, 0.18);
+    padding: 28px 32px;
+    grid-template-columns: 1fr 1fr 230px;
+    gap: 28px;
+    z-index: 99999;
+    align-items: stretch;
+  }
+
+  .ppf-dept-item:hover .ppf-mega-panel {
+    display: grid;
+    animation: ppfMenuFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes ppfMenuFade {
+    from { opacity: 0; transform: translateX(6px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Columns inside Mega-Panel */
+  .ppf-mega-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ppf-mega-col h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0F172A;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ppf-mega-col h4 span {
+    color: #DC2626;
+  }
+
+  .ppf-mega-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 8px;
+  }
+
+  .ppf-mega-list a {
+    color: #4B5563;
+    font-size: 13.5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
+  }
+
+  .ppf-mega-list a:hover {
+    color: #DC2626;
+    transform: translateX(4px);
+    font-weight: 700;
+  }
+
+  .ppf-mega-list a::before {
+    content: "•";
+    color: #CBD5E1;
+    font-size: 14px;
+  }
+
+  .ppf-mega-list a:hover::before {
+    color: #DC2626;
+  }
+
+  /* Column 3: Featured Product Spotlight Card */
+  .ppf-spotlight-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+  }
+
+  .ppf-spotlight-badge {
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    align-self: flex-start;
+  }
+
+  .ppf-spotlight-card img {
+    max-height: 120px;
+    object-fit: contain;
+    margin: 14px auto;
+  }
+
+  .ppf-spotlight-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .ppf-spotlight-cert {
+    font-size: 11px;
+    color: #16A34A;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .ppf-spotlight-btn {
+    background: #0F172A;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    margin-top: auto;
+  }
+
+  .ppf-spotlight-btn:hover {
+    background: #DC2626;
+  }
+</style>
+
+<div class="ppf-nav-wrap">
+
+  <!-- Trigger Button -->
+  <button class="ppf-dept-btn" type="button">
+    <div class="ppf-dept-btn-left">
+      <!-- 6-Dots Icon -->
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="5" cy="5" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/>
+        <circle cx="5" cy="12" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/>
+        <circle cx="5" cy="19" r="2.5"/><circle cx="12" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/>
+      </svg>
+      <span>All Departments</span>
+    </div>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+
+  <!-- Vertical Departments Menu: Automatically stretched to match banner height -->
+  <ul class="ppf-dept-menu">
+    
+    <!-- 1. Fire Products (Mega Menu) -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-products/" class="ppf-dept-link">
+        <span>Fire Products</span>
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- UNIFIED MEGA-PANEL -->
+      <div class="ppf-mega-panel">
+        
+        <!-- Column 1: Gas & Flame Detection -->
+        <div class="ppf-mega-col">
+          <h4><span>•</span> Gas Detection</h4>
+          <ul class="ppf-mega-list">
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/gas-detectors/co-detectors/">CO Detectors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/gas-detectors/combustible-detectors/">Combustible Gas Detectors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/gas-detectors/h2s-detectors/">H2S Toxic Gas Detectors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/gas-detectors/lpg-detectors/">LPG &amp; Methane Detectors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/gas-detectors/o2-detectors/">O2 Oxygen Sensors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/gas-detectors/so2-detector/">SO2 Detectors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/flame-detectors/">Optical Flame Detectors</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Smoke, Heat & Panels -->
+        <div class="ppf-mega-col">
+          <h4><span>•</span> Smoke &amp; Alarm Systems</h4>
+          <ul class="ppf-mega-list">
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/smoke-detectors/">Addressable Optical Smoke</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/heat-detectors/">Heat Detectors (Fixed / ROR)</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/fire-alarm-panels/">Conventional Alarm Panels</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/testing-kits-spray/">Aerosol Testers &amp; Dispenser Kits</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/detector-base/">Detector Base &amp; Relay Plates</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/beam-detectors/">Long-Range Beam Detectors</a></li>
+            <li><a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/detections/standalone-detectors/">Standalone 9V Alarms</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Featured Spotlight Card -->
+        <div class="ppf-spotlight-card">
+          <div>
+            <span class="ppf-spotlight-badge">Featured System</span>
+            <img src="https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/04/Ziton-ZP730-2P.jpg" alt="Ziton Optical Smoke Detector" onerror="this.src='https://safetag.ae/wp-content/uploads/2024/03/AICO-EI3024-300x300.jpg'">
+            <div class="ppf-spotlight-title">Ziton ZP730-2P Addressable Smoke Detector</div>
+            <div class="ppf-spotlight-cert">✓ Dubai Civil Defense Certified</div>
+          </div>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/ziton-zp730-2p/" class="ppf-spotlight-btn">View Product &rarr;</a>
+        </div>
+
+      </div>
+    </li>
+
+    <!-- 2. Fire Fighting -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/" class="ppf-dept-link">
+        <span>Fire Fighting</span>
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </li>
+
+    <!-- 3. Emergency Lighting -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/emergency-lighting/" class="ppf-dept-link">
+        <span>Emergency Lighting</span>
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </li>
+
+    <!-- 4. Marine Products -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/marine-products/" class="ppf-dept-link">
+        <span>Marine Products</span>
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </li>
+
+    <!-- 5. Safety Products -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/safety-products/" class="ppf-dept-link">
+        <span>Safety Products</span>
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </li>
+
+    <!-- 6. Hardwares -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/hardwares/" class="ppf-dept-link">
+        <span>Hardwares &amp; Fittings</span>
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </li>
+
+    <!-- 7. Notification Devices -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/notification-devices/" class="ppf-dept-link">
+        <span>Notification Devices</span>
+      </a>
+    </li>
+
+    <!-- 8. On Sale -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/on-sale/" class="ppf-dept-link">
+        <span>On Sale</span>
+        <span class="ppf-badge-hot">SALE</span>
+      </a>
+    </li>
+
+    <!-- 9. Top Selling -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/top-selling/" class="ppf-dept-link">
+        <span>Top Selling</span>
+      </a>
+    </li>
+
+    <!-- 10. Latest Products -->
+    <li class="ppf-dept-item">
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/" class="ppf-dept-link">
+        <span>Latest Products</span>
+      </a>
+    </li>
+
+  </ul>
+
+</div>

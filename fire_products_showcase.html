@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Products Showcase - Modern Design</title>
+  <!-- Google Fonts: Inter / Poppins for crisp typography matching modern WooCommerce themes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide / FontAwesome icons via SVG inline -->
+  <style>
+    :root {
+      --primary-blue: #1565C0;
+      --primary-blue-hover: #0D47A1;
+      --accent-red: #D32F2F;
+      --accent-red-hover: #B71C1C;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --bg-surface: #FFFFFF;
+      --bg-page: #F8FAFC;
+      --border-color: #E2E8F0;
+      --border-focus: #CBD5E1;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.12);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      padding: 40px 20px;
+      line-height: 1.5;
+    }
+
+    .fire-showcase-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Top Header with Tabs */
+    .showcase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .tab-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .tab-btn {
+      position: relative;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding-bottom: 16px;
+      margin-bottom: -18px;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .tab-btn.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--primary-blue);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .badge-count {
+      font-size: 11px;
+      background: #F1F5F9;
+      color: var(--text-muted);
+      padding: 2px 7px;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active .badge-count {
+      background: #E0E7FF;
+      color: var(--primary-blue);
+    }
+
+    .header-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .header-action-link:hover {
+      color: var(--primary-blue-hover);
+      transform: translateX(3px);
+    }
+
+    /* Dynamic Tab Panels */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Product Side Columns (Left & Right) */
+    .product-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-between;
+    }
+
+    /* Mini Horizontal Product Card */
+    .mini-product-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .mini-product-card:hover {
+      border-color: #BFDBFE;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .mini-thumb-wrapper {
+      width: 82px;
+      height: 82px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      padding: 4px;
+      border: 1px solid #F1F5F9;
+    }
+
+    .mini-thumb-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .mini-product-card:hover .mini-thumb-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .mini-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .category-label {
+      font-size: 11px;
+      text-transform: capitalize;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .mini-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary-blue);
+      line-height: 1.35;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 0.2s;
+    }
+
+    .mini-product-card:hover .mini-title {
+      color: var(--primary-blue-hover);
+      text-decoration: underline;
+    }
+
+    .mini-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .mini-price .currency {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    /* Center Featured Hero Spotlight Card */
+    .hero-spotlight-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .hero-spotlight-card:hover {
+      border-color: #93C5FD;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .hero-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .spotlight-pill {
+      background: #EFF6FF;
+      color: var(--primary-blue);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #DBEAFE;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .spotlight-pill::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--primary-blue);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .thumb-indicator {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      border: 1.5px solid #BFDBFE;
+      padding: 3px;
+      background: #FFFFFF;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+      transition: var(--transition);
+    }
+
+    .thumb-indicator:hover {
+      border-color: var(--primary-blue);
+      transform: scale(1.06);
+    }
+
+    .thumb-indicator img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .hero-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+      padding: 16px;
+      margin: 8px 0 16px 0;
+      position: relative;
+    }
+
+    .hero-media img {
+      max-width: 90%;
+      max-height: 220px;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.06));
+    }
+
+    .hero-spotlight-card:hover .hero-media img {
+      transform: scale(1.05);
+    }
+
+    .hero-details {
+      border-top: 1px solid #EDF2F7;
+      padding-top: 18px;
+    }
+
+    .hero-category {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .hero-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1.4;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-title:hover {
+      color: var(--primary-blue-hover);
+      text-decoration: underline;
+    }
+
+    .hero-pricing-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-price {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--accent-red);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-price .currency {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .hero-btn {
+      background: var(--primary-blue);
+      color: #FFFFFF;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 9px 18px;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .hero-btn:hover {
+      background: var(--primary-blue-hover);
+      box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Toast Notification for Interactivity */
+    .toast-notice {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1E293B;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+    }
+
+    .toast-notice.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .tab-panel.active {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-spotlight-card {
+        grid-column: span 2;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .fire-showcase-container {
+        padding: 20px 16px;
+      }
+      .tab-panel.active {
+        grid-template-columns: 1fr;
+      }
+      .hero-spotlight-card {
+        grid-column: span 1;
+      }
+      .tab-nav {
+        gap: 20px;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+      .tab-btn {
+        font-size: 16px;
+      }
+      .hero-price {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Modern Fire Products Showcase Section -->
+  <section class="fire-showcase-container">
+    
+    <!-- Header with Dynamic Tabs -->
+    <div class="showcase-header">
+      <nav class="tab-nav" role="tablist">
+        <button class="tab-btn active" data-tab="featured" role="tab" aria-selected="true">
+          Feature <span class="badge-count">7</span>
+        </button>
+        <button class="tab-btn" data-tab="bestselling" role="tab" aria-selected="false">
+          Best selling <span class="badge-count">7</span>
+        </button>
+        <button class="tab-btn" data-tab="onsale" role="tab" aria-selected="false">
+          On Sale <span class="badge-count">7</span>
+        </button>
+      </nav>
+      
+      <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-products/" class="header-action-link" target="_blank">
+        Explore All Fire Products
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- TAB 1: FEATURED (Current Screenshot Layout Re-imagined) -->
+    <div class="tab-panel active" id="tab-featured">
+      
+      <!-- Left Column (3 items) -->
+      <div class="product-column">
+        <!-- Item 1 -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/apc-z41-300-6-6-300psi-osy-type-flange-end-gate-valve/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/APC-Z41-300-300x300.jpg" alt="APC Z41-300 OS&Y Gate Valve" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">APC Z41-300, 6″, 6″ 300PSI-OS&Y Type Flange End Gate Valve</h4>
+            <div class="mini-price">
+              <span class="currency">AED</span> 1,680
+            </div>
+          </div>
+        </a>
+
+        <!-- Item 2 -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei164rc-heat-detector-mains-domestic-detector-with-lithium-battery/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI164RC-Heat-Detector-300x300.jpg" alt="Aico EI164RC Heat Detector" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI164RC Heat Detector – Mains Domestic Detector With Lithium Battery</h4>
+            <div class="mini-price">
+              <span class="currency">AED</span> 413
+            </div>
+          </div>
+        </a>
+
+        <!-- Item 3 -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp760-8-zone-fire-alarm-system-repeater-panel/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP760 Repeater Panel" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">C-Tec CFP760 8 Zone Fire Alarm System Repeater Panel</h4>
+            <div class="mini-price">
+              <span class="currency">AED</span> 1,808
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Spotlight Card (Featured Hero Item) -->
+      <div class="hero-spotlight-card">
+        <div>
+          <div class="hero-top-bar">
+            <span class="spotlight-pill">Featured Deal</span>
+            <div class="thumb-indicator" title="Switch view">
+              <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="Thumbnail icon">
+            </div>
+          </div>
+          
+          <div class="hero-media">
+            <img id="featured-hero-img" src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP702-4 Control Panel">
+          </div>
+        </div>
+
+        <div class="hero-details">
+          <span class="hero-category">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702-4-standard-2-zone-conventional-fire-alarm-control-panel/" class="hero-title" target="_blank">
+            C-Tec CFP702-4 Standard 2 Zone Conventional Fire Alarm Control Panel
+          </a>
+          <div class="hero-pricing-bar">
+            <div class="hero-price">
+              <span class="currency">AED</span> 1,240
+            </div>
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702-4-standard-2-zone-conventional-fire-alarm-control-panel/" class="hero-btn" target="_blank">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              View Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (3 items) -->
+      <div class="product-column">
+        <!-- Item 4 -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-relay-base-plate-ei128r/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI128R-300x300.jpg" alt="Aico Relay Base Plate" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico Relay Base Plate EI128R</h4>
+            <div class="mini-price">
+              <span class="currency">AED</span> 336
+            </div>
+          </div>
+        </a>
+
+        <!-- Item 5 -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3018-3000-series-carbon-monoxide-alarm-with-smartlink-functionality/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI3018-300x300.jpg" alt="Aico EI3018 Carbon Monoxide Alarm" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI3018 3000 Series Carbon Monoxide Alarm With Smartlink...</h4>
+            <div class="mini-price">
+              <span class="currency">AED</span> 595
+            </div>
+          </div>
+        </a>
+
+        <!-- Item 6 -->
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp704e-4-economy-4-zone-conventional-fire-alarm-control-panel/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP704E-4 Panel" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">C-Tec CFP704E-4 Economy 4 Zone Conventional Fire Alarm Control...</h4>
+            <div class="mini-price">
+              <span class="currency">AED</span> 1,240
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: BEST SELLING -->
+    <div class="tab-panel" id="tab-bestselling">
+      <div class="product-column">
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei100mrf-radiolink-wireless-interlink-module/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI100MRF-300x300.jpg" alt="Aico EI100MRF" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI100MRF Radiolink + Wireless Interlink Module</h4>
+            <div class="mini-price"><span class="currency">AED</span> 458</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei141rc-smoke-detector-mains-ionization-domestic-detector-with-battery/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/EI141RC-300x300.jpg" alt="Aico EI141RC" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI141RC Smoke Detector – Mains Ionization Domestic</h4>
+            <div class="mini-price"><span class="currency">AED</span> 368</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/bardic-call-point-cover/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Bardic-Cover-300x300.jpg" alt="Bardic Cover" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Bardic Call Point Protection Cover</h4>
+            <div class="mini-price"><span class="currency">AED</span> 53</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Spotlight for Best Selling -->
+      <div class="hero-spotlight-card">
+        <div>
+          <div class="hero-top-bar">
+            <span class="spotlight-pill">Top Seller</span>
+            <div class="thumb-indicator">
+              <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI3024-300x300.jpg" alt="Aico Multisensor">
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI3024-300x300.jpg" alt="Aico EI3024 Multisensor">
+          </div>
+        </div>
+        <div class="hero-details">
+          <span class="hero-category">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3024-mains-interlinked-optical-smoke-heat-multisensor-detector-with-10-year-lithium-battery-backup/" class="hero-title" target="_blank">
+            Aico EI3024 Mains Interlinked Optical Smoke & Heat Multisensor Detector
+          </a>
+          <div class="hero-pricing-bar">
+            <div class="hero-price"><span class="currency">AED</span> 601</div>
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3024-mains-interlinked-optical-smoke-heat-multisensor-detector-with-10-year-lithium-battery-backup/" class="hero-btn" target="_blank">
+              View Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-column">
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp708-4-standard-8-zone-conventional-fire-alarm-control-panel/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec 8 Zone" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">C-Tec CFP708-4 Standard 8 Zone Conventional Fire Alarm Panel</h4>
+            <div class="mini-price"><span class="currency">AED</span> 2,045</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei3016-mains-interlinked-optical-smoke-detector-with-10-year-lithium-battery-backup/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI3016-300x300.jpg" alt="Aico EI3016" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI3016 Mains Interlinked Optical Smoke Detector</h4>
+            <div class="mini-price"><span class="currency">AED</span> 452</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/brk-fg250b-smoke-alarm-9v-battery-powered/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/BRK-300x300.jpg" alt="BRK Smoke Alarm" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">BRK FG250B Smoke Alarm 9V Battery Powered</h4>
+            <div class="mini-price"><span class="currency">AED</span> 158</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- TAB 3: ON SALE -->
+    <div class="tab-panel" id="tab-onsale">
+      <div class="product-column">
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei144e-heat-detector/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI144E-Heat-detector-1-300x300.jpg" alt="Aico EI144E" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI144E Heat Detector Compact Series</h4>
+            <div class="mini-price"><span class="currency">AED</span> 315</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei407-radio-link-call-point/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI407-Radio-Link-Call-Point-300x300.jpg" alt="Aico Call Point" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI407 Radio Link Emergency Call Point</h4>
+            <div class="mini-price"><span class="currency">AED</span> 399</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei450-radiolink-alarm-controller/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/Aico-EI450-1-300x300.jpg" alt="Aico Controller" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI450 Radiolink System Alarm Controller</h4>
+            <div class="mini-price"><span class="currency">AED</span> 546</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Spotlight for On Sale -->
+      <div class="hero-spotlight-card">
+        <div>
+          <div class="hero-top-bar">
+            <span class="spotlight-pill" style="background:#FEF2F2; color:#DC2626; border-color:#FEE2E2;">Hot Discount</span>
+            <div class="thumb-indicator">
+              <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP702E-4">
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP702E-4 Control Panel">
+          </div>
+        </div>
+        <div class="hero-details">
+          <span class="hero-category">Fire Products</span>
+          <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702e-4-economy-2-zone-conventional-fire-alarm-control-panel/" class="hero-title" target="_blank">
+            C-Tec CFP702E-4 Economy 2 Zone Conventional Fire Alarm Control Panel
+          </a>
+          <div class="hero-pricing-bar">
+            <div class="hero-price"><span class="currency">AED</span> 1,097</div>
+            <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp702e-4-economy-2-zone-conventional-fire-alarm-control-panel/" class="hero-btn" target="_blank">
+              View Details
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-column">
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei603rf-battery-powered-heat-detector-with-wireless-interlink-facility/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI603RF-300x300.jpg" alt="Aico EI603RF" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">Aico EI603RF Battery Heat Detector with Wireless Interlink</h4>
+            <div class="mini-price"><span class="currency">AED</span> 706</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/aico-ei650rf-battery-powered-optical-smoke-detector-with-wireless-interlink-facility/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/AICO-EI650RF-1-300x300.jpg" alt="AICO EI650RF" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">AICO EI650RF Battery Optical Smoke Detector</h4>
+            <div class="mini-price"><span class="currency">AED</span> 689</div>
+          </div>
+        </a>
+
+        <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/product/c-tec-cfp708e-4-economy-8-zone-conventional-fire-alarm-control-panel/" class="mini-product-card" target="_blank">
+          <div class="mini-thumb-wrapper">
+            <img src="https://safetag.ae/wp-content/uploads/2024/03/C-Tec-FACP-300x300.jpg" alt="C-Tec CFP708E-4" loading="lazy">
+          </div>
+          <div class="mini-info">
+            <span class="category-label">Fire Products</span>
+            <h4 class="mini-title">C-Tec CFP708E-4 Economy 8 Zone Conventional Fire Alarm Panel</h4>
+            <div class="mini-price"><span class="currency">AED</span> 1,714</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Interactive Tab Switching Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          // Remove active class from buttons & panels
+          tabButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          tabPanels.forEach(p => p.classList.remove('active'));
+
+          // Activate clicked button & corresponding panel
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          const targetId = 'tab-' + this.getAttribute('data-tab');
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

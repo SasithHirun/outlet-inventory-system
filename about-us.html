@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Pacific Power & Fire Contractors Dubai UAE</title>
+  
+  <!-- Google Fonts: Matching Website Hierarchy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       CSS VARIABLES & GLOBAL RESET (MATCHING LIVE THEME SYSTEM)
+       ========================================================= */
+    :root {
+      --theme-primary-color: #333E48;       /* Charcoal primary */
+      --theme-secondary-color: #004EC3;     /* Royal corporate blue */
+      --primary-blue: #1565C0;              /* Engineering blue */
+      --primary-blue-hover: #0D47A1;
+      --primary-blue-light: #EFF6FF;
+      --theme-accent-color: #FF3D3D;        /* Fire safety accent red */
+      --accent-red: #D32F2F;                /* Deep safety red */
+      --accent-red-hover: #B71C1C;
+      --accent-red-light: #FEF2F2;
+      --gold-accent: #ECA227;               /* AMC CTA Button color */
+      --gold-accent-hover: #D9911A;
+      --text-main: #333E48;
+      --text-muted: #73787D;
+      --text-light: #FFFFFF;
+      --bg-page: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-alt: #F4F4F4;
+      --border-color: #E2E8F0;
+      --border-subtle: #ECECEC;
+      
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-feature: 'Plus Jakarta Sans', sans-serif;
+      
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
+      --transition: all 0.28s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      background-color: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* =========================================================
+       1. TOP BAR
+       ========================================================= */
+    .topbar {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 13px;
+      color: var(--text-muted);
+      padding: 8px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .topbar-item i {
+      color: var(--theme-accent-color);
+      font-size: 12px;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .badge-approved {
+      background-color: var(--primary-blue-light);
+      color: var(--primary-blue);
+      font-weight: 600;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* =========================================================
+       2. MAIN HEADER
+       ========================================================= */
+    .main-header {
+      background-color: #FFFFFF;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .main-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      min-width: 210px;
+    }
+
+    .header-logo img {
+      max-height: 48px;
+      width: auto;
+    }
+
+    .header-logo-fallback {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      letter-spacing: -0.5px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-logo-fallback span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--theme-accent-color);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* Search Bar with Category Select */
+    .header-search {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: var(--transition);
+    }
+
+    .header-search:focus-within {
+      border-color: var(--primary-blue);
+    }
+
+    .search-category {
+      border: none;
+      background: #F8FAFC;
+      border-right: 1px solid var(--border-color);
+      padding: 0 14px;
+      font-size: 13px;
+      color: var(--text-main);
+      font-weight: 500;
+      cursor: pointer;
+      outline: none;
+      font-family: var(--font-body);
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      padding: 10px 14px;
+      font-size: 14px;
+      outline: none;
+      font-family: var(--font-body);
+    }
+
+    .search-btn {
+      background-color: var(--theme-accent-color);
+      color: #FFFFFF;
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: var(--transition);
+    }
+
+    .search-btn:hover {
+      background-color: var(--accent-red);
+    }
+
+    /* Header Utilities */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .action-icon {
+      position: relative;
+      font-size: 20px;
+      color: var(--theme-primary-color);
+    }
+
+    .action-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background-color: var(--theme-accent-color);
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .action-text small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .action-text strong {
+      font-weight: 600;
+      color: var(--theme-primary-color);
+    }
+
+    /* =========================================================
+       3. NAVIGATION BAR
+       ========================================================= */
+    .navbar {
+      background-color: var(--theme-primary-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-departments {
+      background-color: var(--theme-accent-color);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: var(--transition);
+    }
+
+    .nav-departments:hover {
+      background-color: var(--accent-red);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      flex: 1;
+    }
+
+    .nav-menu li a {
+      display: block;
+      padding: 14px 18px;
+      color: #E2E8F0;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li.active a {
+      color: #FFFFFF;
+    }
+
+    .nav-menu li.active a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      background-color: var(--theme-accent-color);
+    }
+
+    .nav-hotline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .nav-hotline i {
+      color: var(--theme-accent-color);
+      font-size: 16px;
+    }
+
+    /* =========================================================
+       4. HERO / BREADCRUMB BANNER (AS IN DESIGN)
+       ========================================================= */
+    .page-hero {
+      position: relative;
+      background: linear-gradient(rgba(14, 23, 42, 0.82), rgba(15, 23, 42, 0.90)),
+                  url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 65px 0;
+      text-align: left;
+      border-bottom: 4px solid var(--theme-accent-color);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #CBD5E1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .breadcrumb a {
+      color: #94A3B8;
+    }
+
+    .breadcrumb a:hover {
+      color: #FFFFFF;
+    }
+
+    .breadcrumb span {
+      color: var(--theme-accent-color);
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+
+    /* =========================================================
+       5. SECTION: WHO WE ARE
+       ========================================================= */
+    .section-who-we-are {
+      padding: 85px 0;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    /* Left Image Showcase with overlapping elements */
+    .who-media {
+      position: relative;
+    }
+
+    .media-card-main {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      border: 3px solid #FFFFFF;
+    }
+
+    .media-card-main img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Emergency Call 24/7 Red Badge */
+    .emergency-badge {
+      position: absolute;
+      top: 20px;
+      right: -15px;
+      background-color: var(--accent-red);
+      color: #FFFFFF;
+      padding: 14px 22px;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(211, 47, 47, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 3;
+    }
+
+    .emergency-badge .badge-icon-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .emergency-badge .badge-icon-title i {
+      font-size: 14px;
+    }
+
+    .emergency-badge .badge-phone {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Overlapping Inset Image */
+    .media-card-inset {
+      position: absolute;
+      bottom: -30px;
+      right: 15px;
+      width: 230px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 4px solid #FFFFFF;
+      box-shadow: var(--shadow-lg);
+      z-index: 2;
+    }
+
+    .media-card-inset img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    /* Right Text Column */
+    .section-tag {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--theme-secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      line-height: 1.3;
+      margin-bottom: 18px;
+    }
+
+    .who-content p {
+      margin-bottom: 16px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555E68;
+    }
+
+    /* 2 Feature Items Below */
+    .who-features-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .feature-item h4 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-item h4::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--theme-accent-color);
+    }
+
+    .feature-item p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       6. SECTION: MISSION / VISION / VALUES (ANGLED 3-CARD BAND)
+       ========================================================= */
+    .section-mvv {
+      position: relative;
+      background: linear-gradient(rgba(18, 22, 28, 0.85), rgba(18, 22, 28, 0.92)),
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .mvv-band {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      position: relative;
+    }
+
+    .mvv-card {
+      padding: 60px 45px;
+      color: #FFFFFF;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Charcoal Left Card with Angle Cut */
+    .mvv-card.mission {
+      background: #1E2328;
+      clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+      padding-right: 65px;
+    }
+
+    /* Center Red Card */
+    .mvv-card.vision {
+      background: #C62828;
+      margin-left: -30px;
+      padding-left: 50px;
+    }
+
+    /* Right Crimson Card */
+    .mvv-card.values {
+      background: #D32F2F;
+    }
+
+    .mvv-card h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mvv-card.mission h3 {
+      color: #F8B133; /* Golden accent from design */
+    }
+
+    .mvv-card.vision h3,
+    .mvv-card.values h3 {
+      color: #FFFFFF;
+    }
+
+    .mvv-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* =========================================================
+       7. SECTION: HOW WE WORK (PROCESS)
+       ========================================================= */
+    .section-how-we-work {
+      padding: 85px 0;
+      background-color: #FFFFFF;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .work-left-block .section-tag {
+      color: var(--primary-blue);
+    }
+
+    .work-left-block .section-title {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .work-image-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 3px solid #FFFFFF;
+    }
+
+    .work-image-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+    }
+
+    .work-right-block .work-intro {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555E68;
+      margin-bottom: 30px;
+    }
+
+    /* 4 Steps Grid */
+    .work-steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 32px;
+    }
+
+    .step-item {
+      position: relative;
+    }
+
+    .step-item h4 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-item h4::before {
+      content: '';
+      width: 6px;
+      height: 18px;
+      background-color: var(--theme-accent-color);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .step-item p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================
+       8. SECTION: NEED MORE HELP? (FAQ & SUPPORT)
+       ========================================================= */
+    .section-help-faq {
+      position: relative;
+      background: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.95)),
+                  url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 80px 0;
+      color: #FFFFFF;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    /* Left Support Area */
+    .help-left-col h2 {
+      font-family: var(--font-heading);
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #FFFFFF;
+    }
+
+    .help-left-col .help-intro {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #CBD5E1;
+      margin-bottom: 28px;
+    }
+
+    .support-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Support Card 1: Red */
+    .support-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 22px 24px;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .support-card.red-card {
+      background-color: #C62828;
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(198, 40, 40, 0.35);
+    }
+
+    .support-card.white-card {
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      box-shadow: var(--shadow-md);
+    }
+
+    .support-card-icon {
+      font-size: 26px;
+      min-width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .red-card .support-card-icon {
+      background: rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+    }
+
+    .white-card .support-card-icon {
+      background: #FEE2E2;
+      color: var(--accent-red);
+    }
+
+    .support-card-body h4 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .red-card .support-card-body h4 {
+      color: #FFFFFF;
+    }
+
+    .white-card .support-card-body h4 {
+      color: var(--theme-primary-color);
+    }
+
+    .support-card-body p {
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .red-card .support-card-body p {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .white-card .support-card-body p {
+      color: var(--text-muted);
+    }
+
+    /* Right FAQ Accordion */
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 14px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 10px 0;
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      color: #FFFFFF;
+      transition: var(--transition);
+    }
+
+    .faq-item.active .faq-question {
+      color: #F8B133; /* Golden active tone from design */
+    }
+
+    .faq-question:hover {
+      color: #F8B133;
+    }
+
+    .faq-icon {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+      color: #94A3B8;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: #F8B133;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #CBD5E1;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-top: 8px;
+    }
+
+    /* =========================================================
+       9. SECTION: BOTTOM AMC CTA BANNER
+       ========================================================= */
+    .section-amc-cta {
+      position: relative;
+      background: linear-gradient(rgba(10, 15, 26, 0.88), rgba(10, 15, 26, 0.92)),
+                  url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 38px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .amc-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .amc-content h2 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.3px;
+    }
+
+    .btn-amc-contact {
+      background-color: var(--gold-accent);
+      color: #1A202C;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 13px 32px;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(236, 162, 39, 0.4);
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .btn-amc-contact:hover {
+      background-color: var(--gold-accent-hover);
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 162, 39, 0.6);
+    }
+
+    /* =========================================================
+       10. FOOTER (EXACT MATCHING THEME)
+       ========================================================= */
+    .site-footer {
+      background-color: #FAFAFA;
+      border-top: 1px solid var(--border-color);
+      padding: 70px 0 25px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--theme-accent-color);
+    }
+
+    .footer-col p {
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links li a {
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links li a:hover {
+      color: var(--theme-secondary-color);
+      transform: translateX(4px);
+    }
+
+    .footer-links li a::before {
+      content: '›';
+      color: var(--theme-secondary-color);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .footer-contact-item i {
+      color: var(--theme-accent-color);
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 13px;
+    }
+
+    .footer-bottom a {
+      color: var(--theme-primary-color);
+      font-weight: 600;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--theme-secondary-color);
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 10px;
+      font-size: 22px;
+      color: #94A3B8;
+    }
+
+    /* =========================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================= */
+    @media (max-width: 992px) {
+      .who-grid,
+      .work-grid,
+      .help-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .mvv-band {
+        grid-template-columns: 1fr;
+      }
+
+      .mvv-card.mission {
+        clip-path: none;
+        padding-right: 45px;
+      }
+
+      .mvv-card.vision {
+        margin-left: 0;
+        padding-left: 45px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .emergency-badge {
+        right: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-right,
+      .nav-menu,
+      .header-search {
+        display: none;
+      }
+      
+      .who-features-row,
+      .work-steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .amc-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .section-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       1. TOP UTILITY BAR
+       ========================================================= -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>Hotline: +971 544 472 389</span>
+        </div>
+        <div class="topbar-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>order@firecontractorsindubai.com</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="badge-approved">
+          <i class="fa-solid fa-shield-halved"></i> Dubai Civil Defense Approved Contractor
+        </div>
+        <div class="topbar-item">
+          <i class="fa-solid fa-globe"></i>
+          <span>Dubai, United Arab Emirates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       2. MAIN HEADER
+       ========================================================= -->
+  <header class="main-header">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="header-logo">
+        <img src="https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2023/08/firec-logo.png" 
+             alt="Pacific Power & Fire Contractors Dubai UAE" 
+             onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+        <div id="logoFallback" class="header-logo-fallback" style="display:none;">
+          PACIFIC POWER
+          <span>& FIRE CONTRACTORS</span>
+        </div>
+      </a>
+
+      <!-- Central Search Box -->
+      <form class="header-search" action="#" method="get">
+        <select class="search-category" name="product_cat">
+          <option value="">All Categories</option>
+          <option value="fire-alarm">Fire Alarm Panels</option>
+          <option value="smoke-detectors">Smoke & Heat Detectors</option>
+          <option value="valves">Valves & Sprinklers</option>
+          <option value="emergency-lights">Emergency Lighting</option>
+        </select>
+        <input type="text" class="search-input" placeholder="Search fire protection products, parts, model..." required>
+        <button type="submit" class="search-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <!-- Action Icons: Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fa-regular fa-heart"></i>
+            <span class="action-badge">0</span>
+          </div>
+          <div class="action-text">
+            <small>Favorites</small>
+            <strong>Wishlist</strong>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="action-badge">0</span>
+          </div>
+          <div class="action-text">
+            <small>Cart</small>
+            <strong>AED 0.00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       3. NAVIGATION BAR
+       ========================================================= -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Departments Drawer -->
+      <div class="nav-departments">
+        <i class="fa-solid fa-bars-staggered"></i>
+        <span>All Departments</span>
+        <i class="fa-solid fa-chevron-down" style="font-size: 11px; margin-left: 5px;"></i>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="about-us.html">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+      <!-- Emergency Support Hotline -->
+      <div class="nav-hotline">
+        <i class="fa-solid fa-headset"></i>
+        <span>Emergency 24/7 Support</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       4. PAGE HERO / BREADCRUMB (FROM DESIGN MOCKUP)
+       ========================================================= -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span>ABOUT</span>
+      </div>
+      <h1>About</h1>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. SECTION: WHO WE ARE (FROM DESIGN MOCKUP)
+       ========================================================= -->
+  <section class="section-who-we-are">
+    <div class="container">
+      <div class="who-grid">
+        
+        <!-- Left: Image Showcase with Emergency Call Badge and Inset Photo -->
+        <div class="who-media">
+          <div class="media-card-main">
+            <!-- Fire hose reel and extinguisher in cabinet -->
+            <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80" 
+                 alt="Fire hose reel and extinguisher in safety cabinet">
+          </div>
+
+          <!-- Red Floating Emergency Call 24/7 Badge -->
+          <div class="emergency-badge">
+            <div class="badge-icon-title">
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>Emergency Call 24/7</span>
+            </div>
+            <div class="badge-phone">+971 544 472 389</div>
+          </div>
+
+          <!-- Bottom Right Inset Photo: Engineering blueprints and valves -->
+          <div class="media-card-inset">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=450&q=80" 
+                 alt="Fire system engineering blueprints and piping installation">
+          </div>
+        </div>
+
+        <!-- Right: Text Content and Feature Grid -->
+        <div class="who-content">
+          <span class="section-tag">WHO WE ARE</span>
+          <h2 class="section-title">Responding to Fire Safety With Unwavering Commitment</h2>
+          
+          <p>We are a dedicated fire protection contracting company delivering reliable, regulation-compliant fire safety solutions across Dubai and the UAE. Our work is driven by one clear responsibility: protecting lives, property, and operations through properly designed, installed, and maintained fire systems.</p>
+          
+          <p>Our team works closely with consultants, contractors, facility managers, and building owners to ensure every fire protection solution meets safety standards, authority approvals, and real-world operational needs.</p>
+
+          <!-- 2 Sub-Features -->
+          <div class="who-features-row">
+            <div class="feature-item">
+              <h4>Rapid Emergency Response</h4>
+              <p>Always ready to respond. Our teams act quickly during emergencies and system failures to restore fire protection without delay.</p>
+            </div>
+            <div class="feature-item">
+              <h4>Prevention and Education</h4>
+              <p>We focus on prevention through compliant system design, regular inspections, and structured maintenance to reduce risk and ensure safety.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. SECTION: MISSION / VISION / VALUES (ANGLED 3-CARD BAND)
+       ========================================================= -->
+  <section class="section-mvv">
+    <div class="mvv-band">
+      
+      <!-- Card 1: Our Mission (Charcoal Left Card) -->
+      <div class="mvv-card mission">
+        <h3>Our Mission</h3>
+        <p>To deliver Dubai Civil Defence-approved fire protection solutions that safeguard lives, property, and operations through compliant design, installation, testing, maintenance, and rapid emergency support, driven by integrity, reliability, and unmatched commitment to safety.</p>
+      </div>
+
+      <!-- Card 2: Our Vision (Red Center Card) -->
+      <div class="mvv-card vision">
+        <h3>Our Vision</h3>
+        <p>We protect lives and property through proactive fire risk control, compliant system implementation, and dependable emergency response. Every action we take is guided by responsibility, precision, and commitment to the communities we serve.</p>
+      </div>
+
+      <!-- Card 3: Our Values (Crimson Right Card) -->
+      <div class="mvv-card values">
+        <h3>Our Values</h3>
+        <p>We value safety first, strict compliance, integrity, technical excellence, and customer commitment, delivering reliable fire protection solutions through transparent practices, skilled teams, and responsible service that protects lives and property.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. SECTION: HOW WE WORK (FROM DESIGN MOCKUP)
+       ========================================================= -->
+  <section class="section-how-we-work">
+    <div class="container">
+      <div class="work-grid">
+        
+        <!-- Left: Heading & Fire Alarm Pull Station Image -->
+        <div class="work-left-block">
+          <span class="section-tag">HOW WE WORK</span>
+          <h2 class="section-title">Every second counts in our fire safety commitment</h2>
+          <div class="work-image-card">
+            <!-- Manual pull station image -->
+            <img src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=800&q=80" 
+                 alt="Hand activating manual red fire alarm call point">
+          </div>
+        </div>
+
+        <!-- Right: Process Intro & 4-Step Architecture -->
+        <div class="work-right-block">
+          <p class="work-intro">Fire protection demands speed, accuracy, and preparation. Our process is designed to ensure fast response, clear coordination, and reliable execution across every stage of fire safety planning, installation, and maintenance.</p>
+
+          <div class="work-steps-grid">
+            <!-- Step 1 -->
+            <div class="step-item">
+              <h4>Assessment & Planning</h4>
+              <p>We begin with a detailed site assessment to understand risks, layouts, and compliance requirements before proposing the most effective fire protection solution.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+              <h4>Scheduled Execution</h4>
+              <p>Our team plans installations, testing, and maintenance with minimal disruption while ensuring all systems meet approved safety standards.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+              <h4>System Readiness</h4>
+              <p>All equipment is tested, commissioned, and documented to ensure full operational readiness and regulatory compliance.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item">
+              <h4>Ongoing Support</h4>
+              <p>We provide continuous inspection, servicing, and technical support to keep fire protection systems functional at all times.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. SECTION: NEED MORE HELP? (FAQ & SUPPORT)
+       ========================================================= -->
+  <section class="section-help-faq">
+    <div class="container">
+      <div class="help-grid">
+        
+        <!-- Left Column: Support Cards -->
+        <div class="help-left-col">
+          <h2>Need More Help?</h2>
+          <p class="help-intro">Our team is here to support you with expert guidance, quick responses, and dependable fire safety solutions. Whether you need technical assistance, service updates, or project support, we are always ready to help.</p>
+
+          <div class="support-cards-list">
+            <!-- Card 1: Technical Support (Red Card) -->
+            <div class="support-card red-card">
+              <div class="support-card-icon">
+                <i class="fa-regular fa-comments"></i>
+              </div>
+              <div class="support-card-body">
+                <h4>Technical Support</h4>
+                <p>Get direct access to our technical team for system troubleshooting, maintenance guidance, compliance clarification, and on-site support when required.</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Ticket Support (White Card) -->
+            <div class="support-card white-card">
+              <div class="support-card-icon">
+                <i class="fa-regular fa-envelope-open"></i>
+              </div>
+              <div class="support-card-body">
+                <h4>Ticket Support</h4>
+                <p>Submit service requests for inspections, maintenance, system upgrades, or emergency support through a simple and responsive process.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Accordion FAQ -->
+        <div class="help-right-col">
+          <div class="faq-accordion" id="faqAccordion">
+            
+            <!-- FAQ 1 (Default Open) -->
+            <div class="faq-item active">
+              <div class="faq-question">
+                <span>Why choose us for your projects?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                We deliver approved fire protection solutions backed by experienced engineers, compliant installations, and reliable after-service support across Dubai.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How we provide services for you?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                We provide end-to-end fire contracting starting with site surveys and Civil Defense approval drawings, continuing through equipment supply, turnkey installation, and scheduled maintenance contracts.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How are we cost-effective?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                As direct authorized distributors and turnkey contractors, we eliminate intermediate markups, prevent costly non-compliance rework, and offer optimized AMC maintenance packages.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What payment methods are available?</span>
+                <i class="fa-solid fa-chevron-down faq-icon"></i>
+              </div>
+              <div class="faq-answer">
+                We accept bank transfers (EFT), corporate cheques, major credit cards, and flexible milestone-based payment schedules for long-term contracting projects.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       9. SECTION: BOTTOM AMC CTA BANNER
+       ========================================================= -->
+  <section class="section-amc-cta">
+    <div class="container">
+      <div class="amc-content">
+        <h2>Start your Annual Maintenance Contract</h2>
+        <a href="#contact" class="btn-amc-contact">CONTACT US</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       10. SITE FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: About & Compliance -->
+        <div class="footer-col">
+          <h4>Pacific Power & Fire</h4>
+          <p>Leading certified fire protection contractor in Dubai & UAE. Providing full turnkey design, equipment supply, Civil Defense compliance approvals, testing, and 24/7 maintenance contracts.</p>
+          <div class="badge-approved" style="display:inline-flex;">
+            <i class="fa-solid fa-certificate"></i> Dubai Civil Defense Approved
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#projects">Recent Projects</a></li>
+            <li><a href="#brands">Certified Brands</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Safety Equipment -->
+        <div class="footer-col">
+          <h4>Fire Protection</h4>
+          <ul class="footer-links">
+            <li><a href="#">Fire Alarm Control Panels</a></li>
+            <li><a href="#">Optical Smoke & Heat Detectors</a></li>
+            <li><a href="#">Carbon Monoxide Detectors</a></li>
+            <li><a href="#">Gate Valves & Sprinklers</a></li>
+            <li><a href="#">Emergency Lighting Systems</a></li>
+            <li><a href="#">Fire Suppression Systems</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Dispatch -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Industrial Area, Dubai, United Arab Emirates</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+971 544 472 389 / +971 544 472 399</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>order@firecontractorsindubai.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon - Sat: 8:00 AM - 6:00 PM<br>(24/7 Emergency Dispatch)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <a href="index.html">Pacific Power & Fire Contractors</a>. All Rights Reserved.
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       INTERACTIVE ACCORDION SCRIPT
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accordion = document.getElementById('faqAccordion');
+      if (!accordion) return;
+
+      const items = accordion.querySelectorAll('.faq-item');
+
+      items.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+
+          // Close all items
+          items.forEach(otherItem => {
+            otherItem.classList.remove('active');
+          });
+
+          // Toggle current item
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

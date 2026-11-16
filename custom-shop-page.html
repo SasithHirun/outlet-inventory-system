@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Products Catalog | Pacific Power &amp; Fire Contractors Dubai</title>
+
+  <!-- Google Fonts: Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       THEME VARIABLES & BULLETPROOF RESET
+       ========================================================= */
+    :root {
+      --primary-red: #DC2626;
+      --primary-red-hover: #B91C1C;
+      --primary-red-light: #FEF2F2;
+      --text-dark: #0F172A;
+      --text-body: #1E293B;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --border-color: #E2E8F0;
+      --border-light: #F1F5F9;
+      --bg-card: #FFFFFF;
+      --bg-page: #F8FAFC;
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 10px 24px -4px rgba(15, 23, 42, 0.09);
+      --font-main: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .ppf-shop-wrapper,
+    .ppf-shop-wrapper * {
+      box-sizing: border-box !important;
+      font-family: var(--font-main) !important;
+    }
+
+    /* Page Container (Matching 1340px Standard) */
+    .ppf-shop-wrapper {
+      width: 100% !important;
+      max-width: 1340px !important;
+      margin: 0 auto !important;
+      padding: 24px 16px 60px 16px !important;
+      color: var(--text-body) !important;
+    }
+
+    /* Breadcrumbs */
+    .ppf-breadcrumbs {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 13px !important;
+      color: var(--text-muted) !important;
+      margin-bottom: 20px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .ppf-breadcrumbs a {
+      color: var(--text-body) !important;
+      text-decoration: none !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .ppf-breadcrumbs a:hover {
+      color: var(--primary-red) !important;
+    }
+
+    .ppf-breadcrumbs span.sep {
+      color: var(--text-light) !important;
+      font-size: 10px !important;
+    }
+
+    /* =========================================================
+       TWO-COLUMN LAYOUT (DESKTOP)
+       ========================================================= */
+    .ppf-shop-layout {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      gap: 28px !important;
+      width: 100% !important;
+    }
+
+    /* Left Sidebar: Fixed 280px Width & Sticky (No Visible Scrollbar) */
+    .ppf-sidebar {
+      flex: 0 0 280px !important;
+      width: 280px !important;
+      max-width: 280px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 18px !important;
+      position: sticky !important;
+      top: 24px !important;
+      max-height: calc(100vh - 48px) !important;
+      overflow-y: auto !important;
+      scrollbar-width: none !important; /* Firefox */
+      -ms-overflow-style: none !important; /* IE / Edge */
+    }
+
+    .ppf-sidebar::-webkit-scrollbar {
+      display: none !important; /* Chrome / Safari / Opera */
+      width: 0 !important;
+      height: 0 !important;
+      background: transparent !important;
+    }
+
+    /* Drawer Elements Hidden on Desktop */
+    .ppf-drawer-header,
+    .ppf-drawer-backdrop,
+    .ppf-mobile-filter-btn {
+      display: none !important;
+    }
+
+    /* Right Content Area */
+    .ppf-shop-main {
+      flex: 1 1 0% !important;
+      min-width: 0 !important;
+      width: calc(100% - 308px) !important;
+    }
+
+    /* Filter Box Containers */
+    .ppf-filter-box {
+      background: #FFFFFF !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 18px !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+
+    .ppf-filter-title {
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      color: var(--text-dark) !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 14px !important;
+      border-bottom: 2px solid var(--border-light) !important;
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    .ppf-filter-title::after {
+      content: "" !important;
+      position: absolute !important;
+      bottom: -2px !important;
+      left: 0 !important;
+      width: 32px !important;
+      height: 2px !important;
+      background: var(--primary-red) !important;
+    }
+
+    /* Search Input */
+    .ppf-search-input-wrap {
+      position: relative !important;
+      width: 100% !important;
+    }
+
+    .ppf-search-input {
+      width: 100% !important;
+      padding: 9px 12px 9px 34px !important;
+      font-size: 13px !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-sm) !important;
+      outline: none !important;
+      background: #FAFAFA !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .ppf-search-input:focus {
+      border-color: var(--primary-red) !important;
+      background: #FFFFFF !important;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+    }
+
+    .ppf-search-input-wrap svg {
+      position: absolute !important;
+      top: 50% !important;
+      left: 10px !important;
+      transform: translateY(-50%) !important;
+      width: 14px !important;
+      height: 14px !important;
+      stroke: var(--text-light) !important;
+      pointer-events: none !important;
+    }
+
+    /* Category Accordion */
+    .ppf-cat-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 3px !important;
+    }
+
+    .ppf-cat-item {
+      border-radius: var(--radius-sm) !important;
+      overflow: hidden !important;
+    }
+
+    .ppf-cat-btn {
+      width: 100% !important;
+      background: none !important;
+      border: none !important;
+      padding: 8px 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      text-align: left !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      color: var(--text-body) !important;
+      cursor: pointer !important;
+      border-radius: var(--radius-sm) !important;
+      transition: all 0.15s ease !important;
+    }
+
+    .ppf-cat-btn:hover {
+      background: var(--primary-red-light) !important;
+      color: var(--primary-red) !important;
+    }
+
+    .ppf-cat-btn.active {
+      background: var(--primary-red) !important;
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+    }
+
+    .ppf-cat-btn.active .ppf-cat-count {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+    }
+
+    .ppf-cat-left {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+
+    .ppf-cat-left svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke: currentColor !important;
+      fill: none !important;
+      flex-shrink: 0 !important;
+    }
+
+    .ppf-cat-toggle {
+      width: 12px !important;
+      height: 12px !important;
+      stroke: currentColor !important;
+      fill: none !important;
+      transition: transform 0.2s ease !important;
+      cursor: pointer !important;
+      padding: 2px !important;
+    }
+
+    .ppf-cat-item.open > .ppf-cat-btn .ppf-cat-toggle {
+      transform: rotate(90deg) !important;
+    }
+
+    .ppf-cat-count {
+      font-size: 10.5px !important;
+      font-weight: 700 !important;
+      background: var(--border-light) !important;
+      color: var(--text-muted) !important;
+      padding: 2px 7px !important;
+      border-radius: 10px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    /* Sub-categories */
+    .ppf-subcat-list {
+      list-style: none !important;
+      padding: 3px 0 6px 22px !important;
+      margin: 0 !important;
+      display: none !important;
+      flex-direction: column !important;
+      gap: 2px !important;
+    }
+
+    .ppf-cat-item.open > .ppf-subcat-list {
+      display: flex !important;
+    }
+
+    .ppf-subcat-btn {
+      width: 100% !important;
+      background: none !important;
+      border: none !important;
+      padding: 6px 8px !important;
+      text-align: left !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      color: var(--text-muted) !important;
+      cursor: pointer !important;
+      border-radius: 4px !important;
+      transition: all 0.15s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    .ppf-subcat-btn:hover {
+      color: var(--primary-red) !important;
+      background: var(--primary-red-light) !important;
+      padding-left: 12px !important;
+    }
+
+    .ppf-subcat-btn.active {
+      color: var(--primary-red) !important;
+      font-weight: 700 !important;
+      background: var(--primary-red-light) !important;
+      padding-left: 12px !important;
+    }
+
+    .ppf-subcat-btn .sub-text {
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .ppf-subcat-btn .sub-text::before {
+      content: "•" !important;
+      color: var(--text-light) !important;
+      margin-right: 6px !important;
+      font-size: 11px !important;
+    }
+
+    .ppf-subcat-btn.active .sub-text::before {
+      color: var(--primary-red) !important;
+    }
+
+    .ppf-subcat-count {
+      font-size: 9.5px !important;
+      font-weight: 700 !important;
+      color: var(--text-light) !important;
+      background: #F1F5F9 !important;
+      padding: 1px 5px !important;
+      border-radius: 6px !important;
+    }
+
+    /* Price Filter */
+    .ppf-price-inputs {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin-bottom: 12px !important;
+    }
+
+    .ppf-price-input-group {
+      flex: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 5px 8px !important;
+      background: #FAFAFA !important;
+    }
+
+    .ppf-price-prefix {
+      font-size: 10.5px !important;
+      font-weight: 700 !important;
+      color: var(--text-muted) !important;
+      margin-right: 4px !important;
+    }
+
+    .ppf-price-input {
+      width: 100% !important;
+      border: none !important;
+      background: transparent !important;
+      outline: none !important;
+      font-size: 12.5px !important;
+      font-weight: 600 !important;
+      color: var(--text-dark) !important;
+    }
+
+    .ppf-price-btn {
+      width: 100% !important;
+      background: var(--text-dark) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 8px !important;
+      font-size: 11.5px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      cursor: pointer !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .ppf-price-btn:hover {
+      background: var(--primary-red) !important;
+    }
+
+    .ppf-reset-filters-btn {
+      width: 100% !important;
+      background: transparent !important;
+      border: 1px dashed var(--border-color) !important;
+      color: var(--text-muted) !important;
+      padding: 8px !important;
+      border-radius: var(--radius-sm) !important;
+      font-size: 11.5px !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      margin-top: 10px !important;
+    }
+
+    .ppf-reset-filters-btn:hover {
+      border-color: var(--primary-red) !important;
+      color: var(--primary-red) !important;
+      background: var(--primary-red-light) !important;
+    }
+
+    /* =========================================================
+       RIGHT CONTENT (TOPBAR, GRID & PAGINATION)
+       ========================================================= */
+    .ppf-topbar {
+      background: #FFFFFF !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 12px 18px !important;
+      margin-bottom: 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+
+    .ppf-topbar-left {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+
+    .ppf-result-count {
+      font-size: 13px !important;
+      color: var(--text-muted) !important;
+      font-weight: 500 !important;
+    }
+
+    .ppf-result-count strong {
+      color: var(--text-dark) !important;
+      font-weight: 700 !important;
+    }
+
+    .ppf-topbar-right {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    .ppf-sort-select {
+      font-size: 12.5px !important;
+      font-weight: 600 !important;
+      color: var(--text-body) !important;
+      background-color: #FFFFFF !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 7px 28px 7px 12px !important;
+      outline: none !important;
+      cursor: pointer !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 8px center !important;
+    }
+
+    .ppf-sort-select:focus {
+      border-color: var(--primary-red) !important;
+    }
+
+    /* Active Filter Pills Bar */
+    .ppf-active-filters-bar {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      flex-wrap: wrap !important;
+      margin-bottom: 16px !important;
+    }
+
+    .ppf-filter-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      background: #FFFFFF !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: 20px !important;
+      padding: 3px 10px !important;
+      font-size: 11.5px !important;
+      font-weight: 600 !important;
+      color: var(--text-body) !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+
+    .ppf-filter-pill button {
+      background: none !important;
+      border: none !important;
+      color: var(--text-light) !important;
+      cursor: pointer !important;
+      font-size: 12px !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .ppf-filter-pill button:hover {
+      color: var(--primary-red) !important;
+    }
+
+    /* =========================================================
+       PRODUCT CARDS GRID
+       ========================================================= */
+    .ppf-product-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 18px !important;
+      margin-bottom: 30px !important;
+      width: 100% !important;
+    }
+
+    .ppf-product-card {
+      background: var(--bg-card) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-md) !important;
+      padding: 16px 14px 14px 14px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      position: relative !important;
+      overflow: hidden !important;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+
+    .ppf-product-card:hover {
+      border-color: #D1D5DB !important;
+      box-shadow: var(--shadow-hover) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Sale Badge */
+    .ppf-product-badge {
+      position: absolute !important;
+      top: 10px !important;
+      right: 10px !important;
+      background: var(--primary-red) !important;
+      color: #FFFFFF !important;
+      font-size: 9.5px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+      padding: 3px 7px !important;
+      border-radius: 4px !important;
+      box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3) !important;
+      z-index: 2 !important;
+    }
+
+    /* Product Image */
+    .ppf-product-img-wrap {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 160px !important;
+      width: 100% !important;
+      margin-bottom: 12px !important;
+      text-decoration: none !important;
+      overflow: hidden !important;
+    }
+
+    .ppf-product-img-wrap img {
+      max-width: 90% !important;
+      max-height: 145px !important;
+      object-fit: contain !important;
+      transition: transform 0.25s ease !important;
+    }
+
+    .ppf-product-card:hover .ppf-product-img-wrap img {
+      transform: scale(1.06) !important;
+    }
+
+    .ppf-product-category {
+      font-size: 10.5px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      color: var(--text-light) !important;
+      margin-bottom: 4px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .ppf-product-title {
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      color: var(--text-body) !important;
+      line-height: 1.4 !important;
+      height: 38px !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      margin-bottom: 8px !important;
+      text-decoration: none !important;
+      transition: color 0.15s ease !important;
+    }
+
+    .ppf-product-title:hover {
+      color: var(--primary-red) !important;
+    }
+
+    /* Stars */
+    .ppf-product-rating {
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+      font-size: 11px !important;
+      color: #ECA227 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .ppf-product-price-wrap {
+      margin-bottom: 12px !important;
+    }
+
+    .ppf-product-price {
+      font-size: 15px !important;
+      font-weight: 800 !important;
+      color: var(--text-dark) !important;
+    }
+
+    .ppf-product-price del {
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      color: var(--text-light) !important;
+      margin-left: 6px !important;
+    }
+
+    /* Buttons */
+    .ppf-product-actions {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+    }
+
+    .ppf-add-cart-btn {
+      width: 100% !important;
+      background: var(--primary-red) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 9px 12px !important;
+      font-size: 11.5px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.3px !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      transition: all 0.15s ease !important;
+      box-shadow: 0 1px 2px rgba(220, 38, 38, 0.2) !important;
+    }
+
+    .ppf-add-cart-btn:hover {
+      background: var(--primary-red-hover) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25) !important;
+    }
+
+    .ppf-add-cart-btn.loading {
+      opacity: 0.75 !important;
+      pointer-events: none !important;
+    }
+
+    .ppf-view-prod-btn {
+      width: 100% !important;
+      background: #F8FAFC !important;
+      color: var(--text-body) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 7px 10px !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      display: block !important;
+    }
+
+    .ppf-view-prod-btn:hover {
+      border-color: #CBD5E1 !important;
+      background: #F1F5F9 !important;
+      color: var(--primary-red) !important;
+    }
+
+    /* Cart Success Flow */
+    .ppf-cart-success-box {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+
+    .ppf-go-cart-btn {
+      flex: 1 !important;
+      background: #059669 !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 9px 10px !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      text-align: center !important;
+      text-decoration: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 5px !important;
+    }
+
+    .ppf-go-cart-btn:hover {
+      background: #047857 !important;
+    }
+
+    .ppf-cart-check-badge {
+      width: 32px !important;
+      height: 32px !important;
+      background: #DCFCE7 !important;
+      color: #16A34A !important;
+      border: 1px solid #BBF7D0 !important;
+      border-radius: var(--radius-sm) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-weight: 800 !important;
+      font-size: 13px !important;
+    }
+
+    /* =========================================================
+       RESPONSIVE PAGINATION
+       ========================================================= */
+    .ppf-pagination-wrap {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+      margin-top: 35px !important;
+      padding-top: 20px !important;
+      border-top: 1px solid var(--border-light) !important;
+      width: 100% !important;
+    }
+
+    .ppf-page-btn {
+      min-width: 38px !important;
+      height: 38px !important;
+      padding: 0 10px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #FFFFFF !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-sm) !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: var(--text-body) !important;
+      cursor: pointer !important;
+      transition: all 0.15s ease !important;
+      user-select: none !important;
+    }
+
+    .ppf-page-btn:hover:not(:disabled) {
+      border-color: var(--primary-red) !important;
+      color: var(--primary-red) !important;
+      background: var(--primary-red-light) !important;
+    }
+
+    .ppf-page-btn.active {
+      background: var(--primary-red) !important;
+      border-color: var(--primary-red) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3) !important;
+    }
+
+    .ppf-page-btn:disabled {
+      opacity: 0.35 !important;
+      cursor: not-allowed !important;
+    }
+
+    .ppf-page-ellipsis {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-width: 24px !important;
+      height: 38px !important;
+      color: var(--text-light) !important;
+      font-weight: 800 !important;
+      font-size: 14px !important;
+      user-select: none !important;
+    }
+
+    /* Toast Notification */
+    #ppf-toast {
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      background: #0F172A !important;
+      color: #FFFFFF !important;
+      padding: 12px 18px !important;
+      border-radius: var(--radius-sm) !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      transform: translateY(100px) !important;
+      opacity: 0 !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      z-index: 999999 !important;
+    }
+
+    #ppf-toast.show {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+
+    #ppf-toast a {
+      color: #F87171 !important;
+      text-decoration: underline !important;
+      font-weight: 700 !important;
+    }
+
+    /* Empty state */
+    .ppf-no-products {
+      grid-column: 1 / -1 !important;
+      text-align: center !important;
+      padding: 50px 20px !important;
+      background: #FFFFFF !important;
+      border: 1px dashed var(--border-color) !important;
+      border-radius: var(--radius-md) !important;
+    }
+
+    .ppf-no-products h3 {
+      font-size: 17px !important;
+      color: var(--text-dark) !important;
+      font-weight: 800 !important;
+      margin: 12px 0 6px 0 !important;
+    }
+
+    .ppf-no-products p {
+      font-size: 13px !important;
+      color: var(--text-muted) !important;
+      margin: 0 0 16px 0 !important;
+    }
+
+    /* =========================================================
+       COMPREHENSIVE MOBILE & TABLET RESPONSIVENESS (<= 900px)
+       ========================================================= */
+    @media (max-width: 900px) {
+      .ppf-shop-wrapper {
+        padding: 16px 12px 50px 12px !important;
+      }
+
+      .ppf-shop-layout {
+        flex-direction: column !important;
+      }
+
+      /* Slide-in Mobile Drawer for Sidebar Filters (No Visible Scrollbar) */
+      .ppf-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 300px !important;
+        max-width: 86vw !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        background: #FFFFFF !important;
+        z-index: 99999 !important;
+        padding: 0 0 30px 0 !important;
+        box-shadow: none !important;
+        transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        overflow-y: auto !important;
+        border-right: 1px solid var(--border-color) !important;
+        gap: 0 !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+      }
+
+      .ppf-sidebar.drawer-open {
+        left: 0 !important;
+        box-shadow: 15px 0 40px rgba(0, 0, 0, 0.25) !important;
+      }
+
+      .ppf-sidebar .ppf-filter-box {
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+        box-shadow: none !important;
+        padding: 16px !important;
+      }
+
+      /* Drawer Header */
+      .ppf-drawer-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 14px 16px !important;
+        background: #0F172A !important;
+        color: #FFFFFF !important;
+        font-size: 13.5px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .ppf-drawer-close-btn {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border: none !important;
+        color: #FFFFFF !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+      }
+
+      /* Drawer Backdrop Overlay */
+      .ppf-drawer-backdrop {
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(15, 23, 42, 0.55) !important;
+        backdrop-filter: blur(2px) !important;
+        -webkit-backdrop-filter: blur(2px) !important;
+        z-index: 99998 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.25s ease !important;
+      }
+
+      .ppf-drawer-backdrop.show {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+      }
+
+      /* Mobile Filters Toggle Button */
+      .ppf-mobile-filter-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        background: var(--text-dark) !important;
+        color: #FFFFFF !important;
+        border: none !important;
+        border-radius: var(--radius-sm) !important;
+        padding: 7px 13px !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        cursor: pointer !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      .ppf-mobile-filter-btn:hover {
+        background: var(--primary-red) !important;
+      }
+
+      .ppf-mobile-filter-badge {
+        background: var(--primary-red) !important;
+        color: #FFFFFF !important;
+        font-size: 10px !important;
+        padding: 1px 6px !important;
+        border-radius: 10px !important;
+        font-weight: 800 !important;
+      }
+
+      .ppf-shop-main {
+        width: 100% !important;
+      }
+
+      .ppf-product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+      }
+    }
+
+    /* Small Phone Screens (<= 540px) */
+    @media (max-width: 540px) {
+      .ppf-shop-wrapper {
+        padding: 12px 8px 40px 8px !important;
+      }
+
+      .ppf-breadcrumbs {
+        font-size: 12px !important;
+        margin-bottom: 12px !important;
+        gap: 6px !important;
+      }
+
+      .ppf-topbar {
+        padding: 10px 12px !important;
+        gap: 8px !important;
+      }
+
+      .ppf-topbar-left {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+
+      .ppf-topbar-right {
+        width: 100% !important;
+      }
+
+      .ppf-sort-select {
+        width: 100% !important;
+        font-size: 12px !important;
+        padding: 8px 28px 8px 10px !important;
+      }
+
+      .ppf-result-count {
+        font-size: 12px !important;
+      }
+
+      .ppf-product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      .ppf-product-card {
+        padding: 10px 8px !important;
+      }
+
+      .ppf-product-img-wrap {
+        height: 125px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .ppf-product-img-wrap img {
+        max-height: 115px !important;
+      }
+
+      .ppf-product-category {
+        font-size: 9.5px !important;
+        margin-bottom: 3px !important;
+      }
+
+      .ppf-product-title {
+        font-size: 11.5px !important;
+        height: 32px !important;
+        line-height: 1.35 !important;
+        margin-bottom: 6px !important;
+      }
+
+      .ppf-product-rating {
+        font-size: 10px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .ppf-product-price {
+        font-size: 13.5px !important;
+      }
+
+      .ppf-product-price del {
+        font-size: 11px !important;
+        margin-left: 4px !important;
+      }
+
+      .ppf-add-cart-btn {
+        padding: 8px 6px !important;
+        font-size: 10.5px !important;
+      }
+
+      .ppf-view-prod-btn {
+        padding: 6px 6px !important;
+        font-size: 10px !important;
+      }
+
+      /* Responsive Pagination on Small Mobile */
+      .ppf-pagination-wrap {
+        gap: 4px !important;
+        margin-top: 24px !important;
+        padding-top: 16px !important;
+      }
+
+      .ppf-page-btn {
+        min-width: 32px !important;
+        height: 32px !important;
+        font-size: 12px !important;
+        padding: 0 6px !important;
+        border-radius: 4px !important;
+      }
+
+      .ppf-page-ellipsis {
+        min-width: 16px !important;
+        height: 32px !important;
+        font-size: 11px !important;
+      }
+
+      #ppf-toast {
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 16px !important;
+        font-size: 12px !important;
+        padding: 10px 14px !important;
+        justify-content: space-between !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ppf-shop-wrapper">
+
+  <!-- Breadcrumbs -->
+  <nav class="ppf-breadcrumbs" aria-label="Breadcrumbs">
+    <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/">Home</a>
+    <span class="sep">&bull;</span>
+    <a href="https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/">Shop</a>
+    <span class="sep">&bull;</span>
+    <span id="ppf-crumb-current" style="color:var(--text-dark); font-weight:700;">All Products</span>
+  </nav>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="ppf-drawer-backdrop" id="ppf-drawer-backdrop" onclick="ppfCloseDrawer()"></div>
+
+  <!-- Main Shop Two-Column Flexbox Layout -->
+  <div class="ppf-shop-layout">
+
+    <!-- LEFT SIDEBAR: FILTERS -->
+    <aside class="ppf-sidebar" id="ppf-sidebar">
+      
+      <!-- Drawer Header (Visible only on Mobile) -->
+      <div class="ppf-drawer-header">
+        <span>Filters &amp; Categories</span>
+        <button type="button" class="ppf-drawer-close-btn" onclick="ppfCloseDrawer()" aria-label="Close Filters">✕</button>
+      </div>
+
+      <!-- 1. Search Box Filter -->
+      <div class="ppf-filter-box">
+        <div class="ppf-filter-title">Search Catalog</div>
+        <div class="ppf-search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="ppf-search-input" class="ppf-search-input" placeholder="Search keywords..." oninput="ppfHandleSearch(this.value)">
+        </div>
+      </div>
+
+      <!-- 2. Product Categories Filter -->
+      <div class="ppf-filter-box">
+        <div class="ppf-filter-title">
+          <span>Categories</span>
+          <span style="font-size:11px; font-weight:700; color:var(--text-light); text-transform:none;">Filter</span>
+        </div>
+
+        <ul class="ppf-cat-list" id="ppf-category-tree">
+          
+          <!-- All Categories Option -->
+          <li class="ppf-cat-item">
+            <button class="ppf-cat-btn active" data-cat="all" onclick="ppfSelectCategory('all', 'All Products', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                <span>All Departments</span>
+              </div>
+              <span class="ppf-cat-count" id="count-all">...</span>
+            </button>
+          </li>
+
+          <!-- 1. Fire Products -->
+          <li class="ppf-cat-item open">
+            <button class="ppf-cat-btn" data-cat="fire-products" onclick="ppfSelectCategory('fire-products', 'Fire Products', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                <span>Fire Products</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="ppf-cat-count" id="count-fire-products">...</span>
+                <svg class="ppf-cat-toggle" viewBox="0 0 24 24" stroke-width="2.5" onclick="ppfToggleAccordion(event, this)"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </button>
+            <ul class="ppf-subcat-list">
+              <li><button class="ppf-subcat-btn" data-cat="conventional-fire-alarm" onclick="ppfSelectCategory('conventional-fire-alarm', 'Conventional Fire Alarm System', this)"><span class="sub-text">Conventional Fire Alarm</span><span class="ppf-subcat-count" id="count-conventional-fire-alarm"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="addressable-fire-alarm" onclick="ppfSelectCategory('addressable-fire-alarm', 'Addressable Fire Alarm System', this)"><span class="sub-text">Addressable Fire Alarm</span><span class="ppf-subcat-count" id="count-addressable-fire-alarm"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="voice-evacuation" onclick="ppfSelectCategory('voice-evacuation', 'Voice Evacuation System', this)"><span class="sub-text">Voice Evacuation</span><span class="ppf-subcat-count" id="count-voice-evacuation"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="beam-detector" onclick="ppfSelectCategory('beam-detector', 'Beam Detector', this)"><span class="sub-text">Beam Detector</span><span class="ppf-subcat-count" id="count-beam-detector"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="flame-detector" onclick="ppfSelectCategory('flame-detector', 'Flame Detector', this)"><span class="sub-text">Flame Detector</span><span class="ppf-subcat-count" id="count-flame-detector"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="co-detection" onclick="ppfSelectCategory('co-detection', 'CO Detection System', this)"><span class="sub-text">CO Detection</span><span class="ppf-subcat-count" id="count-co-detection"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="gas-detectors" onclick="ppfSelectCategory('gas-detectors', 'Gas Detectors &amp; LPG', this)"><span class="sub-text">Gas &amp; LPG Detectors</span><span class="ppf-subcat-count" id="count-gas-detectors"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="panels-modules" onclick="ppfSelectCategory('panels-modules', 'Panels &amp; Modules', this)"><span class="sub-text">Panels &amp; Modules</span><span class="ppf-subcat-count" id="count-panels-modules"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="smoke-detectors" onclick="ppfSelectCategory('smoke-detectors', 'Smoke Detectors', this)"><span class="sub-text">Smoke Detectors</span><span class="ppf-subcat-count" id="count-smoke-detectors"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="heat-detectors" onclick="ppfSelectCategory('heat-detectors', 'Heat Detectors', this)"><span class="sub-text">Heat Detectors</span><span class="ppf-subcat-count" id="count-heat-detectors"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="testing-tools" onclick="ppfSelectCategory('testing-tools', 'Testing &amp; Commissioning', this)"><span class="sub-text">Testing Tools</span><span class="ppf-subcat-count" id="count-testing-tools"></span></button></li>
+            </ul>
+          </li>
+
+          <!-- 2. Fire Fighting -->
+          <li class="ppf-cat-item">
+            <button class="ppf-cat-btn" data-cat="fire-fighting" onclick="ppfSelectCategory('fire-fighting', 'Fire Fighting', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                <span>Fire Fighting</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="ppf-cat-count" id="count-fire-fighting">...</span>
+                <svg class="ppf-cat-toggle" viewBox="0 0 24 24" stroke-width="2.5" onclick="ppfToggleAccordion(event, this)"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </button>
+            <ul class="ppf-subcat-list">
+              <li><button class="ppf-subcat-btn" data-cat="fire-extinguisher" onclick="ppfSelectCategory('fire-extinguisher', 'Fire Extinguisher', this)"><span class="sub-text">Fire Extinguishers</span><span class="ppf-subcat-count" id="count-fire-extinguisher"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="fire-extinguisher-refilling" onclick="ppfSelectCategory('fire-extinguisher-refilling', 'Fire Extinguisher Refilling', this)"><span class="sub-text">Extinguisher Refilling</span><span class="ppf-subcat-count" id="count-fire-extinguisher-refilling"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="trolley-extinguisher" onclick="ppfSelectCategory('trolley-extinguisher', 'Trolley Type Fire Extinguisher', this)"><span class="sub-text">Trolley Extinguishers</span><span class="ppf-subcat-count" id="count-trolley-extinguisher"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="cabinets" onclick="ppfSelectCategory('cabinets', 'Cabinets', this)"><span class="sub-text">Cabinets &amp; Hose Reels</span><span class="ppf-subcat-count" id="count-cabinets"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="fire-hydrants" onclick="ppfSelectCategory('fire-hydrants', 'Fire Hydrants', this)"><span class="sub-text">Fire Hydrants</span><span class="ppf-subcat-count" id="count-fire-hydrants"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="hose" onclick="ppfSelectCategory('hose', 'Fire Hose', this)"><span class="sub-text">Fire Hose &amp; Reels</span><span class="ppf-subcat-count" id="count-hose"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="pump-valves" onclick="ppfSelectCategory('pump-valves', 'Pump &amp; Valves', this)"><span class="sub-text">Pump &amp; Valves</span><span class="ppf-subcat-count" id="count-pump-valves"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="sprinklers" onclick="ppfSelectCategory('sprinklers', 'Sprinklers', this)"><span class="sub-text">Sprinklers</span><span class="ppf-subcat-count" id="count-sprinklers"></span></button></li>
+            </ul>
+          </li>
+
+          <!-- 3. Emergency Lighting -->
+          <li class="ppf-cat-item">
+            <button class="ppf-cat-btn" data-cat="emergency-lighting" onclick="ppfSelectCategory('emergency-lighting', 'Emergency Lighting', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2v8"/><path d="m4.93 4.93 4.24 4.24"/><path d="M2 12h8"/><path d="m4.93 19.07 4.24-4.24"/><path d="M12 22v-8"/><path d="m19.07 19.07-4.24-4.24"/><path d="M22 12h-8"/><path d="m19.07 4.93-4.24 4.24"/></svg>
+                <span>Emergency Lighting</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="ppf-cat-count" id="count-emergency-lighting">...</span>
+                <svg class="ppf-cat-toggle" viewBox="0 0 24 24" stroke-width="2.5" onclick="ppfToggleAccordion(event, this)"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </button>
+            <ul class="ppf-subcat-list">
+              <li><button class="ppf-subcat-btn" data-cat="central-monitoring" onclick="ppfSelectCategory('central-monitoring', 'Central Monitoring System', this)"><span class="sub-text">Central Monitoring</span><span class="ppf-subcat-count" id="count-central-monitoring"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="self-contained" onclick="ppfSelectCategory('self-contained', 'Self Contained Lights', this)"><span class="sub-text">Self Contained Lights</span><span class="ppf-subcat-count" id="count-self-contained"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="exit-lights" onclick="ppfSelectCategory('exit-lights', 'Emergency Exit Lights', this)"><span class="sub-text">Exit Luminaires</span><span class="ppf-subcat-count" id="count-exit-lights"></span></button></li>
+            </ul>
+          </li>
+
+          <!-- 4. Marine Products -->
+          <li class="ppf-cat-item">
+            <button class="ppf-cat-btn" data-cat="marine-products" onclick="ppfSelectCategory('marine-products', 'Marine Products', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="5" r="3"/><line x1="12" y1="22" x2="12" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+                <span>Marine Products</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="ppf-cat-count" id="count-marine-products">...</span>
+                <svg class="ppf-cat-toggle" viewBox="0 0 24 24" stroke-width="2.5" onclick="ppfToggleAccordion(event, this)"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </button>
+            <ul class="ppf-subcat-list">
+              <li><button class="ppf-subcat-btn" data-cat="marine-safety" onclick="ppfSelectCategory('marine-safety', 'Marine Safety Equipments', this)"><span class="sub-text">Safety (Lifejackets)</span><span class="ppf-subcat-count" id="count-marine-safety"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="marine-alarms" onclick="ppfSelectCategory('marine-alarms', 'Marine Alarms &amp; Detection', this)"><span class="sub-text">Alarms &amp; Sirens</span><span class="ppf-subcat-count" id="count-marine-alarms"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="marine-anchor" onclick="ppfSelectCategory('marine-anchor', 'Anchor &amp; Lifecrafts', this)"><span class="sub-text">Anchor &amp; Lifecrafts</span><span class="ppf-subcat-count" id="count-marine-anchor"></span></button></li>
+            </ul>
+          </li>
+
+          <!-- 5. Safety Products (PPE) -->
+          <li class="ppf-cat-item">
+            <button class="ppf-cat-btn" data-cat="safety-products" onclick="ppfSelectCategory('safety-products', 'Safety Products', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Safety Products</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="ppf-cat-count" id="count-safety-products">...</span>
+                <svg class="ppf-cat-toggle" viewBox="0 0 24 24" stroke-width="2.5" onclick="ppfToggleAccordion(event, this)"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </button>
+            <ul class="ppf-subcat-list">
+              <li><button class="ppf-subcat-btn" data-cat="ppe" onclick="ppfSelectCategory('ppe', 'Personal Protective Equipments', this)"><span class="sub-text">Personal Protective (PPE)</span><span class="ppf-subcat-count" id="count-ppe"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="emergency-kits" onclick="ppfSelectCategory('emergency-kits', 'Emergency Kits Equipments', this)"><span class="sub-text">Emergency Kits &amp; SCBA</span><span class="ppf-subcat-count" id="count-emergency-kits"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="traffic-equipments" onclick="ppfSelectCategory('traffic-equipments', 'Traffic &amp; Lockout Equipments', this)"><span class="sub-text">Traffic &amp; Lockout</span><span class="ppf-subcat-count" id="count-traffic-equipments"></span></button></li>
+            </ul>
+          </li>
+
+          <!-- 6. Hardwares & Fittings -->
+          <li class="ppf-cat-item">
+            <button class="ppf-cat-btn" data-cat="hardwares" onclick="ppfSelectCategory('hardwares', 'Hardwares &amp; Fittings', this)">
+              <div class="ppf-cat-left">
+                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <span>Hardwares &amp; Fittings</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="ppf-cat-count" id="count-hardwares">...</span>
+                <svg class="ppf-cat-toggle" viewBox="0 0 24 24" stroke-width="2.5" onclick="ppfToggleAccordion(event, this)"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+            </button>
+            <ul class="ppf-subcat-list">
+              <li><button class="ppf-subcat-btn" data-cat="bath-sanitaries" onclick="ppfSelectCategory('bath-sanitaries', 'Bath Sanitaries', this)"><span class="sub-text">Bath Sanitaries &amp; Showers</span><span class="ppf-subcat-count" id="count-bath-sanitaries"></span></button></li>
+              <li><button class="ppf-subcat-btn" data-cat="door-handles" onclick="ppfSelectCategory('door-handles', 'Door &amp; Handles', this)"><span class="sub-text">Door Knobs &amp; Handles</span><span class="ppf-subcat-count" id="count-door-handles"></span></button></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <!-- Reset Button -->
+        <button class="ppf-reset-filters-btn" onclick="ppfResetAllFilters()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <span>Clear All Filters</span>
+        </button>
+      </div>
+
+      <!-- 3. Price Filter Slider / Range -->
+      <div class="ppf-filter-box">
+        <div class="ppf-filter-title">Filter by Price</div>
+        <div class="ppf-price-inputs">
+          <div class="ppf-price-input-group">
+            <span class="ppf-price-prefix">AED</span>
+            <input type="number" id="ppf-min-price" class="ppf-price-input" placeholder="Min" min="0" value="0">
+          </div>
+          <span style="color:var(--text-light);">&mdash;</span>
+          <div class="ppf-price-input-group">
+            <span class="ppf-price-prefix">AED</span>
+            <input type="number" id="ppf-max-price" class="ppf-price-input" placeholder="Max" min="0" value="5000">
+          </div>
+        </div>
+        <button class="ppf-price-btn" onclick="ppfApplyPriceFilter()">Apply Filter</button>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT CONTENT: SHOP PRODUCTS & PAGINATION -->
+    <main class="ppf-shop-main">
+
+      <!-- Topbar / Result Count / Sort Dropdown & Mobile Filter Button -->
+      <div class="ppf-topbar">
+        <div class="ppf-topbar-left">
+          <!-- Mobile Filter Button (Visible only on mobile/tablet) -->
+          <button type="button" class="ppf-mobile-filter-btn" onclick="ppfOpenDrawer()" aria-label="Open Product Filters">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+            <span>Filters</span>
+            <span class="ppf-mobile-filter-badge" id="ppf-mobile-active-count" style="display:none;">1</span>
+          </button>
+
+          <div class="ppf-result-count" id="ppf-result-count">Showing <strong id="ppf-count-range">...</strong> of <strong id="ppf-count-total">...</strong> products</div>
+        </div>
+
+        <div class="ppf-topbar-right">
+          <!-- Sort Dropdown -->
+          <select id="ppf-sort-select" class="ppf-sort-select" onchange="ppfHandleSort(this.value)">
+            <option value="default">Default sorting</option>
+            <option value="popularity">Sort by popularity</option>
+            <option value="price-asc">Sort by price: low to high</option>
+            <option value="price-desc">Sort by price: high to low</option>
+            <option value="title-asc">Sort by name: A to Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Active Filter Pills -->
+      <div class="ppf-active-filters-bar" id="ppf-active-filters-bar"></div>
+
+      <!-- Product Cards Grid -->
+      <div class="ppf-product-grid" id="ppf-product-grid">
+        <!-- Products populated by JS -->
+      </div>
+
+      <!-- Pagination Numbers -->
+      <nav class="ppf-pagination-wrap" id="ppf-pagination" aria-label="Product Pagination"></nav>
+
+    </main>
+
+  </div>
+
+</div>
+
+<!-- Floating Cart Toast Notification -->
+<div id="ppf-toast">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <span id="ppf-toast-text">Item added to cart!</span>
+  <a id="ppf-toast-cart-btn" href="https://infobahndubai.com/demo/pacificpowerfirecontractors/cart/">View Cart &rarr;</a>
+</div>
+
+<!-- =========================================================
+     JAVASCRIPT: FULL MULTI-PAGE ENGINE & COMPREHENSIVE FILTERING
+     ========================================================= -->
+<script>
+  const ppfConfig = {
+    perPage: 9,
+    currentPage: 1,
+    selectedCategory: 'all',
+    selectedCategoryTitle: 'All Products',
+    searchQuery: '',
+    minPrice: 0,
+    maxPrice: 999999,
+    sortBy: 'default',
+    totalProducts: 0,
+    totalPages: 1
+  };
+
+  const ppfEnv = (function() {
+    let siteBase = "https://infobahndubai.com/demo/pacificpowerfirecontractors";
+    let ajaxEndpoint = siteBase + "/?wc-ajax=add_to_cart";
+    let cartUrl = siteBase + "/cart/";
+
+    if (typeof wc_add_to_cart_params !== 'undefined') {
+      if (wc_add_to_cart_params.cart_url) cartUrl = wc_add_to_cart_params.cart_url;
+      if (wc_add_to_cart_params.wc_ajax_url) {
+        ajaxEndpoint = wc_add_to_cart_params.wc_ajax_url.replace('%%endpoint%%', 'add_to_cart');
+      }
+      if (wc_add_to_cart_params.ajax_url) {
+        siteBase = wc_add_to_cart_params.ajax_url.split('/wp-admin')[0];
+      }
+    } else {
+      const match = window.location.pathname.match(/^(\/[^\/]+\/[^\/]+)/);
+      if (match) siteBase = window.location.origin + match[1];
+      ajaxEndpoint = siteBase + "/?wc-ajax=add_to_cart";
+      cartUrl = siteBase + "/cart/";
+    }
+
+    return { siteBase: siteBase, ajaxEndpoint: ajaxEndpoint, cartUrl: cartUrl };
+  })();
+
+  /* -------------------------------------------------------------
+     MOBILE DRAWER CONTROLLERS
+     ------------------------------------------------------------- */
+  function ppfOpenDrawer() {
+    const sidebar = document.getElementById('ppf-sidebar');
+    const backdrop = document.getElementById('ppf-drawer-backdrop');
+    if (sidebar) sidebar.classList.add('drawer-open');
+    if (backdrop) backdrop.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function ppfCloseDrawer() {
+    const sidebar = document.getElementById('ppf-sidebar');
+    const backdrop = document.getElementById('ppf-drawer-backdrop');
+    if (sidebar) sidebar.classList.remove('drawer-open');
+    if (backdrop) backdrop.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  /* -------------------------------------------------------------
+     BASE DATASET (Extinguishers, Lighting, Marine, Safety, Hardware)
+     ------------------------------------------------------------- */
+  const PPF_CATALOG_DATA = [
+    // 20 Fire Extinguishers
+    { id: 9101, name: "6KG Automatic Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 199.50, oldPrice: 240, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/6KG-Automatic-Dry-Chemical-Powder-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 8 },
+    { id: 9102, name: "9KG Automatic Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 199.50, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/6KG-Automatic-Dry-Chemical-Powder-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 4 },
+    { id: 9103, name: "AFO Fire Extinguisher Ball Automatic Suppression", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 94.50, oldPrice: 120, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/AFO-FIre-Ball-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 15 },
+    { id: 9104, name: "Bristol FE6 6 Liters Foam Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 171.15, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/bristol-foam.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 7 },
+    { id: 9105, name: "Bristol FE9 9 Liters Foam Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 257.25, oldPrice: 285, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/bristol-foam.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 5 },
+    { id: 9106, name: "Bristol WE6 6 Liters Water Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 171.15, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/bristol-6L.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 4, reviews: 3 },
+    { id: 9107, name: "Bristol WE9 9 Liters Water Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 191.10, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/bristol-6L.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 6 },
+    { id: 9108, name: "Fireguard 1kg Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 52.50, oldPrice: 65, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/Fireguard-1-Kg-DCP.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 9 },
+    { id: 9109, name: "Fireguard 2Kg Carbon Dioxide (CO2) Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 147.00, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/Fireguard-2Kg-CO2.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 11 },
+    { id: 9110, name: "Fireguard 2Kg Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 78.75, oldPrice: 95, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/2Kg-dcp-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 14 },
+    { id: 9111, name: "Fireguard 4Kg Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 105.00, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/Fireguard-4kg-DCP-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 12 },
+    { id: 9112, name: "Fireguard 5Kg Carbon Dioxide (CO2) Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 262.50, oldPrice: 295, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/Fireguard-5kg-CO2.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 8 },
+    { id: 9113, name: "Fireguard 6 Liter Foam Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 136.50, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/6-Liter.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 4 },
+    { id: 9114, name: "Fireguard 6 Liter Water Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 102.90, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/Water-Fire-Extinguisher.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 4, reviews: 5 },
+    { id: 9115, name: "Fireguard 6kg Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 136.50, oldPrice: 155, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/CO2-5kg-6kg-Fire-Extinguisher-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 18 },
+    { id: 9116, name: "Fireguard 9 Liter Foam Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 157.50, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/11/FIreguard-9-Liter-Foam.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 6 },
+    { id: 9117, name: "Fireguard 9 Liter Water Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 147.00, oldPrice: 165, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/03/Water-Fire-Extinguisher.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 7 },
+    { id: 9118, name: "Fireguard 9kg Dry Chemical Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 157.50, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/Fireguard-FGFP9-9kg.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 10 },
+    { id: 9119, name: "Fireking 12KG Dry Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 189.00, oldPrice: 215, sale: true, image: "https://safetag.ae/wp-content/uploads/2024/05/Fireking-Fire-Extinguisher.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 8 },
+    { id: 9120, name: "Fireking 1KG Dry Powder Fire Extinguisher", categorySlugs: ['fire-fighting', 'fire-extinguisher'], categoryNames: ['fire fighting', 'fire extinguisher'], catTitle: "Fire Extinguisher", price: 52.50, oldPrice: null, sale: false, image: "https://safetag.ae/wp-content/uploads/2024/03/1kg-DCP.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/fire-extinguisher/", rating: 5, reviews: 13 },
+
+    // Additional Services & Equipment
+    { id: 9201, name: "Complete Fire Extinguisher Refilling & Hydrotest Service", categorySlugs: ['fire-fighting', 'refilling', 'fire-extinguisher-refilling'], categoryNames: ['fire fighting', 'refilling'], catTitle: "Extinguisher Refilling", price: 85, oldPrice: 110, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Siting-of-extinguishers.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/services/", rating: 5, reviews: 16 },
+    { id: 9202, name: "50KG Trolley Type DCP Mobile Fire Extinguisher", categorySlugs: ['fire-fighting', 'trolley', 'trolley-extinguisher'], categoryNames: ['fire fighting', 'trolley extinguisher'], catTitle: "Trolley Extinguisher", price: 1650, oldPrice: 1850, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Siting-of-extinguishers.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/", rating: 5, reviews: 6 },
+    { id: 9203, name: "Heavy Duty 4-Way Breeching Inlet Fire Hydrant", categorySlugs: ['fire-fighting', 'fire-hydrants'], categoryNames: ['fire fighting', 'fire hydrants'], catTitle: "Fire Hydrants", price: 1250, oldPrice: null, sale: false, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/", rating: 5, reviews: 5 },
+    { id: 9204, name: "25M High Pressure Canvas Fire Hose with Couplings", categorySlugs: ['fire-fighting', 'hose'], categoryNames: ['fire fighting', 'fire hose'], catTitle: "Fire Hose", price: 340, oldPrice: null, sale: false, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/fire-fighting/", rating: 4, reviews: 4 },
+
+    // Emergency Lighting
+    { id: 9301, name: "Guardmax Maintained / Non-Maintained Emergency Light", categorySlugs: ['emergency-lighting'], categoryNames: ['emergency lighting'], catTitle: "Emergency Lighting", price: 126, oldPrice: 147, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Emergency-Lighting.webp", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/emergency-lighting/", rating: 5, reviews: 11 },
+    { id: 9302, name: "Central Monitoring Emergency Exit Luminaire DCD", categorySlugs: ['emergency-lighting', 'central-monitoring'], categoryNames: ['emergency lighting', 'central monitoring'], catTitle: "Central Monitoring", price: 280, oldPrice: 320, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Emergency-Lighting.webp", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/emergency-lighting/", rating: 5, reviews: 7 },
+    { id: 9303, name: "Twin-Spot High Lumen LED Self-Contained Emergency Luminaire", categorySlugs: ['emergency-lighting', 'self-contained'], categoryNames: ['emergency lighting', 'self contained'], catTitle: "Self Contained Lights", price: 195, oldPrice: null, sale: false, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Emergency-Lighting.webp", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/emergency-lighting/", rating: 5, reviews: 5 },
+    { id: 9304, name: "LED Running Man Illuminated Emergency Exit Sign", categorySlugs: ['emergency-lighting', 'exit-lights'], categoryNames: ['emergency lighting', 'exit lights'], catTitle: "Exit Lights", price: 145, oldPrice: 175, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/Emergency-Lighting.webp", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/emergency-lighting/", rating: 5, reviews: 8 },
+
+    // Marine Products
+    { id: 9401, name: "SOLAS Approved Offshore Life Jacket 150N with Whistle", categorySlugs: ['marine-products', 'marine-safety'], categoryNames: ['marine products', 'marine safety'], catTitle: "Marine Safety", price: 210, oldPrice: 245, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_hocjowhocjowhocj.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=marine", rating: 5, reviews: 9 },
+    { id: 9402, name: "SOLAS 4.3KG Marine Lifebuoy Ring with Reflective Tape", categorySlugs: ['marine-products', 'marine-safety'], categoryNames: ['marine products', 'marine safety'], catTitle: "Marine Safety", price: 185, oldPrice: null, sale: false, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_hocjowhocjowhocj.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=marine", rating: 5, reviews: 4 },
+    { id: 9403, name: "Marine Grade Waterproof Heavy Duty Siren 120dB", categorySlugs: ['marine-products', 'marine-alarms'], categoryNames: ['marine products', 'marine alarms'], catTitle: "Marine Alarms", price: 380, oldPrice: 420, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_hocjowhocjowhocj.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=marine", rating: 4, reviews: 3 },
+    { id: 9404, name: "Marine Galvanized Anchor & Inflatable Lifecraft 6-Person", categorySlugs: ['marine-products', 'marine-anchor'], categoryNames: ['marine products', 'marine anchor'], catTitle: "Marine Anchor", price: 3200, oldPrice: 3600, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_hocjowhocjowhocj.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=marine", rating: 5, reviews: 3 },
+
+    // Safety Products (PPE)
+    { id: 9501, name: "Industrial Full PPE Safety Helmet with Ratchet", categorySlugs: ['safety-products', 'ppe'], categoryNames: ['safety products', 'ppe'], catTitle: "PPE", price: 85, oldPrice: 110, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/3009061-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=safety", rating: 5, reviews: 14 },
+    { id: 9502, name: "Industrial Wall-Mounted Emergency First Aid Kit Box", categorySlugs: ['safety-products', 'emergency-kits'], categoryNames: ['safety products', 'emergency kits'], catTitle: "Emergency Kits", price: 165, oldPrice: null, sale: false, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/3009061-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=safety", rating: 5, reviews: 6 },
+    { id: 9503, name: "Self-Contained Air Breathing Apparatus (SCBA) Kit", categorySlugs: ['safety-products', 'emergency-kits'], categoryNames: ['safety products', 'emergency kits'], catTitle: "Emergency Kits", price: 3450, oldPrice: 3800, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/3009061-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=safety", rating: 5, reviews: 3 },
+    { id: 9504, name: "Industrial Lockout Tagout Safety Station Kit", categorySlugs: ['safety-products', 'traffic-equipments'], categoryNames: ['safety products', 'traffic equipments'], catTitle: "Traffic & Lockout", price: 420, oldPrice: null, sale: false, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/3009061-1.jpg", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/shop/?s=safety", rating: 4, reviews: 2 },
+
+    // Hardwares & Fittings
+    { id: 9601, name: "Commercial Grade Stainless Steel Door Knob Set", categorySlugs: ['hardwares', 'door-handles', 'tool-hardware'], categoryNames: ['hardwares', 'door handles', 'tool hardware'], catTitle: "Door & Handles", price: 145, oldPrice: 175, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_hzwmlmhzwmlmhzwm-removebg-preview.png", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/tool-hardware/", rating: 5, reviews: 5 },
+    { id: 9602, name: "Brass Chrome Finish Rain Shower Set with Mixer", categorySlugs: ['hardwares', 'bath-sanitaries', 'tool-hardware'], categoryNames: ['hardwares', 'bath sanitaries', 'tool hardware'], catTitle: "Bath Sanitaries", price: 385, oldPrice: 450, sale: true, image: "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/10/Gemini_Generated_Image_hzwmlmhzwmlmhzwm-removebg-preview.png", link: "https://infobahndubai.com/demo/pacificpowerfirecontractors/product-category/tool-hardware/", rating: 5, reviews: 7 }
+  ];
+
+  let rawCatalog = [...PPF_CATALOG_DATA];
+
+  /* -------------------------------------------------------------
+     UNIVERSAL CATEGORY MATCHING ENGINE
+     ------------------------------------------------------------- */
+  function ppfMatchesCategory(product, selectedCatSlug) {
+    if (!selectedCatSlug || selectedCatSlug === 'all') return true;
+
+    const sel = selectedCatSlug.toLowerCase().trim();
+    const slugs = (product.categorySlugs || []).map(s => s.toLowerCase());
+    const names = (product.categoryNames || []).map(n => n.toLowerCase());
+    const title = (product.name || '').toLowerCase();
+
+    // 1. Direct slug or name match
+    if (slugs.includes(sel) || slugs.some(s => s.includes(sel))) return true;
+
+    // 2. Comprehensive Department & Subcategory Rules
+    switch(sel) {
+      // Main Departments
+      case 'fire-products':
+        return slugs.some(s => ['fire-products', 'detections', 'notification-devices', 'fire-alarm-panels'].includes(s)) ||
+               title.includes('detector') || title.includes('alarm') || title.includes('panel') || title.includes('stopper') || title.includes('call point');
+
+      case 'fire-fighting':
+        return slugs.some(s => ['fire-fighting', 'cabinets', 'sprinklers', 'pump-and-valve', 'fire-extinguisher', 'refilling', 'trolley', 'hose', 'fire-hydrants'].includes(s)) ||
+               title.includes('extinguisher') || title.includes('hydrant') || title.includes('sprinkler') || title.includes('cabinet') || title.includes('hose') || title.includes('valve') || title.includes('pump');
+
+      case 'emergency-lighting':
+        return slugs.some(s => s.includes('emergency') || s.includes('lighting') || s.includes('exit')) ||
+               title.includes('emergency') || title.includes('exit light') || title.includes('luminaire') || title.includes('running man');
+
+      case 'marine-products':
+        return slugs.some(s => s.includes('marine')) ||
+               title.includes('marine') || title.includes('solas') || title.includes('life jacket') || title.includes('lifebuoy') || title.includes('lifecraft') || title.includes('anchor');
+
+      case 'safety-products':
+        return slugs.some(s => s.includes('safety') || s.includes('ppe') || s.includes('lockout')) ||
+               title.includes('safety') || title.includes('ppe') || title.includes('helmet') || title.includes('first aid') || title.includes('breathing apparatus') || title.includes('lockout');
+
+      case 'hardwares':
+      case 'tool-hardware':
+        return slugs.some(s => s.includes('hardware') || s.includes('tool') || s.includes('bath') || s.includes('door')) ||
+               title.includes('door') || title.includes('knob') || title.includes('handle') || title.includes('shower') || title.includes('bath');
+
+      // Fire Products Sub-categories
+      case 'conventional-fire-alarm':
+        return slugs.some(s => s.includes('conventional')) || title.includes('conventional');
+
+      case 'addressable-fire-alarm':
+        return slugs.some(s => s.includes('addressable')) || title.includes('addressable');
+
+      case 'voice-evacuation':
+        return slugs.some(s => s.includes('voice') || s.includes('evacuation')) || title.includes('voice') || title.includes('evacuation') || title.includes('amplifier');
+
+      case 'beam-detector':
+      case 'beam-detectors':
+        return slugs.some(s => s.includes('beam')) || title.includes('beam');
+
+      case 'flame-detector':
+      case 'flame-detectors':
+        return slugs.some(s => s.includes('flame')) || title.includes('flame');
+
+      case 'co-detection':
+      case 'co-detectors':
+        return slugs.some(s => s.includes('co-') || s.includes('monoxide')) || title.includes('carbon monoxide') || title.includes(' co ') || title.includes('co detector');
+
+      case 'gas-detectors':
+        return slugs.some(s => s.includes('gas') || s.includes('combustible') || s.includes('h2s') || s.includes('so2') || s.includes('o2')) || title.includes('gas') || title.includes('lpg');
+
+      case 'panels-modules':
+      case 'fire-alarm-panels':
+        return slugs.some(s => s.includes('panel')) || title.includes('panel') || title.includes('repeater') || title.includes('module') || title.includes('vlf') || title.includes('hli') || title.includes('simplicity') || title.includes('quatro') || title.includes('infinity') || title.includes('smart1') || title.includes('cfp');
+
+      case 'smoke-detectors':
+        return slugs.some(s => s.includes('smoke')) || title.includes('smoke');
+
+      case 'heat-detectors':
+        return slugs.some(s => s.includes('heat')) || title.includes('heat');
+
+      case 'testing-tools':
+      case 'testing-kits-spray':
+        return slugs.some(s => s.includes('test')) || title.includes('test') || title.includes('solo') || title.includes('dispenser') || title.includes('capsule');
+
+      // Fire Fighting Sub-categories
+      case 'fire-extinguisher':
+        return slugs.some(s => s.includes('extinguisher') && !s.includes('refill')) || (title.includes('extinguisher') && !title.includes('refilling'));
+
+      case 'fire-extinguisher-refilling':
+        return slugs.some(s => s.includes('refill')) || title.includes('refill') || title.includes('hydrotest');
+
+      case 'trolley-extinguisher':
+        return slugs.some(s => s.includes('trolley')) || title.includes('trolley');
+
+      case 'cabinets':
+        return slugs.some(s => s.includes('cabinet')) || title.includes('cabinet');
+
+      case 'fire-hydrants':
+        return slugs.some(s => s.includes('hydrant')) || title.includes('hydrant') || title.includes('breeching') || title.includes('inlet');
+
+      case 'hose':
+        return slugs.some(s => s.includes('hose')) || title.includes('hose') || title.includes('reel');
+
+      case 'pump-valves':
+      case 'pump-and-valve':
+        return slugs.some(s => s.includes('pump') || s.includes('valve')) || title.includes('pump') || title.includes('valve') || title.includes('flange');
+
+      case 'sprinklers':
+        return slugs.some(s => s.includes('sprinkler')) || title.includes('sprinkler');
+
+      // Emergency Lighting Sub-categories
+      case 'central-monitoring':
+        return slugs.some(s => s.includes('central-monitoring')) || title.includes('central monitoring');
+
+      case 'self-contained':
+        return slugs.some(s => s.includes('self-contained')) || title.includes('self-contained') || title.includes('self contained') || title.includes('twin-spot');
+
+      case 'exit-lights':
+        return slugs.some(s => s.includes('exit')) || title.includes('exit') || title.includes('running man');
+
+      // Marine Sub-categories
+      case 'marine-safety':
+        return slugs.some(s => s.includes('marine-safety')) || title.includes('life jacket') || title.includes('lifebuoy') || title.includes('life') || title.includes('buoy') || title.includes('solas');
+
+      case 'marine-alarms':
+        return slugs.some(s => s.includes('marine-alarms')) || title.includes('siren') || title.includes('waterproof');
+
+      case 'marine-anchor':
+        return slugs.some(s => s.includes('anchor')) || title.includes('anchor') || title.includes('lifecraft');
+
+      // Safety PPE Sub-categories
+      case 'ppe':
+        return slugs.some(s => s.includes('ppe')) || title.includes('helmet') || title.includes('glove') || title.includes('mask') || title.includes('shield');
+
+      case 'emergency-kits':
+        return slugs.some(s => s.includes('emergency-kits')) || title.includes('first aid') || title.includes('scba') || title.includes('breathing apparatus') || title.includes('eyewash') || title.includes('evacuation chair');
+
+      case 'traffic-equipments':
+        return slugs.some(s => s.includes('traffic') || s.includes('lockout')) || title.includes('lockout') || title.includes('tagout') || title.includes('traffic');
+
+      // Hardware Sub-categories
+      case 'bath-sanitaries':
+        return slugs.some(s => s.includes('bath')) || title.includes('bath') || title.includes('shower') || title.includes('mixer');
+
+      case 'door-handles':
+        return slugs.some(s => s.includes('door') || s.includes('handle')) || title.includes('door') || title.includes('knob') || title.includes('handle');
+
+      default:
+        return slugs.includes(sel) || names.some(n => n.includes(sel)) || title.includes(sel);
+    }
+  }
+
+  /* -------------------------------------------------------------
+     LIVE MULTI-PAGE FETCHER (Fetches all 300+ Products from Store)
+     ------------------------------------------------------------- */
+  function ppfIngestProducts(data) {
+    if (!Array.isArray(data)) return;
+    const existingIds = new Set(rawCatalog.map(p => p.id));
+
+    data.forEach(function(item) {
+      if (existingIds.has(item.id)) return;
+
+      let priceVal = 0;
+      let oldVal = null;
+
+      if (item.prices && item.prices.price) {
+        let p = parseFloat(item.prices.price);
+        const minor = (typeof item.prices.currency_minor_unit === 'number') ? item.prices.currency_minor_unit : 0;
+        if (minor > 0) p = p / Math.pow(10, minor);
+        priceVal = p;
+
+        if (item.prices.regular_price && item.prices.sale_price && item.prices.regular_price !== item.prices.sale_price) {
+          let r = parseFloat(item.prices.regular_price);
+          if (minor > 0) r = r / Math.pow(10, minor);
+          oldVal = r;
+        }
+      } else if (item.price) {
+        priceVal = parseFloat(String(item.price).replace(/[^0-9.]/g, '')) || 0;
+      }
+
+      const categories = Array.isArray(item.categories) ? item.categories.map(c => ({
+        id: c.id,
+        name: c.name,
+        slug: (c.slug || '').toLowerCase()
+      })) : [];
+
+      const categorySlugs = categories.map(c => c.slug);
+      const categoryNames = categories.map(c => (c.name || '').toLowerCase());
+
+      // Find the most specific category title for card badge
+      let displayCat = 'Fire Products';
+      if (categories.length > 0) {
+        const specificCat = categories.find(c => c.slug !== 'fire-products' && c.slug !== 'detections');
+        displayCat = specificCat ? specificCat.name : categories[0].name;
+      }
+
+      const imgSrc = (item.images && item.images[0]) ? item.images[0].src : "https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg";
+
+      rawCatalog.push({
+        id: item.id,
+        name: item.name,
+        categorySlugs: categorySlugs,
+        categoryNames: categoryNames,
+        catTitle: displayCat,
+        price: priceVal,
+        oldPrice: oldVal,
+        sale: oldVal !== null && oldVal > priceVal,
+        image: imgSrc,
+        link: item.permalink || (ppfEnv.siteBase + '/?p=' + item.id),
+        rating: 5,
+        reviews: (item.id % 7) + 2
+      });
+
+      existingIds.add(item.id);
+    });
+  }
+
+  async function ppfFetchLiveProducts() {
+    try {
+      const baseUrl = ppfEnv.siteBase + '/wp-json/wc/store/v1/products?per_page=100';
+
+      // 1. Fetch Page 1 first for immediate responsiveness
+      const res1 = await fetch(baseUrl + '&page=1', { headers: { 'Accept': 'application/json' } });
+      if (res1.ok) {
+        const p1 = await res1.json();
+        if (Array.isArray(p1) && p1.length > 0) {
+          ppfIngestProducts(p1);
+          ppfUpdateCounts();
+          ppfFilterAndRender();
+
+          // 2. Concurrently fetch remaining pages in the background
+          const remainingPages = [2, 3, 4];
+          const remainingPromises = remainingPages.map(page =>
+            fetch(baseUrl + '&page=' + page, { headers: { 'Accept': 'application/json' } })
+              .then(r => r.ok ? r.json() : [])
+              .catch(() => [])
+          );
+
+          const moreResults = await Promise.all(remainingPromises);
+          const moreProducts = moreResults.flat();
+          if (moreProducts.length > 0) {
+            ppfIngestProducts(moreProducts);
+            ppfUpdateCounts();
+            ppfFilterAndRender();
+          }
+        }
+      }
+    } catch (err) {
+      console.warn("WooCommerce live API fallback active:", err);
+    }
+
+    ppfUpdateCounts();
+    ppfFilterAndRender();
+  }
+
+  function ppfUpdateCounts() {
+    const elAll = document.getElementById('count-all');
+    if (elAll) elAll.innerText = rawCatalog.length;
+
+    // Main Categories
+    const mainCats = [
+      'fire-products',
+      'fire-fighting',
+      'emergency-lighting',
+      'marine-products',
+      'safety-products',
+      'hardwares'
+    ];
+
+    mainCats.forEach(cat => {
+      const el = document.getElementById('count-' + cat);
+      if (el) {
+        const count = rawCatalog.filter(p => ppfMatchesCategory(p, cat)).length;
+        el.innerText = count;
+      }
+    });
+
+    // Subcategories count badges
+    const subButtons = document.querySelectorAll('.ppf-subcat-btn[data-cat]');
+    subButtons.forEach(btn => {
+      const cat = btn.getAttribute('data-cat');
+      const badge = btn.querySelector('.ppf-subcat-count');
+      if (cat && badge) {
+        const count = rawCatalog.filter(p => ppfMatchesCategory(p, cat)).length;
+        badge.innerText = count;
+        // Dim button if count is 0
+        if (count === 0) {
+          btn.style.opacity = '0.5';
+        } else {
+          btn.style.opacity = '1';
+        }
+      }
+    });
+  }
+
+  /* -------------------------------------------------------------
+     FILTER & RENDER ENGINE
+     ------------------------------------------------------------- */
+  function ppfFilterAndRender() {
+    let filtered = rawCatalog.filter(item => {
+      // 1. Category Matching via Universal Matcher
+      if (!ppfMatchesCategory(item, ppfConfig.selectedCategory)) {
+        return false;
+      }
+
+      // 2. Keyword Search
+      if (ppfConfig.searchQuery) {
+        const q = ppfConfig.searchQuery.toLowerCase();
+        const inName = (item.name || '').toLowerCase().includes(q);
+        const inCat = (item.catTitle || '').toLowerCase().includes(q);
+        const inSlugs = (item.categorySlugs || []).some(s => s.includes(q));
+        const inCatNames = (item.categoryNames || []).some(n => n.includes(q));
+        if (!inName && !inCat && !inSlugs && !inCatNames) return false;
+      }
+
+      // 3. Price Filter
+      if (typeof item.price === 'number') {
+        if (item.price < ppfConfig.minPrice || item.price > ppfConfig.maxPrice) return false;
+      }
+
+      return true;
+    });
+
+    // Sort
+    if (ppfConfig.sortBy === 'price-asc') filtered.sort((a, b) => a.price - b.price);
+    else if (ppfConfig.sortBy === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+    else if (ppfConfig.sortBy === 'title-asc') filtered.sort((a, b) => a.name.localeCompare(b.name));
+    else if (ppfConfig.sortBy === 'popularity') filtered.sort((a, b) => (b.reviews || 0) - (a.reviews || 0));
+
+    ppfConfig.totalProducts = filtered.length;
+    ppfConfig.totalPages = Math.max(1, Math.ceil(filtered.length / ppfConfig.perPage));
+    if (ppfConfig.currentPage > ppfConfig.totalPages) ppfConfig.currentPage = 1;
+
+    // Pagination slice
+    const startIndex = (ppfConfig.currentPage - 1) * ppfConfig.perPage;
+    const pagedItems = filtered.slice(startIndex, startIndex + ppfConfig.perPage);
+
+    // Update Result Counters
+    const countTotalEl = document.getElementById('ppf-count-total');
+    const countRangeEl = document.getElementById('ppf-count-range');
+    if (countTotalEl) countTotalEl.innerText = filtered.length;
+    if (countRangeEl) {
+      if (filtered.length === 0) countRangeEl.innerText = "0";
+      else countRangeEl.innerText = `${startIndex + 1}–${Math.min(startIndex + ppfConfig.perPage, filtered.length)}`;
+    }
+
+    ppfRenderActivePills();
+    ppfRenderGrid(pagedItems);
+    ppfRenderPagination();
+  }
+
+  function ppfRenderActivePills() {
+    const bar = document.getElementById('ppf-active-filters-bar');
+    const mobileBadge = document.getElementById('ppf-mobile-active-count');
+    if (!bar) return;
+    bar.innerHTML = '';
+    let activeFilterCount = 0;
+
+    if (ppfConfig.selectedCategory !== 'all') {
+      activeFilterCount++;
+      const pill = document.createElement('div');
+      pill.className = 'ppf-filter-pill';
+      pill.innerHTML = `<span>Category: <strong>${ppfConfig.selectedCategoryTitle}</strong></span> <button onclick="ppfSelectCategory('all', 'All Products', null)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
+      bar.appendChild(pill);
+    }
+
+    if (ppfConfig.searchQuery) {
+      activeFilterCount++;
+      const pill = document.createElement('div');
+      pill.className = 'ppf-filter-pill';
+      pill.innerHTML = `<span>Search: "<strong>${ppfConfig.searchQuery}</strong>"</span> <button onclick="ppfClearSearch()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
+      bar.appendChild(pill);
+    }
+
+    if (ppfConfig.minPrice > 0 || ppfConfig.maxPrice < 999999) {
+      activeFilterCount++;
+    }
+
+    if (mobileBadge) {
+      if (activeFilterCount > 0) {
+        mobileBadge.innerText = activeFilterCount;
+        mobileBadge.style.display = 'inline-block';
+      } else {
+        mobileBadge.style.display = 'none';
+      }
+    }
+
+    if (activeFilterCount > 0) {
+      const clearBtn = document.createElement('button');
+      clearBtn.className = 'ppf-filter-pill';
+      clearBtn.style.background = '#FEF2F2';
+      clearBtn.style.color = '#DC2626';
+      clearBtn.style.borderColor = '#FCA5A5';
+      clearBtn.style.cursor = 'pointer';
+      clearBtn.innerHTML = `<span>Clear All</span>`;
+      clearBtn.onclick = ppfResetAllFilters;
+      bar.appendChild(clearBtn);
+    }
+  }
+
+  function ppfRenderGrid(items) {
+    const grid = document.getElementById('ppf-product-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    if (items.length === 0) {
+      grid.innerHTML = `
+        <div class="ppf-no-products">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <h3>No matching products found</h3>
+          <p>Try resetting your filters or selecting "All Departments" to see all available products.</p>
+          <button class="ppf-price-btn" style="max-width:180px; margin:0 auto;" onclick="ppfResetAllFilters()">Show All Products</button>
+        </div>
+      `;
+      return;
+    }
+
+    items.forEach(product => {
+      const card = document.createElement('article');
+      card.className = 'ppf-product-card';
+
+      const formattedPrice = `AED ${Number(product.price).toLocaleString('en-US', { minimumFractionDigits: (product.price % 1 !== 0 ? 2 : 0) })}`;
+      const oldPriceHtml = product.oldPrice ? `<del>AED ${Number(product.oldPrice).toLocaleString('en-US')}</del>` : '';
+
+      card.innerHTML = `
+        ${product.sale ? `<span class="ppf-product-badge">Sale</span>` : ''}
+
+        <div>
+          <a href="${product.link}" class="ppf-product-img-wrap" title="${product.name}">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2026/11/2442-1.jpg'">
+          </a>
+
+          <div class="ppf-product-category">${product.catTitle}</div>
+          <a href="${product.link}" class="ppf-product-title" title="${product.name}">${product.name}</a>
+
+          <div class="ppf-product-rating">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ECA227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ECA227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ECA227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ECA227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#ECA227"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span style="color:var(--text-light); font-size:10px; margin-left:3px;">(${product.reviews || 1})</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="ppf-product-price-wrap">
+            <span class="ppf-product-price">${formattedPrice} ${oldPriceHtml}</span>
+          </div>
+
+          <div class="ppf-product-actions" id="action-wrap-${product.id}">
+            <button class="ppf-add-cart-btn" onclick="ppfAddToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', this, event)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span>Add to Cart</span>
+            </button>
+            <a href="${product.link}" class="ppf-view-prod-btn">View Details &rarr;</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  /* -------------------------------------------------------------
+     SMART RESPONSIVE PAGINATION WITH ELLIPSIS
+     ------------------------------------------------------------- */
+  function ppfRenderPagination() {
+    const nav = document.getElementById('ppf-pagination');
+    if (!nav) return;
+    nav.innerHTML = '';
+
+    if (ppfConfig.totalPages <= 1) {
+      nav.style.display = 'none';
+      return;
+    }
+    nav.style.display = 'flex';
+
+    const current = ppfConfig.currentPage;
+    const total = ppfConfig.totalPages;
+    const isMobile = window.innerWidth <= 540;
+
+    // Previous Button
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'ppf-page-btn';
+    prevBtn.innerHTML = '&lsaquo;';
+    prevBtn.disabled = current === 1;
+    prevBtn.setAttribute('title', 'Previous Page');
+    prevBtn.onclick = () => ppfGoToPage(current - 1);
+    nav.appendChild(prevBtn);
+
+    const delta = isMobile ? 1 : 2;
+    let pageNumbers = [];
+
+    for (let i = 1; i <= total; i++) {
+      if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+        pageNumbers.push(i);
+      }
+    }
+
+    let lastNum = 0;
+    pageNumbers.forEach(p => {
+      if (lastNum > 0 && p - lastNum > 1) {
+        const dots = document.createElement('span');
+        dots.className = 'ppf-page-ellipsis';
+        dots.innerText = '…';
+        nav.appendChild(dots);
+      }
+
+      const pageBtn = document.createElement('button');
+      pageBtn.className = 'ppf-page-btn' + (p === current ? ' active' : '');
+      pageBtn.innerText = p;
+      pageBtn.setAttribute('title', 'Page ' + p);
+      pageBtn.onclick = () => ppfGoToPage(p);
+      nav.appendChild(pageBtn);
+
+      lastNum = p;
+    });
+
+    // Next Button
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'ppf-page-btn';
+    nextBtn.innerHTML = '&rsaquo;';
+    nextBtn.disabled = current === total;
+    nextBtn.setAttribute('title', 'Next Page');
+    nextBtn.onclick = () => ppfGoToPage(current + 1);
+    nav.appendChild(nextBtn);
+  }
+
+  function ppfGoToPage(page) {
+    if (page < 1 || page > ppfConfig.totalPages) return;
+    ppfConfig.currentPage = page;
+    ppfFilterAndRender();
+    const header = document.querySelector('.ppf-topbar');
+    if (header) header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* -------------------------------------------------------------
+     NATIVE WOOCOMMERCE AJAX ADD TO CART
+     ------------------------------------------------------------- */
+  async function ppfAddToCart(productId, productName, btn, event) {
+    if (event) event.preventDefault();
+    if (btn.classList.contains('loading')) return;
+
+    btn.classList.add('loading');
+    btn.innerHTML = '<span>Adding...</span>';
+
+    try {
+      const params = new URLSearchParams();
+      params.append('product_id', productId);
+      params.append('quantity', '1');
+
+      await fetch(ppfEnv.ajaxEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: params.toString(),
+        credentials: 'include'
+      });
+
+      if (window.jQuery) {
+        window.jQuery(document.body).trigger('wc_fragment_refresh');
+        window.jQuery(document.body).trigger('added_to_cart', [null, null, window.jQuery(btn)]);
+      }
+    } catch (e) {
+      console.warn("AJAX add to cart warning:", e);
+    }
+
+    const actionWrap = document.getElementById('action-wrap-' + productId);
+    if (actionWrap) {
+      actionWrap.innerHTML = `
+        <div class="ppf-cart-success-box">
+          <a href="${ppfEnv.cartUrl}" class="ppf-go-cart-btn">View Cart &rarr;</a>
+          <div class="ppf-cart-check-badge" title="Added to cart">✓</div>
+        </div>
+      `;
+    }
+
+    ppfShowToast(`"${productName}" has been added to your cart.`);
+  }
+
+  function ppfShowToast(msg) {
+    const toast = document.getElementById('ppf-toast');
+    const text = document.getElementById('ppf-toast-text');
+    if (!toast || !text) return;
+    text.innerText = msg;
+    toast.classList.add('show');
+    clearTimeout(toast.timeout);
+    toast.timeout = setTimeout(() => { toast.classList.remove('show'); }, 4000);
+  }
+
+  /* -------------------------------------------------------------
+     FILTER ACTIONS
+     ------------------------------------------------------------- */
+  function ppfSelectCategory(catSlug, catTitle, btn) {
+    ppfConfig.selectedCategory = catSlug;
+    ppfConfig.selectedCategoryTitle = catTitle;
+    ppfConfig.currentPage = 1;
+
+    document.querySelectorAll('.ppf-cat-btn, .ppf-subcat-btn').forEach(b => b.classList.remove('active'));
+    if (btn) {
+      btn.classList.add('active');
+      const parentItem = btn.closest('.ppf-cat-item');
+      if (parentItem) parentItem.classList.add('open');
+    }
+
+    const crumbCurrent = document.getElementById('ppf-crumb-current');
+    if (crumbCurrent) crumbCurrent.innerText = catTitle;
+
+    ppfFilterAndRender();
+
+    if (window.innerWidth <= 900) {
+      ppfCloseDrawer();
+    }
+  }
+
+  function ppfToggleAccordion(e, icon) {
+    e.stopPropagation();
+    const item = icon.closest('.ppf-cat-item');
+    if (item) item.classList.toggle('open');
+  }
+
+  let searchTimeout = null;
+  function ppfHandleSearch(val) {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      ppfConfig.searchQuery = val.trim();
+      ppfConfig.currentPage = 1;
+      ppfFilterAndRender();
+    }, 250);
+  }
+
+  function ppfClearSearch() {
+    ppfConfig.searchQuery = '';
+    const input = document.getElementById('ppf-search-input');
+    if (input) input.value = '';
+    ppfConfig.currentPage = 1;
+    ppfFilterAndRender();
+  }
+
+  function ppfApplyPriceFilter() {
+    const minVal = parseFloat(document.getElementById('ppf-min-price').value) || 0;
+    const maxVal = parseFloat(document.getElementById('ppf-max-price').value) || 999999;
+    ppfConfig.minPrice = minVal;
+    ppfConfig.maxPrice = maxVal;
+    ppfConfig.currentPage = 1;
+    ppfFilterAndRender();
+
+    if (window.innerWidth <= 900) {
+      ppfCloseDrawer();
+    }
+  }
+
+  function ppfResetAllFilters() {
+    ppfConfig.selectedCategory = 'all';
+    ppfConfig.selectedCategoryTitle = 'All Products';
+    ppfConfig.searchQuery = '';
+    ppfConfig.minPrice = 0;
+    ppfConfig.maxPrice = 999999;
+    ppfConfig.sortBy = 'default';
+    ppfConfig.currentPage = 1;
+
+    const sInput = document.getElementById('ppf-search-input');
+    if (sInput) sInput.value = '';
+    const sSort = document.getElementById('ppf-sort-select');
+    if (sSort) sSort.value = 'default';
+    document.getElementById('ppf-min-price').value = 0;
+    document.getElementById('ppf-max-price').value = 5000;
+
+    document.querySelectorAll('.ppf-cat-btn, .ppf-subcat-btn').forEach(b => b.classList.remove('active'));
+    const allBtn = document.querySelector('.ppf-cat-btn[data-cat="all"]');
+    if (allBtn) allBtn.classList.add('active');
+
+    document.getElementById('ppf-crumb-current').innerText = 'All Products';
+
+    ppfFilterAndRender();
+
+    if (window.innerWidth <= 900) {
+      ppfCloseDrawer();
+    }
+  }
+
+  function ppfHandleSort(val) {
+    ppfConfig.sortBy = val;
+    ppfConfig.currentPage = 1;
+    ppfFilterAndRender();
+  }
+
+  /* -------------------------------------------------------------
+     INITIALIZATION & URL QUERY PARSER
+     ------------------------------------------------------------- */
+  document.addEventListener('DOMContentLoaded', () => {
+    // Check URL parameters (e.g. ?cat=smoke-detectors or ?s=extinguisher)
+    const urlParams = new URLSearchParams(window.location.search);
+    const catParam = urlParams.get('cat') || urlParams.get('category');
+    const searchParam = urlParams.get('s') || urlParams.get('search');
+
+    if (catParam) {
+      ppfConfig.selectedCategory = catParam;
+      ppfConfig.selectedCategoryTitle = catParam.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      const matchingBtn = document.querySelector(`[data-cat="${catParam}"]`);
+      if (matchingBtn) {
+        document.querySelectorAll('.ppf-cat-btn, .ppf-subcat-btn').forEach(b => b.classList.remove('active'));
+        matchingBtn.classList.add('active');
+        const parent = matchingBtn.closest('.ppf-cat-item');
+        if (parent) parent.classList.add('open');
+      }
+    }
+
+    if (searchParam) {
+      ppfConfig.searchQuery = searchParam;
+      const sInput = document.getElementById('ppf-search-input');
+      if (sInput) sInput.value = searchParam;
+    }
+
+    ppfUpdateCounts();
+    ppfFilterAndRender();
+    ppfFetchLiveProducts();
+  });
+
+  window.addEventListener('resize', () => {
+    ppfRenderPagination();
+  });
+</script>
+
+</body>
+</html>

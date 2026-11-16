@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Pumps Services | Pacific Power & Fire Contractors Dubai</title>
+
+  <!-- Google Fonts: Consistent with Website Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       THEME VARIABLES & CORE RESET (MATCHING LIVE WEBSITE)
+       ========================================================= */
+    :root {
+      --theme-primary-color: #333E48;       /* Charcoal Primary */
+      --theme-secondary-color: #004EC3;     /* Corporate Blue */
+      --primary-blue: #1565C0;
+      --theme-accent-color: #FF3D3D;        /* Fire Alert Red */
+      --accent-red: #C62828;                /* Safety Red */
+      --accent-red-hover: #B71C1C;
+      --gold-accent: #ECA227;               /* Golden Amber CTA */
+      --gold-accent-hover: #D9911A;
+      --text-main: #333E48;
+      --text-muted: #555E68;
+      --bg-page: #FFFFFF;
+      --border-color: #E2E8F0;
+      
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.14);
+      --transition: all 0.28s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      background-color: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* =========================================================
+       FIRE PUMPS DETAIL LAYOUT (MATCHING IMAGE EXACTLY)
+       ========================================================= */
+    .pumps-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    /* Left Column: Description & Technical Content */
+    .detail-main-content {
+      color: var(--text-muted);
+    }
+
+    .content-heading {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 22px;
+      letter-spacing: -0.4px;
+      line-height: 1.25;
+    }
+
+    .detail-main-content p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #555E68;
+      margin-bottom: 20px;
+    }
+
+    /* Middle Feature Row: Image + 5-Point Checklist */
+    .content-feature-row {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin: 30px 0;
+      padding: 5px 0;
+    }
+
+    .feature-image-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 3px solid #FFFFFF;
+      position: relative;
+    }
+
+    .feature-image-wrap img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .feature-image-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    .feature-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      line-height: 1.45;
+      font-family: var(--font-heading);
+    }
+
+    .checklist-item i {
+      color: var(--theme-accent-color);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       RIGHT SIDEBAR: CONTACT US & EMERGENCY 24/7 WIDGETS
+       ========================================================= */
+    .sidebar-sticky-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 30px;
+    }
+
+    /* Widget 1: Contact Us Card */
+    .widget-contact-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 38px 30px;
+      color: #FFFFFF;
+      background: linear-gradient(rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.94)),
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .widget-contact-card h3 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .widget-contact-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: var(--theme-accent-color);
+      border-radius: 2px;
+    }
+
+    .widget-contact-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #E2E8F0;
+      margin-bottom: 22px;
+    }
+
+    .widget-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background-color: var(--gold-accent);
+      color: #1A202C;
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 13px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(236, 162, 39, 0.4);
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .widget-contact-btn:hover {
+      background-color: var(--gold-accent-hover);
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(236, 162, 39, 0.6);
+    }
+
+    /* Widget 2: Emergency 24/7 Red Box */
+    .widget-emergency-box {
+      background-color: var(--accent-red);
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 8px 22px rgba(198, 40, 40, 0.35);
+      transition: var(--transition);
+    }
+
+    .widget-emergency-box:hover {
+      background-color: var(--accent-red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(198, 40, 40, 0.5);
+    }
+
+    .emergency-box-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .emergency-box-content small {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      opacity: 0.95;
+      margin-bottom: 2px;
+    }
+
+    .emergency-box-content strong {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================= */
+    @media (max-width: 992px) {
+      .pumps-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .content-feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar-sticky-wrap {
+        position: static;
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 25px 0;
+      }
+
+      .content-heading {
+        font-size: 26px;
+      }
+
+      .widget-contact-card {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       FIRE PUMPS MAIN SECTION (NO HEADER / NO FOOTER)
+       ========================================================= -->
+  <section class="section-pumps-detail">
+    <div class="container">
+      <div class="pumps-layout-grid">
+
+        <!-- Left Column: Description & Technical Scope Checklist -->
+        <main class="detail-main-content">
+          <h1 class="content-heading">Description</h1>
+
+          <p>Fire pumps are a critical component of any fire fighting system, designed to provide adequate water pressure and flow during a fire emergency. When the main water supply cannot meet system demand, fire pumps ensure that sprinklers, hydrants, hose reels, and standpipe systems operate effectively to control and suppress fire.</p>
+
+          <p>At Fire Contractors in Dubai, we supply, install, test, and maintain Civil Defence approved fire pump systems for residential, commercial, and industrial buildings. Our solutions are engineered for reliability, performance, and full compliance with local authority regulations, ensuring dependable operation when it matters most.</p>
+
+          <!-- Middle Feature Row: Image + 5-Point Checklist -->
+          <div class="content-feature-row">
+            <div class="feature-image-wrap">
+              <!-- Industrial red fire pump sets and manifold piping -->
+              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" 
+                   alt="Industrial red electric and diesel fire pumps with control panels and manifold piping">
+            </div>
+
+            <div class="feature-checklist">
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Supply And Installation Of Electric, Diesel, And Jockey Fire Pumps</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Fire Pump Room Layout And System Integration</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Testing And Commissioning Of Fire Pump Systems</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Flow, Pressure, And Performance Testing</span>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Preventive And Corrective Maintenance Services</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Summary Paragraph -->
+          <p>Fire pumps play a vital role in maintaining constant water pressure during emergency situations. A properly designed and maintained fire pump system ensures that fire fighting equipment performs efficiently, supports rapid fire suppression, and protects both life and property. Regular testing and servicing reduce the risk of failure and ensure readiness at all times.</p>
+        </main>
+
+        <!-- Right Column: Sidebar Widgets (Contact Us & Emergency 24/7) -->
+        <aside class="detail-sidebar">
+          <div class="sidebar-sticky-wrap">
+
+            <!-- Widget 1: Contact Us Card -->
+            <div class="widget-contact-card">
+              <h3>Contact Us</h3>
+              <p>A trusted Civil Defence-approved fire contractor in Dubai serving residential and commercial sectors with reliable, compliant fire protection annual maintenance services.</p>
+              
+              <a href="#inquiry" class="widget-contact-btn">
+                <span>Inquire About Fire Pumps</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Widget 2: Emergency 24/7 Red Box -->
+            <a href="tel:+971544472399" class="widget-emergency-box">
+              <div class="emergency-box-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div class="emergency-box-content">
+                <small>Emergency Call 24/7</small>
+                <strong>+971 544 472 399</strong>
+              </div>
+            </a>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="auraRoseGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48" />
+      <stop offset="55%" stop-color="#D9465F" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="auraDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Rounded Luxury Frame -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="#FFFFFF" stroke="url(#auraRoseGold)" stroke-width="3.5" />
+  <rect x="13" y="13" width="94" height="94" rx="22" stroke="#F1F5F9" stroke-width="1.5" />
+
+  <!-- Architectural Stylized 'A' Ribbon & Celebration Star -->
+  <!-- Left & Right Pillars of 'A' -->
+  <path d="M60 22L32 90H43.5L60 48L76.5 90H88L60 22Z" fill="url(#auraDark)" />
+
+  <!-- Sweeping Celebration Ribbon Crossbar -->
+  <path d="M36 70C48 60 72 60 84 70C72 65 48 65 36 70Z" fill="url(#auraRoseGold)" />
+  <path d="M34 68C49 54 71 54 86 68" stroke="url(#auraRoseGold)" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Four-Point Celebration Sparkle Crown at Apex -->
+  <path d="M60 12L62.8 19.2L70 22L62.8 24.8L60 32L57.2 24.8L50 22L57.2 19.2L60 12Z" fill="#E11D48" />
+
+  <!-- Subtle Gold Accent Diamond in Center -->
+  <polygon points="60,55 65,61 60,67 55,61" fill="#D97706" />
+</svg>

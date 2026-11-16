@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Pacific Power & Fire Contractors Dubai UAE</title>
+  
+  <!-- Google Fonts: Matching Website Hierarchy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* =========================================================
+       CSS VARIABLES & GLOBAL RESET (MATCHING LIVE THEME SYSTEM)
+       ========================================================= */
+    :root {
+      --theme-primary-color: #333E48;       /* Charcoal primary */
+      --theme-secondary-color: #004EC3;     /* Royal corporate blue */
+      --primary-blue: #1565C0;              /* Engineering blue */
+      --primary-blue-hover: #0D47A1;
+      --primary-blue-light: #EFF6FF;
+      --theme-accent-color: #FF3D3D;        /* Fire safety accent red */
+      --accent-red: #D32F2F;                /* Deep safety red */
+      --accent-red-hover: #B71C1C;
+      --accent-red-light: #FEF2F2;
+      --gold-accent: #ECA227;               /* Read More & AMC CTA Amber */
+      --gold-accent-hover: #D9911A;
+      --text-main: #333E48;
+      --text-muted: #73787D;
+      --text-light: #FFFFFF;
+      --bg-page: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-alt: #F4F4F4;
+      --border-color: #E2E8F0;
+      --border-subtle: #ECECEC;
+      
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-feature: 'Plus Jakarta Sans', sans-serif;
+      
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 14px 30px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      background-color: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* =========================================================
+       1. TOP UTILITY BAR
+       ========================================================= */
+    .topbar {
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 13px;
+      color: var(--text-muted);
+      padding: 8px 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .topbar-item i {
+      color: var(--theme-accent-color);
+      font-size: 12px;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .badge-approved {
+      background-color: var(--primary-blue-light);
+      color: var(--primary-blue);
+      font-weight: 600;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* =========================================================
+       2. MAIN HEADER
+       ========================================================= */
+    .main-header {
+      background-color: #FFFFFF;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .main-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      min-width: 210px;
+    }
+
+    .header-logo img {
+      max-height: 48px;
+      width: auto;
+    }
+
+    .header-logo-fallback {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      letter-spacing: -0.5px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-logo-fallback span {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--theme-accent-color);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* Search Bar with Category Select */
+    .header-search {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: var(--transition);
+    }
+
+    .header-search:focus-within {
+      border-color: var(--primary-blue);
+    }
+
+    .search-category {
+      border: none;
+      background: #F8FAFC;
+      border-right: 1px solid var(--border-color);
+      padding: 0 14px;
+      font-size: 13px;
+      color: var(--text-main);
+      font-weight: 500;
+      cursor: pointer;
+      outline: none;
+      font-family: var(--font-body);
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      padding: 10px 14px;
+      font-size: 14px;
+      outline: none;
+      font-family: var(--font-body);
+    }
+
+    .search-btn {
+      background-color: var(--theme-accent-color);
+      color: #FFFFFF;
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: var(--transition);
+    }
+
+    .search-btn:hover {
+      background-color: var(--accent-red);
+    }
+
+    /* Header Utilities */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .action-icon {
+      position: relative;
+      font-size: 20px;
+      color: var(--theme-primary-color);
+    }
+
+    .action-badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background-color: var(--theme-accent-color);
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 700;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .action-text small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .action-text strong {
+      font-weight: 600;
+      color: var(--theme-primary-color);
+    }
+
+    /* =========================================================
+       3. NAVIGATION BAR
+       ========================================================= */
+    .navbar {
+      background-color: var(--theme-primary-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-departments {
+      background-color: var(--theme-accent-color);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: var(--transition);
+    }
+
+    .nav-departments:hover {
+      background-color: var(--accent-red);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      flex: 1;
+    }
+
+    .nav-menu li a {
+      display: block;
+      padding: 14px 18px;
+      color: #E2E8F0;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li.active a {
+      color: #FFFFFF;
+    }
+
+    .nav-menu li.active a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      background-color: var(--theme-accent-color);
+    }
+
+    .nav-hotline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .nav-hotline i {
+      color: var(--theme-accent-color);
+      font-size: 16px;
+    }
+
+    /* =========================================================
+       4. PAGE HERO / BREADCRUMB
+       ========================================================= */
+    .page-hero {
+      position: relative;
+      background: linear-gradient(rgba(14, 23, 42, 0.82), rgba(15, 23, 42, 0.90)),
+                  url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 65px 0;
+      border-bottom: 4px solid var(--theme-accent-color);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #CBD5E1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .breadcrumb a {
+      color: #94A3B8;
+    }
+
+    .breadcrumb a:hover {
+      color: #FFFFFF;
+    }
+
+    .breadcrumb span {
+      color: var(--theme-accent-color);
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+
+    /* =========================================================
+       5. CORE SERVICES SECTION (FROM MOCKUP IMAGE)
+       ========================================================= */
+    .section-services {
+      padding: 80px 0 95px;
+      background-color: #FFFFFF;
+    }
+
+    /* Section Intro Header */
+    .services-header-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: flex-end;
+      margin-bottom: 55px;
+    }
+
+    .services-title-col .section-tag {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .services-title-col .section-title {
+      font-family: var(--font-heading);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+    }
+
+    .services-desc-col {
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .services-desc-col p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #555E68;
+      margin-bottom: 15px;
+    }
+
+    .services-desc-col::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-red);
+      border-radius: 2px;
+    }
+
+    /* =========================================================
+       SERVICES BENTO GRID (MATCHING USER MOCKUP EXACTLY)
+       ========================================================= */
+    .services-grid-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Top Row: Large Featured Left + 2 Stacked Right */
+    .services-top-row {
+      display: grid;
+      grid-template-columns: 1.65fr 1fr;
+      gap: 24px;
+    }
+
+    .services-stacked-right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Bottom Row: 3 Equal Columns */
+    .services-bottom-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Base Service Card Styling */
+    .service-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      background-color: #1A202C;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .service-card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .service-card:hover .service-card-bg {
+      transform: scale(1.06);
+    }
+
+    /* Gradient Overlay to Ensure High Contrast Readability */
+    .service-card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.25) 0%, rgba(17, 24, 39, 0.88) 72%, rgba(17, 24, 39, 0.96) 100%);
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-card-overlay {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.20) 0%, rgba(17, 24, 39, 0.90) 65%, rgba(17, 24, 39, 0.98) 100%);
+    }
+
+    /* Content Within Card */
+    .service-card-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #FFFFFF;
+    }
+
+    /* Card 1: Annual Maintenance (Large Feature Card) */
+    .card-large {
+      min-height: 480px;
+    }
+
+    .card-large .service-card-content {
+      padding: 40px 38px;
+      max-width: 580px;
+    }
+
+    .card-large h3 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+      letter-spacing: -0.3px;
+    }
+
+    .card-large p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 22px;
+    }
+
+    /* Solid Gold Amber Button for Main Card */
+    .btn-card-readmore {
+      background-color: var(--gold-accent);
+      color: #1A202C;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 10px 24px;
+      border-radius: 4px;
+      display: inline-block;
+      align-self: flex-start;
+      box-shadow: 0 4px 12px rgba(236, 162, 39, 0.35);
+      transition: var(--transition);
+    }
+
+    .btn-card-readmore:hover {
+      background-color: var(--gold-accent-hover);
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(236, 162, 39, 0.5);
+    }
+
+    /* Stacked Right Cards & Bottom 3 Cards */
+    .card-medium {
+      min-height: 228px;
+    }
+
+    .card-medium .service-card-content {
+      padding: 26px 28px;
+    }
+
+    .card-medium h3 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+    }
+
+    .card-medium p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 14px;
+    }
+
+    /* Text Underline Link Style For Secondary Cards (As in Image) */
+    .link-card-readmore {
+      color: var(--gold-accent);
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .link-card-readmore::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--gold-accent);
+      transition: var(--transition);
+    }
+
+    .service-card:hover .link-card-readmore {
+      color: #FFC107;
+    }
+
+    .service-card:hover .link-card-readmore::after {
+      background-color: #FFC107;
+      width: 110%;
+    }
+
+    /* =========================================================
+       6. COMPLIANCE & ENGINEERING STANDARDS STRIP
+       ========================================================= */
+    .section-standards-strip {
+      background-color: #F8FAFC;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 55px 0;
+    }
+
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .standard-box {
+      background: #FFFFFF;
+      padding: 24px 22px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .standard-box:hover {
+      border-color: var(--primary-blue);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .standard-icon {
+      font-size: 24px;
+      min-width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .standard-text h4 {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 4px;
+    }
+
+    .standard-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* =========================================================
+       7. SECTION: BOTTOM AMC CTA BANNER
+       ========================================================= */
+    .section-amc-cta {
+      position: relative;
+      background: linear-gradient(rgba(10, 15, 26, 0.88), rgba(10, 15, 26, 0.92)),
+                  url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 38px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .amc-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .amc-content h2 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.3px;
+    }
+
+    .btn-amc-contact {
+      background-color: var(--gold-accent);
+      color: #1A202C;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 13px 32px;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(236, 162, 39, 0.4);
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .btn-amc-contact:hover {
+      background-color: var(--gold-accent-hover);
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 162, 39, 0.6);
+    }
+
+    /* =========================================================
+       8. FOOTER (EXACT MATCHING THEME)
+       ========================================================= */
+    .site-footer {
+      background-color: #FAFAFA;
+      border-top: 1px solid var(--border-color);
+      padding: 70px 0 25px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--theme-primary-color);
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: var(--theme-accent-color);
+    }
+
+    .footer-col p {
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links li a {
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links li a:hover {
+      color: var(--theme-secondary-color);
+      transform: translateX(4px);
+    }
+
+    .footer-links li a::before {
+      content: '›';
+      color: var(--theme-secondary-color);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .footer-contact-item i {
+      color: var(--theme-accent-color);
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 13px;
+    }
+
+    .footer-bottom a {
+      color: var(--theme-primary-color);
+      font-weight: 600;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--theme-secondary-color);
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 10px;
+      font-size: 22px;
+      color: #94A3B8;
+    }
+
+    /* =========================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================= */
+    @media (max-width: 992px) {
+      .services-header-wrap {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .services-top-row {
+        grid-template-columns: 1fr;
+      }
+
+      .services-bottom-row {
+        grid-template-columns: 1fr;
+      }
+
+      .standards-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-right,
+      .nav-menu,
+      .header-search {
+        display: none;
+      }
+
+      .standards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .amc-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .services-title-col .section-title {
+        font-size: 28px;
+      }
+      
+      .card-large {
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       1. TOP UTILITY BAR
+       ========================================================= -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>Hotline: +971 544 472 389</span>
+        </div>
+        <div class="topbar-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>order@firecontractorsindubai.com</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="badge-approved">
+          <i class="fa-solid fa-shield-halved"></i> Dubai Civil Defense Approved Contractor
+        </div>
+        <div class="topbar-item">
+          <i class="fa-solid fa-globe"></i>
+          <span>Dubai, United Arab Emirates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       2. MAIN HEADER
+       ========================================================= -->
+  <header class="main-header">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="header-logo">
+        <img src="https://infobahndubai.com/demo/pacificpowerfirecontractors/wp-content/uploads/2023/08/firec-logo.png" 
+             alt="Pacific Power & Fire Contractors Dubai UAE" 
+             onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+        <div id="logoFallback" class="header-logo-fallback" style="display:none;">
+          PACIFIC POWER
+          <span>& FIRE CONTRACTORS</span>
+        </div>
+      </a>
+
+      <!-- Central Search Box -->
+      <form class="header-search" action="#" method="get">
+        <select class="search-category" name="product_cat">
+          <option value="">All Categories</option>
+          <option value="fire-alarm">Fire Alarm Panels</option>
+          <option value="smoke-detectors">Smoke & Heat Detectors</option>
+          <option value="valves">Valves & Sprinklers</option>
+          <option value="emergency-lights">Emergency Lighting</option>
+        </select>
+        <input type="text" class="search-input" placeholder="Search fire protection products, parts, model..." required>
+        <button type="submit" class="search-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <!-- Action Icons: Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fa-regular fa-heart"></i>
+            <span class="action-badge">0</span>
+          </div>
+          <div class="action-text">
+            <small>Favorites</small>
+            <strong>Wishlist</strong>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="action-badge">0</span>
+          </div>
+          <div class="action-text">
+            <small>Cart</small>
+            <strong>AED 0.00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       3. NAVIGATION BAR
+       ========================================================= -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Departments Drawer -->
+      <div class="nav-departments">
+        <i class="fa-solid fa-bars-staggered"></i>
+        <span>All Departments</span>
+        <i class="fa-solid fa-chevron-down" style="font-size: 11px; margin-left: 5px;"></i>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li class="active"><a href="services.html">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+      <!-- Emergency Support Hotline -->
+      <div class="nav-hotline">
+        <i class="fa-solid fa-headset"></i>
+        <span>Emergency 24/7 Support</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       4. PAGE HERO / BREADCRUMB
+       ========================================================= -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span>SERVICES</span>
+      </div>
+      <h1>Our Services</h1>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. CORE SERVICES SECTION (TRANSCRIBED FROM MOCKUP IMAGE)
+       ========================================================= -->
+  <section class="section-services">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="services-header-wrap">
+        <div class="services-title-col">
+          <span class="section-tag">OUR SERVICES</span>
+          <h2 class="section-title">Fire protection services built on trust and compliance</h2>
+        </div>
+        <div class="services-desc-col">
+          <p>Every fire safety system we deliver is built around one priority: protecting lives and property. From design and installation to testing and maintenance, our services follow approved standards and proven practices to ensure reliable fire protection across residential, commercial, and industrial projects.</p>
+        </div>
+      </div>
+
+      <!-- Bento Services Layout -->
+      <div class="services-grid-container">
+        
+        <!-- Top Row: 1 Large Left + 2 Stacked Right -->
+        <div class="services-top-row">
+          
+          <!-- Service 1: Annual Maintenance (Large Card) -->
+          <div class="service-card card-large">
+            <!-- Inspection technician image -->
+            <img class="service-card-bg" 
+                 src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Fire technician conducting annual maintenance and equipment inspection">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <h3>Annual Maintenance</h3>
+              <p>Planned inspection and maintenance services to ensure all fire protection systems remain compliant, functional, and ready at all times.</p>
+              <a href="annual-maintenance.html" class="btn-card-readmore">READ MORE</a>
+            </div>
+          </div>
+
+          <!-- Stacked Column Right -->
+          <div class="services-stacked-right">
+            
+            <!-- Service 2: Fire Extinguishers -->
+            <div class="service-card card-medium">
+              <!-- Fire extinguisher inspection image -->
+              <img class="service-card-bg" 
+                   src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80" 
+                   alt="Technician checking fire extinguisher pressure and safety seals">
+              <div class="service-card-overlay"></div>
+              <div class="service-card-content">
+                <h3>Fire Extinguishers</h3>
+                <p>Supply, inspection, refilling, and servicing of fire extinguishers to meet safety standards and site requirements.</p>
+                <a href="fire-extinguishers.html" class="link-card-readmore">
+                  READ MORE <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Service 3: Emergency Lighting -->
+            <div class="service-card card-medium">
+              <!-- Emergency exit and lighting fixture image -->
+              <img class="service-card-bg" 
+                   src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" 
+                   alt="Commercial emergency exit lighting and backup battery units">
+              <div class="service-card-overlay"></div>
+              <div class="service-card-content">
+                <h3>Emergency Lighting</h3>
+                <p>Reliable emergency lighting systems that keep exit routes visible and occupants safe during power failures and fire situations.</p>
+                <a href="emergency-lighting.html" class="link-card-readmore">
+                  READ MORE <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Bottom Row: 3 Equal-Width Cards -->
+        <div class="services-bottom-row">
+          
+          <!-- Service 4: Fire Safety Design -->
+          <div class="service-card card-medium">
+            <!-- Engineer reviewing schematics image -->
+            <img class="service-card-bg" 
+                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" 
+                 alt="Fire safety engineering design and Civil Defense approval drawings">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <h3>Fire Safety Design</h3>
+              <p>Professional fire safety design and drawings prepared in line with Civil Defense requirements for fast approvals and smooth execution.</p>
+              <a href="fire-safety-design.html" class="link-card-readmore">
+                READ MORE <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 5: Fire Pumps -->
+          <div class="service-card card-medium">
+            <!-- Industrial fire pumps and manifold piping image -->
+            <img class="service-card-bg" 
+                 src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" 
+                 alt="Industrial red fire pumps manifold and pressure piping systems">
+              <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <h3>Fire Pumps</h3>
+              <p>Design, supply, installation, and maintenance of fire pump systems to ensure a reliable and adequate water supply during fire emergencies.</p>
+              <a href="fire-pumps.html" class="link-card-readmore">
+                READ MORE <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 6: Fire Suppression -->
+          <div class="service-card card-medium">
+            <!-- Fire suppression riser and control valves image -->
+            <img class="service-card-bg" 
+                 src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80" 
+                 alt="Technicians maintaining clean agent and sprinkler fire suppression systems">
+            <div class="service-card-overlay"></div>
+            <div class="service-card-content">
+              <h3>Fire Suppression</h3>
+              <p>Advanced fire suppression systems designed to control or extinguish fires in critical and high-risk environments.</p>
+              <a href="fire-suppression.html" class="link-card-readmore">
+                READ MORE <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. COMPLIANCE & ENGINEERING STANDARDS STRIP
+       ========================================================= -->
+  <section class="section-standards-strip">
+    <div class="container">
+      <div class="standards-grid">
+        
+        <div class="standard-box">
+          <div class="standard-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="standard-text">
+            <h4>Civil Defense Compliant</h4>
+            <p>100% adherence to Dubai Civil Defense fire codes and safety protocols.</p>
+          </div>
+        </div>
+
+        <div class="standard-box">
+          <div class="standard-icon">
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+          <div class="standard-text">
+            <h4>Certified Engineers</h4>
+            <p>Field teams certified for complex installations and commissioning.</p>
+          </div>
+        </div>
+
+        <div class="standard-box">
+          <div class="standard-icon">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <div class="standard-text">
+            <h4>24/7 Rapid Response</h4>
+            <p>Dedicated round-the-clock emergency dispatch and troubleshooting.</p>
+          </div>
+        </div>
+
+        <div class="standard-box">
+          <div class="standard-icon">
+            <i class="fa-solid fa-file-circle-check"></i>
+          </div>
+          <div class="standard-text">
+            <h4>Authority Approvals</h4>
+            <p>Complete documentation and inspection sign-off support for building owners.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. SECTION: BOTTOM AMC CTA BANNER
+       ========================================================= -->
+  <section class="section-amc-cta">
+    <div class="container">
+      <div class="amc-content">
+        <h2>Start your Annual Maintenance Contract</h2>
+        <a href="#contact" class="btn-amc-contact">CONTACT US</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       8. SITE FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: About & Compliance -->
+        <div class="footer-col">
+          <h4>Pacific Power & Fire</h4>
+          <p>Leading certified fire protection contractor in Dubai & UAE. Providing full turnkey design, equipment supply, Civil Defense compliance approvals, testing, and 24/7 maintenance contracts.</p>
+          <div class="badge-approved" style="display:inline-flex;">
+            <i class="fa-solid fa-certificate"></i> Dubai Civil Defense Approved
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="#projects">Recent Projects</a></li>
+            <li><a href="#brands">Certified Brands</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Safety Equipment -->
+        <div class="footer-col">
+          <h4>Fire Protection</h4>
+          <ul class="footer-links">
+            <li><a href="#">Fire Alarm Control Panels</a></li>
+            <li><a href="#">Optical Smoke & Heat Detectors</a></li>
+            <li><a href="#">Carbon Monoxide Detectors</a></li>
+            <li><a href="#">Gate Valves & Sprinklers</a></li>
+            <li><a href="#">Emergency Lighting Systems</a></li>
+            <li><a href="#">Fire Suppression Systems</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Dispatch -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Industrial Area, Dubai, United Arab Emirates</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+971 544 472 389 / +971 544 472 399</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>order@firecontractorsindubai.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon - Sat: 8:00 AM - 6:00 PM<br>(24/7 Emergency Dispatch)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <a href="index.html">Pacific Power & Fire Contractors</a>. All Rights Reserved.
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

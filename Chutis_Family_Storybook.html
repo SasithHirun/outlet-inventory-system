@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>චූටිගේ පවුල - Chuti's Family Storybook</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans Sinhala', 'Nirmala UI', sans-serif;
+            background: #1e1914;
+            margin: 0;
+            padding: 30px 15px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            color: #f7ecd5;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.4rem;
+            color: #ffd885;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            margin: 4px 0;
+            font-size: 1.15rem;
+            color: #e6dac3;
+        }
+
+        .controls {
+            margin: 20px 0 30px;
+        }
+
+        .btn-print {
+            background: #d4a359;
+            color: #2b1f13;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+            transition: transform 0.15s, background 0.15s;
+        }
+
+        .btn-print:hover {
+            background: #eed088;
+            transform: translateY(-2px);
+        }
+
+        .book-container {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+            max-width: 860px;
+            width: 100%;
+        }
+
+        .page-card {
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+            break-after: page;
+        }
+
+        .page-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page-info {
+            background: #2a221b;
+            padding: 12px 24px;
+            text-align: right;
+            font-size: 0.95rem;
+            color: #d1b894;
+            font-weight: 600;
+            border-top: 1px solid #3d3126;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            header, .controls, .page-info {
+                display: none !important;
+            }
+            .book-container {
+                gap: 0;
+                max-width: 100%;
+            }
+            .page-card {
+                box-shadow: none;
+                border-radius: 0;
+                page-break-after: always;
+                break-after: page;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>චූටිගේ පවුල</h1>
+        <p><strong>කතුවරිය:</strong> වර්ෂා දසනායක (පන්තිය: 5-C)</p>
+        <div class="controls">
+            <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF Storybook</button>
+        </div>
+    </header>
+
+    <div class="book-container">
+        <!-- Cover Page -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chuti_family_cover_with_author_1792250032412.jpg" alt="Cover Page">
+            <div class="page-info">කවරය (Cover Page)</div>
+        </div>
+
+        <!-- Page 1 -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_page_1_storybook_1792286768774.jpg" alt="Page 1">
+            <div class="page-info">පිටුව 1 (Page 1)</div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_page_2_storybook_1792251231712.jpg" alt="Page 2">
+            <div class="page-info">පිටුව 2 (Page 2)</div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_page_3_storybook_1792286911837.jpg" alt="Page 3">
+            <div class="page-info">පිටුව 3 (Page 3)</div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_page_4_storybook_1792286986658.jpg" alt="Page 4">
+            <div class="page-info">පිටුව 4 (Page 4)</div>
+        </div>
+
+        <!-- Page 5 -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_page_5_storybook_1792287084156.jpg" alt="Page 5">
+            <div class="page-info">පිටුව 5 (Page 5)</div>
+        </div>
+
+        <!-- Page 6 -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_page_6_storybook_1792287273336.jpg" alt="Page 6">
+            <div class="page-info">පිටුව 6 (Page 6)</div>
+        </div>
+
+        <!-- Last Page / Author Page -->
+        <div class="page-card">
+            <img src="C:/Users/HP/.gemini/antigravity/brain/a4cf0b4f-feb4-4f2a-a198-74b4218846fb/chutis_family_author_page_1792292098517.jpg" alt="Author Page">
+            <div class="page-info">අවසාන පිටුව - කතුවරිය (Last Page - Author)</div>
+        </div>
+    </div>
+
+</body>
+</html>
